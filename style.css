@@ -1,0 +1,324 @@
+/***************************************/
+/* global elements 
+/***************************************/
+body 
+{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/***************************************/
+/* buttons
+/***************************************/
+.btn-primary
+{
+  background-color: #0F718A;
+  border-color: #0a4f60;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus
+{
+  background-color: #0a4f60;
+  border-color: #0a4f60;
+}
+
+/***************************************/
+/* logo and header
+/***************************************/
+.logo-header
+{
+  vertical-align: middle;
+  line-height: 50px;
+  padding-bottom: 15px;
+  
+}
+
+.logo-header a
+{
+  text-decoration: none;
+  color: black;
+}
+
+.logo-header img
+{
+  height: 50px; 
+  width: auto;
+  padding-right: 10px;
+}
+
+.logo-header h1
+{
+  display: inline; 
+  vertical-align: middle;
+}
+
+.logo-header-right
+{  
+  float: right;
+  height: 50px;
+}
+
+.logo-header-right h4
+{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  height: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-header-clear
+{
+  clear: both;
+}
+
+/***************************************/
+/* navbar 
+/***************************************/
+@media (min-width: 768px) 
+{
+  .navbar-nav 
+  {
+    float: left;
+    margin: 0;
+    margin-left: -15px;
+  }
+}
+
+.navbar-nav 
+{
+    margin: 0 -15px;
+}
+
+.navbar 
+{
+  margin-bottom: 20px;
+  border: 1px solid #f8f8f8;
+  border-radius: 6px;
+}
+
+.navbar ul a
+{
+  border-radius: 6px;
+  border: 1px solid #f8f8f8;
+}
+
+.navbar-collapse
+{
+  border: 0;
+}
+
+/***************************************/
+/* index page 
+/***************************************/
+.index-col-heading
+{
+  padding-bottom: 3px;
+}
+
+.event
+{
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.event-date
+{
+  background-color: #0F718A;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 3px;
+  padding: 2px 4px 2px 4px;
+  margin-right: 5px;  
+  vertical-align: top;
+}
+
+.event-text
+{
+  display: inline-block;
+}
+
+.events-table img
+{
+  position: relative;
+  top: -1px;
+  padding-right: 5px;
+}
+
+.jumbotron
+{
+  margin-bottom: 15px;
+}
+
+.twitter-box
+{
+  float: right;
+  width: 300px;
+}
+
+@media (max-width: 1200px) 
+{
+  .twitter-box
+  {
+    float: none;
+  }
+}
+
+.news-date
+{
+  background-color: #edeced;
+  color: #838383;
+  border-radius: 3px;
+  padding: 2px 4px 2px 4px;
+  margin-right: 5px;  
+  vertical-align: top;
+}
+
+.index-col
+{
+  padding-bottom: 1px;
+}
+
+.index-news-item
+{
+  padding-bottom: 2px;
+}
+
+/***************************************/
+/* about page
+/***************************************/
+.about-text p
+{
+  margin-top: 15px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 180%; 
+  font-size: 24px; 
+  font-weight: normal;
+}
+
+.about-text img
+{
+  height: 200px; 
+  width: auto; 
+  float: left; 
+  padding-right: 25px;
+}
+
+.about-members .panel
+{
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.about-members .panel-body
+{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.about-members li
+{
+  padding-bottom: 2px;
+}
+
+.panel-default
+{
+  border: 1px solid #f5f5f5;
+}
+
+.panel-default .panel-heading
+{
+  border: 1px solid #f5f5f5;
+}
+
+/***************************************/
+/* events page
+/***************************************/
+.events-table td
+{
+  padding: 5px 0px 5px 0px;
+  vertical-align: top;
+}
+
+.events-table td:first-child
+{
+  width: 90px;
+}
+
+.events-table
+{
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.events-table .event-date
+{
+  font-size: 20px;
+}
+
+.events-table .event-title
+{
+  font-size: 20px;
+}
+
+.events-table-past
+{
+  font-size: 16px;
+}
+
+.events-table-past .event-date
+{
+  font-size: 16px;
+  background-color: #3e8da1;
+}
+
+.events-table .event-location
+{
+  margin-bottom: 10px;
+}
+
+.events-table .event-document
+{
+  display: block;
+  padding-right: 10px;
+}
+
+
+
+
+/***************************************/
+/* news page
+/***************************************/
+.news-list div
+{
+  padding-bottom: 20px;
+}
+
+.news-list .news-title
+{
+  font-size: 20px;
+}
+
+.news-list .news-summary
+{
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+}
+
+.news-list .news-meta
+{
+  margin-bottom: 3px;
+}
+
+h1.news-heading
+{
+  margin-bottom: 20px;
+}
+
+.page-heading
+{
+  margin-top: 10px;
+}

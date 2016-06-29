@@ -1,0 +1,8 @@
+
+RewriteEngine on
+Options +Indexes
+
+RewriteRule ^about$ about.php [NC,L]
+RewriteRule ^events$ events.php [NC,L]
+RewriteRule ^news$ news.php [NC,L]
+RewriteRule ^discuss$ discuss.php [NC,L]

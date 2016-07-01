@@ -12,14 +12,14 @@
         <p class="event-title" id="interopen4">INTEROPen 4</p>
         <p><img src="images/time.png" alt="time"/>10:00 - 16:00</p>
         <div class="event-location"><img src="images/world.png" alt="location"/><a href="https://www.google.co.uk/maps/place/TPP/@53.8434217,-1.6286051,15z/data=!4m5!3m4!1s0x0:0xe9ab6533c44a1e6c!8m2!3d53.8434217!4d-1.6286051">TPP, Leeds</a></div>
-        <p><i>Registration for this event is now closed.</i>  </p>
+        <p><i>Registration for this event is now closed.</i></p>
         
-        <p><div class="event-document"><a href="content/Interopen4%20-%20Draft%20Agenda.pdf"><img src="images/page_pdf.png" alt="PDF document"/>Draft agenda</a></div></p>
+        <div class="event-document"><p><a href="content/Interopen4%20-%20Draft%20Agenda.pdf"><img src="images/page_pdf.png" alt="PDF document"/>Draft agenda</a></p></div>
         
         <p>Item four on the agenda is to consider a patient story to underpin the cross care setting interactions. The patient story is contained within the two documents below and will be floated for consideration at INTEROPen 4:</p>
         
         <div class="event-document"><a href="content/Michael's%20Story%20-%20Introduction.pdf"><img src="images/page_pdf.png" alt="PDF document"/>Cross care domain use case - Michael's story - introduction</a></div>
-        <div class="event-document"><a href="content/Michael's%20Story%20-%20Complex%20Care%20(Interop).pdf"><img src="images/page_pdf.png" alt="PDF document"/>Cross care domain use case - Michael's story - story boards</a></div>
+        <!--<div class="event-document"><a href="content/Michael's%20Story%20-%20Complex%20Care%20(Interop).pdf"><img src="images/page_pdf.png" alt="PDF document"/>Cross care domain use case - Michael's story - story boards</a></div>-->
       </td>
     </tr>
   </table>

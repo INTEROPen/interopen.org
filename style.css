@@ -79,7 +79,7 @@ body
 /***************************************/
 /* navbar 
 /***************************************/
-@media (min-width: 768px) 
+@media (min-width: 767px) 
 {
   .navbar-nav 
   {
@@ -110,6 +110,49 @@ body
 .navbar-collapse
 {
   border: 0;
+}
+
+.dropdown-menu
+{
+  background-color: #f8f8f8;
+  border: 1px solid #f8f8f8;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.nav .open > a, 
+.nav .open > a:focus, 
+.nav .open > a:hover
+{
+  color: #333;
+  border-color: #f8f8f8;
+}
+
+.dropdown-menu > li > a
+{
+  color: #777;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 767px) 
+{
+  .navbar-nav .open .dropdown-menu > li > a
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover
+{
+  background-color: #f8f8f8; 
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover
+{
+  color: #777;
+  background-color: #e7e7e7; 
 }
 
 /***************************************/

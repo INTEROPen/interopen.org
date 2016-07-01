@@ -1,12 +1,47 @@
 <?php
 
-  $pagename = basename($_SERVER["PHP_SELF"]);
+  $current_filename = basename($_SERVER["PHP_SELF"]);
 
-  $pages = array("index.php" => array("NAME" => "Home", "LINK" => "./"),
+  $page_configuration = array(
+            "index.php" => array("NAME" => "Home", "LINK" => "./"),
             "about.php" => array("NAME" => "About", "LINK" => "about"),
+            "DROPDOWN" => array("NAME" => "Our work", 
+                                "ELEMENTS" => array("standards.php" => array("NAME" => "Standards development", "LINK" => "standards"),
+                                                    "connectathon.php" => array("NAME" => "Connectathon", "LINK" => "connectathon"))),
             "events.php" => array("NAME" => "Meetings &amp; events", "LINK" => "events"),
             "news.php" => array("NAME" => "News &amp; media", "LINK" => "news"),
             "discuss.php" => array("NAME" => "Discuss", "LINK" => "discuss"));
+
+  function writeNavbarItem($page_filename, $page_name, $page_link, $current_filename)
+  {
+    $active = ' class="active"';
+
+    if ($page_filename != $current_filename)
+      $active = '';
+
+    echo '<li' . $active . '><a href="' . $page_link . '">' . $page_name . '</a></li>';  
+  }
+
+  function writeNavbarItems($page_configuration, $current_filename)
+  {
+    foreach ($page_configuration as $key => $value) 
+    {
+      if ($key == "DROPDOWN")
+      {
+        echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $value["NAME"] . '<span class="caret"></span></a><ul class="dropdown-menu">';
+
+        foreach ($value["ELEMENTS"] as $key2 => $value2)
+          writeNavbarItem($key2, $value2["NAME"], $value2["LINK"], $current_filename);
+
+        echo '</ul></li>';
+      }
+      else
+      {
+        writeNavbarItem($key, $value["NAME"], $value["LINK"], $current_filename);
+      }
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +80,8 @@
     
       <ul class="nav navbar-nav">  
 <?php
-  
-  foreach ($pages as $key => $value) 
-  {
-    $active = ' class="active"';
-    
-    if ($pagename != $key)
-      $active = '';
-    
-    echo '<li' . $active . '><a href="' . $value["LINK"] . '">' . $value["NAME"] . '</a></li>';
-  }
+        
+  writeNavbarItems($page_configuration, $current_filename);
           
 ?>
         </ul>

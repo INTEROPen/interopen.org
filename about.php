@@ -89,6 +89,4 @@
 -->
 </script>
 
-"mailto:suppliergroup@interopen.org"
-
 <?php include('includes/footer.php') ?>

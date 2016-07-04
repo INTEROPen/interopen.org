@@ -30,38 +30,50 @@
           <li>Allscripts</li>
           <li>Answer Digital</li>
           <li>Blackpear</li>
+          <li>BT</li>
+          <li>Cambio+ Healthcare Systems Ltd</li>
+          <li>Capita Health Partners</li>
           <li>Cerner</li>
           <li>CGI</li>
           <li>CharityLog</li>
           <li>CommonTime</li>
           <li>CSC</li>
+          <li>Docman</li>
           <li>Egress</li>
           <li>Emis Health</li>
+          <li>Elsevier</li>
           <li>Endeavour Health</li>
-          <li>enovacom</li>
-          <li>Graphnet Health</li>
+          <li>Enovacom</li>
           <li>GPC</li>
+          <li>Graphnet Health</li>
           <li>Health Intelligence</li>
           <li>Health Linked</li>
           <li>Healthcare Gateway</li>
-          <li>IHE</li>
+          <li>Health Fabric</li>
+          <li>Huawei Technologies (UK) Co Ltd</li>
           <li>IMS Maxims</li>
           <li>INPS</li>
           <li>Intelesant</li>
           <li>InterSystems</li>
           <li>JAC Computer Services Ltd</li>
+          <li>Microsoft</li>
           <li>Optum International</li>
           <li>Orion Health</li>
           <li>Patients Know Best</li>
+          <li>Quicksilva Systems Integration Solutions</li>
           <li>Red Embedded Systems</li>
           <li>Ripple</li>
-          <li>SCC / Specialist Computer Centres</li>
-          <li>Solutions4Health LTD</li>
+          <li>SCC</li>
+          <li>SiteKit</li>
+          <li>Solutions4Health Ltd</li>
           <li>Stalis</li>
-          <li>Sunquest Information Systems (Europe) Ltd</li>
+          <li>Sunquest Information Systems Ltd</li>
+          <li>SystemC</li>
           <li>Targett Business Technology</li>
+          <li>Tiani Spirit</li>
           <li>TotalMobile</li>
           <li>TPP</li>
+          <li>Trustmarque</li>
           <li>Virgin Media Business</li>
           <li>Wiggly-Amps</li>
         </ul>

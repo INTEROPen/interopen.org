@@ -14,8 +14,8 @@
           <h2 class="index-col-heading">Upcoming events</h2>          
 
           <div class="event">
-            <span class="event-date">5 Jul</span>
-            <span class="event-text"><a href="events#interopen4">INTEROPen 4, Leeds</a></span>
+            <span class="event-date">TBA</span>
+            <span class="event-text"><a href="events#interopen5">INTEROPen 5</a></span>
           </div>
 
           <p><a class="btn btn-default" href="events" role="button">View full events list &raquo;</a></p>

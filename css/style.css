@@ -231,6 +231,55 @@ body
   padding-bottom: 2px;
 }
 
+.index-interopen4-box
+{
+  padding-top: 25px; 
+  padding-right: 0;
+}
+
+@media (min-width: 992px) 
+{
+  .index-interopen4-box
+  { 
+    padding-right: 40px;
+  }
+}
+  
+.index-interopen4-box-image
+{
+  background-image: url("../images/interopen4.jpg"); 
+  background-size: cover; 
+  height: 400px;
+}
+
+.index-interopen4-box table
+{
+  height: 100%;
+  width: 100%;
+}
+
+.index-interopen4-box td
+{
+  padding: 20px;
+}
+
+.index-interopen4-box td.index-interopen4-box-bottom
+{
+  
+  height: 100%;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.index-interopen4-box p
+{
+  color: white; 
+  background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.7); 
+  font-size: 24px; 
+  display: inline;
+}
+
 /***************************************/
 /* about page
 /***************************************/

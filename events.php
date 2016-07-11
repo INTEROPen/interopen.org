@@ -30,6 +30,8 @@
 
 <!--          <div class="event-document"><p><a href="content/IO4%20-%20Draft%20Agenda.pdf"><img src="images/page_pdf.png" alt="PDF document"/>Agenda</a></p></div>-->
 
+          <div class="event-document"><p><img src="images/page_excel.png" alt="PDF document"/><a href="https://docs.google.com/spreadsheets/d/1077YtOTfQQbsGjUXhZoFr-tRZMUaCy4bKcydJTeexFc/edit?usp=sharing">Action &amp; decision log from the meeting</a></p></div>
+          
           <p>Slides:</p>
 
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Why%20This%20Matters.pdf">Amir Mehrkar - Why this matters</a></p></div>
@@ -41,7 +43,7 @@
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20GP%20Connect%20programme%20overview.pdf">Glenn Collett - GP Connect Programme Overview</a></p></div>
           
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20FHIR%20Authentication%20and%20Authorization.pdf">Dunmail Hodkinson - FHIR Authentication &amp; Authorization</a></p></div>
-                    
+          
         </td>
       </tr>
       <tr>

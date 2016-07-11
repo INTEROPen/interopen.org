@@ -4,9 +4,9 @@
 
   <div class="row">
     <div class="col-md-5">
-      <h3>Discussion forum</h3>
+      <h3>Discussion forum (members only)</h3>
   
-      <p><a href="https://www.openhealthhub.org/c/interopen"><img src="images/openhealthhub.jpg" alt="OpenHealthHub logo" style="height: 50px; width: auto;"/></a></p>
+      <p><a href="http://interopen.slack.com"><img src="images/slack_logo.png" alt="Slack logo" style="height: 50px; width: auto;"/></a></p>
     </div>
     <div class="col-md-7">
       <h3>Twitter</h3 >

@@ -36,7 +36,9 @@
 
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Why%20This%20Matters.pdf">Amir Mehrkar - Why this matters</a></p></div>
           
-          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Proposed%20project%20(Michael's%20story).pdf">David Stables and Paula Turnock - Proposed project incl. Michael's story</a></p></div>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Proposed%20project%20(Michael's%20story).pdf">David Stables and Paula Turnock - Proposed project</a></p></div>
+          
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Michael's%20Story%20-%20Introduction.pdf">Paula Turnock - Michael's story (narrative)</a></p></div>
                     
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Code4Health%20Community%20Profiles.pdf">Richard Kavanagh - Code4Health Community Profiles</a></p></div>
           

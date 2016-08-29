@@ -5,8 +5,9 @@
   $page_configuration = array(
             "index.php" => array("NAME" => "Home", "LINK" => "./"),
             "about.php" => array("NAME" => "About", "LINK" => "about"),
-            "DROPDOWN" => array("NAME" => "Our work", 
-                                "ELEMENTS" => array("standards.php" => array("NAME" => "Standards development", "LINK" => "standards"),
+            "DROPDOWN" => array("NAME" => "Standards development", 
+                                "ELEMENTS" => array("standards.php" => array("NAME" => "Overview", "LINK" => "standards"),
+                                                    "resource-profiles.php" => array("NAME" => "FHIR® resource profiles", "LINK" => "resource-profiles"),
                                                     "connectathon.php" => array("NAME" => "Connectathon", "LINK" => "connectathon"))),
             "events.php" => array("NAME" => "Meetings &amp; events", "LINK" => "events"),
             "news.php" => array("NAME" => "News &amp; media", "LINK" => "news"),

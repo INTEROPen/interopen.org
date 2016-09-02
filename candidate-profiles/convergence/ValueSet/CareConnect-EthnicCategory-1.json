@@ -1,0 +1,91 @@
+﻿{
+  "id": "CareConnect-EthnicCategory-1",
+  "meta": {
+    "lastUpdated": "2015-11-01T10:00:00"
+  },
+  "extension": [
+    {
+      "Item": "http://www.datadictionary.nhs.uk/data_dictionary/attributes/e/end/ethnic_category_code_de.asp?shownav=0",
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference"
+    }
+  ],
+  "url": "http://hl7.org.uk/CareConnect-EthnicCategory-1-VS",
+  "version": "1.0.0",
+  "name": "CareConnect-EthnicCategory-1-Valueset",
+  "status": "draft",
+  "publisher": "HL7 UK",
+  "description": "The ethnicity of a patient, as specified by the patient. This valueset is comprised of codes from NHS Data Dictionary: Ethnic Category Code.",
+  "codeSystem": {
+    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-EthnicCategory",
+    "concept": [
+      {
+        "code": "A",
+        "display": "British"
+      },
+      {
+        "code": "B",
+        "display": "Irish"
+      },
+      {
+        "code": "C",
+        "display": "Any other White background"
+      },
+      {
+        "code": "D",
+        "display": "White and Black Caribbean"
+      },
+      {
+        "code": "E",
+        "display": "White and Black African"
+      },
+      {
+        "code": "F",
+        "display": "White and Asian"
+      },
+      {
+        "code": "G",
+        "display": "Any other mixed background"
+      },
+      {
+        "code": "H",
+        "display": "Indian"
+      },
+      {
+        "code": "J",
+        "display": "Pakistani"
+      },
+      {
+        "code": "K",
+        "display": "Bangladeshi"
+      },
+      {
+        "code": "L",
+        "display": "Any other Asian background"
+      },
+      {
+        "code": "M",
+        "display": "Caribbean"
+      },
+      {
+        "code": "N",
+        "display": "African"
+      },
+      {
+        "code": "P",
+        "display": "Any other Black background"
+      },
+      {
+        "code": "R",
+        "display": "Chinese"
+      },
+      {
+        "code": "S",
+        "display": "Any other ethnic group"
+      },
+      {
+        "code": "Z",
+        "display": "Not stated"
+      }
+    ]
+  }
+}

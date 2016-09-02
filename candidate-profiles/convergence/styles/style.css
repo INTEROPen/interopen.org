@@ -1,0 +1,338 @@
+﻿/***********************************************
+* general
+***********************************************/
+
+body
+{
+    background-color: #ffffff;
+    position: relative;
+    padding-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a 
+{
+    color: #428BCA;
+    text-decoration: none;
+}
+
+.label 
+{
+    font-weight: normal;
+    vertical-align: auto;
+    background-color: #ccc;
+}
+
+/***********************************************
+* layout
+***********************************************/
+
+#segment-header
+{
+    background-color: #f5f5f5;
+    /*border-bottom: 1px solid silver;*/
+}
+
+.container 
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 1100px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#segment-footer 
+{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    font-size: 12px;
+}
+
+.navbar-default 
+{
+    background-color: #f5f5f5;
+    border: 0px solid #f5f5f5;
+}
+
+.navbar-collapse
+{
+    padding-left: 0;
+}
+
+.navbar-nav > li > a 
+{
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 1.5px;
+}
+
+#segment-navbar
+{
+    background-color: #f5f5f5;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 5px;
+}
+
+.navbar 
+{
+    margin-bottom: 0;
+}
+
+.btn-primary 
+{
+    background-color: #5692ac;
+    border-color: #5692ac;
+}
+
+.table-fixed
+{
+    table-layout: fixed;
+}
+
+.table-column-20pc 
+{
+    width: 20%;
+}
+
+/***********************************************
+* header
+***********************************************/
+
+#logo 
+{
+    float: left;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    margin-left: 0;
+    display: block;
+}
+
+#logo img 
+{
+    max-width: 100%;
+}
+
+#fhir-nav 
+{
+    line-height: 50px;
+    float: right;
+    margin-top: 8px;
+}
+
+#fhir-nav a 
+{
+    color: inherit;
+}
+
+#fhir-status 
+{
+    font-weight: normal;
+    line-height: 50px;
+    float: left;
+    margin-top: 14px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+#fhir-search 
+{
+    line-height: 50px;
+    float: right;
+    margin-top: 16px;
+    color: maroon;
+}
+
+#fhir-search a 
+{
+    color: inherit;
+}
+
+#fhir-logo 
+{
+    float: right;
+    margin-left: 6px;
+    margin-right: 0;
+    margin-bottom: 4px;
+}
+
+#stripe 
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 8px;
+    background: #999999;
+}
+
+#notes a 
+{
+    color: #555555;
+}
+
+/***********************************************
+* structure diagram 
+***********************************************/
+
+table.resource-tree
+{
+    font-size: 11px;
+    border: 0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%;
+}
+
+table.resource-tree,
+table.resource-tree th,
+table.resource-tree td
+{
+    font-family: Verdana, sans-serif;
+}
+
+table.resource-tree th
+{
+    font-size: 13px;
+}
+
+table.resource-tree thead
+{
+    text-align: left;
+    border: 1px #F0F0F0 solid;
+}
+
+table.resource-tree thead tr th
+{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+table.resource-tree thead tr th:first-of-type
+{
+    padding-left: 4px;
+}
+
+table.resource-tree tbody tr
+{
+    border: 0px;
+    padding: 0;
+    vertical-align: top;
+    background-color: white;
+}
+
+table.resource-tree tbody tr td
+{
+    line-height: 1.4em;
+}
+
+.hierarchy 
+{
+    border: 0px;
+    padding: 0px 4px 0px 4px;
+    vertical-align: top;
+    text-align: left; 
+    white-space: nowrap; 
+}
+
+tr.hierarchy 
+{
+    border: 1px #F0F0F0 solid;
+    padding: 0px 4px 0px 4px;
+    font-size: 11px;
+    vertical-align: top;
+}
+
+img.hierarchy 
+{
+    box-sizing: border-box;
+    border: 0px;
+    padding: 0px;
+    vertical-align: top;
+    background-color: white;
+}
+
+table.resource-tree .label 
+{
+    font-size: 100%;
+}
+
+table tr.removed-row
+{
+    text-decoration: line-through; 
+}
+
+.resource-tree-name-column,
+.resource-tree-type-column 
+{
+    width: 200px;
+}
+
+.resource-tree-flags-column,
+.resource-tree-cardinality-column
+{
+    width: 50px;
+}
+
+
+/***********************************************
+* resource content tabs 
+***********************************************/
+
+.tab-content 
+{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+}
+
+.nav-tabs 
+{
+    margin-bottom: 0;
+}
+
+ul.star-list li
+{
+    display: block;
+}
+
+ul.star-list li:before 
+{
+    content: "\2a";
+    font-family: 'Glyphicons Halflings';
+    font-size: 20px;
+    float: left;
+    margin-left: -17px;
+    color: #CCCCCC;
+}
+
+/***********************************************
+* resource listing table
+***********************************************/
+
+#resources-table 
+{
+    width: 100%;
+    
+}
+
+#resources-table .resources-table-name-column
+{
+    width: 300px;
+}
+
+#resources-table .resources-table-maturity-column
+{
+    width: 200px;
+}
+
+#resources-table td.resources-table-identifier-column
+{
+    font-size: 13px;
+}

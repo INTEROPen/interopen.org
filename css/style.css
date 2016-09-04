@@ -509,3 +509,24 @@ h1.news-heading
     width: 20px;
     height: 20px;
 }
+
+/***************************************/
+/* standards pages 
+/***************************************/
+
+.standards-page p, .standards-page ul, .standards-page ol
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.standards-page ul li
+{
+  padding-bottom: 5px;
+}
+
+.standards-page ol li
+{
+  padding-bottom: 10px;
+}

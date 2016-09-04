@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/valueset.xsd">
+	<id value="CareConnect-EthnicCategory-1"/>
+	<meta>
+		<lastUpdated value="2015-11-01T10:00:00"/>
+	</meta>
+	<extension url="http://hl7.org/fhir/StructureDefinition/valueset-sourceReference">
+		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/e/end/ethnic_category_code_de.asp?shownav=0"/>
+	</extension>
+	<url value="http://hl7.org.uk/CareConnect-EthnicCategory-1-VS"/>
+	<version value="1.0.0"/>
+	<name value="CareConnect-EthnicCategory-1-Valueset"/>
+	<status value="draft"/>
+	<publisher value="HL7 UK"/>
+	<description value="The ethnicity of a patient, as specified by the patient. This valueset is comprised of codes from NHS Data Dictionary: Ethnic Category Code."/>
+	<codeSystem>
+		<system value="http://hl7.org.uk/fhir/ValueSet/CareConnect-EthnicCategory"/>
+		<concept>
+			<code value="A"/>
+			<display value="British"/>
+		</concept>
+		<concept>
+			<code value="B"/>
+			<display value="Irish"/>
+		</concept>
+		<concept>
+			<code value="C"/>
+			<display value="Any other White background"/>
+		</concept>
+		<concept>
+			<code value="D"/>
+			<display value="White and Black Caribbean"/>
+		</concept>
+		<concept>
+			<code value="E"/>
+			<display value="White and Black African"/>
+		</concept>
+		<concept>
+			<code value="F"/>
+			<display value="White and Asian"/>
+		</concept>
+		<concept>
+			<code value="G"/>
+			<display value="Any other mixed background"/>
+		</concept>
+		<concept>
+			<code value="H"/>
+			<display value="Indian"/>
+		</concept>
+		<concept>
+			<code value="J"/>
+			<display value="Pakistani"/>
+		</concept>
+		<concept>
+			<code value="K"/>
+			<display value="Bangladeshi"/>
+		</concept>
+		<concept>
+			<code value="L"/>
+			<display value="Any other Asian background"/>
+		</concept>
+		<concept>
+			<code value="M"/>
+			<display value="Caribbean"/>
+		</concept>
+		<concept>
+			<code value="N"/>
+			<display value="African"/>
+		</concept>
+		<concept>
+			<code value="P"/>
+			<display value="Any other Black background"/>
+		</concept>
+		<concept>
+			<code value="R"/>
+			<display value="Chinese"/>
+		</concept>
+		<concept>
+			<code value="S"/>
+			<display value="Any other ethnic group"/>
+		</concept>
+		<concept>
+			<code value="Z"/>
+			<display value="Not stated"/>
+		</concept>
+	</codeSystem>
+</ValueSet>

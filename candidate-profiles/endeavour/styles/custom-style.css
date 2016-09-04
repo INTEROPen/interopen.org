@@ -1,0 +1,15 @@
+
+#resources-table .resources-table-name-column
+{
+    width: 350px;
+}
+
+#resources-table .resources-table-maturity-column
+{
+    width: 350px;
+}
+
+#segment-header
+{
+    border-bottom: 1px solid silver;
+}

@@ -1,0 +1,36 @@
+﻿{
+  "meta": {
+    "lastUpdated": "2016-08-29T01:00:00+01:00"
+  },
+  "extension": [
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
+  "url": "http://hl7.org.uk/CareConnect-ConditionEpisodicity-1-VS",
+  "name": "CareConnect-ConditionEpisodicity-1-Valueset",
+  "status": "draft",
+  "publisher": "HL7 UK",
+  "description": "The type of relationship that exists between a follow-on condition and the target problem episode.",
+  "codeSystem": {
+    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionEpisodicity",
+    "concept": [
+      {
+        "code": "review",
+        "display": "Review",
+        "definition": "The condition is a review of the target problem episode"
+      },
+      {
+        "code": "flare",
+        "display": "Flare",
+        "definition": "The condition marks a flare-up of the target problem episode"
+      },
+      {
+        "code": "end",
+        "display": "End",
+        "definition": "The condition marks the end of the target problem episode"
+      }
+    ]
+  }
+}

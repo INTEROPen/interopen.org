@@ -6,6 +6,15 @@
 
   <table class="events-table">
     <tr>
+        <td><span class="event-date">28 Sep</span></td>
+        <td id="bcsfhir">
+          <p class="event-title">BCS - Fast Healthcare Interoperability: What you need to know about how HL7 FHIR® is changing the game</p>
+          <p><img src="images/time.png" alt="time"/>12:30 - 16:30</p>
+          <div class="event-location"><img src="images/world.png" alt="location"/><a href="https://www.google.co.uk/maps/place/British+Computer+Society+Bcs/@51.5108256,-0.1217621,15z/data=!4m5!3m4!1s0x0:0xec07e04f1cca62f9!8m2!3d51.5108256!4d-0.1217621">BCS, London</a></div>
+          <p>This event is organised and run by the British Computer Society - <a href="https://events.bcs.org/book/2185/">click here for more information and to book</a>.</p>
+        </td>
+    </tr>
+    <tr>
         <td><span class="event-date">TBA</span></td>
         <td class="event-title" id="interopen5">INTEROPen 5</td>
     </tr>

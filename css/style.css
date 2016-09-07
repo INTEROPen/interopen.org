@@ -182,7 +182,7 @@ body
 
 .event-text
 {
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .events-table img

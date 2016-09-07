@@ -10,6 +10,12 @@
       
       <div class="news-list">
 
+        <div id="6sep">
+          <a class="news-title" href="http://www.digitalhealth.net/integration/48036/calling-the-fhir-brigade">Calling the FHIR brigade</a>
+          <p class="news-meta">6 Sep 2016 &nbsp; digitalhealth.net</p>
+          <p class="news-summary">Philip Scott, a senior lecturer in information systems at the University of Portsmouth, and chair of HL7 UK, discusses the evolution of the HL7 FHIR standard, some projects in which it is already being used in the NHS...</p>
+        </div>
+        
         <div id="23jun">
           <a class="news-title" href="http://www.buildingbetterhealthcare.co.uk/news/article_page/INTEROPen_accelerates_development_of_NHS_interoperability_standards/118951">INTEROPen accelerates development of NHS interoperability standards</a>
           <p class="news-meta">23 Jun 2016 &nbsp; buildingbetterhealthcare.co.uk</p>

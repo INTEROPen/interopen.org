@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-08-30T13:22:12.733+01:00"
+    "lastUpdated": "2016-09-07T18:04:48.535+01:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Schedule-1",
   "version": "1.0",
@@ -227,16 +227,10 @@
       },
       {
         "path": "Schedule.meta.profile",
-        "slicing": {
-          "discriminator": [
-            "@profile"
-          ],
-          "rules": 2
-        },
         "short": "Profiles this resource claims to conform to",
         "definition": "A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].",
         "comments": "It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.",
-        "min": 1,
+        "min": 0,
         "max": "*",
         "base": {
           "path": "Schedule.meta.profile",
@@ -249,28 +243,6 @@
             "code": "uri"
           }
         ],
-        "isSummary": true
-      },
-      {
-        "path": "Schedule.meta.profile",
-        "name": "careConnect",
-        "short": "Profiles this resource claims to conform to",
-        "definition": "A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].",
-        "comments": "It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Schedule.meta.profile",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://hl7.org.uk/CareConnect-Schedule-1",
         "isSummary": true
       },
       {
@@ -3374,54 +3346,6 @@
             "code": "id"
           }
         ],
-        "isSummary": true
-      },
-      {
-        "path": "Schedule.meta.profile",
-        "slicing": {
-          "discriminator": [
-            "@profile"
-          ],
-          "rules": 2
-        },
-        "short": "Profiles this resource claims to conform to",
-        "definition": "A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].",
-        "comments": "It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.",
-        "min": 1,
-        "max": "*",
-        "base": {
-          "path": "Schedule.meta.profile",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "isSummary": true
-      },
-      {
-        "path": "Schedule.meta.profile",
-        "name": "careConnect",
-        "short": "Profiles this resource claims to conform to",
-        "definition": "A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].",
-        "comments": "It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Schedule.meta.profile",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://hl7.org.uk/CareConnect-Schedule-1",
         "isSummary": true
       },
       {

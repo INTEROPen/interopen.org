@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-08-30T13:22:01.89+01:00" />
+    <lastUpdated value="2016-09-07T18:03:58.244+01:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-Patient-1" />
   <version value="1.0" />
@@ -184,14 +184,10 @@
     </element>
     <element>
       <path value="Patient.meta.profile" />
-      <slicing>
-        <discriminator value="@profile" />
-        <rules value="openAtEnd" />
-      </slicing>
       <short value="Profiles this resource claims to conform to" />
       <definition value="A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]]." />
       <comments value="It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set." />
-      <min value="1" />
+      <min value="0" />
       <max value="*" />
       <base>
         <path value="Patient.meta.profile" />
@@ -201,25 +197,6 @@
       <type>
         <code value="uri" />
       </type>
-      <isSummary value="true" />
-    </element>
-    <element>
-      <path value="Patient.meta.profile" />
-      <name value="careConnect" />
-      <short value="Profiles this resource claims to conform to" />
-      <definition value="A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]]." />
-      <comments value="It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set." />
-      <min value="1" />
-      <max value="1" />
-      <base>
-        <path value="Patient.meta.profile" />
-        <min value="0" />
-        <max value="*" />
-      </base>
-      <type>
-        <code value="uri" />
-      </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-Patient-1" />
       <isSummary value="true" />
     </element>
     <element>
@@ -10983,46 +10960,6 @@
       <type>
         <code value="id" />
       </type>
-      <isSummary value="true" />
-    </element>
-    <element>
-      <path value="Patient.meta.profile" />
-      <slicing>
-        <discriminator value="@profile" />
-        <rules value="openAtEnd" />
-      </slicing>
-      <short value="Profiles this resource claims to conform to" />
-      <definition value="A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]]." />
-      <comments value="It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set." />
-      <min value="1" />
-      <max value="*" />
-      <base>
-        <path value="Patient.meta.profile" />
-        <min value="0" />
-        <max value="*" />
-      </base>
-      <type>
-        <code value="uri" />
-      </type>
-      <isSummary value="true" />
-    </element>
-    <element>
-      <path value="Patient.meta.profile" />
-      <name value="careConnect" />
-      <short value="Profiles this resource claims to conform to" />
-      <definition value="A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]]." />
-      <comments value="It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set." />
-      <min value="1" />
-      <max value="1" />
-      <base>
-        <path value="Patient.meta.profile" />
-        <min value="0" />
-        <max value="*" />
-      </base>
-      <type>
-        <code value="uri" />
-      </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-Patient-1" />
       <isSummary value="true" />
     </element>
     <element>

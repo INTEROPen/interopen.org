@@ -51,6 +51,8 @@
         <h2 class="index-col-heading">News &amp; media</h2>
 
         <p class="index-news-item"><span class="news-date">6 Sep</span><a href="news#6sep">Calling the FHIR brigade</a></p>
+        <p class="index-news-item"><span class="news-date">17 Aug</span><a href="news#17aug">Ade Memoire: how long?</a></p>
+        <p class="index-news-item"><span class="news-date">15 Aug</span><a href="news#15aug">Fantastic digital developments as we aim to go paperless</a></p>
         <p class="index-news-item"><span class="news-date">23 Jun</span><a href="news#23jun">INTEROPen accelerates development of NHS interoperability standards</a></p>
         <p class="index-news-item"><span class="news-date">20 Jun</span><a href="news#20jun">Q&amp;A: NHS England’s new drive for open data standards in healthcare</a></p>
         <p class="index-news-item"><span class="news-date">14 Jun</span><a href="news#14jun">UK health authorities back supplier IT interoperability group</a></p>

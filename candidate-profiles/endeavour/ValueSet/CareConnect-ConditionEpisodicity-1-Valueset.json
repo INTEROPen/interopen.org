@@ -12,24 +12,34 @@
   "name": "CareConnect-ConditionEpisodicity-1-Valueset",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "The type of relationship that exists between a follow-on condition and the target problem episode.",
+  "description": "Specifies the episodicity of a condition.",
   "codeSystem": {
     "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionEpisodicity",
     "concept": [
       {
+        "code": "first",
+        "display": "First",
+        "definition": "The first episode of a condition"
+      },
+      {
+        "code": "new",
+        "display": "New",
+        "definition": "A new episode of a previously recorded condition"
+      },
+      {
         "code": "review",
         "display": "Review",
-        "definition": "The condition is a review of the target problem episode"
+        "definition": "A review of an existing condition episode"
       },
       {
         "code": "flare",
         "display": "Flare",
-        "definition": "The condition marks a flare-up of the target problem episode"
+        "definition": "A flare-up of an existing condition episode"
       },
       {
         "code": "end",
         "display": "End",
-        "definition": "The condition marks the end of the target problem episode"
+        "definition": "Marks the end of a condition episode"
       }
     ]
   }

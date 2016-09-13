@@ -1,13 +1,13 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-08-30T08:18:23.513+01:00"
+    "lastUpdated": "2016-09-13T15:13:36.274+01:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Condition-1",
   "version": "1.0",
   "name": "CareConnect-Condition-1",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "Use to record detailed information about conditions or diagnoses recognised by a clinician. The Condition profile specifically excludes Problems as those are handled with their own profile.",
+  "description": "Use to record detailed information about conditions or diagnoses recognised by a clinician.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
   "fhirVersion": "1.0.2",
   "kind": 1,
@@ -60,9 +60,9 @@
       },
       {
         "path": "Condition.extension",
-        "name": "problemEpisode",
-        "short": "The problem episode this condition is part of.",
-        "definition": "The problem episode of which this condition is part of. The episodicity type (Review, Flare, End) indicates the type of relationship that exists between this follow-on condition and the target problem episode.",
+        "name": "episode",
+        "short": "first | new | review | flare | end",
+        "definition": "The episodicity status of a condition.",
         "min": 0,
         "max": "1",
         "type": [
@@ -70,7 +70,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ConditionProblemEpisode-1-Ext"
+              "http://hl7.org.uk/CareConnect-ConditionEpisode-1-Ext"
             ]
           }
         ]
@@ -3453,32 +3453,6 @@
         ]
       },
       {
-        "path": "Condition.code.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "Condition.code.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "Condition.code.coding.id",
         "representation": [
           0
@@ -3747,8 +3721,8 @@
         "short": "complaint | symptom | finding | diagnosis",
         "definition": "A category assigned to the condition.",
         "comments": "The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Condition.category",
           "min": 0,
@@ -3762,8 +3736,7 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 2,
-          "description": "A category assigned to the condition.",
+          "strength": 1,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/condition-category"
           }
@@ -4678,7 +4651,7 @@
         "short": "Stage/grade, usually assessed formally",
         "definition": "Clinical stage or grade of a condition. May include formal severity assessments.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.stage",
           "min": 0,
@@ -6347,9 +6320,9 @@
       },
       {
         "path": "Condition.extension",
-        "name": "problemEpisode",
-        "short": "The problem episode this condition is part of.",
-        "definition": "The problem episode of which this condition is part of. The episodicity type (Review, Flare, End) indicates the type of relationship that exists between this follow-on condition and the target problem episode.",
+        "name": "episode",
+        "short": "first | new | review | flare | end",
+        "definition": "The episodicity status of a condition.",
         "min": 0,
         "max": "1",
         "type": [
@@ -6357,7 +6330,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ConditionProblemEpisode-1-Ext"
+              "http://hl7.org.uk/CareConnect-ConditionEpisode-1-Ext"
             ]
           }
         ]
@@ -6914,32 +6887,6 @@
         ]
       },
       {
-        "path": "Condition.code.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "Condition.code.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "Condition.code.coding.system",
         "short": "Identity of the terminology system",
         "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
@@ -7082,8 +7029,8 @@
         "short": "complaint | symptom | finding | diagnosis",
         "definition": "A category assigned to the condition.",
         "comments": "The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Condition.category",
           "min": 0,
@@ -7097,8 +7044,7 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 2,
-          "description": "A category assigned to the condition.",
+          "strength": 1,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/condition-category"
           }
@@ -7249,39 +7195,6 @@
           {
             "identity": "w5",
             "map": "when.done"
-          }
-        ]
-      },
-      {
-        "path": "Condition.stage",
-        "short": "Stage/grade, usually assessed formally",
-        "definition": "Clinical stage or grade of a condition. May include formal severity assessments.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Condition.stage",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "BackboneElement",
-            "code": "BackboneElement"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "con-1",
-            "severity": 0,
-            "human": "Stage SHALL have summary or assessment",
-            "xpath": "exists(f:summary) or exists(f:assessment)"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "./inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"stage/grade\"]"
           }
         ]
       },

@@ -12,7 +12,7 @@
           <p><img src="images/time.png" alt="time"/>09:00 - 10:30</p>
           <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
           <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
-          <p>Please email <a id="emaila" href="">.</a> to take part.</p>
+          <p>Please email <a class="emaila" href="">.</a> to take part.</p>
         </td>
     </tr>
     <tr>

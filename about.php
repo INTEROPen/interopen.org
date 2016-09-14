@@ -13,7 +13,7 @@
 
       <p>Commercial interests are put to one side in the group’s activities.</p>
       
-      <p class="text-left">To join INTEROPen please contact <a id="emaila" href="">.</a></p>
+      <p class="text-left">To join INTEROPen please contact <a class="emaila" href="">.</a></p>
         
     </blockquote>
   </div>

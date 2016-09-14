@@ -12,7 +12,12 @@
 	str1="mailto:";
 	str2="&#x73;&#x75;&#x70;&#x70;&#x6C;&#x69;&#x65;&#x72;&#x67;&#x72;&#x6F;&#x75;";
 	str3="&#x70;&#x40;&#x69;&#x6E;&#x74;&#x65;&#x72;&#x6F;&#x70;&#x65;&#x6E;&#x2E;&#x6F;&#x72;&#x67;";
-	document.getElementById("emaila").innerHTML = decodeEntities(str2+str3);
-	document.getElementById("emaila").setAttribute("href", decodeEntities(str1+str2+str3));
+	
+    var elements = document.getElementsByClassName("emaila");
+    for (var i = 0; i < elements.length; i++)
+    {
+      elements[i].innerHTML = decodeEntities(str2+str3);
+	  elements[i].setAttribute("href", decodeEntities(str1+str2+str3));        
+    }
 -->
 </script>

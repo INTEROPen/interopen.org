@@ -12,7 +12,7 @@
           <p class="news-title">CareConnect candidate FHIR profiles online</p>
           <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
           <div class="news-text">
-            <p>NHS Digital and Endeavour submitted FHIR profiles. They have been working together to agree convergence and these are published on our website at:</p>
+            <p>NHS Digital and Endeavour Health have submitted FHIR profiles. They have been working together to agree convergence and these are published on our website at:</p>
             <p><a href="http://interopen.org/candidate-profiles/convergence/">http://interopen.org/candidate-profiles/convergence/</a></p>
             <p>EMIS and TPP have also been involved in the initial GPConnect FHIR profile work.</p>
             <p><b><span class="red">ACTION FOR MEMBERS:</span></b> Please start using the Slack general channel for any discussion points on the profiles.</p>
@@ -24,7 +24,7 @@
           <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
           <div class="news-text">
             <p>The PRSB has been commissioned to provide a clinical validation review of the <a href="candidate-profiles/convergence/CareConnect-Problem-Condition-1.html">CareConnect–Problem–Condition candidate profile</a> over three workshops, with a view of reviewing the rest of the CareConnect profiles as they are published.</p>
-            <p>On Friday 23rd September 9-10.30 am we plan to have a webinar discussion of the CareConnect candidate profiles and to share any PRSB learning points.</p>
+            <p>On Friday 23rd September 9-10.30 am we plan to have a <a href="events#cccpw">webinar discussion of the CareConnect candidate profiles</a> and to share any PRSB learning points.</p>
             <p><b><span class="red">ACTION FOR MEMBERS:</span></b> Please email <a class="emaila" href="">.</a> if you are keen to be part of this webinar: you must review the profiles ahead of this to inform your contribution.</p>
           </div>
         </div>
@@ -44,6 +44,7 @@
             <p>It, therefore, appears that the role of INTEROpen, is set to become an even more vital piece in the transformation of our NHS for safer and more efficient patient care.</p>
             <p>As a result, <b>a proposal has been put forward that we OPEN our MEMBERSHIP to non-vendor organisations and individuals with technical and clinical expertise in health and social care interoperability standards development.</b></p>
             <p><b>The proposal has been supported enthusiastically by the following members:</b></p>
+            <p>Blackpear, Cerner, Emis Health, Endeavour, Healthcare Gateway, IMS Maxims, InterSystems, Microsoft, Orion Health, TPP, including NHS Digital.</p>
             <p><b><span class="red">ACTION FOR MEMBERS:</span> If you have any objection to this please contact us at <a class="emaila" href="">.</a> <span class="red">by 16/09/2016</span> with your justification, or use SLACK to discuss openly.</b></p>
             <p><b>If no objections are raised we will open up the SLACK forum without delay and update our website and twitter feeds accordingly.</b></p>
           </div>

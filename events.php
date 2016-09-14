@@ -6,6 +6,16 @@
 
   <table class="events-table">
     <tr>
+        <td><span class="event-date">23 Sep</span></td>
+        <td id="cccpw">
+          <p class="event-title">CareConnect candidate profiles webinar</p>
+          <p><img src="images/time.png" alt="time"/>09:00 - 10:30</p>
+          <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
+          <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
+          <p>Please email <a id="emaila" href="">.</a> to take part.</p>
+        </td>
+    </tr>
+    <tr>
         <td><span class="event-date">28 Sep</span></td>
         <td id="bcsfhir">
           <p class="event-title">BCS - Fast Healthcare Interoperability: What you need to know about how HL7 FHIR® is changing the game</p>
@@ -90,5 +100,6 @@
     </tbody>
   </table>
 
+<?php include('includes/email.php') ?>
 
 <?php include('includes/footer.php') ?>

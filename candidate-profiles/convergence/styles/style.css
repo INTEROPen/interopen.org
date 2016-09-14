@@ -312,6 +312,11 @@ ul.star-list li:before
     color: #CCCCCC;
 }
 
+ul.schema-list
+{
+    padding-left: 20px;
+}
+
 /***********************************************
 * resource listing table
 ***********************************************/

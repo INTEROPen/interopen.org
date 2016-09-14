@@ -16,8 +16,15 @@
       <li>The citizen and their family</li>
     </ul>
 
-    <p>The connectathon be underpinned by a story of a person with alcoholism, and diabetes and their contacts with the various services, focusing on the need for real time up-to-date data exchange between systems in each domain.</p>
+    <p>The connectathon is underpinned by the story of Michael, a person with alcoholism, and diabetes and their contacts with the various services, focusing on the need for real time up-to-date data exchange between systems in each domain.</p>
 
+    <p>The following documents were introducted at INTEROPen 4 and provide the story of Michael along with use cases for the connectathon:
+    
+      <ul>
+        <li><a href="content/IO4%20-%20Michael's%20Story%20-%20Introduction.pdf">Michael's story - introduction</a></li>
+        <li><a href="content/IO4%20-%20Michael's%20Story%20-%20Slides.pdf">Michael's story - use cases</a></li>
+      </ul>
+    </p>
   </div>
 
 <?php include('includes/footer.php') ?>

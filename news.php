@@ -56,6 +56,11 @@
           <p class="news-summary">A supplier-led interoperability group has been launched to promote the exchange of data across healthcare through the adoption of open standards.</p>
         </div>
 
+        <div id="1may">
+          <a class="news-title" href="http://interoperability.code4health.org/2016/05/01/latest-newsletter-published/">INTEROPen accelerates development of NHS interoperability standards</a>
+          <p class="news-meta">1 May 2016 &nbsp; interoperability.code4health.org</p>
+        </div>
+        
         <div id="29apr">  
           <a class="news-title" href="http://www.techuk.org/insights/news/item/8393-call-for-action-interoperability-implementation-at-scale-interopen">Call for Action: Interoperability Implementation at Scale (INTEROPen)</a>
           <p class="news-meta">29 Apr 2016 &nbsp; techuk.org</p>

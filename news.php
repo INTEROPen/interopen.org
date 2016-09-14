@@ -1,12 +1,67 @@
 <?php include('includes/header.php') ?>
-      
-  
 
   <div class="row">
 
     <div class="col-md-8">
 
       <h1 class="page-heading news-heading">News</h1> 
+      
+      <div class="news-list">
+
+        <div id="12sep1">
+          <p class="news-title">CareConnect candidate FHIR profiles online</p>
+          <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
+          <div class="news-text">
+            <p>NHS Digital and Endeavour submitted FHIR profiles. They have been working together to agree convergence and these are published on our website at:</p>
+            <p><a href="http://interopen.org/candidate-profiles/convergence/">http://interopen.org/candidate-profiles/convergence/</a></p>
+            <p>EMIS and TPP have also been involved in the initial GPConnect FHIR profile work.</p>
+            <p><b><span class="red">ACTION FOR MEMBERS:</span></b> Please start using the Slack general channel for any discussion points on the profiles.</p>
+          </div>
+        </div>
+        
+        <div id="12sep2">
+          <p class="news-title">PRSB clinical validation of FHIR profiles</p>
+          <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
+          <div class="news-text">
+            <p>The PRSB has been commissioned to provide a clinical validation review of the <a href="candidate-profiles/convergence/CareConnect-Problem-Condition-1.html">CareConnect–Problem–Condition candidate profile</a> over three workshops, with a view of reviewing the rest of the CareConnect profiles as they are published.</p>
+            <p>On Friday 23rd September 9-10.30 am we plan to have a webinar discussion of the CareConnect candidate profiles and to share any PRSB learning points.</p>
+            <p><b><span class="red">ACTION FOR MEMBERS:</span></b> Please email <a class="emaila" href="">.</a> if you are keen to be part of this webinar: you must review the profiles ahead of this to inform your contribution.</p>
+          </div>
+        </div>
+        
+        <div id="12sep3">
+          <p class="news-title">Proposal for INTEROPen to “OPEN" its membership [HAVE YOUR SAY]</p>
+          <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
+          <div class="news-text">
+            <p>Since INTEROPen4 in July, a growing number of non-vendor organisations and individuals with valuable technical and clinical knowledge of the technologies we supply, and the standards needed to enable interoperability, have requested to contribute to INTEROPen’s important standards work.</p>
+            <p>Unfortunately, we have not been able to invite them to our membership. These include NHS provider and commissioner IT teams.</p>
+            <p>However, our mission statement makes it clear that we are here to work together to accelerate the development of open standards for interoperability, whilst putting commercial interests aside.</p>
+            <p>In addition, the recent report, <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/550866/Wachter_Review_Accessible.pdf">Making IT Work</a>, chaired by Dr Robert Wachter, focused heavily on “interoperability”, specifically stating:</p>
+            <ul>
+              <li>"National standards for interoperability should be developed and enforced, with an expectation of widespread interoperability of core data elements by 2020”</li>
+              <li>"Widespread interoperability will require the development and enforcement of standards, along with penalties for suppliers, trusts, GPs, and others who stand in the way of appropriate data sharing."</li>
+            </ul>
+            <p>It, therefore, appears that the role of INTEROpen, is set to become an even more vital piece in the transformation of our NHS for safer and more efficient patient care.</p>
+            <p>As a result, <b>a proposal has been put forward that we OPEN our MEMBERSHIP to non-vendor organisations and individuals with technical and clinical expertise in health and social care interoperability standards development.</b></p>
+            <p><b>The proposal has been supported enthusiastically by the following members:</b></p>
+            <p><b><span class="red">ACTION FOR MEMBERS:</span> If you have any objection to this please contact us at <a class="emaila" href="">.</a> <span class="red">by 16/09/2016</span> with your justification, or use SLACK to discuss openly.</b></p>
+            <p><b>If no objections are raised we will open up the SLACK forum without delay and update our website and twitter feeds accordingly.</b></p>
+          </div>
+        </div>
+        
+        <div id="12sep4">
+          <p class="news-title">Welcome Liam King, from Healthcare Gateway, to our PM team</p>
+          <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>
+          <div class="news-text">
+            <p>Liam King has kindly volunteered to support INTEROPen’s work in a management capacity, helping to assist Paul Cooper from IMS Maxims.</p>
+            <p>We are delighted to have Liam's contribution to our community!</p>
+            <p><b><span class="red">ACTION FOR MEMBERS:</span> If you have capacity to support our work, please get in touch at <a class="emaila" href="">.</a></b></p>
+          </div>
+        </div>
+      
+      </div>
+      
+      <h1 id="media" class="page-heading news-heading">In the media</h1> 
       
       <div class="news-list">
 
@@ -80,5 +135,7 @@
     <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
     
   </div>
-    
+
+<?php include('includes/email.php') ?>
+
 <?php include('includes/footer.php') ?>

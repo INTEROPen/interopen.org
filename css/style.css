@@ -384,17 +384,32 @@ body
 /***************************************/
 .news-list div
 {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .news-list .news-title
 {
   font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.news-list .news-summary, .news-text
+{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.news-text
+{
+  font-size: 16px;
+}
+
+.news-text p
+{
+  margin-bottom: 5px;
 }
 
 .news-list .news-summary
 {
-  font-family: 'Open Sans', sans-serif;
   margin-bottom: 0;
 }
 
@@ -413,6 +428,11 @@ h1.news-heading
   margin-top: 10px;
 }
 
+.red
+{
+  color: red;
+  font-weight: bold;
+}
 
 /***************************************/
 /* github button

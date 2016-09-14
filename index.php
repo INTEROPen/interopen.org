@@ -53,7 +53,16 @@
 
       <div class="col-md-4 index-col">
 
-        <h2 class="index-col-heading">News &amp; media</h2>
+        <h2 class="index-col-heading">News</h2>
+        
+        <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep1">CareConnect Candidate FHIR profiles online</a></p>
+        <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep2">PRSB clinical validation of FHIR profiles</a></p>
+        <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep3">Proposal for INTEROPen to "OPEN" its membership</a></p>
+        <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep4">Welcome Liam King, from Healthcare Gateway</a></p>
+
+        <p><a class="btn btn-default" href="news" role="button">View all news &raquo;</a></p>
+        
+        <h2 class="index-col-heading">In the media</h2>
 
         <p class="index-news-item"><span class="news-date">6 Sep</span><a href="news#6sep">Calling the FHIR brigade</a></p>
         <p class="index-news-item"><span class="news-date">17 Aug</span><a href="news#17aug">Ade Memoire: how long?</a></p>
@@ -63,7 +72,7 @@
         <p class="index-news-item"><span class="news-date">14 Jun</span><a href="news#14jun">UK health authorities back supplier IT interoperability group</a></p>
         <p class="index-news-item"><span class="news-date">27 May</span><a href="news#27may">Being INTEROpen Care-Coordination is not an Option for Providers and Footprints...</a></p>
 
-        <p><a class="btn btn-default" href="news" role="button">View all news &raquo;</a></p>
+        <p><a class="btn btn-default" href="news#media" role="button">View all in the media &raquo;</a></p>
 
      </div>
 

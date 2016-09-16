@@ -1,0 +1,654 @@
+﻿{
+  "meta": {
+    "lastUpdated": "2016-09-16T12:06:16.566+01:00"
+  },
+  "extension": [
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
+  "url": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext",
+  "version": "1.0",
+  "name": "CareConnect-GPRegistrationDetails-1-Extension",
+  "status": "draft",
+  "publisher": "HL7 UK",
+  "description": "This extension supports the registration information recorded by the GP practices.",
+  "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
+  "fhirVersion": "1.0.2",
+  "kind": 0,
+  "constrainedType": "Extension",
+  "abstract": false,
+  "contextType": 0,
+  "context": [
+    "Patient"
+  ],
+  "base": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "snapshot": {
+    "element": [
+      {
+        "path": "Extension",
+        "name": "extension",
+        "short": "Additional GP registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Element",
+            "code": "Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationPeriod",
+        "short": "The period of time during which the Patient registration applies",
+        "definition": "The period of time during which the Patient registration applies.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valuePeriod",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationType",
+        "short": "The type of patient registration at the GP practice",
+        "definition": "The type of patient registration at the GP practice.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationType-1-VS"
+          }
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationStatus",
+        "short": "The registration status for this patient at the GP practice",
+        "definition": "The registration status for this patient at the GP practice.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationStatus-1-VS"
+          }
+        }
+      },
+      {
+        "path": "Extension.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Extension.url",
+        "representation": [
+          0
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "comments": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          },
+          {
+            "TypeName": "integer",
+            "code": "integer"
+          },
+          {
+            "TypeName": "decimal",
+            "code": "decimal"
+          },
+          {
+            "TypeName": "base64Binary",
+            "code": "base64Binary"
+          },
+          {
+            "TypeName": "instant",
+            "code": "instant"
+          },
+          {
+            "TypeName": "string",
+            "code": "string"
+          },
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          },
+          {
+            "TypeName": "date",
+            "code": "date"
+          },
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          },
+          {
+            "TypeName": "time",
+            "code": "time"
+          },
+          {
+            "TypeName": "code",
+            "code": "code"
+          },
+          {
+            "TypeName": "oid",
+            "code": "oid"
+          },
+          {
+            "TypeName": "id",
+            "code": "id"
+          },
+          {
+            "TypeName": "unsignedInt",
+            "code": "unsignedInt"
+          },
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          },
+          {
+            "TypeName": "markdown",
+            "code": "markdown"
+          },
+          {
+            "TypeName": "Annotation",
+            "code": "Annotation"
+          },
+          {
+            "TypeName": "Attachment",
+            "code": "Attachment"
+          },
+          {
+            "TypeName": "Identifier",
+            "code": "Identifier"
+          },
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          },
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          },
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity"
+          },
+          {
+            "TypeName": "Range",
+            "code": "Range"
+          },
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          },
+          {
+            "TypeName": "Ratio",
+            "code": "Ratio"
+          },
+          {
+            "TypeName": "SampledData",
+            "code": "SampledData"
+          },
+          {
+            "TypeName": "Signature",
+            "code": "Signature"
+          },
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          },
+          {
+            "TypeName": "Address",
+            "code": "Address"
+          },
+          {
+            "TypeName": "ContactPoint",
+            "code": "ContactPoint"
+          },
+          {
+            "TypeName": "Timing",
+            "code": "Timing"
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference"
+          },
+          {
+            "TypeName": "Meta",
+            "code": "Meta"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "path": "Extension",
+        "name": "extension",
+        "short": "Additional GP registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Element",
+            "code": "Element"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationPeriod",
+        "short": "The period of time during which the Patient registration applies",
+        "definition": "The period of time during which the Patient registration applies.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valuePeriod",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationType",
+        "short": "The type of patient registration at the GP practice",
+        "definition": "The type of patient registration at the GP practice.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationType-1-VS"
+          }
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "registrationStatus",
+        "short": "The registration status for this patient at the GP practice",
+        "definition": "The registration status for this patient at the GP practice.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationStatus-1-VS"
+          }
+        }
+      },
+      {
+        "path": "Extension.url",
+        "representation": [
+          0
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "comments": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          },
+          {
+            "TypeName": "integer",
+            "code": "integer"
+          },
+          {
+            "TypeName": "decimal",
+            "code": "decimal"
+          },
+          {
+            "TypeName": "base64Binary",
+            "code": "base64Binary"
+          },
+          {
+            "TypeName": "instant",
+            "code": "instant"
+          },
+          {
+            "TypeName": "string",
+            "code": "string"
+          },
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          },
+          {
+            "TypeName": "date",
+            "code": "date"
+          },
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          },
+          {
+            "TypeName": "time",
+            "code": "time"
+          },
+          {
+            "TypeName": "code",
+            "code": "code"
+          },
+          {
+            "TypeName": "oid",
+            "code": "oid"
+          },
+          {
+            "TypeName": "id",
+            "code": "id"
+          },
+          {
+            "TypeName": "unsignedInt",
+            "code": "unsignedInt"
+          },
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          },
+          {
+            "TypeName": "markdown",
+            "code": "markdown"
+          },
+          {
+            "TypeName": "Annotation",
+            "code": "Annotation"
+          },
+          {
+            "TypeName": "Attachment",
+            "code": "Attachment"
+          },
+          {
+            "TypeName": "Identifier",
+            "code": "Identifier"
+          },
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          },
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          },
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity"
+          },
+          {
+            "TypeName": "Range",
+            "code": "Range"
+          },
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          },
+          {
+            "TypeName": "Ratio",
+            "code": "Ratio"
+          },
+          {
+            "TypeName": "SampledData",
+            "code": "SampledData"
+          },
+          {
+            "TypeName": "Signature",
+            "code": "Signature"
+          },
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          },
+          {
+            "TypeName": "Address",
+            "code": "Address"
+          },
+          {
+            "TypeName": "ContactPoint",
+            "code": "ContactPoint"
+          },
+          {
+            "TypeName": "Timing",
+            "code": "Timing"
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference"
+          },
+          {
+            "TypeName": "Meta",
+            "code": "Meta"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      }
+    ]
+  },
+  "W5TopLevelGroup": ""
+}

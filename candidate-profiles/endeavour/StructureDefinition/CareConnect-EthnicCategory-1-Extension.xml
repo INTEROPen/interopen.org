@@ -4,7 +4,7 @@
     <lastUpdated value="2016-08-31T22:08:09.932+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="0" />
+    <valueInteger value="1" />
   </extension>
   <url value="http://hl7.org.uk/CareConnect-EthnicCategory-1-Ext" />
   <name value="CareConnect-EthnicCategory-1-Extension" />

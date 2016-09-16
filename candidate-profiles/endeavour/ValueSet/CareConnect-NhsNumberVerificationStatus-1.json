@@ -5,6 +5,10 @@
   },
   "extension": [
     {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    },
+    {
       "Item": "http://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/n/nhs/nhs_number_status_indicator_code_de.asp?shownav=0",
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference"
     }

@@ -1,7 +1,13 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-07T18:03:58.244+01:00"
+    "lastUpdated": "2016-09-16T16:29:13.703+01:00"
   },
+  "extension": [
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
   "url": "http://hl7.org.uk/CareConnect-Patient-1",
   "version": "1.0",
   "name": "CareConnect-Patient-1",
@@ -18,8 +24,8 @@
     "element": [
       {
         "path": "Patient",
-        "short": "Information about an individual or animal receiving health care services",
-        "definition": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+        "short": "The Patient resource carries the patient demographic details",
+        "definition": "The Patient resource carries the patient demographic details",
         "alias": [
           "SubjectOfCare Client Resident"
         ],
@@ -93,8 +99,103 @@
         ]
       },
       {
+        "path": "Patient.extension",
+        "name": "gpRegistrationDetails",
+        "short": "Additional GP registration information for the Patient resource",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "organDonor",
+        "short": "An indicator that the patient is listed as an organ donor.",
+        "definition": "An indicator that the patient is listed as an organ donor.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "residentialStatus",
+        "short": "The residential status of the patient ",
+        "definition": "The residential status of the patient. For example if this patient is a UK resident.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "path": "Patient.extension",
+        "name": "treatmentCategory",
+        "short": "The treatment category for this patient",
+        "definition": "The treatment category for this patient. For example if this patient is entitled to free healthcare treatment.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "path": "Patient.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Patient.modifierExtension",
+        "name": "nhsCommunication",
+        "short": "NHS communication preferences for a resource",
+        "definition": "Communication preferences including a list of Languages which may be used for communication",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
         "path": "Patient.id",
-        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated",
+        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated",
         "definition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
         "comments": "The only time that a resource does not have an id is when it is being submitted to the server using a create operation. Bundles always have an id, though it is usually a generated UUID.",
         "min": 0,
@@ -2669,8 +2770,8 @@
       {
         "path": "Patient.identifier",
         "name": "nhsNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
+        "short": "The patient's NHS number",
+        "definition": "The patient's NHS number",
         "requirements": "Patients are almost always assigned specific numerical identifiers.",
         "min": 0,
         "max": "1",
@@ -3594,1811 +3695,9 @@
       },
       {
         "path": "Patient.identifier",
-        "name": "chiNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
-        "requirements": "Patients are almost always assigned specific numerical identifiers.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Identifier",
-            "code": "Identifier"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-3"
-          },
-          {
-            "identity": "rim",
-            "map": "id"
-          },
-          {
-            "identity": "cda",
-            "map": ".id"
-          },
-          {
-            "identity": "w5",
-            "map": "id"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.use",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "N/A"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding",
-        "short": "Code defined by a terminology system",
-        "definition": "A reference to a code defined by a terminology system.",
-        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
-        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.coding",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Coding",
-            "code": "Coding"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.1-8, C*E.10-22"
-          },
-          {
-            "identity": "rim",
-            "map": "union(., ./translation)"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.coding.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.system",
-        "short": "Identity of the terminology system",
-        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
-        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
-        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.3"
-          },
-          {
-            "identity": "rim",
-            "map": "./codeSystem"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.version",
-        "short": "Version of the system - if relevant",
-        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
-        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.version",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.7"
-          },
-          {
-            "identity": "rim",
-            "map": "./codeSystemVersion"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.code",
-        "short": "Symbol in syntax defined by the system",
-        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
-        "requirements": "Need to refer to a particular code in the system.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.code",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.1"
-          },
-          {
-            "identity": "rim",
-            "map": "./code"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.display",
-        "short": "Representation defined by the system",
-        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
-        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.display",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.2 - but note this is not well followed"
-          },
-          {
-            "identity": "rim",
-            "map": "CV.displayName"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.userSelected",
-        "short": "If this coding was chosen directly by the user",
-        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
-        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
-        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.userSelected",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "boolean",
-            "code": "boolean"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "Sometimes implied by being first"
-          },
-          {
-            "identity": "rim",
-            "map": "CD.codingRationale"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.text",
-        "short": "Plain text representation of the concept",
-        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
-        "comments": "Very often the text is the same as a displayName of one of the codings.",
-        "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.text",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.9. But note many systems use C*E.2 for this"
-          },
-          {
-            "identity": "rim",
-            "map": "./originalText[mediaType/code=\"text/plain\"]/data"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.system",
-        "short": "The namespace for the identifier",
-        "definition": "Establishes the namespace in which set of possible id values is unique.",
-        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://UNCONFIRMED-fhir.nhs.net/Id/chi-number",
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / EI-2-4"
-          },
-          {
-            "identity": "rim",
-            "map": "II.root or Role.id.root"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierType"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.value",
-        "short": "CHI number",
-        "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
-        "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.value",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "Item3": "123456",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.1 / EI.1"
-          },
-          {
-            "identity": "rim",
-            "map": "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
-          },
-          {
-            "identity": "servd",
-            "map": "./Value"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.period.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.start",
-        "short": "Starting time with inclusive boundary",
-        "definition": "The start of the period. The boundary is inclusive.",
-        "comments": "If the low element is missing, the meaning is that the low boundary is not known.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.start",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "condition": [
-          "per-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "DR.1"
-          },
-          {
-            "identity": "rim",
-            "map": "./low"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.end",
-        "short": "End time with inclusive boundary, if not ongoing",
-        "definition": "The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
-        "comments": "The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.end",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "meaningWhenMissing": "If the end of the period is missing, it means that the period is ongoing",
-        "condition": [
-          "per-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "DR.2"
-          },
-          {
-            "identity": "rim",
-            "map": "./high"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner",
-        "short": "Organization that issued id (may be just text)",
-        "definition": "Organization that issued/manages the identifier.",
-        "comments": "The reference may be just a text description of the assigner.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.assigner",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / (CX.4,CX.9,CX.10)"
-          },
-          {
-            "identity": "rim",
-            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierIssuingAuthority"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.assigner.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.reference",
-        "short": "Relative, internal or absolute URL reference",
-        "definition": "A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.",
-        "comments": "Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure \"/[type]/[id]\" then it should be assumed that the reference is to a FHIR RESTful server.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.reference",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "condition": [
-          "ref-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.display",
-        "short": "Text alternative for the resource",
-        "definition": "Plain text narrative that identifies the resource in addition to the resource reference.",
-        "comments": "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.display",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier",
-        "name": "hcNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
-        "requirements": "Patients are almost always assigned specific numerical identifiers.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Identifier",
-            "code": "Identifier"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-3"
-          },
-          {
-            "identity": "rim",
-            "map": "id"
-          },
-          {
-            "identity": "cda",
-            "map": ".id"
-          },
-          {
-            "identity": "w5",
-            "map": "id"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.use",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "N/A"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding",
-        "short": "Code defined by a terminology system",
-        "definition": "A reference to a code defined by a terminology system.",
-        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
-        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.coding",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Coding",
-            "code": "Coding"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.1-8, C*E.10-22"
-          },
-          {
-            "identity": "rim",
-            "map": "union(., ./translation)"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.type.coding.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.system",
-        "short": "Identity of the terminology system",
-        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
-        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
-        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.3"
-          },
-          {
-            "identity": "rim",
-            "map": "./codeSystem"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.version",
-        "short": "Version of the system - if relevant",
-        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
-        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.version",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.7"
-          },
-          {
-            "identity": "rim",
-            "map": "./codeSystemVersion"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.code",
-        "short": "Symbol in syntax defined by the system",
-        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
-        "requirements": "Need to refer to a particular code in the system.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.code",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.1"
-          },
-          {
-            "identity": "rim",
-            "map": "./code"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.display",
-        "short": "Representation defined by the system",
-        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
-        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.display",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.2 - but note this is not well followed"
-          },
-          {
-            "identity": "rim",
-            "map": "CV.displayName"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.coding.userSelected",
-        "short": "If this coding was chosen directly by the user",
-        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
-        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
-        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.coding.userSelected",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "boolean",
-            "code": "boolean"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "Sometimes implied by being first"
-          },
-          {
-            "identity": "rim",
-            "map": "CD.codingRationale"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type.text",
-        "short": "Plain text representation of the concept",
-        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
-        "comments": "Very often the text is the same as a displayName of one of the codings.",
-        "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.type.text",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.9. But note many systems use C*E.2 for this"
-          },
-          {
-            "identity": "rim",
-            "map": "./originalText[mediaType/code=\"text/plain\"]/data"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.system",
-        "short": "The namespace for the identifier",
-        "definition": "Establishes the namespace in which set of possible id values is unique.",
-        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://UNCONFIRMED-fhir.nhs.net/Id/hc-number",
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / EI-2-4"
-          },
-          {
-            "identity": "rim",
-            "map": "II.root or Role.id.root"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierType"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.value",
-        "short": "The value that is unique",
-        "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
-        "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.value",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "Item3": "123456",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.1 / EI.1"
-          },
-          {
-            "identity": "rim",
-            "map": "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
-          },
-          {
-            "identity": "servd",
-            "map": "./Value"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.period.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.start",
-        "short": "Starting time with inclusive boundary",
-        "definition": "The start of the period. The boundary is inclusive.",
-        "comments": "If the low element is missing, the meaning is that the low boundary is not known.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.start",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "condition": [
-          "per-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "DR.1"
-          },
-          {
-            "identity": "rim",
-            "map": "./low"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period.end",
-        "short": "End time with inclusive boundary, if not ongoing",
-        "definition": "The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
-        "comments": "The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.period.end",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "meaningWhenMissing": "If the end of the period is missing, it means that the period is ongoing",
-        "condition": [
-          "per-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "DR.2"
-          },
-          {
-            "identity": "rim",
-            "map": "./high"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner",
-        "short": "Organization that issued id (may be just text)",
-        "definition": "Organization that issued/manages the identifier.",
-        "comments": "The reference may be just a text description of the assigner.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.assigner",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / (CX.4,CX.9,CX.10)"
-          },
-          {
-            "identity": "rim",
-            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierIssuingAuthority"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Patient.identifier.assigner.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.reference",
-        "short": "Relative, internal or absolute URL reference",
-        "definition": "A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.",
-        "comments": "Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure \"/[type]/[id]\" then it should be assumed that the reference is to a FHIR RESTful server.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.reference",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "condition": [
-          "ref-1"
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner.display",
-        "short": "Text alternative for the resource",
-        "definition": "Plain text narrative that identifies the resource in addition to the resource reference.",
-        "comments": "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.assigner.display",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier",
         "name": "other",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
+        "short": "The patient's other identifiers",
+        "definition": "The patient's other identifiers.",
         "requirements": "Patients are almost always assigned specific numerical identifiers.",
         "min": 0,
         "max": "*",
@@ -5535,7 +3834,7 @@
         "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
         "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.identifier.type",
           "min": 0,
@@ -6333,12 +4632,19 @@
       },
       {
         "path": "Patient.name",
+        "slicing": {
+          "discriminator": [
+            "use",
+            "period.end"
+          ],
+          "rules": 0
+        },
         "short": "A name associated with the patient",
         "definition": "A name associated with the individual.",
         "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
         "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
         "min": 1,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Patient.name",
           "min": 0,
@@ -6429,7 +4735,928 @@
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
         "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
         "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.use",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isSummary": true,
+        "binding": {
+          "strength": 0,
+          "description": "The use of a human name",
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/name-use"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.7, but often indicated by which field contains the name"
+          },
+          {
+            "identity": "rim",
+            "map": "unique(./use)"
+          },
+          {
+            "identity": "servd",
+            "map": "./NamePurpose"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.text",
+        "short": "Text representation of the full name",
+        "definition": "A full text representation of the name.",
+        "comments": "Can provide both a text representation and structured parts.",
+        "requirements": "A renderable, unencoded form.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "implied by XPN.11"
+          },
+          {
+            "identity": "rim",
+            "map": "./formatted"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.family",
+        "short": "Family name (often called 'Surname')",
+        "definition": "The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.",
+        "comments": "For family name, hyphenated names such as \"Smith-Jones\" are a single name, but names with spaces such as \"Smith Jones\" are broken into multiple parts.",
+        "alias": [
+          "surname"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.family",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = FAM]"
+          },
+          {
+            "identity": "servd",
+            "map": "./FamilyName"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.given",
+        "short": "Given names (not always 'first'). Includes middle names",
+        "definition": "Given name.",
+        "comments": "If only initials are recorded, they may be used in place of the full name.  Not called \"first name\" since given names do not always come first.",
+        "alias": [
+          "first name",
+          "middle name"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.given",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.2 + XPN.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = GIV]"
+          },
+          {
+            "identity": "servd",
+            "map": "./GivenNames"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.prefix",
+        "short": "Parts that come before the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.prefix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.5"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = PFX]"
+          },
+          {
+            "identity": "servd",
+            "map": "./TitleCode"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.suffix",
+        "short": "Parts that come after the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.suffix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN/4"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = SFX]"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period",
+        "short": "Time period when name was/is in use",
+        "definition": "Indicates the period of time when this name was valid for the named person.",
+        "requirements": "Allows names to be placed in historical context.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.13 + XPN.14"
+          },
+          {
+            "identity": "rim",
+            "map": "./usablePeriod[type=\"IVL<TS>\"]"
+          },
+          {
+            "identity": "servd",
+            "map": "./StartDate and ./EndDate"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.period.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.start",
+        "short": "Starting time with inclusive boundary",
+        "definition": "The start of the period. The boundary is inclusive.",
+        "comments": "If the low element is missing, the meaning is that the low boundary is not known.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period.start",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "condition": [
+          "per-1"
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "DR.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./low"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.end",
+        "short": "End time with inclusive boundary, if not ongoing",
+        "definition": "The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+        "comments": "The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period.end",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "meaningWhenMissing": "If the end of the period is missing, it means that the period is ongoing",
+        "condition": [
+          "per-1"
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "DR.2"
+          },
+          {
+            "identity": "rim",
+            "map": "./high"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name",
+        "name": "usual",
+        "short": "The patient's current usual name",
+        "definition": "The patient's current usual name",
+        "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
+        "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.name",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-5, PID-9"
+          },
+          {
+            "identity": "rim",
+            "map": "name"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.name"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.use",
+        "short": " ",
+        "definition": "Identifies the purpose for this name.",
+        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
+        "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.use",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "Item1": "usual",
+        "isModifier": true,
+        "isSummary": true,
+        "binding": {
+          "strength": 0,
+          "description": "The use of a human name",
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/name-use"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.7, but often indicated by which field contains the name"
+          },
+          {
+            "identity": "rim",
+            "map": "unique(./use)"
+          },
+          {
+            "identity": "servd",
+            "map": "./NamePurpose"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.text",
+        "short": "Text representation of the full name",
+        "definition": "A full text representation of the name.",
+        "comments": "Can provide both a text representation and structured parts.",
+        "requirements": "A renderable, unencoded form.",
+        "min": 0,
         "max": "0",
+        "base": {
+          "path": "Patient.name.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "implied by XPN.11"
+          },
+          {
+            "identity": "rim",
+            "map": "./formatted"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.family",
+        "short": "Family name (often called 'Surname')",
+        "definition": "The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.",
+        "comments": "For family name, hyphenated names such as \"Smith-Jones\" are a single name, but names with spaces such as \"Smith Jones\" are broken into multiple parts.",
+        "alias": [
+          "surname"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.family",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = FAM]"
+          },
+          {
+            "identity": "servd",
+            "map": "./FamilyName"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.given",
+        "short": "Given names (not always 'first'). Includes middle names",
+        "definition": "Given name.",
+        "comments": "If only initials are recorded, they may be used in place of the full name.  Not called \"first name\" since given names do not always come first.",
+        "alias": [
+          "first name",
+          "middle name"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.given",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.2 + XPN.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = GIV]"
+          },
+          {
+            "identity": "servd",
+            "map": "./GivenNames"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.prefix",
+        "short": "Parts that come before the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.prefix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.5"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = PFX]"
+          },
+          {
+            "identity": "servd",
+            "map": "./TitleCode"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.suffix",
+        "short": "Parts that come after the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.suffix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN/4"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = SFX]"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period",
+        "short": "Time period when name was/is in use",
+        "definition": "Indicates the period of time when this name was valid for the named person.",
+        "requirements": "Allows names to be placed in historical context.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.13 + XPN.14"
+          },
+          {
+            "identity": "rim",
+            "map": "./usablePeriod[type=\"IVL<TS>\"]"
+          },
+          {
+            "identity": "servd",
+            "map": "./StartDate and ./EndDate"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.period.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.start",
+        "short": "Starting time with inclusive boundary",
+        "definition": "The start of the period. The boundary is inclusive.",
+        "comments": "If the low element is missing, the meaning is that the low boundary is not known.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.period.start",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "condition": [
+          "per-1"
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "DR.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./low"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.end",
+        "short": "End time with inclusive boundary, if not ongoing",
+        "definition": "The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+        "comments": "The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.name.period.end",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "meaningWhenMissing": "If the end of the period is missing, it means that the period is ongoing",
+        "condition": [
+          "per-1"
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "DR.2"
+          },
+          {
+            "identity": "rim",
+            "map": "./high"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name",
+        "name": "other",
+        "short": "The patient's other names",
+        "definition": "The patient's other names.",
+        "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
+        "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-5, PID-9"
+          },
+          {
+            "identity": "rim",
+            "map": "name"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.name"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.use",
+        "short": "usual | official | temp | nickname | anonymous | old | maiden",
+        "definition": "Identifies the purpose for this name.",
+        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
+        "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Patient.name.use",
           "min": 0,
@@ -6639,7 +5866,7 @@
         "definition": "Indicates the period of time when this name was valid for the named person.",
         "requirements": "Allows names to be placed in historical context.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Patient.name.period",
           "min": 0,
@@ -6885,7 +6112,7 @@
         "path": "Patient.telecom.system",
         "short": "phone | fax | email | pager | other",
         "definition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.telecom.system",
@@ -6930,7 +6157,7 @@
         "definition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
         "comments": "Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.",
         "requirements": "Need to support legacy numbers that are not in a tightly controlled format.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.telecom.value",
@@ -7008,7 +6235,7 @@
         "definition": "Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.",
         "comments": "Note that rank does not necessarily follow the order in which the contacts are represented in the instance.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.telecom.rank",
           "min": 0,
@@ -7190,11 +6417,11 @@
       },
       {
         "path": "Patient.gender",
-        "short": "male | female | other | unknown",
+        "short": "Gender for administrative purposes",
         "definition": "Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.",
         "comments": "The gender may not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though the vast majority of systems and contexts only support M and F.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific gender aspect of interest (anatomical, chromosonal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosonal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overrideable error, not a \"hard\" error.",
         "requirements": "Needed for identification of the individual, in combination with (at least) name and birth date. Gender of individual drives many clinical processes.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.gender",
@@ -7210,7 +6437,6 @@
         "isSummary": true,
         "binding": {
           "strength": 0,
-          "description": "The gender of a person used for administrative purposes.",
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/administrative-gender"
           }
@@ -7232,11 +6458,11 @@
       },
       {
         "path": "Patient.birthDate",
-        "short": "The date of birth for the individual",
-        "definition": "The date of birth for the individual.",
-        "comments": "At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension \"patient-birthTime\" available that should be used where Time is required (such as in maternaty/infant care systems).",
+        "short": "The date of birth for the patient",
+        "definition": "The date of birth for the patient.",
+        "comments": "At least an estimated year should be provided as a guess if the real date of birth is unknown.",
         "requirements": "Age of the individual drives many clinical processes.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.birthDate",
@@ -7270,7 +6496,7 @@
         ]
       },
       {
-        "path": "Patient.deceased[x]",
+        "path": "Patient.deceasedDateTime",
         "short": "Indicates if the individual is deceased or not",
         "definition": "Indicates if the individual is deceased or not.",
         "comments": "If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.",
@@ -7283,10 +6509,6 @@
           "max": "1"
         },
         "type": [
-          {
-            "TypeName": "boolean",
-            "code": "boolean"
-          },
           {
             "TypeName": "dateTime",
             "code": "dateTime"
@@ -8018,8 +7240,8 @@
         "definition": "A reference to a code defined by a terminology system.",
         "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
         "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
-        "min": 0,
-        "max": "*",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Patient.maritalStatus.coding",
           "min": 0,
@@ -8109,7 +7331,7 @@
         "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
         "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
         "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.maritalStatus.coding.system",
@@ -8144,7 +7366,7 @@
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.maritalStatus.coding.version",
           "min": 0,
@@ -8177,7 +7399,7 @@
         "short": "Symbol in syntax defined by the system",
         "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
         "requirements": "Need to refer to a particular code in the system.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.maritalStatus.coding.code",
@@ -8211,7 +7433,7 @@
         "short": "Representation defined by the system",
         "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
         "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.maritalStatus.coding.display",
@@ -8247,7 +7469,7 @@
         "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
         "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.maritalStatus.coding.userSelected",
           "min": 0,
@@ -8282,7 +7504,7 @@
         "comments": "Very often the text is the same as a displayName of one of the codings.",
         "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.maritalStatus.text",
           "min": 0,
@@ -8311,7 +7533,7 @@
         ]
       },
       {
-        "path": "Patient.multipleBirth[x]",
+        "path": "Patient.multipleBirthBoolean",
         "short": "Whether patient is part of a multiple birth",
         "definition": "Indicates whether the patient is part of a multiple or indicates the actual birth order.",
         "requirements": "For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs.",
@@ -8326,10 +7548,6 @@
           {
             "TypeName": "boolean",
             "code": "boolean"
-          },
-          {
-            "TypeName": "integer",
-            "code": "integer"
           }
         ],
         "mapping": [
@@ -8353,7 +7571,7 @@
         "definition": "Image of the patient.",
         "requirements": "Many EHR systems have the capability to capture an image of the patient. Fits with newer social media usage too.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Patient.photo",
           "min": 0,
@@ -8823,10 +8041,9 @@
           }
         ],
         "binding": {
-          "strength": 1,
-          "description": "The nature of the relationship between a patient and a contact person for that patient.",
+          "strength": 0,
           "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/patient-contact-relationship"
+            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS"
           }
         },
         "mapping": [
@@ -8997,7 +8214,7 @@
         "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
         "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
         "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.contact.relationship.coding.system",
@@ -9032,7 +8249,7 @@
         "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
         "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.contact.relationship.coding.version",
           "min": 0,
@@ -9065,7 +8282,7 @@
         "short": "Symbol in syntax defined by the system",
         "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
         "requirements": "Need to refer to a particular code in the system.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.contact.relationship.coding.code",
@@ -9099,7 +8316,7 @@
         "short": "Representation defined by the system",
         "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
         "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.contact.relationship.coding.display",
@@ -9135,7 +8352,7 @@
         "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
         "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.contact.relationship.coding.userSelected",
           "min": 0,
@@ -9170,7 +8387,7 @@
         "comments": "Very often the text is the same as a displayName of one of the codings.",
         "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.contact.relationship.text",
           "min": 0,
@@ -9203,7 +8420,7 @@
         "short": "A name associated with the contact person",
         "definition": "A name associated with the contact person.",
         "requirements": "Contact persons need to be identified by name, but it is uncommon to need details about multiple other names for that contact person.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Patient.contact.name",
@@ -9289,12 +8506,12 @@
       },
       {
         "path": "Patient.contact.name.use",
-        "short": "usual | official | temp | nickname | anonymous | old | maiden",
+        "short": " ",
         "definition": "Identifies the purpose for this name.",
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
         "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Patient.contact.name.use",
           "min": 0,
@@ -9306,6 +8523,7 @@
             "code": "code"
           }
         ],
+        "Item1": "usual",
         "isModifier": true,
         "isSummary": true,
         "binding": {
@@ -9872,7 +9090,7 @@
         "definition": "Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.",
         "comments": "Note that rank does not necessarily follow the order in which the contacts are represented in the instance.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "Patient.contact.telecom.rank",
           "min": 0,
@@ -12317,7 +11535,7 @@
         "comments": "If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes then you need multiple Patient.Communication associations.   For animals, language is not a relevant field, and should be absent from the instance. If the Patient does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.",
         "requirements": "If a patient does not speak the local language, interpreters may be required, so languages spoken and proficiency is an important things to keep track of both for patient and other persons of interest.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Patient.communication",
           "min": 0,
@@ -12856,24 +12074,17 @@
       },
       {
         "path": "Patient.careProvider",
-        "short": "Patient's nominated primary care provider",
-        "definition": "Patient's nominated care provider.",
+        "short": "Patient's nominated practitioner",
+        "definition": "Patient's nominated practitioner.",
         "comments": "This may be the primary care provider (in a GP context), or it may be a patient nominated care manager in a community/disablity setting, or even organization that will provide people to perform the care provider roles.  This is not to be used to record Care Teams, these should be recorded on either the CarePlan or EpisodeOfCare resources.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Patient.careProvider",
           "min": 0,
           "max": "*"
         },
         "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
-            ]
-          },
           {
             "TypeName": "Reference",
             "code": "Reference",
@@ -13049,7 +12260,7 @@
         "comments": "There is no assumption that linked patient records have mutual links.",
         "requirements": "There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Patient.link",
           "min": 0,
@@ -13349,8 +12560,8 @@
     "element": [
       {
         "path": "Patient",
-        "short": "Information about an individual or animal receiving health care services",
-        "definition": "Demographics and other administrative information about an individual or animal receiving care or other health-related services.",
+        "short": "The Patient resource carries the patient demographic details",
+        "definition": "The Patient resource carries the patient demographic details",
         "alias": [
           "SubjectOfCare Client Resident"
         ],
@@ -13424,8 +12635,103 @@
         ]
       },
       {
+        "path": "Patient.extension",
+        "name": "gpRegistrationDetails",
+        "short": "Additional GP registration information for the Patient resource",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "organDonor",
+        "short": "An indicator that the patient is listed as an organ donor.",
+        "definition": "An indicator that the patient is listed as an organ donor.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "residentialStatus",
+        "short": "The residential status of the patient ",
+        "definition": "The residential status of the patient. For example if this patient is a UK resident.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "path": "Patient.extension",
+        "name": "treatmentCategory",
+        "short": "The treatment category for this patient",
+        "definition": "The treatment category for this patient. For example if this patient is entitled to free healthcare treatment.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "path": "Patient.modifierExtension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Patient.modifierExtension",
+        "name": "nhsCommunication",
+        "short": "NHS communication preferences for a resource",
+        "definition": "Communication preferences including a list of Languages which may be used for communication",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
         "path": "Patient.id",
-        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated",
+        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated",
         "definition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
         "comments": "The only time that a resource does not have an id is when it is being submitted to the server using a create operation. Bundles always have an id, though it is usually a generated UUID.",
         "min": 0,
@@ -13490,8 +12796,8 @@
       {
         "path": "Patient.identifier",
         "name": "nhsNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
+        "short": "The patient's NHS number",
+        "definition": "The patient's NHS number",
         "requirements": "Patients are almost always assigned specific numerical identifiers.",
         "min": 0,
         "max": "1",
@@ -13771,523 +13077,9 @@
       },
       {
         "path": "Patient.identifier",
-        "name": "chiNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
-        "requirements": "Patients are almost always assigned specific numerical identifiers.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Identifier",
-            "code": "Identifier"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-3"
-          },
-          {
-            "identity": "rim",
-            "map": "id"
-          },
-          {
-            "identity": "cda",
-            "map": ".id"
-          },
-          {
-            "identity": "w5",
-            "map": "id"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.use",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "N/A"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.system",
-        "short": "The namespace for the identifier",
-        "definition": "Establishes the namespace in which set of possible id values is unique.",
-        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://UNCONFIRMED-fhir.nhs.net/Id/chi-number",
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / EI-2-4"
-          },
-          {
-            "identity": "rim",
-            "map": "II.root or Role.id.root"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierType"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.value",
-        "short": "CHI number",
-        "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
-        "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.value",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "Item3": "123456",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.1 / EI.1"
-          },
-          {
-            "identity": "rim",
-            "map": "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
-          },
-          {
-            "identity": "servd",
-            "map": "./Value"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner",
-        "short": "Organization that issued id (may be just text)",
-        "definition": "Organization that issued/manages the identifier.",
-        "comments": "The reference may be just a text description of the assigner.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.assigner",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / (CX.4,CX.9,CX.10)"
-          },
-          {
-            "identity": "rim",
-            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierIssuingAuthority"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier",
-        "name": "hcNumber",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
-        "requirements": "Patients are almost always assigned specific numerical identifiers.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Identifier",
-            "code": "Identifier"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-3"
-          },
-          {
-            "identity": "rim",
-            "map": "id"
-          },
-          {
-            "identity": "cda",
-            "map": ".id"
-          },
-          {
-            "identity": "w5",
-            "map": "id"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.use",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "N/A"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.system",
-        "short": "The namespace for the identifier",
-        "definition": "Establishes the namespace in which set of possible id values is unique.",
-        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.system",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://UNCONFIRMED-fhir.nhs.net/Id/hc-number",
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / EI-2-4"
-          },
-          {
-            "identity": "rim",
-            "map": "II.root or Role.id.root"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierType"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.value",
-        "short": "The value that is unique",
-        "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
-        "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Patient.identifier.value",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "Item3": "123456",
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.1 / EI.1"
-          },
-          {
-            "identity": "rim",
-            "map": "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
-          },
-          {
-            "identity": "servd",
-            "map": "./Value"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier.assigner",
-        "short": "Organization that issued id (may be just text)",
-        "definition": "Organization that issued/manages the identifier.",
-        "comments": "The reference may be just a text description of the assigner.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.assigner",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / (CX.4,CX.9,CX.10)"
-          },
-          {
-            "identity": "rim",
-            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierIssuingAuthority"
-          }
-        ]
-      },
-      {
-        "path": "Patient.identifier",
         "name": "other",
-        "short": "An identifier for this patient",
-        "definition": "An identifier for this patient.",
+        "short": "The patient's other identifiers",
+        "definition": "The patient's other identifiers.",
         "requirements": "Patients are almost always assigned specific numerical identifiers.",
         "min": 0,
         "max": "*",
@@ -14319,6 +13111,44 @@
           {
             "identity": "w5",
             "map": "id"
+          }
+        ]
+      },
+      {
+        "path": "Patient.identifier.type",
+        "short": "Description of identifier",
+        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
+        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
+        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.identifier.type",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 1,
+          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.5"
+          },
+          {
+            "identity": "rim",
+            "map": "Role.code or implied by context"
           }
         ]
       },
@@ -14394,8 +13224,51 @@
       },
       {
         "path": "Patient.name",
+        "slicing": {
+          "discriminator": [
+            "use",
+            "period.end"
+          ],
+          "rules": 0
+        },
         "short": "A name associated with the patient",
         "definition": "A name associated with the individual.",
+        "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
+        "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "Patient.name",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-5, PID-9"
+          },
+          {
+            "identity": "rim",
+            "map": "name"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.name"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name",
+        "name": "usual",
+        "short": "The patient's current usual name",
+        "definition": "The patient's current usual name",
         "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
         "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
         "min": 1,
@@ -14429,12 +13302,256 @@
       },
       {
         "path": "Patient.name.use",
+        "short": " ",
+        "definition": "Identifies the purpose for this name.",
+        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
+        "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.use",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "Item1": "usual",
+        "isModifier": true,
+        "isSummary": true,
+        "binding": {
+          "strength": 0,
+          "description": "The use of a human name",
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/name-use"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.7, but often indicated by which field contains the name"
+          },
+          {
+            "identity": "rim",
+            "map": "unique(./use)"
+          },
+          {
+            "identity": "servd",
+            "map": "./NamePurpose"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.text",
+        "short": "Text representation of the full name",
+        "definition": "A full text representation of the name.",
+        "comments": "Can provide both a text representation and structured parts.",
+        "requirements": "A renderable, unencoded form.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.name.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "implied by XPN.11"
+          },
+          {
+            "identity": "rim",
+            "map": "./formatted"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.family",
+        "short": "Family name (often called 'Surname')",
+        "definition": "The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.",
+        "comments": "For family name, hyphenated names such as \"Smith-Jones\" are a single name, but names with spaces such as \"Smith Jones\" are broken into multiple parts.",
+        "alias": [
+          "surname"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.family",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = FAM]"
+          },
+          {
+            "identity": "servd",
+            "map": "./FamilyName"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.prefix",
+        "short": "Parts that come before the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.prefix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN.5"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = PFX]"
+          },
+          {
+            "identity": "servd",
+            "map": "./TitleCode"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.suffix",
+        "short": "Parts that come after the name",
+        "definition": "Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.name.suffix",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XPN/4"
+          },
+          {
+            "identity": "rim",
+            "map": "./part[partType = SFX]"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.period.end",
+        "short": "End time with inclusive boundary, if not ongoing",
+        "definition": "The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.",
+        "comments": "The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.name.period.end",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "meaningWhenMissing": "If the end of the period is missing, it means that the period is ongoing",
+        "condition": [
+          "per-1"
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "DR.2"
+          },
+          {
+            "identity": "rim",
+            "map": "./high"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name",
+        "name": "other",
+        "short": "The patient's other names",
+        "definition": "The patient's other names.",
+        "comments": "A patient may have multiple names with different uses or applicable periods. For animals, the name is a \"HumanName\" in the sense that is assigned and used by humans and has the same patterns.",
+        "requirements": "Need to be able to track the patient by multiple names. Examples are your official name and a partner name.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.name",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-5, PID-9"
+          },
+          {
+            "identity": "rim",
+            "map": "name"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.name"
+          }
+        ]
+      },
+      {
+        "path": "Patient.name.use",
         "short": "usual | official | temp | nickname | anonymous | old | maiden",
         "definition": "Identifies the purpose for this name.",
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
         "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Patient.name.use",
           "min": 0,
@@ -14601,36 +13718,226 @@
         ]
       },
       {
-        "path": "Patient.name.period",
-        "short": "Time period when name was/is in use",
-        "definition": "Indicates the period of time when this name was valid for the named person.",
-        "requirements": "Allows names to be placed in historical context.",
-        "min": 0,
-        "max": "0",
+        "path": "Patient.telecom.system",
+        "short": "phone | fax | email | pager | other",
+        "definition": "Telecommunications form for contact point - what communications system is required to make use of the contact.",
+        "min": 1,
+        "max": "1",
         "base": {
-          "path": "Patient.name.period",
+          "path": "Patient.telecom.system",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "TypeName": "Period",
-            "code": "Period"
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "condition": [
+          "cpt-2"
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 0,
+          "description": "Telecommunications form for contact point",
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/contact-point-system"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "XTN.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./scheme"
+          },
+          {
+            "identity": "servd",
+            "map": "./ContactPointType"
+          }
+        ]
+      },
+      {
+        "path": "Patient.telecom.value",
+        "short": "The actual contact point details",
+        "definition": "The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).",
+        "comments": "Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.",
+        "requirements": "Need to support legacy numbers that are not in a tightly controlled format.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.telecom.value",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
           }
         ],
         "isSummary": true,
         "mapping": [
           {
             "identity": "v2",
-            "map": "XPN.13 + XPN.14"
+            "map": "XTN.1 (or XTN.12)"
           },
           {
             "identity": "rim",
-            "map": "./usablePeriod[type=\"IVL<TS>\"]"
+            "map": "./url"
           },
           {
             "identity": "servd",
-            "map": "./StartDate and ./EndDate"
+            "map": "./Value"
+          }
+        ]
+      },
+      {
+        "path": "Patient.telecom.rank",
+        "short": "Specify preferred order of use (1 = highest)",
+        "definition": "Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.",
+        "comments": "Note that rank does not necessarily follow the order in which the contacts are represented in the instance.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.telecom.rank",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.gender",
+        "short": "Gender for administrative purposes",
+        "definition": "Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.",
+        "comments": "The gender may not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though the vast majority of systems and contexts only support M and F.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific gender aspect of interest (anatomical, chromosonal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosonal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overrideable error, not a \"hard\" error.",
+        "requirements": "Needed for identification of the individual, in combination with (at least) name and birth date. Gender of individual drives many clinical processes.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.gender",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org/fhir/ValueSet/administrative-gender"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-8"
+          },
+          {
+            "identity": "rim",
+            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.administrativeGenderCode"
+          }
+        ]
+      },
+      {
+        "path": "Patient.birthDate",
+        "short": "The date of birth for the patient",
+        "definition": "The date of birth for the patient.",
+        "comments": "At least an estimated year should be provided as a guess if the real date of birth is unknown.",
+        "requirements": "Age of the individual drives many clinical processes.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.birthDate",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "date",
+            "code": "date"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-7"
+          },
+          {
+            "identity": "rim",
+            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/birthTime"
+          },
+          {
+            "identity": "cda",
+            "map": ".patient.birthTime"
+          },
+          {
+            "identity": "loinc",
+            "map": "21112-8"
+          }
+        ]
+      },
+      {
+        "path": "Patient.deceasedDateTime",
+        "short": "Indicates if the individual is deceased or not",
+        "definition": "Indicates if the individual is deceased or not.",
+        "comments": "If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.",
+        "requirements": "The fact that a patient is deceased influences the clinical process. Also, in human communication and relation management it is necessary to know whether the person is alive.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.deceased[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ],
+        "isModifier": true,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-30  (bool) and PID-29 (datetime)"
+          },
+          {
+            "identity": "rim",
+            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
           }
         ]
       },
@@ -14676,13 +13983,600 @@
         ]
       },
       {
+        "path": "Patient.maritalStatus.coding",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.maritalStatus.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.maritalStatus.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.maritalStatus.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.maritalStatus.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.maritalStatus.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.coding.userSelected",
+        "short": "If this coding was chosen directly by the user",
+        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
+        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.maritalStatus.coding.userSelected",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Sometimes implied by being first"
+          },
+          {
+            "identity": "rim",
+            "map": "CD.codingRationale"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
+          }
+        ]
+      },
+      {
+        "path": "Patient.maritalStatus.text",
+        "short": "Plain text representation of the concept",
+        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
+        "comments": "Very often the text is the same as a displayName of one of the codings.",
+        "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.maritalStatus.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.9. But note many systems use C*E.2 for this"
+          },
+          {
+            "identity": "rim",
+            "map": "./originalText[mediaType/code=\"text/plain\"]/data"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
+          }
+        ]
+      },
+      {
+        "path": "Patient.multipleBirthBoolean",
+        "short": "Whether patient is part of a multiple birth",
+        "definition": "Indicates whether the patient is part of a multiple or indicates the actual birth order.",
+        "requirements": "For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Patient.multipleBirth[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PID-24 (bool), PID-25 (integer)"
+          },
+          {
+            "identity": "rim",
+            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.photo",
+        "short": "Image of the patient",
+        "definition": "Image of the patient.",
+        "requirements": "Many EHR systems have the capability to capture an image of the patient. Fits with newer social media usage too.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.photo",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Attachment",
+            "code": "Attachment"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBX-5 - needs a profile"
+          },
+          {
+            "identity": "rim",
+            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/desc"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship",
+        "short": "The kind of relationship",
+        "definition": "The nature of the relationship between the patient and the contact person.",
+        "requirements": "Used to determine which contact person is the most relevant to approach, depending on circumstances.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Patient.contact.relationship",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "NK1-7, NK1-3"
+          },
+          {
+            "identity": "rim",
+            "map": "code"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.contact.relationship.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.contact.relationship.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.contact.relationship.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.contact.relationship.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.coding.userSelected",
+        "short": "If this coding was chosen directly by the user",
+        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
+        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.contact.relationship.coding.userSelected",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Sometimes implied by being first"
+          },
+          {
+            "identity": "rim",
+            "map": "CD.codingRationale"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.relationship.text",
+        "short": "Plain text representation of the concept",
+        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
+        "comments": "Very often the text is the same as a displayName of one of the codings.",
+        "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.contact.relationship.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.9. But note many systems use C*E.2 for this"
+          },
+          {
+            "identity": "rim",
+            "map": "./originalText[mediaType/code=\"text/plain\"]/data"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
+          }
+        ]
+      },
+      {
+        "path": "Patient.contact.name",
+        "short": "A name associated with the contact person",
+        "definition": "A name associated with the contact person.",
+        "requirements": "Contact persons need to be identified by name, but it is uncommon to need details about multiple other names for that contact person.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Patient.contact.name",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "HumanName",
+            "code": "HumanName"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "NK1-2"
+          },
+          {
+            "identity": "rim",
+            "map": "name"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
         "path": "Patient.contact.name.use",
-        "short": "usual | official | temp | nickname | anonymous | old | maiden",
+        "short": " ",
         "definition": "Identifies the purpose for this name.",
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old name etc.for a current/permanent one. Applications can assume that a name is current unless it explicitly says that it is temporary or old.",
         "requirements": "Allows the appropriate name for a particular context of use to be selected from among a set of names.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Patient.contact.name.use",
           "min": 0,
@@ -14694,6 +14588,7 @@
             "code": "code"
           }
         ],
+        "Item1": "usual",
         "isModifier": true,
         "isSummary": true,
         "binding": {
@@ -14883,6 +14778,36 @@
         ]
       },
       {
+        "path": "Patient.contact.telecom.rank",
+        "short": "Specify preferred order of use (1 = highest)",
+        "definition": "Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.",
+        "comments": "Note that rank does not necessarily follow the order in which the contacts are represented in the instance.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.contact.telecom.rank",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
         "path": "Patient.contact.address.state",
         "short": "Sub-unit of country (abbreviations ok)",
         "definition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).",
@@ -14997,6 +14922,36 @@
           {
             "identity": "cda",
             "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "Patient.communication",
+        "short": "A list of Languages which may be used to communicate with the patient about his or her health",
+        "definition": "Languages which may be used to communicate with the patient about his or her health.",
+        "comments": "If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes then you need multiple Patient.Communication associations.   For animals, language is not a relevant field, and should be absent from the instance. If the Patient does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.",
+        "requirements": "If a patient does not speak the local language, interpreters may be required, so languages spoken and proficiency is an important things to keep track of both for patient and other persons of interest.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.communication",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "BackboneElement",
+            "code": "BackboneElement"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "LanguageCommunication"
+          },
+          {
+            "identity": "cda",
+            "map": "patient.languageCommunication"
           }
         ]
       },
@@ -15179,24 +15134,17 @@
       },
       {
         "path": "Patient.careProvider",
-        "short": "Patient's nominated primary care provider",
-        "definition": "Patient's nominated care provider.",
+        "short": "Patient's nominated practitioner",
+        "definition": "Patient's nominated practitioner.",
         "comments": "This may be the primary care provider (in a GP context), or it may be a patient nominated care manager in a community/disablity setting, or even organization that will provide people to perform the care provider roles.  This is not to be used to record Care Teams, these should be recorded on either the CarePlan or EpisodeOfCare resources.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Patient.careProvider",
           "min": 0,
           "max": "*"
         },
         "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
-            ]
-          },
           {
             "TypeName": "Reference",
             "code": "Reference",
@@ -15251,6 +15199,37 @@
           {
             "identity": "cda",
             "map": ".providerOrganization"
+          }
+        ]
+      },
+      {
+        "path": "Patient.link",
+        "short": "Link to another patient resource that concerns the same actual person",
+        "definition": "Link to another patient resource that concerns the same actual patient.",
+        "comments": "There is no assumption that linked patient records have mutual links.",
+        "requirements": "There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Patient.link",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "BackboneElement",
+            "code": "BackboneElement"
+          }
+        ],
+        "isModifier": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "outboundLink"
+          },
+          {
+            "identity": "cda",
+            "map": "n/a"
           }
         ]
       },

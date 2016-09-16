@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-08-31T22:09:41.684+01:00" />
+    <lastUpdated value="2016-09-16T15:22:34.213+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext" />
-  <name value="CareConnect-NhsNumberVerificationStatus-1-Extension" />
+  <url value="http://hl7.org.uk/CareConnect-OrganDonor-1-Ext" />
+  <name value="CareConnect-OrganDonor-1-Extension" />
   <status value="draft" />
   <publisher value="HL7 UK" />
-  <description value="CareConnect NhsNumberVerificationStatus extension profile" />
+  <description value="Records the organ donor status for a patient." />
   <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="1.0.2" />
   <kind value="datatype" />
   <constrainedType value="Extension" />
   <abstract value="false" />
   <contextType value="resource" />
-  <context value="Patient.identifier" />
+  <context value="Patient" />
   <base value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <snapshot>
     <element>
       <path value="Extension" />
       <name value="extension" />
-      <short value="NHS number verification status" />
-      <definition value="The verification/tracing status of the NHS number." />
+      <short value="An indicator that the patient is listed as an organ donor" />
+      <definition value="An indicator that the patient is listed as an organ donor." />
       <min value="0" />
-      <max value="*" />
+      <max value="1" />
       <base>
         <path value="Extension" />
         <min value="0" />
@@ -35,6 +35,7 @@
       <type>
         <code value="Element" />
       </type>
+      <isModifier value="false" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -98,15 +99,15 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-OrganDonor-1-Ext" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
       </mapping>
     </element>
     <element>
-      <path value="Extension.valueCodeableConcept" />
-      <short value="Verification status of the NHS number" />
+      <path value="Extension.valueBoolean" />
+      <short value="An indicator that the patient is listed as an organ donor" />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <min value="1" />
       <max value="1" />
@@ -116,12 +117,9 @@
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="boolean" />
       </type>
-      <binding>
-        <strength value="required" />
-        <description value="NHS number verification status" />
-      </binding>
+      <isModifier value="false" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -132,10 +130,10 @@
     <element>
       <path value="Extension" />
       <name value="extension" />
-      <short value="NHS number verification status" />
-      <definition value="The verification/tracing status of the NHS number." />
+      <short value="An indicator that the patient is listed as an organ donor" />
+      <definition value="An indicator that the patient is listed as an organ donor." />
       <min value="0" />
-      <max value="*" />
+      <max value="1" />
       <base>
         <path value="Extension" />
         <min value="0" />
@@ -144,6 +142,7 @@
       <type>
         <code value="Element" />
       </type>
+      <isModifier value="false" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -165,15 +164,15 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-OrganDonor-1-Ext" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
       </mapping>
     </element>
     <element>
-      <path value="Extension.valueCodeableConcept" />
-      <short value="Verification status of the NHS number" />
+      <path value="Extension.valueBoolean" />
+      <short value="An indicator that the patient is listed as an organ donor" />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <min value="1" />
       <max value="1" />
@@ -183,12 +182,9 @@
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="boolean" />
       </type>
-      <binding>
-        <strength value="required" />
-        <description value="NHS number verification status" />
-      </binding>
+      <isModifier value="false" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />

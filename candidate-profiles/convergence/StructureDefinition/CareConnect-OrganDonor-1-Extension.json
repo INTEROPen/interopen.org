@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-08-31T22:09:41.684+01:00"
+    "lastUpdated": "2016-09-16T15:22:34.213+01:00"
   },
   "extension": [
     {
@@ -8,11 +8,11 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext",
-  "name": "CareConnect-NhsNumberVerificationStatus-1-Extension",
+  "url": "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext",
+  "name": "CareConnect-OrganDonor-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "CareConnect NhsNumberVerificationStatus extension profile",
+  "description": "Records the organ donor status for a patient.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
   "fhirVersion": "1.0.2",
   "kind": 0,
@@ -20,7 +20,7 @@
   "abstract": false,
   "contextType": 0,
   "context": [
-    "Patient.identifier"
+    "Patient"
   ],
   "base": "http://hl7.org/fhir/StructureDefinition/Extension",
   "snapshot": {
@@ -28,10 +28,10 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "NHS number verification status",
-        "definition": "The verification/tracing status of the NHS number.",
+        "short": "An indicator that the patient is listed as an organ donor",
+        "definition": "An indicator that the patient is listed as an organ donor.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -43,6 +43,7 @@
             "code": "Element"
           }
         ],
+        "isModifier": false,
         "mapping": [
           {
             "identity": "rim",
@@ -127,7 +128,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext",
         "mapping": [
           {
             "identity": "rim",
@@ -136,8 +137,8 @@
         ]
       },
       {
-        "path": "Extension.valueCodeableConcept",
-        "short": "Verification status of the NHS number",
+        "path": "Extension.valueBoolean",
+        "short": "An indicator that the patient is listed as an organ donor",
         "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
         "min": 1,
         "max": "1",
@@ -148,14 +149,11 @@
         },
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "boolean",
+            "code": "boolean"
           }
         ],
-        "binding": {
-          "strength": 0,
-          "description": "NHS number verification status"
-        },
+        "isModifier": false,
         "mapping": [
           {
             "identity": "rim",
@@ -170,10 +168,10 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "NHS number verification status",
-        "definition": "The verification/tracing status of the NHS number.",
+        "short": "An indicator that the patient is listed as an organ donor",
+        "definition": "An indicator that the patient is listed as an organ donor.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -185,6 +183,7 @@
             "code": "Element"
           }
         ],
+        "isModifier": false,
         "mapping": [
           {
             "identity": "rim",
@@ -213,7 +212,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext",
         "mapping": [
           {
             "identity": "rim",
@@ -222,8 +221,8 @@
         ]
       },
       {
-        "path": "Extension.valueCodeableConcept",
-        "short": "Verification status of the NHS number",
+        "path": "Extension.valueBoolean",
+        "short": "An indicator that the patient is listed as an organ donor",
         "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
         "min": 1,
         "max": "1",
@@ -234,14 +233,11 @@
         },
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "boolean",
+            "code": "boolean"
           }
         ],
-        "binding": {
-          "strength": 0,
-          "description": "NHS number verification status"
-        },
+        "isModifier": false,
         "mapping": [
           {
             "identity": "rim",

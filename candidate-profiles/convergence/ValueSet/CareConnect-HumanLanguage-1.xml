@@ -4,6 +4,9 @@
 	<meta>
 		<lastUpdated value="2015-10-27T00:00:00+00:00"/>
 	</meta>
+	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+		<valueInteger value="1" />
+	</extension>
 	<extension url="http://hl7.org/fhir/StructureDefinition/valueset-sourceReference">
 		<valueUri value="http://www.datadictionary.nhs.uk/data_dictionary/attributes/l/language_code_de.asp?shownav=0"/>
 	</extension>

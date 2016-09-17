@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-16T14:12:24.553+01:00" />
+    <lastUpdated value="2016-09-17T09:03:10.462+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -60,6 +60,7 @@
       <short value="Languages which may be used for communication" />
       <definition value="Languages which may be used for communication" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
@@ -77,13 +78,15 @@
       <short value="Language preference indicator" />
       <definition value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <comments value="This language is specifically identified for communicating healthcare information" />
-      <max value="1" />
+      <min value="0" />
+	  <max value="1" />
     </element>
     <element>
       <path value="Extension.extension.valueBoolean" />
       <short value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <definition value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="boolean" />
       </type>
@@ -93,15 +96,33 @@
       <name value="interpreterRequired" />
       <short value="Interpreter preference indicator" />
       <definition value="Indicates whether an interperter is required for communication purposes" />
-      <max value="1" />
+      <min value="0" />
+	  <max value="1" />
     </element>
     <element>
       <path value="Extension.extension.valueBoolean" />
       <short value="Indicates whether an interperter is required for communication purposes" />
       <definition value="Indicates whether an interperter is required for communication purposes- True / False?" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="boolean" />
+      </type>
+    </element>
+    <element>
+      <path value="Extension.extension" />
+      <short value="Mode of communucation for the selected language" />
+      <definition value="Mode of communucation for the selected language" />
+      <name value="modeOfCommunication" />
+      <min value="0" />
+	  <max value="1" />
+    </element>
+    <element>
+      <path value="Extension.extension.valueString" />
+      <min value="1" />
+	  <max value="1" />
+      <type>
+        <code value="string" />
       </type>
     </element>
     <element>
@@ -325,6 +346,7 @@
       <short value="Languages which may be used for communication" />
       <definition value="Languages which may be used for communication" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
@@ -342,13 +364,15 @@
       <short value="Language preference indicator" />
       <definition value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <comments value="This language is specifically identified for communicating healthcare information" />
-      <max value="1" />
+      <min value="0" />
+	  <max value="1" />
     </element>
     <element>
       <path value="Extension.extension.valueBoolean" />
       <short value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <definition value="Indicates whether or not this language is preferred (over other languages up a certain level)" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="boolean" />
       </type>
@@ -358,15 +382,33 @@
       <name value="interpreterRequired" />
       <short value="Interpreter preference indicator" />
       <definition value="Indicates whether an interperter is required for communication purposes" />
-      <max value="1" />
+      <min value="0" />
+	  <max value="1" />
     </element>
     <element>
       <path value="Extension.extension.valueBoolean" />
       <short value="Indicates whether an interperter is required for communication purposes" />
       <definition value="Indicates whether an interperter is required for communication purposes- True / False?" />
       <min value="1" />
+	  <max value="1" />
       <type>
         <code value="boolean" />
+      </type>
+    </element>
+    <element>
+      <path value="Extension.extension" />
+      <short value="Mode of communucation for the selected language" />
+      <definition value="Mode of communucation for the selected language" />
+      <name value="modeOfCommunication" />
+      <min value="0" />
+	  <max value="1" />
+    </element>
+    <element>
+      <path value="Extension.extension.valueString" />
+      <min value="1" />
+	  <max value="1" />
+      <type>
+        <code value="string" />
       </type>
     </element>
     <element>

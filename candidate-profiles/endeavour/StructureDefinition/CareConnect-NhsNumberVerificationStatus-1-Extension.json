@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-08-31T22:09:41.684+01:00"
+    "lastUpdated": "2016-09-17T08:22:27.396+01:00"
   },
   "extension": [
     {
@@ -154,7 +154,10 @@
         ],
         "binding": {
           "strength": 0,
-          "description": "NHS number verification status"
+          "description": "NHS number verification status",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-VS"
+          }
         },
         "mapping": [
           {
@@ -240,7 +243,10 @@
         ],
         "binding": {
           "strength": 0,
-          "description": "NHS number verification status"
+          "description": "NHS number verification status",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-VS"
+          }
         },
         "mapping": [
           {

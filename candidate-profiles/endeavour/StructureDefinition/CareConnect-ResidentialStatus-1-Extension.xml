@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-16T16:27:56.444+01:00" />
+    <lastUpdated value="2016-09-17T08:20:54.468+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -128,7 +128,9 @@
       <binding>
         <strength value="required" />
         <description value="A vocabulary that identifies the residential status of the patient." />
-        <valueSetUri value="http://fhir.nhs.net/ValueSet/residential-status-1" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />
@@ -203,7 +205,9 @@
       <binding>
         <strength value="required" />
         <description value="A vocabulary that identifies the residential status of the patient." />
-        <valueSetUri value="http://fhir.nhs.net/ValueSet/residential-status-1" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />

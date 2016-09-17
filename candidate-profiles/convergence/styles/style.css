@@ -341,3 +341,14 @@ ul.schema-list
 {
     font-size: 13px;
 }
+
+
+/***********************************************
+* valueset reference table
+***********************************************/
+
+table.valueset-reference-table tr td
+{
+    padding-right: 10px;
+    padding-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-16T16:27:56.444+01:00"
+    "lastUpdated": "2016-09-17T08:20:54.468+01:00"
   },
   "extension": [
     {
@@ -162,7 +162,9 @@
         "binding": {
           "strength": 0,
           "description": "A vocabulary that identifies the residential status of the patient.",
-          "Item": "http://fhir.nhs.net/ValueSet/residential-status-1"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-ResidentialStatus-1-VS"
+          }
         },
         "mapping": [
           {
@@ -256,7 +258,9 @@
         "binding": {
           "strength": 0,
           "description": "A vocabulary that identifies the residential status of the patient.",
-          "Item": "http://fhir.nhs.net/ValueSet/residential-status-1"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-ResidentialStatus-1-VS"
+          }
         },
         "mapping": [
           {

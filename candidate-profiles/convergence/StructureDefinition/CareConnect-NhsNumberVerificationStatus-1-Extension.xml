@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-08-31T22:09:41.684+01:00" />
+    <lastUpdated value="2016-09-17T08:22:27.396+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -121,6 +121,9 @@
       <binding>
         <strength value="required" />
         <description value="NHS number verification status" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />
@@ -188,6 +191,9 @@
       <binding>
         <strength value="required" />
         <description value="NHS number verification status" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />

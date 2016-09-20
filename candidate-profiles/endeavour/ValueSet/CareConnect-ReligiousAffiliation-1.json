@@ -9,7 +9,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     },
     {
-      "Item": "urn:oid:2.16.840.1.113883.2.1.3.2.4.15.10",
+      "Item": "urn:oid:2.16.840.1.113883.2.1.3.2.4.16.21",
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-oid"
     }
   ],

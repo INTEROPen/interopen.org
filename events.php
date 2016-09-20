@@ -11,6 +11,7 @@
           <p class="event-title">CareConnect candidate profiles webinar</p>
           <p><img src="images/time.png" alt="time"/>09:00 - 10:30</p>
           <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4.1%20-%20FHIR%20Profile%20Webinar%20Draft%20Agenda.pdf">Draft agenda</a></p></div>
           <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
           <p>Please email <a class="emaila" href="">.</a> to take part.</p>
         </td>

@@ -2,12 +2,6 @@
   "meta": {
     "lastUpdated": "2016-08-30T08:18:27.708+01:00"
   },
-  "extension": [
-    {
-      "Item": 1,
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-    }
-  ],
   "url": "http://hl7.org.uk/CareConnect-Problem-Condition-1",
   "version": "1.0",
   "name": "CareConnect-Problem-Condition-1",

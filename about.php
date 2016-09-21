@@ -5,15 +5,15 @@
   <div class="col-md-8 text-justify about-text">  
       <blockquote class="blockquote">
 
-      <p>Leading industry organisations have come together to create INTEROPen, a supplier action group aimed at accelerating the development of open standards for interoperability in the health and social care sector.</p>
+      <p>INTEROPen is an OPEN collaboration of individuals, industry, standards organisations and health and care providers, who have agreed to work together to accelerate the development of open standards for interoperability in the health and social care sector.</p>
 
       <img src="images/connect.jpg" alt="Two jigsaw pieces being put together"/>
       
-      <p>INTEROPen provides a forum for suppliers to collaborate on the design and application of technical interoperability standards. The areas covered by the group include data exchange, data validation, defining APIs and governance. It is an action group whereby members commit to design, validation and demonstration using real systems.</p>
+      <p>INTEROPen aims to provide a forum to collaborate on the design and application of technical interoperability standards. The areas covered by the group include data exchange, data validation, defining APIs and governance. It is an action group whereby members commit to design, validation and demonstration using real systems.</p>
 
       <p>Commercial interests are put to one side in the group’s activities.</p>
       
-      <p class="text-left">To join INTEROPen please contact <a class="emaila" href="">.</a></p>
+      <p class="text-left">To join INTEROPen please contact <a class="emailb" href="">.</a></p>
         
     </blockquote>
   </div>

@@ -72,7 +72,7 @@
       <div class="logo-header">
         <a href="./"><img src="images/logo.png" alt="INTEROPen logo" />
         <h1>INTEROPen</h1></a>
-        <div class="logo-header-right"><h4>Supplier-led healthcare IT interoperability</h4></div>
+        <div class="logo-header-right"><h4>An Open Collaborative Leading Healthcare IT Interoperability</h4></div>
         <div class="logo-header-clear"></div>  
       </div>
       

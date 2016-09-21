@@ -19,5 +19,15 @@
       elements[i].innerHTML = decodeEntities(str2+str3);
 	  elements[i].setAttribute("href", decodeEntities(str1+str2+str3));        
     }
+  
+	str4="&#x6D;&#x65;&#x6D;&#x62;&#x65;&#x72;&#x73;&#x68;&#x69;&#x70;&#x40;&#x69;&#x6E;";
+	str5="&#x74;&#x65;&#x72;&#x6F;&#x70;&#x65;&#x6E;&#x2E;&#x6F;&#x72;&#x67;";
+  
+    var elements2 = document.getElementsByClassName("emailb");
+    for (var i = 0; i < elements2.length; i++)
+    {
+      elements2[i].innerHTML = decodeEntities(str4+str5);
+	  elements2[i].setAttribute("href", decodeEntities(str1+str4+str5));        
+    }
 -->
 </script>

@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <div class="container">
         
-        <p>Leading industry organisations have come together to create INTEROPen, a supplier action group to accelerate the development of open standards for interoperability in the health and social care sector.</p>
+        <p>Leading organisations and individuals have come together to create INTEROPen, an action group to accelerate the development of open standards for interoperability in the health and social care sector.</p>
         <p><a class="btn btn-primary btn-lg" href="about" role="button">Learn more &raquo;</a></p>
       </div>
     </div>

@@ -6,7 +6,7 @@
     <div class="col-md-5">
       <h3>Discussion forum (members only)</h3>
   
-      <p><a href="http://interopen.slack.com"><img src="images/slack_logo.png" alt="Slack logo" style="height: 50px; width: auto;"/></a></p>
+      <p><a href="https://interopen.ryver.com/"><img src="images/ryver_logo.png" alt="Ryver logo" style="height: 50px; width: auto;"/></a></p>
     </div>
     <div class="col-md-7">
       <h3>Twitter</h3 >

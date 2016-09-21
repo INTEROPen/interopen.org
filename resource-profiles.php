@@ -19,7 +19,7 @@
     <h3>Member proposals</h3>
     
     <ol>
-      <li>The Convergence Group - Proposals for AllergyIntolerance, MedicationOrder, Observation, Problem-Condition
+      <li>The Convergence Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, Patient, Observation 
         <p>
           <a href="candidate-profiles/convergence">View on interopen.org</a><br/>
           <a href="https://www.simplifier.net/CareConnectConvergen">View on simplifier.net</a>

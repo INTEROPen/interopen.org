@@ -6,17 +6,6 @@
 
   <table class="events-table">
     <tr>
-        <td><span class="event-date">23 Sep</span></td>
-        <td id="cccpw">
-          <p class="event-title">CareConnect candidate profiles webinar</p>
-          <p><img src="images/time.png" alt="time"/>09:00 - 10:30</p>
-          <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
-          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4.1%20-%20FHIR%20Profile%20Webinar%20Draft%20Agenda.pdf">Draft agenda</a></p></div>
-          <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
-          <p>Please email <a class="emaila" href="">.</a> to take part.</p>
-        </td>
-    </tr>
-    <tr>
         <td><span class="event-date">28 Sep</span></td>
         <td id="bcsfhir">
           <p class="event-title">BCS - Fast Healthcare Interoperability: What you need to know about how HL7 FHIR® is changing the game</p>
@@ -41,6 +30,19 @@
 
   <table class="events-table events-table-past">
     <tbody>
+      <tr>
+        <td><span class="event-date">23 Sep</span></td>
+        <td id="cccpw">
+          <p class="event-title">CareConnect candidate profiles webinar</p>
+          <p><img src="images/time.png" alt="time"/>09:00 - 10:30</p>
+          <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4.1%20-%20FHIR%20Profile%20Webinar%20Draft%20Agenda.pdf">Agenda</a></p></div>
+          <div class="event-document"><p><img src="images/film.png" alt="Video"/><a href="https://interopen.ryver.com/#posts/1145844">Webinar recording (requires RYVER login)</a></p></div>
+          
+          <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
+          <p>Please email <a class="emaila" href="">.</a> to take part.</p>
+        </td>
+    </tr>
       <tr>
         <td><span class="event-date">5 Jul</span></td>
         <td>

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-02T12:07:13.022+01:00"
+    "lastUpdated": "2016-09-26T22:38:18.491+01:00"
   },
   "extension": [
     {
@@ -51,6 +51,32 @@
           {
             "identity": "w5",
             "map": "clinical.medication"
+          }
+        ]
+      },
+      {
+        "path": "MedicationOrder.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "MedicationOrder.extension",
+        "name": "statement",
+        "short": "Medication Statement link",
+        "definition": "Used to specifiy a link to the medication authorisation that this order is part of.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext"
+            ]
           }
         ]
       },
@@ -7196,48 +7222,6 @@
         ]
       },
       {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "name": "reviewDate",
-        "short": "Repeat review date",
-        "definition": "The scheduled time for which the repeat prescription will be reviewed",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationRepeatRevwDate-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "name": "lastIssueDate",
-        "short": "The date a prescription was last issued",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "MedicationOrder.dispenseRequest.id",
         "representation": [
           0
@@ -8975,7 +8959,7 @@
         "short": "An order/prescription that this supersedes",
         "definition": "A link to a resource representing an earlier order or prescription that this order supersedes.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationOrder.priorPrescription",
           "min": 0,
@@ -8986,7 +8970,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrder-1"
+              "http://hl7.org/fhir/StructureDefinition/MedicationOrder"
             ]
           }
         ],
@@ -9136,6 +9120,32 @@
           {
             "identity": "w5",
             "map": "clinical.medication"
+          }
+        ]
+      },
+      {
+        "path": "MedicationOrder.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "MedicationOrder.extension",
+        "name": "statement",
+        "short": "Medication Statement link",
+        "definition": "Used to specifiy a link to the medication authorisation that this order is part of.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext"
+            ]
           }
         ]
       },
@@ -10725,48 +10735,6 @@
         ]
       },
       {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "name": "reviewDate",
-        "short": "Repeat review date",
-        "definition": "The scheduled time for which the repeat prescription will be reviewed",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationRepeatRevwDate-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dispenseRequest.extension",
-        "name": "lastIssueDate",
-        "short": "The date a prescription was last issued",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "MedicationOrder.dispenseRequest.medication[x]",
         "short": "Product to be supplied",
         "definition": "Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications.",
@@ -11294,7 +11262,7 @@
         "short": "An order/prescription that this supersedes",
         "definition": "A link to a resource representing an earlier order or prescription that this order supersedes.",
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "MedicationOrder.priorPrescription",
           "min": 0,
@@ -11305,7 +11273,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrder-1"
+              "http://hl7.org/fhir/StructureDefinition/MedicationOrder"
             ]
           }
         ],

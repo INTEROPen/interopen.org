@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-02T15:06:10.57+01:00"
+    "lastUpdated": "2016-09-26T14:40:03.837+01:00"
   },
   "extension": [
     {
@@ -2782,7 +2782,7 @@
               "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
-              2
+              1
             ]
           }
         ],
@@ -4917,32 +4917,6 @@
         ]
       },
       {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "AllergyIntolerance.reaction.manifestation.coding.id",
         "representation": [
           0
@@ -5208,32 +5182,6 @@
           {
             "identity": "orim",
             "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-          }
-        ]
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
           }
         ]
       },
@@ -6498,7 +6446,7 @@
               "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
-              2
+              1
             ]
           }
         ],
@@ -7347,32 +7295,6 @@
         ]
       },
       {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
-          }
-        ]
-      },
-      {
         "path": "AllergyIntolerance.reaction.manifestation.coding",
         "name": "SNOMED CT",
         "short": "Code defined by a terminology system",
@@ -7410,32 +7332,6 @@
           {
             "identity": "orim",
             "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-          }
-        ]
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "AllergyIntolerance.reaction.manifestation.coding.extension",
-        "name": "qualifier",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext"
-            ]
           }
         ]
       },

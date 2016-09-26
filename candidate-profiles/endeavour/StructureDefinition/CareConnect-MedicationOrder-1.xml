@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-02T12:07:13.022+01:00" />
+    <lastUpdated value="2016-09-26T22:38:18.491+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -43,6 +43,25 @@
         <identity value="w5" />
         <map value="clinical.medication" />
       </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
+      <name value="statement" />
+      <short value="Medication Statement link" />
+      <definition value="Used to specifiy a link to the medication authorisation that this order is part of." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext" />
+      </type>
     </element>
     <element>
       <path value="MedicationOrder.id" />
@@ -5877,36 +5896,6 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <name value="reviewDate" />
-      <short value="Repeat review date" />
-      <definition value="The scheduled time for which the repeat prescription will be reviewed" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatRevwDate-1-Ext" />
-      </type>
-    </element>
-    <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <name value="lastIssueDate" />
-      <short value="The date a prescription was last issued" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext" />
-      </type>
-    </element>
-    <element>
       <path value="MedicationOrder.dispenseRequest.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -7312,7 +7301,7 @@
       <short value="An order/prescription that this supersedes" />
       <definition value="A link to a resource representing an earlier order or prescription that this order supersedes." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationOrder.priorPrescription" />
         <min value="0" />
@@ -7320,7 +7309,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationOrder-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationOrder" />
       </type>
       <isSummary value="true" />
     </element>
@@ -7435,6 +7424,25 @@
         <identity value="w5" />
         <map value="clinical.medication" />
       </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
+      <name value="statement" />
+      <short value="Medication Statement link" />
+      <definition value="Used to specifiy a link to the medication authorisation that this order is part of." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext" />
+      </type>
     </element>
     <element>
       <path value="MedicationOrder.identifier.use" />
@@ -8751,36 +8759,6 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <name value="reviewDate" />
-      <short value="Repeat review date" />
-      <definition value="The scheduled time for which the repeat prescription will be reviewed" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatRevwDate-1-Ext" />
-      </type>
-    </element>
-    <element>
-      <path value="MedicationOrder.dispenseRequest.extension" />
-      <name value="lastIssueDate" />
-      <short value="The date a prescription was last issued" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext" />
-      </type>
-    </element>
-    <element>
       <path value="MedicationOrder.dispenseRequest.medication[x]" />
       <short value="Product to be supplied" />
       <definition value="Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications." />
@@ -9215,7 +9193,7 @@
       <short value="An order/prescription that this supersedes" />
       <definition value="A link to a resource representing an earlier order or prescription that this order supersedes." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationOrder.priorPrescription" />
         <min value="0" />
@@ -9223,7 +9201,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationOrder-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationOrder" />
       </type>
       <isSummary value="true" />
     </element>

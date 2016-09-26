@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-02T12:04:45.083+01:00" />
+    <lastUpdated value="2016-09-26T22:37:07.621+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext" />
-  <name value="CareConnect-MedicationLastIssueDate-1-Extension" />
+  <url value="http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext" />
+  <name value="CareConnect-MedicationOrderStatement-1-Extension" />
   <status value="draft" />
   <publisher value="HL7 UK" />
-  <description value="This Extension resource is constrained to support the date a prescription was last issued." />
+  <description value="Used to specifiy a link to the medication authorisation that this order is part of." />
+  <requirements value="The ability to add extensions in a structured way is what keeps FHIR resources simple." />
   <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="1.0.2" />
   <kind value="datatype" />
@@ -22,8 +23,9 @@
   <snapshot>
     <element>
       <path value="Extension" />
-      <short value="The date a prescription was last issued" />
-      <definition value="Optional Extensions Element - found in all resources." />
+      <name value="extension" />
+      <short value="Medication Statement link" />
+      <definition value="Used to specifiy a link to the medication authorisation that this order is part of." />
       <min value="0" />
       <max value="*" />
       <base>
@@ -97,15 +99,15 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
       </mapping>
     </element>
     <element>
-      <path value="Extension.valueDateTime" />
-      <short value="The date a prescription was last issued" />
+      <path value="Extension.valueReference" />
+      <short value="Medication Statement link" />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <min value="1" />
       <max value="1" />
@@ -115,7 +117,9 @@
         <max value="1" />
       </base>
       <type>
-        <code value="dateTime" />
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatement-1" />
+        <aggregation value="referenced" />
       </type>
       <mapping>
         <identity value="rim" />
@@ -126,8 +130,9 @@
   <differential>
     <element>
       <path value="Extension" />
-      <short value="The date a prescription was last issued" />
-      <definition value="Optional Extensions Element - found in all resources." />
+      <name value="extension" />
+      <short value="Medication Statement link" />
+      <definition value="Used to specifiy a link to the medication authorisation that this order is part of." />
       <min value="0" />
       <max value="*" />
       <base>
@@ -159,15 +164,15 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationLastIssueDate-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
       </mapping>
     </element>
     <element>
-      <path value="Extension.valueDateTime" />
-      <short value="The date a prescription was last issued" />
+      <path value="Extension.valueReference" />
+      <short value="Medication Statement link" />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <min value="1" />
       <max value="1" />
@@ -177,7 +182,9 @@
         <max value="1" />
       </base>
       <type>
-        <code value="dateTime" />
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatement-1" />
+        <aggregation value="referenced" />
       </type>
       <mapping>
         <identity value="rim" />

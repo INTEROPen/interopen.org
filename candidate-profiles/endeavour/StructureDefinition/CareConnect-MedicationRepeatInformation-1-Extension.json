@@ -1,18 +1,13 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-08-31T14:14:29.482+01:00"
+    "lastUpdated": "2016-09-26T22:10:15.967+01:00"
   },
-  "extension": [
-    {
-      "Item": 0,
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
-    }
-  ],
-  "url": "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext",
-  "name": "CareConnect-CodingQualifier-1-Extension",
+  "url": "http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext",
+  "name": "CareConnect-MedicationRepeatInformation-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "Used to indicate extra information about a coded value e.g. Laterality, Severity, etc.",
+  "description": "Indicates the specific repeat information of a medication item. ",
+  "requirements": "The ability to add extensions in a structured way is what keeps FHIR resources simple.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
   "fhirVersion": "1.0.2",
   "kind": 0,
@@ -20,7 +15,7 @@
   "abstract": false,
   "contextType": 0,
   "context": [
-    "Condition"
+    "MedicationStatement"
   ],
   "base": "http://hl7.org/fhir/StructureDefinition/Extension",
   "snapshot": {
@@ -28,8 +23,8 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
+        "short": "Medication repeat information",
+        "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "*",
         "base": {
@@ -61,37 +56,171 @@
       },
       {
         "path": "Extension.extension",
-        "name": "type",
-        "short": "Qualifier Type",
-        "definition": "The type of qualifier used to indicate extra information about a coded value e.g. Laterality, Severity, etc.",
+        "name": "quantity",
+        "short": "Amount of medication to supply per dispense",
         "min": 1,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCoding",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "quantity"
+      },
+      {
+        "path": "Extension.extension.valueQuantity",
         "min": 1,
         "type": [
           {
-            "TypeName": "Coding",
-            "code": "Coding"
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
           }
         ]
       },
       {
         "path": "Extension.extension",
-        "name": "value",
-        "short": "Qualifier Value",
-        "definition": "The qualifier value used to indicate extra information about a coded value e.g. Left, Bilateral, Severe, etc.",
+        "name": "quantityText",
+        "short": "Quantity representation",
         "min": 1,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCoding",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "quantityText"
+      },
+      {
+        "path": "Extension.extension.valueString",
         "min": 1,
         "type": [
           {
-            "TypeName": "Coding",
-            "code": "Coding"
+            "TypeName": "string",
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "numberOfRepeatsAllowed",
+        "short": "Number of issues authorised",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "numberOfRepeatsAllowed"
+      },
+      {
+        "path": "Extension.extension.valuePositiveInt",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "numberOfRepeatsIssued",
+        "short": "Number of issues issued",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "numberOfRepeatsIssued"
+      },
+      {
+        "path": "Extension.extension.valuePositiveInt",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "expectedSupplyDuration",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "expectedSupplyDuration"
+      },
+      {
+        "path": "Extension.extension.valueQuantity",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Duration"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "lastIssueDate",
+        "short": "The date a prescription was last issued",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "lastIssueDate"
+      },
+      {
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "reviewDate",
+        "short": "Repeat review date",
+        "definition": "The scheduled time for which the repeat prescription will be reviewed",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "reviewDate"
+      },
+      {
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
           }
         ]
       },
@@ -172,7 +301,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext",
         "mapping": [
           {
             "identity": "rim",
@@ -339,8 +468,8 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "Coding Qualifier",
-        "definition": "Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc.",
+        "short": "Medication repeat information",
+        "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "*",
         "base": {
@@ -372,37 +501,171 @@
       },
       {
         "path": "Extension.extension",
-        "name": "type",
-        "short": "Qualifier Type",
-        "definition": "The type of qualifier used to indicate extra information about a coded value e.g. Laterality, Severity, etc.",
+        "name": "quantity",
+        "short": "Amount of medication to supply per dispense",
         "min": 1,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCoding",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "quantity"
+      },
+      {
+        "path": "Extension.extension.valueQuantity",
         "min": 1,
         "type": [
           {
-            "TypeName": "Coding",
-            "code": "Coding"
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
           }
         ]
       },
       {
         "path": "Extension.extension",
-        "name": "value",
-        "short": "Qualifier Value",
-        "definition": "The qualifier value used to indicate extra information about a coded value e.g. Left, Bilateral, Severe, etc.",
+        "name": "quantityText",
+        "short": "Quantity representation",
         "min": 1,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCoding",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "quantityText"
+      },
+      {
+        "path": "Extension.extension.valueString",
         "min": 1,
         "type": [
           {
-            "TypeName": "Coding",
-            "code": "Coding"
+            "TypeName": "string",
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "numberOfRepeatsAllowed",
+        "short": "Number of issues authorised",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "numberOfRepeatsAllowed"
+      },
+      {
+        "path": "Extension.extension.valuePositiveInt",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "numberOfRepeatsIssued",
+        "short": "Number of issues issued",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "numberOfRepeatsIssued"
+      },
+      {
+        "path": "Extension.extension.valuePositiveInt",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "positiveInt",
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "expectedSupplyDuration",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "expectedSupplyDuration"
+      },
+      {
+        "path": "Extension.extension.valueQuantity",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Duration"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "lastIssueDate",
+        "short": "The date a prescription was last issued",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "lastIssueDate"
+      },
+      {
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "path": "Extension.extension",
+        "name": "reviewDate",
+        "short": "Repeat review date",
+        "definition": "The scheduled time for which the repeat prescription will be reviewed",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "reviewDate"
+      },
+      {
+        "path": "Extension.extension.valueDateTime",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "dateTime",
+            "code": "dateTime"
           }
         ]
       },
@@ -427,7 +690,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext",
         "mapping": [
           {
             "identity": "rim",

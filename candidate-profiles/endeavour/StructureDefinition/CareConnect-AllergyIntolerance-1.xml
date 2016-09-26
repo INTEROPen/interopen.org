@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-02T15:06:10.57+01:00" />
+    <lastUpdated value="2016-09-26T14:40:03.837+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -2267,7 +2267,7 @@
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="bundled" />
+        <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -4002,25 +4002,6 @@
       </mapping>
     </element>
     <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <name value="qualifier" />
-      <short value="Coding Qualifier" />
-      <definition value="Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc." />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext" />
-      </type>
-    </element>
-    <element>
       <path value="AllergyIntolerance.reaction.manifestation.coding.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -4244,25 +4225,6 @@
         <identity value="orim" />
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
       </mapping>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <name value="qualifier" />
-      <short value="Coding Qualifier" />
-      <definition value="Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc." />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext" />
-      </type>
     </element>
     <element>
       <path value="AllergyIntolerance.reaction.manifestation.coding.id" />
@@ -5287,7 +5249,7 @@
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="bundled" />
+        <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -5987,25 +5949,6 @@
       </mapping>
     </element>
     <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <name value="qualifier" />
-      <short value="Coding Qualifier" />
-      <definition value="Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc." />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext" />
-      </type>
-    </element>
-    <element>
       <path value="AllergyIntolerance.reaction.manifestation.coding" />
       <name value="SNOMED CT" />
       <short value="Code defined by a terminology system" />
@@ -6040,25 +5983,6 @@
         <identity value="orim" />
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
       </mapping>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="AllergyIntolerance.reaction.manifestation.coding.extension" />
-      <name value="qualifier" />
-      <short value="Coding Qualifier" />
-      <definition value="Used to qualify or indicate extra information about a coded value e.g. Laterality, Severity, etc." />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-CodingQualifier-1-Ext" />
-      </type>
     </element>
     <element>
       <path value="AllergyIntolerance.reaction.manifestation.coding.system" />

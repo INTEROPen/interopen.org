@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-08-31T13:46:23.518+01:00" />
+    <lastUpdated value="2016-09-26T22:11:58.71+01:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-MedicationStatement-1" />
   <name value="CareConnect-MedicationStatement-1" />
@@ -50,6 +50,25 @@
         <identity value="w5" />
         <map value="clinical.medication" />
       </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <name value="repeatInformation" />
+      <short value="Medication repeat information" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext" />
+      </type>
     </element>
     <element>
       <path value="MedicationStatement.id" />
@@ -1499,7 +1518,7 @@
       <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.identifier.use" />
         <min value="0" />
@@ -1533,7 +1552,7 @@
       <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
       <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.identifier.type" />
         <min value="0" />
@@ -1885,7 +1904,7 @@
       <short value="The value that is unique" />
       <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
       <comments value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="MedicationStatement.identifier.value" />
@@ -1915,7 +1934,7 @@
       <short value="Time period when id is/was valid for use" />
       <definition value="Time period during which identifier is/was valid for use." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.identifier.period" />
         <min value="0" />
@@ -2039,7 +2058,7 @@
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.identifier.assigner" />
         <min value="0" />
@@ -2161,7 +2180,8 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2264,7 +2284,7 @@
     </element>
     <element>
       <path value="MedicationStatement.informationSource" />
-      <definition value="The person who provided the information about the taking of this medication." />
+      <definition value="The person who provided the information about the medication." />
       <min value="0" />
       <max value="1" />
       <base>
@@ -2274,15 +2294,13 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <aggregation value="referenced" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2676,7 +2694,7 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationStatement.reasonForUse[x]" />
+      <path value="MedicationStatement.reasonForUseReference" />
       <definition value="A reason for why the medication is being/was taken." />
       <min value="0" />
       <max value="1" />
@@ -2686,11 +2704,9 @@
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
-      </type>
-      <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Condition" />
+        <profile value="http://hl7.org.uk/CareConnect-Condition-1" />
+        <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
       <binding>
@@ -2849,7 +2865,7 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationStatement.medication[x]" />
+      <path value="MedicationStatement.medicationCodeableConcept" />
       <short value="What medication was taken" />
       <definition value="Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications." />
       <comments value="If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the medication this statement concerns. When the only available information is a text description of the medication, Medication.code.text should be used." />
@@ -2863,11 +2879,12 @@
       <type>
         <code value="CodeableConcept" />
       </type>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
-      </type>
       <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes identifying medication item" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+      </binding>
       <mapping>
         <identity value="rim" />
         <map value="SubstanceAdministration&gt;Component&gt;SubstanceAdministrationRequest.consumable" />
@@ -2882,7 +2899,7 @@
       <short value="Details of how medication was taken" />
       <definition value="Indicates how the medication is/was used by the patient." />
       <min value="0" />
-      <max value="*" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage" />
         <min value="0" />
@@ -2965,9 +2982,9 @@
     </element>
     <element>
       <path value="MedicationStatement.dosage.text" />
-      <short value="Reported dosage information" />
+      <short value="A text representation of the dosage instructions given to the patient" />
       <definition value="Free text dosage information as reported about a patient's medication use. When coded dosage information is present, the free text may still be present for display to humans." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.text" />
@@ -3047,7 +3064,7 @@
       <definition value="Identifies specific times when the event occurs." />
       <requirements value="In an MAR, for instance, you need to take a general specification, and turn it into a precise specification." />
       <min value="0" />
-      <max value="*" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.event" />
         <min value="0" />
@@ -3160,7 +3177,7 @@
       <short value="Length/Range of lengths, or (Start and/or end) limits" />
       <definition value="Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
         <min value="0" />
@@ -3211,7 +3228,7 @@
       <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
       <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.duration" />
         <min value="0" />
@@ -3239,7 +3256,7 @@
       <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
       <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
         <min value="0" />
@@ -3259,7 +3276,7 @@
       <short value="s | min | h | d | wk | mo | a - unit of time (UCUM)" />
       <definition value="The units of time for the duration, in UCUM units." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
         <min value="0" />
@@ -3307,7 +3324,7 @@
       <short value="Event occurs up to frequencyMax times per period" />
       <definition value="If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
         <min value="0" />
@@ -3353,7 +3370,7 @@
       <short value="Upper limit of period (3-4 hours)" />
       <definition value="If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as &quot;do this once every 3-5 days." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
         <min value="0" />
@@ -3401,7 +3418,7 @@
       <definition value="A real world event that the occurrence of the event should be tied to." />
       <requirements value="Timings are frequently determined by occurrences such as waking, eating and sleep." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.when" />
         <min value="0" />
@@ -3429,7 +3446,7 @@
       <definition value="A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes." />
       <comments value="A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.timing.code" />
         <min value="0" />
@@ -3747,7 +3764,7 @@
       <short value="Take &quot;as needed&quot; (for x)" />
       <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).    Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.asNeeded[x]" />
         <min value="0" />
@@ -3774,7 +3791,7 @@
       <short value="Where (on body) medication is/was administered" />
       <definition value="A coded specification of or a reference to the anatomic site where the medication first enters the body." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.site[x]" />
         <min value="0" />
@@ -3805,7 +3822,7 @@
       <short value="How the medication entered the body" />
       <definition value="A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.route" />
         <min value="0" />
@@ -4124,7 +4141,7 @@
       <definition value="A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV." />
       <comments value="One of the reasons this attribute is not used often, is that the method is often pre-coordinated with the route and/or form of administration.  This means the codes used in route or form may pre-coordinate the method in the route code or the form code.  The implementation decision about what coding system to use for route or form code will determine how frequently the method code will be populated e.g. if route or form code pre-coordinate method code, then this attribute will not be populated often; if there is no pre-coordination then method code may  be used frequently." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.method" />
         <min value="0" />
@@ -4435,7 +4452,7 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationStatement.dosage.quantity[x]" />
+      <path value="MedicationStatement.dosage.quantityQuantity" />
       <short value="Amount administered in one dose" />
       <definition value="The amount of therapeutic or other substance given at one administration event." />
       <min value="0" />
@@ -4449,9 +4466,6 @@
         <code value="Quantity" />
         <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
       </type>
-      <type>
-        <code value="Range" />
-      </type>
       <isSummary value="true" />
       <mapping>
         <identity value="rim" />
@@ -4463,7 +4477,7 @@
       <short value="Dose quantity per unit of time" />
       <definition value="Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.rate[x]" />
         <min value="0" />
@@ -4486,7 +4500,7 @@
       <short value="Maximum dose that was consumed per unit of time" />
       <definition value="The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours." />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="MedicationStatement.dosage.maxDosePerPeriod" />
         <min value="0" />
@@ -4979,6 +4993,721 @@
       <mapping>
         <identity value="w5" />
         <map value="clinical.medication" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <name value="repeatInformation" />
+      <short value="Medication repeat information" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.identifier.use" />
+      <short value="usual | official | temp | secondary (If known)" />
+      <definition value="The purpose of this identifier." />
+      <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
+      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.identifier.use" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isModifier value="true" />
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Identifies the purpose for this identifier, if known ." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/identifier-use" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="N/A" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.code or implied by context" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.identifier.type" />
+      <short value="Description of identifier" />
+      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
+      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
+      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.identifier.type" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="extensible" />
+        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.5" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.code or implied by context" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.identifier.value" />
+      <short value="The value that is unique" />
+      <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
+      <comments value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.identifier.value" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <exampleString value="123456" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.1 / EI.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./Value" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.identifier.period" />
+      <short value="Time period when id is/was valid for use" />
+      <definition value="Time period during which identifier is/was valid for use." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.identifier.period" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Period" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.7 + CX.8" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="Role.effectiveTime or implied by context" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./StartDate and ./EndDate" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.identifier.assigner" />
+      <short value="Organization that issued id (may be just text)" />
+      <definition value="Organization that issued/manages the identifier." />
+      <comments value="The reference may be just a text description of the assigner." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.identifier.assigner" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / (CX.4,CX.9,CX.10)" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierIssuingAuthority" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.patient" />
+      <short value="Who is/was taking  the medication" />
+      <definition value="The person or animal who is/was taking the medication." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.patient" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <aggregation value="referenced" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="PID-3-Patient ID List" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="SubstanceAdministration-&gt;subject-&gt;Patient" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="who.focus" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.informationSource" />
+      <definition value="The person who provided the information about the medication." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.informationSource" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <aggregation value="referenced" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <aggregation value="referenced" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="w5" />
+        <map value="who.source" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.reasonForUseReference" />
+      <definition value="A reason for why the medication is being/was taken." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.reasonForUse[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Condition-1" />
+        <aggregation value="referenced" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="example" />
+        <description value="Codes identifying why the medication is being taken." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/condition-code" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element>
+      <path value="MedicationStatement.medicationCodeableConcept" />
+      <short value="What medication was taken" />
+      <definition value="Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications." />
+      <comments value="If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the medication this statement concerns. When the only available information is a text description of the medication, Medication.code.text should be used." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.medication[x]" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes identifying medication item" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value="SubstanceAdministration&gt;Component&gt;SubstanceAdministrationRequest.consumable" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="what" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage" />
+      <short value="Details of how medication was taken" />
+      <definition value="Indicates how the medication is/was used by the patient." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.dosage" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="BackboneElement" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="SubstanceAdministration&gt;Component&gt;SubstanceAdministrationRequest" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.text" />
+      <short value="A text representation of the dosage instructions given to the patient" />
+      <definition value="Free text dosage information as reported about a patient's medication use. When coded dosage information is present, the free text may still be present for display to humans." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.dosage.text" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.event" />
+      <short value="When the event occurs" />
+      <definition value="Identifies specific times when the event occurs." />
+      <requirements value="In an MAR, for instance, you need to take a general specification, and turn it into a precise specification." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.event" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="QLIST&lt;TS&gt;" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
+      <short value="Length/Range of lengths, or (Start and/or end) limits" />
+      <definition value="Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Duration" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="IVL(TS) used in a QSI" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.duration" />
+      <short value="How long when it happens" />
+      <definition value="How long this thing happens for when it happens." />
+      <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
+      <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.duration" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="decimal" />
+      </type>
+      <constraint>
+        <key value="tim-4" />
+        <severity value="error" />
+        <human value="duration SHALL be a non-negative value" />
+        <xpath value="@value &gt;= 0 or not(@value)" />
+      </constraint>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="PIVL.phase / EIVL.offset" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
+      <short value="How long when it happens (Max)" />
+      <definition value="The upper limit of how long this thing happens for when it happens." />
+      <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
+      <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="decimal" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="PIVL.phase / EIVL.offset" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
+      <short value="s | min | h | d | wk | mo | a - unit of time (UCUM)" />
+      <definition value="The units of time for the duration, in UCUM units." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="A unit of time (units from UCUM)." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/units-of-time" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value="PIVL.phase.unit" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
+      <short value="Event occurs up to frequencyMax times per period" />
+      <definition value="If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="integer" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="PIVL.phase" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
+      <short value="Upper limit of period (3-4 hours)" />
+      <definition value="If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as &quot;do this once every 3-5 days." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="decimal" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="PIVL.phase" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.repeat.when" />
+      <short value="Regular life events the event is tied to" />
+      <definition value="A real world event that the occurrence of the event should be tied to." />
+      <requirements value="Timings are frequently determined by occurrences such as waking, eating and sleep." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.repeat.when" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Real world event that the relating to the schedule." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/event-timing" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value="EIVL.event" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.timing.code" />
+      <short value="QD | QOD | Q4H | Q6H | BID | TID | QID | AM | PM +" />
+      <definition value="A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes." />
+      <comments value="A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.timing.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="preferred" />
+        <description value="Code for a known / defined timing pattern." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/timing-abbreviation" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value="QSC.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.asNeeded[x]" />
+      <short value="Take &quot;as needed&quot; (for x)" />
+      <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).    Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.asNeeded[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="example" />
+        <description value="A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot; etc." />
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value="boolean: .outboundRelationship[typeCode=PRCN].negationInd (inversed - so negationInd = true means asNeeded=false  CodeableConcept: .outboundRelationship[typCode=PRCN].target[classCode=OBS, moodCode=EVN, isCriterionInd=true, code=&quot;Assertion&quot;].value" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.site[x]" />
+      <short value="Where (on body) medication is/was administered" />
+      <definition value="A coded specification of or a reference to the anatomic site where the medication first enters the body." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.site[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/BodySite" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="example" />
+        <description value="A coded concept describing the site location the medicine enters into or onto the body." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/approach-site-codes" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value=".approachSiteCode" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.route" />
+      <short value="How the medication entered the body" />
+      <definition value="A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.route" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="example" />
+        <description value="A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject." />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/route-codes" />
+        </valueSetReference>
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value=".routeCode" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.method" />
+      <short value="Technique used to administer medication" />
+      <definition value="A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV." />
+      <comments value="One of the reasons this attribute is not used often, is that the method is often pre-coordinated with the route and/or form of administration.  This means the codes used in route or form may pre-coordinate the method in the route code or the form code.  The implementation decision about what coding system to use for route or form code will determine how frequently the method code will be populated e.g. if route or form code pre-coordinate method code, then this attribute will not be populated often; if there is no pre-coordination then method code may  be used frequently." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.method" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="example" />
+        <description value="A coded concept describing the technique by which the medicine is administered." />
+      </binding>
+      <mapping>
+        <identity value="rim" />
+        <map value=".methodCode" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.quantityQuantity" />
+      <short value="Amount administered in one dose" />
+      <definition value="The amount of therapeutic or other substance given at one administration event." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.dosage.quantity[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".doseQuantity" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.rate[x]" />
+      <short value="Dose quantity per unit of time" />
+      <definition value="Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.rate[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".rateQuantity" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.maxDosePerPeriod" />
+      <short value="Maximum dose that was consumed per unit of time" />
+      <definition value="The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationStatement.dosage.maxDosePerPeriod" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value=".maxDoseQuantity" />
       </mapping>
     </element>
   </differential>

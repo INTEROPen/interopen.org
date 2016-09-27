@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-26T22:11:58.71+01:00" />
+    <lastUpdated value="2016-09-27T15:56:39.311+01:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-MedicationStatement-1" />
   <name value="CareConnect-MedicationStatement-1" />
@@ -57,6 +57,29 @@
         <discriminator value="url" />
         <rules value="openAtEnd" />
       </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <name value="quantity" />
+      <short value="Amount of medication to supply per dispense" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <name value="lastIssueDate" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext" />
+      </type>
     </element>
     <element>
       <path value="MedicationStatement.extension" />
@@ -2915,6 +2938,24 @@
       </mapping>
     </element>
     <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <name value="additionalInstructions" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext" />
+      </type>
+    </element>
+    <element>
       <path value="MedicationStatement.dosage.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -5004,6 +5045,29 @@
     </element>
     <element>
       <path value="MedicationStatement.extension" />
+      <name value="quantity" />
+      <short value="Amount of medication to supply per dispense" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
+      <name value="lastIssueDate" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.extension" />
       <name value="repeatInformation" />
       <short value="Medication repeat information" />
       <definition value="Optional Extensions Element - found in all resources." />
@@ -5298,6 +5362,24 @@
         <identity value="rim" />
         <map value="SubstanceAdministration&gt;Component&gt;SubstanceAdministrationRequest" />
       </mapping>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <name value="additionalInstructions" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext" />
+      </type>
     </element>
     <element>
       <path value="MedicationStatement.dosage.text" />

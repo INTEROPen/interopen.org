@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-26T22:11:58.71+01:00"
+    "lastUpdated": "2016-09-27T15:56:39.311+01:00"
   },
   "url": "http://hl7.org.uk/CareConnect-MedicationStatement-1",
   "name": "CareConnect-MedicationStatement-1",
@@ -66,6 +66,39 @@
           ],
           "rules": 2
         }
+      },
+      {
+        "path": "MedicationStatement.extension",
+        "name": "quantity",
+        "short": "Amount of medication to supply per dispense",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.extension",
+        "name": "lastIssueDate",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext"
+            ]
+          }
+        ]
       },
       {
         "path": "MedicationStatement.extension",
@@ -3578,6 +3611,31 @@
         ]
       },
       {
+        "path": "MedicationStatement.dosage.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "MedicationStatement.dosage.extension",
+        "name": "additionalInstructions",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
         "path": "MedicationStatement.dosage.id",
         "representation": [
           0
@@ -6152,6 +6210,39 @@
       },
       {
         "path": "MedicationStatement.extension",
+        "name": "quantity",
+        "short": "Amount of medication to supply per dispense",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.extension",
+        "name": "lastIssueDate",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.extension",
         "name": "repeatInformation",
         "short": "Medication repeat information",
         "definition": "Optional Extensions Element - found in all resources.",
@@ -6516,6 +6607,31 @@
           {
             "identity": "rim",
             "map": "SubstanceAdministration>Component>SubstanceAdministrationRequest"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "MedicationStatement.dosage.extension",
+        "name": "additionalInstructions",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext"
+            ]
           }
         ]
       },

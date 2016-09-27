@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-26T22:10:15.967+01:00" />
+    <lastUpdated value="2016-09-27T15:47:31.306+01:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext" />
   <name value="CareConnect-MedicationRepeatInformation-1-Extension" />
@@ -47,54 +47,10 @@
     </element>
     <element>
       <path value="Extension.extension" />
-      <name value="quantity" />
-      <short value="Amount of medication to supply per dispense" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="quantity" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueQuantity" />
-      <min value="1" />
-      <type>
-        <code value="Quantity" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
-      <name value="quantityText" />
-      <short value="Quantity representation" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="quantityText" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueString" />
-      <min value="1" />
-      <type>
-        <code value="string" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
       <name value="numberOfRepeatsAllowed" />
       <short value="Number of issues authorised" />
       <min value="1" />
       <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="numberOfRepeatsAllowed" />
     </element>
     <element>
       <path value="Extension.extension.valuePositiveInt" />
@@ -110,11 +66,6 @@
       <max value="1" />
     </element>
     <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="numberOfRepeatsIssued" />
-    </element>
-    <element>
       <path value="Extension.extension.valuePositiveInt" />
       <min value="1" />
       <type>
@@ -127,11 +78,6 @@
       <max value="1" />
     </element>
     <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="expectedSupplyDuration" />
-    </element>
-    <element>
       <path value="Extension.extension.valueQuantity" />
       <min value="1" />
       <type>
@@ -141,33 +87,10 @@
     </element>
     <element>
       <path value="Extension.extension" />
-      <name value="lastIssueDate" />
-      <short value="The date a prescription was last issued" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="lastIssueDate" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueDateTime" />
-      <min value="1" />
-      <type>
-        <code value="dateTime" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
       <name value="reviewDate" />
       <short value="Repeat review date" />
       <definition value="The scheduled time for which the repeat prescription will be reviewed" />
       <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="reviewDate" />
     </element>
     <element>
       <path value="Extension.extension.valueDateTime" />
@@ -386,54 +309,10 @@
     </element>
     <element>
       <path value="Extension.extension" />
-      <name value="quantity" />
-      <short value="Amount of medication to supply per dispense" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="quantity" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueQuantity" />
-      <min value="1" />
-      <type>
-        <code value="Quantity" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
-      <name value="quantityText" />
-      <short value="Quantity representation" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="quantityText" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueString" />
-      <min value="1" />
-      <type>
-        <code value="string" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
       <name value="numberOfRepeatsAllowed" />
       <short value="Number of issues authorised" />
       <min value="1" />
       <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="numberOfRepeatsAllowed" />
     </element>
     <element>
       <path value="Extension.extension.valuePositiveInt" />
@@ -449,11 +328,6 @@
       <max value="1" />
     </element>
     <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="numberOfRepeatsIssued" />
-    </element>
-    <element>
       <path value="Extension.extension.valuePositiveInt" />
       <min value="1" />
       <type>
@@ -466,11 +340,6 @@
       <max value="1" />
     </element>
     <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="expectedSupplyDuration" />
-    </element>
-    <element>
       <path value="Extension.extension.valueQuantity" />
       <min value="1" />
       <type>
@@ -480,33 +349,10 @@
     </element>
     <element>
       <path value="Extension.extension" />
-      <name value="lastIssueDate" />
-      <short value="The date a prescription was last issued" />
-      <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="lastIssueDate" />
-    </element>
-    <element>
-      <path value="Extension.extension.valueDateTime" />
-      <min value="1" />
-      <type>
-        <code value="dateTime" />
-      </type>
-    </element>
-    <element>
-      <path value="Extension.extension" />
       <name value="reviewDate" />
       <short value="Repeat review date" />
       <definition value="The scheduled time for which the repeat prescription will be reviewed" />
       <max value="1" />
-    </element>
-    <element>
-      <path value="Extension.extension.url" />
-      <representation value="xmlAttr" />
-      <fixedUri value="reviewDate" />
     </element>
     <element>
       <path value="Extension.extension.valueDateTime" />

@@ -19,18 +19,8 @@
     <h3>Member proposals</h3>
     
     <ol>
-      <li>The Convergence Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, Patient, Observation 
-        <p>
-          <a href="candidate-profiles/convergence">View on interopen.org</a><br/>
-          <a href="https://www.simplifier.net/CareConnectConvergen">View on simplifier.net</a>
-        </p>
-      </li>
-      <li>Endeavour Health Charitable Trust
-        <p>
-          <a href="candidate-profiles/endeavour">View on interopen.org</a><br/>
-          <a href="https://www.simplifier.net/CareConnect-Endeavou">View on simplifier.net</a>
-        </p>
-      </li>
+      <li><a href="candidate-profiles/convergence">The Convergence Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, Patient, Observation</a></li>
+      <li><a href="candidate-profiles/endeavour">Endeavour Health Charitable Trust</a></li>
     </ol>
     
     <h3>Other resouces</h3>

@@ -8,6 +8,14 @@
       
       <div class="news-list">
 
+        <div id="17oct">
+          <p class="news-title">INTEROPen October 2016 Newsletter</p>
+          <p class="news-meta">17 October 2016 &nbsp; Amir Mehrkar</p>
+          <div class="news-text">
+            <p><a href="content/2016%20October%20INTEROPen%20Newsletter%20Final.pdf">Click here to read the INTEROPen October 2016 Newsletter</a>.</p>
+          </div>
+        </div>
+        
         <div id="12sep1">
           <p class="news-title">CareConnect candidate FHIR profiles online</p>
           <p class="news-meta">12 Sep 2016 &nbsp; Amir Mehrkar</p>

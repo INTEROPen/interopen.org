@@ -8,6 +8,14 @@
       
       <div class="news-list">
 
+        <div id="19oct">
+          <p class="news-title">Developing Community FHIR Profiles</p>
+          <p class="news-meta">19 October 2016 &nbsp; Amir Mehrkar &amp; Richard Kavanagh</p>
+          <div class="news-text">
+            <p><a href="content/C4H%20-%20CareConnect%20Profiles%20V4%20Amir%20Richard.pdf">Click here to see the presentation given to the Code4Health Interoperability Community on Developing Community FHIR Profiles</a>.</p>
+          </div>
+        </div>
+        
         <div id="17oct">
           <p class="news-title">INTEROPen October 2016 Newsletter</p>
           <p class="news-meta">17 October 2016 &nbsp; Amir Mehrkar</p>

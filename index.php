@@ -50,12 +50,11 @@
 
         <h2 class="index-col-heading">News</h2>
 
-        <p class="index-news-item"><span class="news-date">17 Oct</span><a href="news#17oct">INTEROPen October 2016 Newsletter</a></p>
-        
+        <p class="index-news-item"><span class="news-date">19 Oct</span><a href="news#19oct">Developing Community FHIR Profiles</a></p>
+        <p class="index-news-item"><span class="news-date">17 Oct</span><a href="news#17oct">INTEROPen October 2016 Newsletter</a></p>        
         <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep1">CareConnect Candidate FHIR profiles online</a></p>
         <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep2">PRSB clinical validation of FHIR profiles</a></p>
         <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep3">Proposal for INTEROPen to "OPEN" its membership</a></p>
-        <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep4">Welcome Liam King, from Healthcare Gateway</a></p>
 
         <p><a class="btn btn-default" href="news" role="button">View all news &raquo;</a></p>
         
@@ -65,9 +64,6 @@
         <p class="index-news-item"><span class="news-date">17 Aug</span><a href="news#17aug">Ade Memoire: how long?</a></p>
         <p class="index-news-item"><span class="news-date">15 Aug</span><a href="news#15aug">Fantastic digital developments as we aim to go paperless</a></p>
         <p class="index-news-item"><span class="news-date">23 Jun</span><a href="news#23jun">INTEROPen accelerates development of NHS interoperability standards</a></p>
-        <p class="index-news-item"><span class="news-date">20 Jun</span><a href="news#20jun">Q&amp;A: NHS England’s new drive for open data standards in healthcare</a></p>
-        <p class="index-news-item"><span class="news-date">14 Jun</span><a href="news#14jun">UK health authorities back supplier IT interoperability group</a></p>
-        <p class="index-news-item"><span class="news-date">27 May</span><a href="news#27may">Being INTEROpen Care-Coordination is not an Option for Providers and Footprints...</a></p>
 
         <p><a class="btn btn-default" href="news#media" role="button">View all in the media &raquo;</a></p>
 

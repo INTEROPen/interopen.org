@@ -50,7 +50,7 @@
 
         <h2 class="index-col-heading">News</h2>
 
-        <p class="index-news-item"><span class="news-date">19 Oct</span><a href="news#19oct">Developing Community FHIR Profiles</a></p>
+        <p class="index-news-item"><span class="news-date">19 Oct</span><a href="news#19oct">Developing Community FHIR Profiles (Webinar slides)</a></p>
         <p class="index-news-item"><span class="news-date">17 Oct</span><a href="news#17oct">INTEROPen October 2016 Newsletter</a></p>        
         <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep1">CareConnect Candidate FHIR profiles online</a></p>
         <p class="index-news-item"><span class="news-date">12 Sep</span><a href="news#12sep2">PRSB clinical validation of FHIR profiles</a></p>

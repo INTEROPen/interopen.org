@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-26T13:25:07.675+01:00"
+    "lastUpdated": "2016-10-25T00:58:29.47+01:00"
   },
   "extension": [
     {
@@ -3806,10 +3806,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Encounter-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Encounter"
             ]
           }
         ],
@@ -4025,17 +4022,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1
@@ -6268,10 +6262,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Specimen-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Specimen"
             ]
           }
         ],
@@ -10344,45 +10335,6 @@
         ]
       },
       {
-        "path": "Observation.encounter",
-        "short": "Healthcare event during which this observation is made",
-        "definition": "The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.",
-        "requirements": "For some observations it may be important to know the link between an observation and a particular encounter.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.encounter",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Encounter-1"
-            ],
-            "aggregation": [
-              1
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PV1"
-          },
-          {
-            "identity": "rim",
-            "map": "inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"
-          },
-          {
-            "identity": "w5",
-            "map": "context"
-          }
-        ]
-      },
-      {
         "path": "Observation.encounter.reference",
         "short": "Relative URL reference to the Encounter resource",
         "definition": "A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.",
@@ -10497,17 +10449,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1
@@ -11119,41 +11068,6 @@
           {
             "identity": "orim",
             "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-          }
-        ]
-      },
-      {
-        "path": "Observation.specimen",
-        "short": "Specimen used for this observation",
-        "definition": "The specimen that was used when this observation was made.",
-        "comments": "Observations are not made on specimens themselves; they are made on a subject, but usually by the means of a specimen. Note that although specimens are often involved, they are not always tracked and reported explicitly. Also note that observation resources may be used in contexts that track the specimen explicitly (e.g. Diagnostic Report).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.specimen",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Specimen-1"
-            ],
-            "aggregation": [
-              1
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "SPM segment"
-          },
-          {
-            "identity": "rim",
-            "map": "participation[typeCode=SPC].specimen"
           }
         ]
       },

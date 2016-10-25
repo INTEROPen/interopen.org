@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-26T13:30:52.599+01:00" />
+    <lastUpdated value="2016-10-25T00:57:49.275+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -2293,8 +2293,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2408,12 +2407,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
         <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
@@ -4450,11 +4448,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-DiagnosticReport-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
       </type>
       <condition value="con-1" />
       <isSummary value="true" />
@@ -5811,37 +5809,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Condition.encounter" />
-      <short value="Encounter when condition first asserted" />
-      <definition value="Encounter during which the condition was first asserted." />
-      <comments value="This record indicates the encounter this particular record is associated with.  In the case of a &quot;new&quot; diagnosis reflecting ongoing/revised information about the condition, this might be distinct from the first encounter in which the underlying condition was first &quot;known&quot;." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Condition.encounter" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="referenced" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="PV1-19 (+PV1-54)" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="context" />
-      </mapping>
-    </element>
-    <element>
       <path value="Condition.encounter.reference" />
       <short value="Relative URL reference to the Encounter resource" />
       <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
@@ -5876,12 +5843,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
         <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
@@ -6738,11 +6704,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-DiagnosticReport-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
       </type>
       <condition value="con-1" />
       <isSummary value="true" />

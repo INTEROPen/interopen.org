@@ -1,7 +1,13 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-27T15:56:39.311+01:00"
+    "lastUpdated": "2016-10-25T01:02:19.483+01:00"
   },
+  "extension": [
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
   "url": "http://hl7.org.uk/CareConnect-MedicationStatement-1",
   "name": "CareConnect-MedicationStatement-1",
   "status": "draft",
@@ -66,6 +72,23 @@
           ],
           "rules": 2
         }
+      },
+      {
+        "path": "MedicationStatement.extension",
+        "name": "reasonEnded",
+        "short": "Why prescription was stopped",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext"
+            ]
+          }
+        ]
       },
       {
         "path": "MedicationStatement.extension",
@@ -1878,7 +1901,7 @@
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
         "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.identifier.use",
           "min": 0,
@@ -1917,7 +1940,7 @@
         "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
         "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.identifier.type",
           "min": 0,
@@ -2307,7 +2330,7 @@
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
         "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "MedicationStatement.identifier.system",
@@ -2377,7 +2400,7 @@
         "short": "Time period when id is/was valid for use",
         "definition": "Time period during which identifier is/was valid for use.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.identifier.period",
           "min": 0,
@@ -2534,7 +2557,7 @@
         "definition": "Organization that issued/manages the identifier.",
         "comments": "The reference may be just a text description of the assigner.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.identifier.assigner",
           "min": 0,
@@ -2841,17 +2864,21 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1
@@ -3036,6 +3063,12 @@
       },
       {
         "path": "MedicationStatement.reasonNotTaken.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
         "short": "Code defined by a terminology system",
         "definition": "A reference to a code defined by a terminology system.",
         "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
@@ -3298,6 +3331,271 @@
         ]
       },
       {
+        "path": "MedicationStatement.reasonNotTaken.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.userSelected",
+        "short": "If this coding was chosen directly by the user",
+        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
+        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.userSelected",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Sometimes implied by being first"
+          },
+          {
+            "identity": "rim",
+            "map": "CD.codingRationale"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
+          }
+        ]
+      },
+      {
         "path": "MedicationStatement.reasonNotTaken.text",
         "short": "Plain text representation of the concept",
         "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
@@ -3333,7 +3631,7 @@
         ]
       },
       {
-        "path": "MedicationStatement.reasonForUseReference",
+        "path": "MedicationStatement.reasonForUse[x]",
         "definition": "A reason for why the medication is being/was taken.",
         "min": 0,
         "max": "1",
@@ -3343,6 +3641,10 @@
           "max": "1"
         },
         "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          },
           {
             "TypeName": "Reference",
             "code": "Reference",
@@ -3356,8 +3658,7 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "Codes identifying why the medication is being taken.",
+          "strength": 2,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/condition-code"
           }
@@ -3434,6 +3735,9 @@
             "code": "Reference",
             "profile": [
               "http://hl7.org/fhir/StructureDefinition/Resource"
+            ],
+            "aggregation": [
+              1
             ]
           }
         ],
@@ -3551,7 +3855,7 @@
         ]
       },
       {
-        "path": "MedicationStatement.medicationCodeableConcept",
+        "path": "MedicationStatement.medication[x]",
         "short": "What medication was taken",
         "definition": "Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications.",
         "comments": "If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the medication this statement concerns. When the only available information is a text description of the medication, Medication.code.text should be used.",
@@ -3566,13 +3870,22 @@
           {
             "TypeName": "CodeableConcept",
             "code": "CodeableConcept"
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
           }
         ],
         "isSummary": true,
         "binding": {
           "strength": 0,
           "description": "Codes identifying medication item",
-          "Item": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+          }
         },
         "mapping": [
           {
@@ -4266,7 +4579,7 @@
         "definition": "A real world event that the occurrence of the event should be tied to.",
         "requirements": "Timings are frequently determined by occurrences such as waking, eating and sleep.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.timing.repeat.when",
           "min": 0,
@@ -4685,7 +4998,7 @@
         "short": "Take \"as needed\" (for x)",
         "definition": "Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).    Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.asNeeded[x]",
           "min": 0,
@@ -4703,8 +5016,8 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example \"pain\", \"30 minutes prior to sexual intercourse\", \"on flare-up\" etc."
+          "strength": 2,
+          "Item": "http://snomed.info/sct"
         },
         "mapping": [
           {
@@ -4718,7 +5031,7 @@
         "short": "Where (on body) medication is/was administered",
         "definition": "A coded specification of or a reference to the anatomic site where the medication first enters the body.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.site[x]",
           "min": 0,
@@ -4739,8 +5052,7 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "A coded concept describing the site location the medicine enters into or onto the body.",
+          "strength": 2,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/approach-site-codes"
           }
@@ -4757,7 +5069,7 @@
         "short": "How the medication entered the body",
         "definition": "A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.route",
           "min": 0,
@@ -4842,6 +5154,12 @@
       },
       {
         "path": "MedicationStatement.dosage.route.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
         "short": "Code defined by a terminology system",
         "definition": "A reference to a code defined by a terminology system.",
         "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
@@ -5104,6 +5422,275 @@
         ]
       },
       {
+        "path": "MedicationStatement.dosage.route.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 2,
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.userSelected",
+        "short": "If this coding was chosen directly by the user",
+        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
+        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.userSelected",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Sometimes implied by being first"
+          },
+          {
+            "identity": "rim",
+            "map": "CD.codingRationale"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
+          }
+        ]
+      },
+      {
         "path": "MedicationStatement.dosage.route.text",
         "short": "Plain text representation of the concept",
         "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
@@ -5144,7 +5731,7 @@
         "definition": "A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.",
         "comments": "One of the reasons this attribute is not used often, is that the method is often pre-coordinated with the route and/or form of administration.  This means the codes used in route or form may pre-coordinate the method in the route code or the form code.  The implementation decision about what coding system to use for route or form code will determine how frequently the method code will be populated e.g. if route or form code pre-coordinate method code, then this attribute will not be populated often; if there is no pre-coordination then method code may  be used frequently.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.method",
           "min": 0,
@@ -5226,6 +5813,12 @@
       },
       {
         "path": "MedicationStatement.dosage.method.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
         "short": "Code defined by a terminology system",
         "definition": "A reference to a code defined by a terminology system.",
         "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
@@ -5488,6 +6081,275 @@
         ]
       },
       {
+        "path": "MedicationStatement.dosage.method.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 2,
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.id",
+        "representation": [
+          0
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "id",
+            "code": "id"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.userSelected",
+        "short": "If this coding was chosen directly by the user",
+        "definition": "Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).",
+        "comments": "Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.",
+        "requirements": "This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.userSelected",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Sometimes implied by being first"
+          },
+          {
+            "identity": "rim",
+            "map": "CD.codingRationale"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]"
+          }
+        ]
+      },
+      {
         "path": "MedicationStatement.dosage.method.text",
         "short": "Plain text representation of the concept",
         "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
@@ -5555,7 +6417,7 @@
         "short": "Dose quantity per unit of time",
         "definition": "Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.rate[x]",
           "min": 0,
@@ -5584,7 +6446,7 @@
         "short": "Maximum dose that was consumed per unit of time",
         "definition": "The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.maxDosePerPeriod",
           "min": 0,
@@ -6210,6 +7072,23 @@
       },
       {
         "path": "MedicationStatement.extension",
+        "name": "reasonEnded",
+        "short": "Why prescription was stopped",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.extension",
         "name": "quantity",
         "short": "Amount of medication to supply per dispense",
         "definition": "Optional Extensions Element - found in all resources.",
@@ -6259,79 +7138,37 @@
         ]
       },
       {
-        "path": "MedicationStatement.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
-        "min": 0,
-        "max": "0",
+        "path": "MedicationStatement.identifier.system",
+        "short": "The namespace for the identifier",
+        "definition": "Establishes the namespace in which set of possible id values is unique.",
+        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
+        "min": 1,
+        "max": "1",
         "base": {
-          "path": "MedicationStatement.identifier.use",
+          "path": "MedicationStatement.identifier.system",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "TypeName": "code",
-            "code": "code"
+            "TypeName": "uri",
+            "code": "uri"
           }
         ],
-        "isModifier": true,
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
         "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
         "mapping": [
           {
             "identity": "v2",
-            "map": "N/A"
+            "map": "CX.4 / EI-2-4"
           },
           {
             "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
-        "path": "MedicationStatement.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
+            "map": "II.root or Role.id.root"
           },
           {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
+            "identity": "servd",
+            "map": "./IdentifierType"
           }
         ]
       },
@@ -6367,76 +7204,6 @@
           {
             "identity": "servd",
             "map": "./Value"
-          }
-        ]
-      },
-      {
-        "path": "MedicationStatement.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
-        "path": "MedicationStatement.identifier.assigner",
-        "short": "Organization that issued id (may be just text)",
-        "definition": "Organization that issued/manages the identifier.",
-        "comments": "The reference may be just a text description of the assigner.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.identifier.assigner",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.4 / (CX.4,CX.9,CX.10)"
-          },
-          {
-            "identity": "rim",
-            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-          },
-          {
-            "identity": "servd",
-            "map": "./IdentifierIssuingAuthority"
           }
         ]
       },
@@ -6494,17 +7261,21 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1
@@ -6520,7 +7291,222 @@
         ]
       },
       {
-        "path": "MedicationStatement.reasonForUseReference",
+        "path": "MedicationStatement.reasonNotTaken.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonNotTaken.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.reasonNotTaken.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.reasonForUse[x]",
         "definition": "A reason for why the medication is being/was taken.",
         "min": 0,
         "max": "1",
@@ -6530,6 +7516,10 @@
           "max": "1"
         },
         "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          },
           {
             "TypeName": "Reference",
             "code": "Reference",
@@ -6543,15 +7533,40 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "Codes identifying why the medication is being taken.",
+          "strength": 2,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/condition-code"
           }
         }
       },
       {
-        "path": "MedicationStatement.medicationCodeableConcept",
+        "path": "MedicationStatement.supportingInformation",
+        "short": "Additional supporting information",
+        "definition": "Allows linking the MedicationStatement to the underlying MedicationOrder, or to other information that supports the MedicationStatement.",
+        "comments": "Likely references would be to MedicationOrder, MedicationDispense, Claim, Observation or QuestionnaireAnswers.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.supportingInformation",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Resource"
+            ],
+            "aggregation": [
+              1
+            ]
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "path": "MedicationStatement.medication[x]",
         "short": "What medication was taken",
         "definition": "Identifies the medication being administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications.",
         "comments": "If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the medication this statement concerns. When the only available information is a text description of the medication, Medication.code.text should be used.",
@@ -6566,13 +7581,22 @@
           {
             "TypeName": "CodeableConcept",
             "code": "CodeableConcept"
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
           }
         ],
         "isSummary": true,
         "binding": {
           "strength": 0,
           "description": "Codes identifying medication item",
-          "Item": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+          }
         },
         "mapping": [
           {
@@ -6861,39 +7885,6 @@
         ]
       },
       {
-        "path": "MedicationStatement.dosage.timing.repeat.when",
-        "short": "Regular life events the event is tied to",
-        "definition": "A real world event that the occurrence of the event should be tied to.",
-        "requirements": "Timings are frequently determined by occurrences such as waking, eating and sleep.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.dosage.timing.repeat.when",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Real world event that the relating to the schedule.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/event-timing"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "EIVL.event"
-          }
-        ]
-      },
-      {
         "path": "MedicationStatement.dosage.timing.code",
         "short": "QD | QOD | Q4H | Q6H | BID | TID | QID | AM | PM +",
         "definition": "A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes.",
@@ -6931,7 +7922,7 @@
         "short": "Take \"as needed\" (for x)",
         "definition": "Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).    Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.asNeeded[x]",
           "min": 0,
@@ -6949,8 +7940,8 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example \"pain\", \"30 minutes prior to sexual intercourse\", \"on flare-up\" etc."
+          "strength": 2,
+          "Item": "http://snomed.info/sct"
         },
         "mapping": [
           {
@@ -6964,7 +7955,7 @@
         "short": "Where (on body) medication is/was administered",
         "definition": "A coded specification of or a reference to the anatomic site where the medication first enters the body.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationStatement.dosage.site[x]",
           "min": 0,
@@ -6985,8 +7976,7 @@
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "A coded concept describing the site location the medicine enters into or onto the body.",
+          "strength": 2,
           "Item": {
             "reference": "http://hl7.org/fhir/ValueSet/approach-site-codes"
           }
@@ -6999,64 +7989,440 @@
         ]
       },
       {
-        "path": "MedicationStatement.dosage.route",
-        "short": "How the medication entered the body",
-        "definition": "A code specifying the route or physiological path of administration of a therapeutic agent into or onto a subject.",
+        "path": "MedicationStatement.dosage.route.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
-          "path": "MedicationStatement.dosage.route",
+          "path": "MedicationStatement.dosage.route.coding",
           "min": 0,
-          "max": "1"
+          "max": "*"
         },
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "Coding",
+            "code": "Coding"
           }
         ],
         "isSummary": true,
-        "binding": {
-          "strength": 3,
-          "description": "A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/route-codes"
-          }
-        },
         "mapping": [
           {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
             "identity": "rim",
-            "map": ".routeCode"
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
           }
         ]
       },
       {
-        "path": "MedicationStatement.dosage.method",
-        "short": "Technique used to administer medication",
-        "definition": "A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.",
-        "comments": "One of the reasons this attribute is not used often, is that the method is often pre-coordinated with the route and/or form of administration.  This means the codes used in route or form may pre-coordinate the method in the route code or the form code.  The implementation decision about what coding system to use for route or form code will determine how frequently the method code will be populated e.g. if route or form code pre-coordinate method code, then this attribute will not be populated often; if there is no pre-coordination then method code may  be used frequently.",
+        "path": "MedicationStatement.dosage.route.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
-          "path": "MedicationStatement.dosage.method",
+          "path": "MedicationStatement.dosage.route.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "strength": 2,
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS"
+        },
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.system",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.route.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.route.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        },
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
+            "identity": "rim",
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding",
+        "name": "SNOMED CT",
+        "short": "Code defined by a terminology system",
+        "definition": "A reference to a code defined by a terminology system.",
+        "comments": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true.",
+        "requirements": "Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "TypeName": "Coding",
+            "code": "Coding"
           }
         ],
         "isSummary": true,
         "binding": {
-          "strength": 3,
-          "description": "A coded concept describing the technique by which the medicine is administered."
+          "strength": 2,
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS"
         },
         "mapping": [
           {
+            "identity": "v2",
+            "map": "C*E.1-8, C*E.10-22"
+          },
+          {
             "identity": "rim",
-            "map": ".methodCode"
+            "map": "union(., ./translation)"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.system",
+        "short": "Identity of the terminology system",
+        "definition": "The identification of the code system that defines the meaning of the symbol in the code.",
+        "comments": "The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously.",
+        "requirements": "Need to be unambiguous about the source of the definition of the symbol.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item1": "http://snomed.info/sct",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.3"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystem"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.version",
+        "short": "Version of the system - if relevant",
+        "definition": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.",
+        "comments": "Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.version",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.7"
+          },
+          {
+            "identity": "rim",
+            "map": "./codeSystemVersion"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.code",
+        "short": "Symbol in syntax defined by the system",
+        "definition": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+        "requirements": "Need to refer to a particular code in the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.code",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "code",
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.1"
+          },
+          {
+            "identity": "rim",
+            "map": "./code"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"
+          }
+        ]
+      },
+      {
+        "path": "MedicationStatement.dosage.method.coding.display",
+        "short": "Representation defined by the system",
+        "definition": "A representation of the meaning of the code in the system, following the rules of the system.",
+        "requirements": "Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "MedicationStatement.dosage.method.coding.display",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "C*E.2 - but note this is not well followed"
+          },
+          {
+            "identity": "rim",
+            "map": "CV.displayName"
+          },
+          {
+            "identity": "orim",
+            "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
           }
         ]
       },
@@ -7085,60 +8451,6 @@
           {
             "identity": "rim",
             "map": ".doseQuantity"
-          }
-        ]
-      },
-      {
-        "path": "MedicationStatement.dosage.rate[x]",
-        "short": "Dose quantity per unit of time",
-        "definition": "Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.dosage.rate[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Ratio",
-            "code": "Ratio"
-          },
-          {
-            "TypeName": "Range",
-            "code": "Range"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": ".rateQuantity"
-          }
-        ]
-      },
-      {
-        "path": "MedicationStatement.dosage.maxDosePerPeriod",
-        "short": "Maximum dose that was consumed per unit of time",
-        "definition": "The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationStatement.dosage.maxDosePerPeriod",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Ratio",
-            "code": "Ratio"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": ".maxDoseQuantity"
           }
         ]
       }

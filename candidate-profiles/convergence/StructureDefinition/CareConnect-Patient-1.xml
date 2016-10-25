@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-16T16:29:13.703+01:00" />
+    <lastUpdated value="2016-10-25T00:49:50.496+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -110,7 +110,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -123,7 +122,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.modifierExtension" />
@@ -8113,7 +8111,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Organization-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
       </type>
       <condition value="pat-1" />
       <mapping>
@@ -9870,7 +9868,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -9900,7 +9898,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Organization-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -10327,7 +10325,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10340,7 +10337,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.modifierExtension" />
@@ -12161,36 +12157,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.contact.organization" />
-      <short value="Organization that is associated with the contact" />
-      <definition value="Organization on behalf of which the contact is acting or for which the contact is working." />
-      <requirements value="For guardians or business related contacts, the organization is relevant." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Patient.contact.organization" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Organization-1" />
-      </type>
-      <condition value="pat-1" />
-      <mapping>
-        <identity value="v2" />
-        <map value="NK1-13, NK1-30, NK1-31, NK1-32, NK1-41" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="scoper" />
-      </mapping>
-      <mapping>
-        <identity value="cda" />
-        <map value="n/a" />
-      </mapping>
-    </element>
-    <element>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Animal" />
       </extension>
@@ -12411,7 +12377,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -12424,33 +12390,6 @@
       <mapping>
         <identity value="cda" />
         <map value="n/a" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Patient.managingOrganization" />
-      <short value="Organization that is the custodian of the patient record" />
-      <definition value="Organization that is the custodian of the patient record." />
-      <comments value="There is only one managing organization for a specific patient record. Other organizations will have their own Patient record, and may use the Link property to join the records together (or a Person resource which can include confidence ratings for the association)." />
-      <requirements value="Need to know who recognizes this patient record, manages and updates it." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Patient.managingOrganization" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Organization-1" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="scoper" />
-      </mapping>
-      <mapping>
-        <identity value="cda" />
-        <map value=".providerOrganization" />
       </mapping>
     </element>
     <element>

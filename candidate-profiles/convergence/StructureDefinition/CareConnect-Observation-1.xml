@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-26T13:25:07.675+01:00" />
+    <lastUpdated value="2016-10-25T00:58:29.47+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -3130,8 +3130,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -3304,12 +3303,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
         <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
@@ -5152,8 +5150,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Specimen-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Specimen" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -8474,36 +8471,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.encounter" />
-      <short value="Healthcare event during which this observation is made" />
-      <definition value="The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made." />
-      <requirements value="For some observations it may be important to know the link between an observation and a particular encounter." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Observation.encounter" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="referenced" />
-      </type>
-      <mapping>
-        <identity value="v2" />
-        <map value="PV1" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="context" />
-      </mapping>
-    </element>
-    <element>
       <path value="Observation.encounter.reference" />
       <short value="Relative URL reference to the Encounter resource" />
       <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
@@ -8598,12 +8565,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
         <aggregation value="referenced" />
       </type>
       <isSummary value="true" />
@@ -9121,32 +9087,6 @@
       <mapping>
         <identity value="orim" />
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Observation.specimen" />
-      <short value="Specimen used for this observation" />
-      <definition value="The specimen that was used when this observation was made." />
-      <comments value="Observations are not made on specimens themselves; they are made on a subject, but usually by the means of a specimen. Note that although specimens are often involved, they are not always tracked and reported explicitly. Also note that observation resources may be used in contexts that track the specimen explicitly (e.g. Diagnostic Report)." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Observation.specimen" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Specimen-1" />
-        <aggregation value="referenced" />
-      </type>
-      <mapping>
-        <identity value="v2" />
-        <map value="SPM segment" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="participation[typeCode=SPC].specimen" />
       </mapping>
     </element>
     <element>

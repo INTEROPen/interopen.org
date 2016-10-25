@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-26T14:40:03.837+01:00"
+    "lastUpdated": "2016-10-25T00:54:04.24+01:00"
   },
   "extension": [
     {
@@ -2731,17 +2731,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1
@@ -6395,17 +6392,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              1
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org.uk/CareConnect-Patient-1"
             ],
             "aggregation": [
               1

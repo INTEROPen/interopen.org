@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-16T16:29:13.703+01:00"
+    "lastUpdated": "2016-10-25T00:49:50.496+01:00"
   },
   "extension": [
     {
@@ -146,8 +146,7 @@
               "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -164,8 +163,7 @@
               "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.modifierExtension",
@@ -9932,7 +9930,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
+              "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ],
@@ -12089,7 +12087,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           }
         ],
@@ -12126,7 +12124,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
+              "http://hl7.org/fhir/StructureDefinition/Organization"
             ]
           }
         ],
@@ -12682,8 +12680,7 @@
               "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -12700,8 +12697,7 @@
               "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.modifierExtension",
@@ -14849,45 +14845,6 @@
         ]
       },
       {
-        "path": "Patient.contact.organization",
-        "short": "Organization that is associated with the contact",
-        "definition": "Organization on behalf of which the contact is acting or for which the contact is working.",
-        "requirements": "For guardians or business related contacts, the organization is relevant.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.contact.organization",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
-            ]
-          }
-        ],
-        "condition": [
-          "pat-1"
-        ],
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "NK1-13, NK1-30, NK1-31, NK1-32, NK1-41"
-          },
-          {
-            "identity": "rim",
-            "map": "scoper"
-          },
-          {
-            "identity": "cda",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
         "extension": [
           {
             "Item": "Animal",
@@ -15149,7 +15106,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1"
+              "http://hl7.org/fhir/StructureDefinition/Practitioner"
             ]
           }
         ],
@@ -15165,40 +15122,6 @@
           {
             "identity": "cda",
             "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Patient.managingOrganization",
-        "short": "Organization that is the custodian of the patient record",
-        "definition": "Organization that is the custodian of the patient record.",
-        "comments": "There is only one managing organization for a specific patient record. Other organizations will have their own Patient record, and may use the Link property to join the records together (or a Person resource which can include confidence ratings for the association).",
-        "requirements": "Need to know who recognizes this patient record, manages and updates it.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.managingOrganization",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Organization-1"
-            ]
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "scoper"
-          },
-          {
-            "identity": "cda",
-            "map": ".providerOrganization"
           }
         ]
       },

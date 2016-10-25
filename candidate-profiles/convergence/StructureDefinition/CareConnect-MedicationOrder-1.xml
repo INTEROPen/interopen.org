@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-09-26T22:38:18.491+01:00" />
+    <lastUpdated value="2016-10-25T01:02:15.841+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -50,6 +50,18 @@
         <discriminator value="url" />
         <rules value="openAtEnd" />
       </slicing>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
+      <name value="supplyType" />
+      <short value="Medication supply type" />
+      <definition value="Indicates the legal/contractual nature of a prescription." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1-Extension.structuredefinition.xml" />
+      </type>
     </element>
     <element>
       <path value="MedicationOrder.extension" />
@@ -1515,7 +1527,7 @@
       <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.identifier.use" />
         <min value="0" />
@@ -1549,7 +1561,7 @@
       <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
       <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.identifier.type" />
         <min value="0" />
@@ -1871,7 +1883,7 @@
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
       <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="MedicationOrder.identifier.system" />
@@ -1931,7 +1943,7 @@
       <short value="Time period when id is/was valid for use" />
       <definition value="Time period during which identifier is/was valid for use." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.identifier.period" />
         <min value="0" />
@@ -2055,7 +2067,7 @@
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.identifier.assigner" />
         <min value="0" />
@@ -2911,8 +2923,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3027,8 +3038,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="bundled" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3134,7 +3144,7 @@
       <short value="Reason or indication for writing the prescription" />
       <definition value="Can be the reason or the indication for writing the prescription." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.reason[x]" />
         <min value="0" />
@@ -3149,8 +3159,7 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="Codes indicating why the medication was ordered." />
+        <strength value="preferred" />
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/condition-code" />
         </valueSetReference>
@@ -3185,7 +3194,7 @@
       <isSummary value="true" />
     </element>
     <element>
-      <path value="MedicationOrder.medicationCodeableConcept" />
+      <path value="MedicationOrder.medication[x]" />
       <short value="Medication to be taken" />
       <definition value="Identifies the medication being administered." />
       <comments value="If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the prescribed medication. When the only available information is a text description of the medication, Medication.code.text should be used." />
@@ -3199,11 +3208,17 @@
       <type>
         <code value="CodeableConcept" />
       </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
+      </type>
       <isSummary value="true" />
       <binding>
         <strength value="required" />
         <description value="Codes identifying medication item" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />
@@ -4305,7 +4320,7 @@
       <definition value="A real world event that the occurrence of the event should be tied to." />
       <requirements value="Timings are frequently determined by occurrences such as waking, eating and sleep." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.timing.repeat.when" />
         <min value="0" />
@@ -4652,7 +4667,7 @@
       <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept)." />
       <comments value="Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.asNeeded[x]" />
         <min value="0" />
@@ -4666,8 +4681,8 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot; etc." />
+        <strength value="preferred" />
+        <valueSetUri value="http://snomed.info/sct" />
       </binding>
       <mapping>
         <identity value="rim" />
@@ -4679,7 +4694,7 @@
       <short value="Body site to administer to" />
       <definition value="A coded specification of the anatomic site where the medication first enters the body." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.site[x]" />
         <min value="0" />
@@ -4694,8 +4709,7 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept describing the site location the medicine enters into or onto the body." />
+        <strength value="preferred" />
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/approach-site-codes" />
         </valueSetReference>
@@ -4714,7 +4728,7 @@
       <short value="How drug should enter body" />
       <definition value="A code specifying the route or physiological path of administration of a therapeutic agent into or onto a patient's body." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.route" />
         <min value="0" />
@@ -4784,6 +4798,10 @@
     </element>
     <element>
       <path value="MedicationOrder.dosageInstruction.route.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -5002,6 +5020,231 @@
       </mapping>
     </element>
     <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding" />
+      <name value="SNOMED CT" />
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="preferred" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
       <path value="MedicationOrder.dosageInstruction.route.text" />
       <short value="Plain text representation of the concept" />
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
@@ -5037,7 +5280,7 @@
       <definition value="A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  For examples, Slow Push; Deep IV." />
       <comments value="Terminologies used often pre-coordinate this term with the route and or form of administration." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.method" />
         <min value="0" />
@@ -5104,6 +5347,10 @@
     </element>
     <element>
       <path value="MedicationOrder.dosageInstruction.method.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -5322,6 +5569,231 @@
       </mapping>
     </element>
     <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding" />
+      <name value="SNOMED CT" />
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="preferred" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
       <path value="MedicationOrder.dosageInstruction.method.text" />
       <short value="Plain text representation of the concept" />
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
@@ -5357,7 +5829,7 @@
       <definition value="The amount of therapeutic or other substance given at one administration event." />
       <comments value="Note that this specifies the quantity of the specified medication, not the quantity for each active ingredient(s). Each ingredient amount can be communicated in the Medication resource. For example, if one wants to communicate that a tablet was 375 mg, where the dose was one tablet, you can use the Medication resource to document that the tablet was comprised of 375 mg of drug XYZ. Alternatively if the dose was 375 mg, then you may only need to use the Medication resource to indicate this was a tablet. If the example were an IV such as dopamine and you wanted to communicate that 400mg of dopamine was mixed in 500 ml of some IV solution, then this would all be communicated in the Medication resource. If the administration is not intended to be instantaneous (rate is present or timing has a duration), this can be specified to convey the total amount to be administered over the period of time as indicated by the schedule e.g. 500 ml in dose, with timing used to convey that this should be done over 4 hours." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.dose[x]" />
         <min value="0" />
@@ -5386,7 +5858,7 @@
       <definition value="Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours." />
       <comments value="It is possible to supply both a rate and a doseQuantity to provide full details about how the medication is to be administered and supplied. If the rate is intended to change over time, depending on local rules/regulations, each change should be captured as a new version of the MedicationOrder with an updated rate, or captured with a new MedicationOrder with the new rate." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.rate[x]" />
         <min value="0" />
@@ -5414,7 +5886,7 @@
       <definition value="The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours." />
       <comments value="This is intended for use as an adjunct to the dosage when there is an upper cap.  For example &quot;2 tablets every 4 hours to a maximum of 8/day&quot;." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.maxDosePerPeriod" />
         <min value="0" />
@@ -6085,7 +6557,7 @@
       <short value="End time with inclusive boundary, if not ongoing" />
       <definition value="The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time." />
       <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03." />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="MedicationOrder.dispenseRequest.validityPeriod.end" />
@@ -6571,7 +7043,7 @@
       <short value="Any restrictions on medication substitution" />
       <definition value="Indicates whether or not substitution can or should be part of the dispense. In some cases substitution must happen, in other cases substitution must not happen, and in others it does not matter. This block explains the prescriber's intent. If nothing is specified substitution may be done." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.substitution" />
         <min value="0" />
@@ -7301,7 +7773,7 @@
       <short value="An order/prescription that this supersedes" />
       <definition value="A link to a resource representing an earlier order or prescription that this order supersedes." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.priorPrescription" />
         <min value="0" />
@@ -7309,7 +7781,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationOrder" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationOrder-1" />
       </type>
       <isSummary value="true" />
     </element>
@@ -7434,6 +7906,18 @@
     </element>
     <element>
       <path value="MedicationOrder.extension" />
+      <name value="supplyType" />
+      <short value="Medication supply type" />
+      <definition value="Indicates the legal/contractual nature of a prescription." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationOrder.extension" />
       <name value="statement" />
       <short value="Medication Statement link" />
       <definition value="Used to specifiy a link to the medication authorisation that this order is part of." />
@@ -7445,70 +7929,33 @@
       </type>
     </element>
     <element>
-      <path value="MedicationOrder.identifier.use" />
-      <short value="usual | official | temp | secondary (If known)" />
-      <definition value="The purpose of this identifier." />
-      <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
-      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
-      <min value="0" />
-      <max value="0" />
+      <path value="MedicationOrder.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="MedicationOrder.identifier.use" />
+        <path value="MedicationOrder.identifier.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="code" />
+        <code value="uri" />
       </type>
-      <isModifier value="true" />
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
       <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="Identifies the purpose for this identifier, if known ." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-use" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="v2" />
-        <map value="N/A" />
+        <map value="CX.4 / EI-2-4" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="Role.code or implied by context" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationOrder.identifier.type" />
-      <short value="Description of identifier" />
-      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
-      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
-      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationOrder.identifier.type" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="extensible" />
-        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.5" />
+        <map value="II.root or Role.id.root" />
       </mapping>
       <mapping>
-        <identity value="rim" />
-        <map value="Role.code or implied by context" />
+        <identity value="servd" />
+        <map value="./IdentifierType" />
       </mapping>
     </element>
     <element>
@@ -7539,64 +7986,6 @@
       <mapping>
         <identity value="servd" />
         <map value="./Value" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationOrder.identifier.period" />
-      <short value="Time period when id is/was valid for use" />
-      <definition value="Time period during which identifier is/was valid for use." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationOrder.identifier.period" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Period" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.7 + CX.8" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="Role.effectiveTime or implied by context" />
-      </mapping>
-      <mapping>
-        <identity value="servd" />
-        <map value="./StartDate and ./EndDate" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationOrder.identifier.assigner" />
-      <short value="Organization that issued id (may be just text)" />
-      <definition value="Organization that issued/manages the identifier." />
-      <comments value="The reference may be just a text description of the assigner." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationOrder.identifier.assigner" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.4 / (CX.4,CX.9,CX.10)" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper" />
-      </mapping>
-      <mapping>
-        <identity value="servd" />
-        <map value="./IdentifierIssuingAuthority" />
       </mapping>
     </element>
     <element>
@@ -7914,8 +8303,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -7954,37 +8342,6 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.encounter" />
-      <short value="Created during encounter/admission/stay" />
-      <definition value="A link to a resource that identifies the particular occurrence of contact between patient and health care provider." />
-      <comments value="SubstanceAdministration-&gt;component-&gt;EncounterEvent." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="MedicationOrder.encounter" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Encounter-1" />
-        <aggregation value="bundled" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="PV1-19-Visit Number" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="componentOf.patientEncounter" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="context" />
-      </mapping>
-    </element>
-    <element>
       <path value="MedicationOrder.encounter.reference" />
       <short value="Relative URL reference to the Encounter resource" />
       <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
@@ -8011,7 +8368,7 @@
       <short value="Reason or indication for writing the prescription" />
       <definition value="Can be the reason or the indication for writing the prescription." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.reason[x]" />
         <min value="0" />
@@ -8026,8 +8383,7 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="Codes indicating why the medication was ordered." />
+        <strength value="preferred" />
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/condition-code" />
         </valueSetReference>
@@ -8046,7 +8402,7 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.medicationCodeableConcept" />
+      <path value="MedicationOrder.medication[x]" />
       <short value="Medication to be taken" />
       <definition value="Identifies the medication being administered." />
       <comments value="If only a code is specified, then it needs to be a code for a specific product.  If more information is required, then the use of the medication resource is recommended.  Note: do not use Medication.name to describe the prescribed medication. When the only available information is a text description of the medication, Medication.code.text should be used." />
@@ -8060,11 +8416,17 @@
       <type>
         <code value="CodeableConcept" />
       </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
+      </type>
       <isSummary value="true" />
       <binding>
         <strength value="required" />
         <description value="Codes identifying medication item" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />
@@ -8478,34 +8840,6 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.timing.repeat.when" />
-      <short value="Regular life events the event is tied to" />
-      <definition value="A real world event that the occurrence of the event should be tied to." />
-      <requirements value="Timings are frequently determined by occurrences such as waking, eating and sleep." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationOrder.dosageInstruction.timing.repeat.when" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="code" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="Real world event that the relating to the schedule." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/event-timing" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="rim" />
-        <map value="EIVL.event" />
-      </mapping>
-    </element>
-    <element>
       <path value="MedicationOrder.dosageInstruction.timing.code" />
       <short value="QD | QOD | Q4H | Q6H | BID | TID | QID | AM | PM +" />
       <definition value="A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes." />
@@ -8539,7 +8873,7 @@
       <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept)." />
       <comments value="Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.asNeeded[x]" />
         <min value="0" />
@@ -8553,8 +8887,8 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot; etc." />
+        <strength value="preferred" />
+        <valueSetUri value="http://snomed.info/sct" />
       </binding>
       <mapping>
         <identity value="rim" />
@@ -8566,7 +8900,7 @@
       <short value="Body site to administer to" />
       <definition value="A coded specification of the anatomic site where the medication first enters the body." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.dosageInstruction.site[x]" />
         <min value="0" />
@@ -8581,8 +8915,7 @@
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept describing the site location the medicine enters into or onto the body." />
+        <strength value="preferred" />
         <valueSetReference>
           <reference value="http://hl7.org/fhir/ValueSet/approach-site-codes" />
         </valueSetReference>
@@ -8597,145 +8930,377 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.route" />
-      <short value="How drug should enter body" />
-      <definition value="A code specifying the route or physiological path of administration of a therapeutic agent into or onto a patient's body." />
+      <path value="MedicationOrder.dosageInstruction.route.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
-        <path value="MedicationOrder.dosageInstruction.route" />
+        <path value="MedicationOrder.dosageInstruction.route.coding" />
         <min value="0" />
-        <max value="1" />
+        <max value="*" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding" />
+      <name value="SNOMED CT" />
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept describing the route or physiological path of administration of a therapeutic agent into or onto the body of a subject." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/route-codes" />
-        </valueSetReference>
+        <strength value="preferred" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS" />
       </binding>
       <mapping>
         <identity value="v2" />
-        <map value="RXR-1-Route" />
+        <map value="C*E.1-8, C*E.10-22" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="routeCode" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.method" />
-      <short value="Technique for administering medication" />
-      <definition value="A coded value indicating the method by which the medication is introduced into or onto the body. Most commonly used for injections.  For examples, Slow Push; Deep IV." />
-      <comments value="Terminologies used often pre-coordinate this term with the route and or form of administration." />
-      <min value="0" />
-      <max value="0" />
+      <path value="MedicationOrder.dosageInstruction.route.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="MedicationOrder.dosageInstruction.method" />
+        <path value="MedicationOrder.dosageInstruction.route.coding.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.route.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.route.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding" />
+      <name value="SNOMED CT" />
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
       </type>
       <isSummary value="true" />
       <binding>
-        <strength value="example" />
-        <description value="A coded concept describing the technique by which the medicine is administered." />
+        <strength value="preferred" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS" />
       </binding>
       <mapping>
         <identity value="v2" />
-        <map value="RXR-4-Administration Method" />
+        <map value="C*E.1-8, C*E.10-22" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="methodCode" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.dose[x]" />
-      <short value="Amount of medication per dose" />
-      <definition value="The amount of therapeutic or other substance given at one administration event." />
-      <comments value="Note that this specifies the quantity of the specified medication, not the quantity for each active ingredient(s). Each ingredient amount can be communicated in the Medication resource. For example, if one wants to communicate that a tablet was 375 mg, where the dose was one tablet, you can use the Medication resource to document that the tablet was comprised of 375 mg of drug XYZ. Alternatively if the dose was 375 mg, then you may only need to use the Medication resource to indicate this was a tablet. If the example were an IV such as dopamine and you wanted to communicate that 400mg of dopamine was mixed in 500 ml of some IV solution, then this would all be communicated in the Medication resource. If the administration is not intended to be instantaneous (rate is present or timing has a duration), this can be specified to convey the total amount to be administered over the period of time as indicated by the schedule e.g. 500 ml in dose, with timing used to convey that this should be done over 4 hours." />
-      <min value="0" />
-      <max value="0" />
+      <path value="MedicationOrder.dosageInstruction.method.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="MedicationOrder.dosageInstruction.dose[x]" />
+        <path value="MedicationOrder.dosageInstruction.method.coding.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="Range" />
+        <code value="uri" />
       </type>
-      <type>
-        <code value="Quantity" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
-      </type>
+      <fixedUri value="http://snomed.info/sct" />
       <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="RXE-23-Give Rate Amount / RXE-24.1-Give Rate Units.code / RXE-24.3-Give Rate Units.name of coding system" />
+        <map value="C*E.3" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="doseQuantity" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.rate[x]" />
-      <short value="Amount of medication per unit of time" />
-      <definition value="Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours." />
-      <comments value="It is possible to supply both a rate and a doseQuantity to provide full details about how the medication is to be administered and supplied. If the rate is intended to change over time, depending on local rules/regulations, each change should be captured as a new version of the MedicationOrder with an updated rate, or captured with a new MedicationOrder with the new rate." />
+      <path value="MedicationOrder.dosageInstruction.method.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
       <min value="0" />
       <max value="0" />
       <base>
-        <path value="MedicationOrder.dosageInstruction.rate[x]" />
+        <path value="MedicationOrder.dosageInstruction.method.coding.version" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="Ratio" />
-      </type>
-      <type>
-        <code value="Range" />
+        <code value="string" />
       </type>
       <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="RXE-22-Give Per (Time Unit)" />
+        <map value="C*E.7" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="rateQuantity" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.dosageInstruction.maxDosePerPeriod" />
-      <short value="Upper limit on medication per unit of time" />
-      <definition value="The maximum total quantity of a therapeutic substance that may be administered to a subject over the period of time.  For example, 1000mg in 24 hours." />
-      <comments value="This is intended for use as an adjunct to the dosage when there is an upper cap.  For example &quot;2 tablets every 4 hours to a maximum of 8/day&quot;." />
-      <min value="0" />
-      <max value="0" />
+      <path value="MedicationOrder.dosageInstruction.method.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="MedicationOrder.dosageInstruction.maxDosePerPeriod" />
+        <path value="MedicationOrder.dosageInstruction.method.coding.code" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="Ratio" />
+        <code value="code" />
       </type>
       <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="RXE-4-Give Amount - Maximum / RXE-5-Give Units" />
+        <map value="C*E.1" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="maxDoseQuantity" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="MedicationOrder.dosageInstruction.method.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="MedicationOrder.dosageInstruction.method.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
       </mapping>
     </element>
     <element>
@@ -8811,33 +9376,6 @@
       <mapping>
         <identity value="rim" />
         <map value="./low" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationOrder.dispenseRequest.validityPeriod.end" />
-      <short value="End time with inclusive boundary, if not ongoing" />
-      <definition value="The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time." />
-      <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03." />
-      <min value="1" />
-      <max value="1" />
-      <base>
-        <path value="MedicationOrder.dispenseRequest.validityPeriod.end" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <meaningWhenMissing value="If the end of the period is missing, it means that the period is ongoing" />
-      <condition value="per-1" />
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="DR.2" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="./high" />
       </mapping>
     </element>
     <element>
@@ -9169,31 +9707,11 @@
       </mapping>
     </element>
     <element>
-      <path value="MedicationOrder.substitution" />
-      <short value="Any restrictions on medication substitution" />
-      <definition value="Indicates whether or not substitution can or should be part of the dispense. In some cases substitution must happen, in other cases substitution must not happen, and in others it does not matter. This block explains the prescriber's intent. If nothing is specified substitution may be done." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationOrder.substitution" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="BackboneElement" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="subjectOf.substitutionPersmission" />
-      </mapping>
-    </element>
-    <element>
       <path value="MedicationOrder.priorPrescription" />
       <short value="An order/prescription that this supersedes" />
       <definition value="A link to a resource representing an earlier order or prescription that this order supersedes." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationOrder.priorPrescription" />
         <min value="0" />
@@ -9201,7 +9719,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/MedicationOrder" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationOrder-1" />
       </type>
       <isSummary value="true" />
     </element>

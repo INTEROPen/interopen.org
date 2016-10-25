@@ -2,6 +2,12 @@
   "meta": {
     "lastUpdated": "2016-09-27T15:46:33.951+01:00"
   },
+  "extension": [
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
   "url": "http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext",
   "name": "CareConnect-MedicationStatementLastIssueDate-1-Extension",
   "status": "draft",

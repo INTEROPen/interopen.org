@@ -64,6 +64,7 @@
           <li>Red Embedded Systems</li>
           <li>Ripple</li>
           <li>SCC</li>
+          <li>Servelec Healthcare</li>
           <li>SiteKit</li>
           <li>Solutions4Health Ltd</li>
           <li>Stalis</li>

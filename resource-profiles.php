@@ -19,7 +19,7 @@
     <h3>Member proposals</h3>
     
     <ol>
-      <li><a href="candidate-profiles/convergence">The Convergence Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, MedicationStatement, Patient, Observation</a></li>
+      <li><a href="candidate-profiles/convergence/">The CareConnect Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, MedicationStatement, Patient, Observation</a></li>
     </ol>
     
     <h3>Other resouces</h3>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-10-25T01:02:19.483+01:00" />
+    <lastUpdated value="2016-10-29T10:46:59.806+01:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -75,7 +75,7 @@
     </element>
     <element>
       <path value="MedicationStatement.extension" />
-      <name value="quantity" />
+      <name value="quantityDispensed" />
       <short value="Amount of medication to supply per dispense" />
       <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
@@ -3357,7 +3357,7 @@
       <definition value="Identifies specific times when the event occurs." />
       <requirements value="In an MAR, for instance, you need to take a general specification, and turn it into a precise specification." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.event" />
         <min value="0" />
@@ -3470,7 +3470,7 @@
       <short value="Length/Range of lengths, or (Start and/or end) limits" />
       <definition value="Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
         <min value="0" />
@@ -3521,7 +3521,7 @@
       <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
       <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.duration" />
         <min value="0" />
@@ -3549,7 +3549,7 @@
       <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
       <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
         <min value="0" />
@@ -3569,7 +3569,7 @@
       <short value="s | min | h | d | wk | mo | a - unit of time (UCUM)" />
       <definition value="The units of time for the duration, in UCUM units." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
         <min value="0" />
@@ -3617,7 +3617,7 @@
       <short value="Event occurs up to frequencyMax times per period" />
       <definition value="If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
         <min value="0" />
@@ -3663,7 +3663,7 @@
       <short value="Upper limit of period (3-4 hours)" />
       <definition value="If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as &quot;do this once every 3-5 days." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
         <min value="0" />
@@ -3739,7 +3739,7 @@
       <definition value="A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes." />
       <comments value="A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.code" />
         <min value="0" />
@@ -5766,7 +5766,7 @@
     </element>
     <element>
       <path value="MedicationStatement.extension" />
-      <name value="quantity" />
+      <name value="quantityDispensed" />
       <short value="Amount of medication to supply per dispense" />
       <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
@@ -6242,7 +6242,7 @@
       <definition value="Identifies specific times when the event occurs." />
       <requirements value="In an MAR, for instance, you need to take a general specification, and turn it into a precise specification." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="MedicationStatement.dosage.timing.event" />
         <min value="0" />
@@ -6255,178 +6255,6 @@
       <mapping>
         <identity value="rim" />
         <map value="QLIST&lt;TS&gt;" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
-      <short value="Length/Range of lengths, or (Start and/or end) limits" />
-      <definition value="Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.bounds[x]" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Quantity" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Duration" />
-      </type>
-      <type>
-        <code value="Range" />
-      </type>
-      <type>
-        <code value="Period" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="IVL(TS) used in a QSI" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.duration" />
-      <short value="How long when it happens" />
-      <definition value="How long this thing happens for when it happens." />
-      <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
-      <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.duration" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="decimal" />
-      </type>
-      <constraint>
-        <key value="tim-4" />
-        <severity value="error" />
-        <human value="duration SHALL be a non-negative value" />
-        <xpath value="@value &gt;= 0 or not(@value)" />
-      </constraint>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="PIVL.phase / EIVL.offset" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
-      <short value="How long when it happens (Max)" />
-      <definition value="The upper limit of how long this thing happens for when it happens." />
-      <comments value="For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise)." />
-      <requirements value="Some activities are not instantaneous and need to be maintained for a period of time." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.durationMax" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="decimal" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="PIVL.phase / EIVL.offset" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
-      <short value="s | min | h | d | wk | mo | a - unit of time (UCUM)" />
-      <definition value="The units of time for the duration, in UCUM units." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.durationUnits" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="code" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="A unit of time (units from UCUM)." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/units-of-time" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="rim" />
-        <map value="PIVL.phase.unit" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
-      <short value="Event occurs up to frequencyMax times per period" />
-      <definition value="If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.frequencyMax" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="integer" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="PIVL.phase" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
-      <short value="Upper limit of period (3-4 hours)" />
-      <definition value="If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as &quot;do this once every 3-5 days." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.repeat.periodMax" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="decimal" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value="PIVL.phase" />
-      </mapping>
-    </element>
-    <element>
-      <path value="MedicationStatement.dosage.timing.code" />
-      <short value="QD | QOD | Q4H | Q6H | BID | TID | QID | AM | PM +" />
-      <definition value="A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes." />
-      <comments value="A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="MedicationStatement.dosage.timing.code" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="preferred" />
-        <description value="Code for a known / defined timing pattern." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/timing-abbreviation" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="rim" />
-        <map value="QSC.code" />
       </mapping>
     </element>
     <element>

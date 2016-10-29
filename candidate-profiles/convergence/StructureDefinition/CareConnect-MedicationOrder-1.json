@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-10-25T01:02:15.841+01:00"
+    "lastUpdated": "2016-10-29T10:47:49.109+01:00"
   },
   "extension": [
     {
@@ -4859,7 +4859,7 @@
         "definition": "Identifies specific times when the event occurs.",
         "requirements": "In an MAR, for instance, you need to take a general specification, and turn it into a precise specification.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.event",
           "min": 0,
@@ -4998,7 +4998,7 @@
         "short": "Length/Range of lengths, or (Start and/or end) limits",
         "definition": "Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.bounds[x]",
           "min": 0,
@@ -5063,7 +5063,7 @@
         "comments": "For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).",
         "requirements": "Some activities are not instantaneous and need to be maintained for a period of time.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.duration",
           "min": 0,
@@ -5098,7 +5098,7 @@
         "comments": "For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).",
         "requirements": "Some activities are not instantaneous and need to be maintained for a period of time.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.durationMax",
           "min": 0,
@@ -5123,7 +5123,7 @@
         "short": "s | min | h | d | wk | mo | a - unit of time (UCUM)",
         "definition": "The units of time for the duration, in UCUM units.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.durationUnits",
           "min": 0,
@@ -5181,7 +5181,7 @@
         "short": "Event occurs up to frequencyMax times per period",
         "definition": "If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.frequencyMax",
           "min": 0,
@@ -5239,7 +5239,7 @@
         "short": "Upper limit of period (3-4 hours)",
         "definition": "If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as \"do this once every 3-5 days.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.repeat.periodMax",
           "min": 0,
@@ -5330,7 +5330,7 @@
         "definition": "A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes.",
         "comments": "A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.code",
           "min": 0,
@@ -10633,7 +10633,7 @@
         "definition": "Identifies specific times when the event occurs.",
         "requirements": "In an MAR, for instance, you need to take a general specification, and turn it into a precise specification.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "MedicationOrder.dosageInstruction.timing.event",
           "min": 0,
@@ -10650,219 +10650,6 @@
           {
             "identity": "rim",
             "map": "QLIST<TS>"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.bounds[x]",
-        "short": "Length/Range of lengths, or (Start and/or end) limits",
-        "definition": "Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.bounds[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Quantity",
-            "code": "Quantity",
-            "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Duration"
-            ]
-          },
-          {
-            "TypeName": "Range",
-            "code": "Range"
-          },
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "IVL(TS) used in a QSI"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.duration",
-        "short": "How long when it happens",
-        "definition": "How long this thing happens for when it happens.",
-        "comments": "For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).",
-        "requirements": "Some activities are not instantaneous and need to be maintained for a period of time.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.duration",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "decimal",
-            "code": "decimal"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "tim-4",
-            "severity": 0,
-            "human": "duration SHALL be a non-negative value",
-            "xpath": "@value >= 0 or not(@value)"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "PIVL.phase / EIVL.offset"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.durationMax",
-        "short": "How long when it happens (Max)",
-        "definition": "The upper limit of how long this thing happens for when it happens.",
-        "comments": "For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).",
-        "requirements": "Some activities are not instantaneous and need to be maintained for a period of time.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.durationMax",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "decimal",
-            "code": "decimal"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "PIVL.phase / EIVL.offset"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.durationUnits",
-        "short": "s | min | h | d | wk | mo | a - unit of time (UCUM)",
-        "definition": "The units of time for the duration, in UCUM units.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.durationUnits",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "A unit of time (units from UCUM).",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/units-of-time"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "PIVL.phase.unit"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.frequencyMax",
-        "short": "Event occurs up to frequencyMax times per period",
-        "definition": "If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.frequencyMax",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "integer",
-            "code": "integer"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "PIVL.phase"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.repeat.periodMax",
-        "short": "Upper limit of period (3-4 hours)",
-        "definition": "If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as \"do this once every 3-5 days.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.repeat.periodMax",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "decimal",
-            "code": "decimal"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "PIVL.phase"
-          }
-        ]
-      },
-      {
-        "path": "MedicationOrder.dosageInstruction.timing.code",
-        "short": "QD | QOD | Q4H | Q6H | BID | TID | QID | AM | PM +",
-        "definition": "A code for the timing pattern. Some codes such as BID are ubiquitous, but many institutions define their own additional codes.",
-        "comments": "A repeat should always be defined except for the common codes BID, TID, QID, AM and PM, which all systems are required to understand.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "MedicationOrder.dosageInstruction.timing.code",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 2,
-          "description": "Code for a known / defined timing pattern.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "QSC.code"
           }
         ]
       },

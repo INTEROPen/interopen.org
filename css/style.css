@@ -558,3 +558,9 @@ h1.news-heading
 {
   padding-bottom: 10px;
 }
+
+ul.candidate-profile-name-list li
+{
+  margin: 0px;
+  padding: 0px;
+}

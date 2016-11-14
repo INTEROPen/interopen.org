@@ -19,24 +19,36 @@
     <h3>Member proposals</h3>
     
     <ol>
-      <li><a href="candidate-profiles/convergence/">The CareConnect Group - Proposals for AllergyIntolerance, Condition, MedicationOrder, MedicationStatement, Patient, Observation</a></li>
+      <li><a href="candidate-profiles/convergence/"><span style="font-size: 120%">The CareConnect Group</span></a>
+        <div style="padding-top: 10px;">Available for preview (<a href="candidate-profiles/convergence/">HERE</a>):</div>
+        <ul class="candidate-profile-name-list">
+          <li>AllergyIntolerance</li>
+          <li>Condition</li>
+          <li>MedicationOrder</li>
+          <li>MedicationStatement</li>
+          <li>Observation</li>
+          <li>Patient</li>
+        </ul>
+        
+        <div style="padding-top: 10px;">Under development:</div>
+        <ul class="candidate-profile-name-list">
+          <li>Encounter</li>
+          <li>Immunization</li>
+          <li>VitalSigns</li>
+        </ul>
+      </li>
     </ol>
     
     <h3>Other resouces</h3>
     
     <p>External FHIR resources relevant to UK health and social:</p>
+    
+    <ul>    
+      <li><a href="https://nhsconnect.github.io/gpconnect/index.html">GP-Connect – NHS Digital program for providing a set of APIs into GP system</a></li>
 
-    <p><a href="http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/">HSCIC - Evolving FHIR standards for connecting to GP systems</a></p>
-
-    <p>Other organisations developing and publishing potential candidate FHIR profiles:</p>
-
-    <ul>
-      <li><a href="http://fhir.endeavourhealth.org/">Endeavour Health</a></li>
-      <li><a href="http://fhir.cerner.com/">Cerner</a></li>
+      <li><a href="http://theprsb.org/publications/bible-sets-out-the-latest-agreed-standards">PRSB - Standards for the clinical structure and content of patient records</a></li>
     </ul>
-    
-    <p><a href="http://theprsb.org/publications/bible-sets-out-the-latest-agreed-standards">PRSB - Standards for the clinical structure and content of patient records</a></p>
-    
+      
   </div>
 
 <?php include('includes/footer.php') ?>

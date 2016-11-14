@@ -10,9 +10,10 @@
         <td><span class="event-date">2-3 Mar</span></td>
         <td id="interopsummit">
           <p class="event-title">Interop Summit 2017 - an educational summit where we learn a common language for interoperability, to connect our care system</p>
-          <p><img src="images/interop_summit_small.jpeg"/></p>
           <div class="event-location"><img src="images/world.png" alt="location"/><a href="https://www.google.co.uk/maps/place/Google+UK/@51.5332266,-0.1283026,17z/data=!4m13!1m7!3m6!1s0x48761b3c547b4e55:0x51aabf4a0a9a8e79!2s6+Pancras+Square,+6+King's+Blvd,+Kings+Cross,+London+N1C+4AG!3b1!8m2!3d51.5332266!4d-0.1261086!3m4!1s0x48761b3c54efa6e1:0xc7053ab04745950d!8m2!3d51.5332408!4d-0.1260016">DeepMind Health, London</a></div>
-          <p><a href="https://t.co/U6ir7ZRfg1">For more information and to book your place click here</a>.</p>
+          <p><img src="images/interop_summit_small.jpeg" style="padding-left: 10px;"/></p>
+          <p><img src="images/bullet_go.png"/><a href="interop-summit.php">More information</a></p>
+          <p><img src="images/bullet_go.png"/><a href="http://bit.ly/interop2017">Register your interest</a></p>
         </td>
       </tr>
       <tr>

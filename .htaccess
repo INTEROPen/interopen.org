@@ -9,3 +9,5 @@ RewriteRule ^discuss$ discuss.php [NC,L]
 RewriteRule ^standards$ standards.php [NC,L]
 RewriteRule ^resource-profiles$ resource-profiles.php [NC,L]
 RewriteRule ^connectathon$ connectathon.php [NC,L]
+RewriteRule ^interop-summit$ interop-summit.php [NC,L]
+

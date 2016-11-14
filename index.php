@@ -15,8 +15,8 @@
         <h2 class="index-col-heading">Upcoming events</h2>          
 
         <div class="event">
-          <span class="event-date">28 Sep</span>
-          <span class="event-text"><a href="events#bcsfhir">BCS - Fast Healthcare Interoperability: What you need to know about how HL7 FHIR® is changing the game</a></span>
+          <span class="event-date">2 &amp; 3 Mar</span>
+          <span class="event-text"><a href="events#interopsummit">Interop Summit 2017</a></span>
         </div>
         
         <div class="event">

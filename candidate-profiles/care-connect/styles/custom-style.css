@@ -1,0 +1,31 @@
+
+#resources-table .resources-table-name-column
+{
+    width: 450px;
+}
+
+#resources-table td.resources-table-identifier-column
+{
+	font-size: 14px;
+}
+
+#segment-header
+{
+    border-bottom: 1px solid silver;
+}
+
+#logo
+{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#segment-header .container img
+{
+  margin-top: 0;
+}
+
+#segment-header .container h3
+{
+  font-size: 26px;
+}

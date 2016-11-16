@@ -15,15 +15,15 @@
         <h2 class="index-col-heading">Upcoming events</h2>          
 
         <div class="event">
+          <span class="event-date">30 Nov</span>
+          <span class="event-text"><a href="events#curationteamreview">INTEROPen Curation Team Review</a></span>
+        </div>
+        
+        <div class="event">
           <span class="event-date">2 &amp; 3 Mar</span>
           <span class="event-text"><a href="events#interopsummit">Interop Summit 2017</a></span>
         </div>
         
-        <div class="event">
-          <span class="event-date">TBA</span>
-          <span class="event-text"><a href="events#interopen5">INTEROPen 5</a></span>
-        </div>
-
         <p><a class="btn btn-default" href="events" role="button">View full events list &raquo;</a></p>
 
         <div class="index-interopen4-box">

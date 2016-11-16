@@ -2,6 +2,21 @@
       
   <h1 class="page-heading">Upcoming events</h1>
 
+  <h2>2016</h2>
+
+  <table class="events-table">
+    <tbody>
+      <tr>
+          <td><span class="event-date">30 Nov</span></td>
+          <td id="curationteamreview">
+            <p class="event-title">INTEROPen Curation Team Review</p>
+            <p>The outputs of this meeting will be shared amongst all membership for consultation.</p>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <h2>2017</h2>
 
   <table class="events-table">
@@ -15,10 +30,6 @@
           <p><img src="images/bullet_go.png"/><a href="interop-summit.php">More information</a></p>
           <p><img src="images/bullet_go.png"/><a href="http://bit.ly/interop2017">Register your interest</a></p>
         </td>
-      </tr>
-      <tr>
-          <td><span class="event-date">TBA</span></td>
-          <td class="event-title" id="interopen5">INTEROPen 5</td>
       </tr>
     </tbody>
   </table>

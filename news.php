@@ -82,6 +82,13 @@
       
       <div class="news-list">
 
+        <div id="3nov">
+          <a class="news-title" href="http://www.digitalhealth.net/infrastructure/48240/ade-memoire:-all-mod-cons">Ade Memoire: all mod cons</a>
+          <p class="news-meta">3 Nov 2016 &nbsp; digitalhealth.net</p>
+          <p class="news-summary">In 1998, Adrian Byrne's trust decided the future was the web. The modern world says it was right, the world of healthcare software that it was wrong. Now, he's got the private hell of deciding where to go on mobile...</p>
+        </div>
+        
+        
         <div id="6sep">
           <a class="news-title" href="http://www.digitalhealth.net/integration/48036/calling-the-fhir-brigade">Calling the FHIR brigade</a>
           <p class="news-meta">6 Sep 2016 &nbsp; digitalhealth.net</p>

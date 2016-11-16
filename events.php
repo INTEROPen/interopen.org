@@ -29,6 +29,7 @@
           <p><img src="images/interop_summit_small.jpeg" style="padding-left: 10px;"/></p>
           <p><img src="images/bullet_go.png"/><a href="interop-summit.php">More information</a></p>
           <p><img src="images/bullet_go.png"/><a href="http://bit.ly/interop2017">Register your interest</a></p>
+          <p><img src="images/twitter.png"/><a href="https://twitter.com/InteropSummit">@InteropSummit on Twitter</a></p>
         </td>
       </tr>
     </tbody>
@@ -45,12 +46,38 @@
   <table class="events-table events-table-past">
     <tbody>
       <tr>
+        <td><span class="event-date">2-3 Nov</span></td>
+        <td id="ehi">
+          <p class="event-title">EHI Live - Interoperability and Personal Health Record</p>
+          <p>Adrian Byrne, Director of IT University Hospital Southampton Foundation Trust</p>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/201610%20interop%20PHR.pdf">Slides from the event</a></p></div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="event-date">2-3 Nov</span></td>
+        <td id="ehi">
+          <p class="event-title">EHI Live - INTEROPen on FHIR</p>
+          <p>Amir Mehrkar - CCIO Orion Health </p>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/INTEROPen%20on%20FHIR%20EHI%20Live%20Amir%20Mehrkar.pdf">Slides from the event</a></p></div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="event-date">19 Oct</span></td>
+        <td id="dcfp">
+          <p class="event-title">Developing Community FHIR Profiles (Webinar)</p>
+          <p>Amir Mehrkar, Orion Health &amp; Richard Kavanagh, NHS Digital</p>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/C4H%20-%20CareConnect%20Profiles%20V4%20Amir%20Richard.pdf">Slides from the webinar</a></p></div>
+        </td>
+      </tr>
+      <tr>
         <td><span class="event-date">28 Sep</span></td>
         <td id="bcsfhir">
           <p class="event-title">BCS - Fast Healthcare Interoperability: What you need to know about how HL7 FHIR® is changing the game</p>
           <p><img src="images/time.png" alt="time"/>12:30 - 16:30</p>
           <div class="event-location"><img src="images/world.png" alt="location"/><a href="https://www.google.co.uk/maps/place/British+Computer+Society+Bcs/@51.5108256,-0.1217621,15z/data=!4m5!3m4!1s0x0:0xec07e04f1cca62f9!8m2!3d51.5108256!4d-0.1217621">BCS, London</a></div>
-          <p>This event is organised and run by the British Computer Society - <a href="https://events.bcs.org/book/2185/">click here for more information and to book</a></p>
+          <p>This event was organised and run by the British Computer Society</p>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/FHIR%20workshop%20invitation%20v1.pdf">Agenda</a></p></div>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/Amir%20Mehrkar%20-%20INTEROPen%20on%20FHIR%20HL7%20BCS%20public.pdf">INTEROPen on FHIR Slides - Amir Mehrkar</a></p></div>
         </td>
       </tr>
       <tr>

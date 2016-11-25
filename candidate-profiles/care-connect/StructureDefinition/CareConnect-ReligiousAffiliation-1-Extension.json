@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext",
+  "url": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml",
   "name": "CareConnect-ReligiousAffiliation-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -127,7 +127,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -156,7 +156,7 @@
           "strength": 0,
           "description": "A code classifying the person's religious affiliation.",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1.valueset.xml"
           }
         },
         "mapping": [
@@ -216,7 +216,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -245,7 +245,7 @@
           "strength": 0,
           "description": "A code classifying the person's religious affiliation.",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1.valueset.xml"
           }
         },
         "mapping": [

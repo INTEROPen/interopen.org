@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-10-29T10:47:49.109+01:00"
+    "lastUpdated": "2016-11-24T22:43:27.041+00:00"
   },
   "extension": [
     {
@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-MedicationOrder-1",
+  "url": "http://hl7.org.uk/CareConnect-MedicationOrder-1.structuredefinition.xml",
   "version": "1.0",
   "name": "CareConnect-MedicationOrder-1",
   "status": "draft",
@@ -92,7 +92,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext"
+              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -2529,7 +2529,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3420,10 +3420,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              2
+              "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3570,7 +3567,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3718,7 +3715,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Encounter"
+              "http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3869,7 +3866,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Condition-1"
+              "http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3935,7 +3932,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Medication"
+              "http://hl7.org.uk/CareConnect-Medication-1.structuredefinition.xml"
             ]
           }
         ],
@@ -3944,7 +3941,7 @@
           "strength": 0,
           "description": "Codes identifying medication item",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1.valueset.xml"
           }
         },
         "mapping": [
@@ -6171,7 +6168,7 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
         },
         "mapping": [
           {
@@ -6834,7 +6831,7 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
         },
         "mapping": [
           {
@@ -8146,7 +8143,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationQuantityText-1-Ext"
+              "http://hl7.org.uk/CareConnect-MedicationQuantityText-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -9538,7 +9535,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrder-1"
+              "http://hl7.org.uk/CareConnect-MedicationOrder-1.structuredefinition.xml"
             ]
           }
         ],
@@ -9729,7 +9726,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Ext"
+              "http://hl7.org.uk/CareConnect-MedicationOrderStatement-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -9801,6 +9798,43 @@
           {
             "identity": "servd",
             "map": "./Value"
+          }
+        ]
+      },
+      {
+        "path": "MedicationOrder.identifier.assigner",
+        "short": "Organization that issued id (may be just text)",
+        "definition": "Organization that issued/manages the identifier.",
+        "comments": "The reference may be just a text description of the assigner.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationOrder.identifier.assigner",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.4 / (CX.4,CX.9,CX.10)"
+          },
+          {
+            "identity": "rim",
+            "map": "II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
+          },
+          {
+            "identity": "servd",
+            "map": "./IdentifierIssuingAuthority"
           }
         ]
       },
@@ -10112,10 +10146,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
-            ],
-            "aggregation": [
-              2
+              "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml"
             ]
           }
         ],
@@ -10180,7 +10211,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
             ]
           }
         ],
@@ -10226,6 +10257,43 @@
           {
             "identity": "rim",
             "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "MedicationOrder.encounter",
+        "short": "Created during encounter/admission/stay",
+        "definition": "A link to a resource that identifies the particular occurrence of contact between patient and health care provider.",
+        "comments": "SubstanceAdministration->component->EncounterEvent.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "MedicationOrder.encounter",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PV1-19-Visit Number"
+          },
+          {
+            "identity": "rim",
+            "map": "componentOf.patientEncounter"
+          },
+          {
+            "identity": "w5",
+            "map": "context"
           }
         ]
       },
@@ -10278,7 +10346,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Condition-1"
+              "http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml"
             ]
           }
         ],
@@ -10325,7 +10393,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Medication"
+              "http://hl7.org.uk/CareConnect-Medication-1.structuredefinition.xml"
             ]
           }
         ],
@@ -10334,7 +10402,7 @@
           "strength": 0,
           "description": "Codes identifying medication item",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1.valueset.xml"
           }
         },
         "mapping": [
@@ -10793,7 +10861,7 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
         },
         "mapping": [
           {
@@ -11012,7 +11080,7 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
         },
         "mapping": [
           {
@@ -11313,7 +11381,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationQuantityText-1-Ext"
+              "http://hl7.org.uk/CareConnect-MedicationQuantityText-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -11672,7 +11740,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-MedicationOrder-1"
+              "http://hl7.org.uk/CareConnect-MedicationOrder-1.structuredefinition.xml"
             ]
           }
         ],

@@ -1,5 +1,4 @@
 ﻿{
-  "id": "CareConnect-ReligiousAffiliation-1",
   "meta": {
     "lastUpdated": "2015-11-01T10:00:00"
   },
@@ -13,9 +12,9 @@
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-oid"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-VS",
+  "url": "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1.valueset.xml",
   "version": "1.0.0",
-  "name": "CareConnect-ReligiousAffiliation-1-Valueset",
+  "name": "CareConnect-ReligiousAffiliation-1",
   "status": "draft",
   "publisher": "HL7 UK",
   "description": "A code from the SNOMED Clinical Terminology UK coding system that describes the religious or other belief system affiliation of a person. Any code from the SNOMED CT UK 'Religious Affiliation SnCT' subset with subset original id 10791000000130; the corresponding SNOMED CT UK Refset fully specified name is 'Religious or other belief system affiliation simple reference set (foundation metadata concept)' with Refset Id 999000531000000100.",

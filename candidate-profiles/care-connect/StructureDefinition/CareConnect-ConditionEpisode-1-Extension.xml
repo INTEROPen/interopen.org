@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Ext" />
+  <url value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Extension.structuredefinition.xml" />
   <name value="CareConnect-ConditionEpisode-1-Extension" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -98,7 +98,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Extension.structuredefinition.xml" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -121,7 +121,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-ConditionEpisodicity-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-ConditionEpisodicity-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -167,7 +167,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Extension.structuredefinition.xml" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -190,7 +190,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-ConditionEpisodicity-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-ConditionEpisodicity-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>

@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext",
+  "url": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml",
   "name": "CareConnect-TreatmentCategory-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -133,7 +133,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -163,7 +163,7 @@
           "strength": 0,
           "description": "A vocabulary that identifies the treatment category for this patient.",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-TreatmentCategory-1.valueset.xml"
           }
         },
         "mapping": [
@@ -229,7 +229,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -259,7 +259,7 @@
           "strength": 0,
           "description": "A vocabulary that identifies the treatment category for this patient.",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-TreatmentCategory-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-TreatmentCategory-1.valueset.xml"
           }
         },
         "mapping": [

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-10-25T00:49:50.496+01:00"
+    "lastUpdated": "2016-11-24T21:27:38.599+00:00"
   },
   "extension": [
     {
@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-Patient-1",
+  "url": "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml",
   "version": "1.0",
   "name": "CareConnect-Patient-1",
   "status": "draft",
@@ -69,6 +69,7 @@
       {
         "path": "Patient.extension",
         "name": "ethnicCategory",
+        "short": "Ethnic category",
         "definition": "The ethnicity of the subject.",
         "min": 0,
         "max": "1",
@@ -77,7 +78,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-EthnicCategory-1-Ext"
+              "http://hl7.org.uk/CareConnect-EthnicCategory-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -85,6 +86,7 @@
       {
         "path": "Patient.extension",
         "name": "religiousAffiliation",
+        "short": "Religious affiliation",
         "definition": "The religious affiliation of the subject.",
         "min": 0,
         "max": "1",
@@ -93,7 +95,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext"
+              "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -102,6 +104,7 @@
         "path": "Patient.extension",
         "name": "gpRegistrationDetails",
         "short": "Additional GP registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "1",
         "type": [
@@ -109,7 +112,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext"
+              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -126,10 +129,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext"
+              "http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.extension",
@@ -143,10 +147,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
+              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.extension",
@@ -160,22 +165,14 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
+              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
-        "path": "Patient.modifierExtension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "Patient.modifierExtension",
+        "path": "Patient.extension",
         "name": "nhsCommunication",
         "short": "NHS communication preferences for a resource",
         "definition": "Communication preferences including a list of Languages which may be used for communication",
@@ -186,10 +183,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext"
+              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.id",
@@ -2816,6 +2814,7 @@
       {
         "path": "Patient.identifier.extension",
         "name": "nhsNumberVerificationStatus",
+        "short": "NHS number verification status",
         "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "1",
@@ -2824,7 +2823,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext"
+              "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -8041,7 +8040,7 @@
         "binding": {
           "strength": 0,
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1.valueset.xml"
           }
         },
         "mapping": [
@@ -11664,7 +11663,7 @@
         ],
         "binding": {
           "strength": 0,
-          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
         },
         "mapping": [
           {
@@ -12385,7 +12384,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
+              "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml"
             ]
           }
         ],
@@ -12603,6 +12602,7 @@
       {
         "path": "Patient.extension",
         "name": "ethnicCategory",
+        "short": "Ethnic category",
         "definition": "The ethnicity of the subject.",
         "min": 0,
         "max": "1",
@@ -12611,7 +12611,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-EthnicCategory-1-Ext"
+              "http://hl7.org.uk/CareConnect-EthnicCategory-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -12619,6 +12619,7 @@
       {
         "path": "Patient.extension",
         "name": "religiousAffiliation",
+        "short": "Religious affiliation",
         "definition": "The religious affiliation of the subject.",
         "min": 0,
         "max": "1",
@@ -12627,7 +12628,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext"
+              "http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -12636,6 +12637,7 @@
         "path": "Patient.extension",
         "name": "gpRegistrationDetails",
         "short": "Additional GP registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "1",
         "type": [
@@ -12643,7 +12645,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext"
+              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -12660,10 +12662,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-OrganDonor-1-Ext"
+              "http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.extension",
@@ -12677,10 +12680,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext"
+              "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.extension",
@@ -12694,22 +12698,14 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext"
+              "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
-        "path": "Patient.modifierExtension",
-        "slicing": {
-          "discriminator": [
-            "url"
-          ],
-          "rules": 2
-        }
-      },
-      {
-        "path": "Patient.modifierExtension",
+        "path": "Patient.extension",
         "name": "nhsCommunication",
         "short": "NHS communication preferences for a resource",
         "definition": "Communication preferences including a list of Languages which may be used for communication",
@@ -12720,10 +12716,11 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext"
+              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "isModifier": false
       },
       {
         "path": "Patient.id",
@@ -12840,6 +12837,7 @@
       {
         "path": "Patient.identifier.extension",
         "name": "nhsNumberVerificationStatus",
+        "short": "NHS number verification status",
         "definition": "Optional Extensions Element - found in all resources.",
         "min": 0,
         "max": "1",
@@ -12848,7 +12846,7 @@
             "TypeName": "Extension",
             "code": "Extension",
             "profile": [
-              "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext"
+              "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -14307,7 +14305,7 @@
         "binding": {
           "strength": 0,
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-PersonRelationshipType-1.valueset.xml"
           }
         },
         "mapping": [
@@ -14933,7 +14931,7 @@
         ],
         "binding": {
           "strength": 0,
-          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1-VS"
+          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
         },
         "mapping": [
           {
@@ -15172,7 +15170,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1"
+              "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml"
             ]
           }
         ],

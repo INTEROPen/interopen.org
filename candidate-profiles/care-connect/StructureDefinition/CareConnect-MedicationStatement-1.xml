@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-10-29T10:46:59.806+01:00" />
+    <lastUpdated value="2016-11-24T22:36:30.159+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-MedicationStatement-1" />
+  <url value="http://hl7.org.uk/CareConnect-MedicationStatement-1.structuredefinition.xml" />
   <name value="CareConnect-MedicationStatement-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -70,7 +70,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -82,7 +82,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -93,7 +93,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -105,7 +105,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -2104,7 +2104,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2218,8 +2218,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2332,16 +2331,15 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-      <type>
-        <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2974,8 +2972,7 @@
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Condition-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <binding>
@@ -3150,14 +3147,14 @@
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
+        <profile value="http://hl7.org.uk/CareConnect-Medication-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <binding>
         <strength value="required" />
         <description value="Codes identifying medication item" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -3204,7 +3201,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -4421,7 +4418,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />
@@ -4966,7 +4963,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />
@@ -5761,7 +5758,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -5773,7 +5770,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementQuantity-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -5784,7 +5781,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationStatementLastIssueDate-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -5796,7 +5793,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationRepeatInformation-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -5860,6 +5857,36 @@
       </mapping>
     </element>
     <element>
+      <path value="MedicationStatement.identifier.assigner" />
+      <short value="Organization that issued id (may be just text)" />
+      <definition value="Organization that issued/manages the identifier." />
+      <comments value="The reference may be just a text description of the assigner." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="MedicationStatement.identifier.assigner" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / (CX.4,CX.9,CX.10)" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierIssuingAuthority" />
+      </mapping>
+    </element>
+    <element>
       <path value="MedicationStatement.patient" />
       <short value="Who is/was taking  the medication" />
       <definition value="The person or animal who is/was taking the medication." />
@@ -5872,8 +5899,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -5901,16 +5927,15 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-      <type>
-        <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -6116,8 +6141,7 @@
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Condition-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <binding>
@@ -6163,14 +6187,14 @@
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
+        <profile value="http://hl7.org.uk/CareConnect-Medication-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <binding>
         <strength value="required" />
         <description value="Codes identifying medication item" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-ManufacturedMaterialSnCT-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -6217,7 +6241,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -6368,7 +6392,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />
@@ -6555,7 +6579,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />

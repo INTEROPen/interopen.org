@@ -6,7 +6,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext" />
+  <url value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml" />
   <name value="CareConnect-MedicationStatementReasonEnded-1-Extension" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -99,7 +99,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
@@ -167,7 +167,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext" />
+      <fixedUri value="http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml" />
       <mapping>
         <identity value="rim" />
         <map value="N/A" />

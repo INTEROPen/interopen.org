@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext",
+  "url": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml",
   "name": "CareConnect-NhsCommunication-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -83,7 +83,7 @@
           "strength": 0,
           "description": "A human language",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-HumanLanguage-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
           }
         }
       },
@@ -226,7 +226,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -448,7 +448,7 @@
           "strength": 0,
           "description": "A human language",
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-HumanLanguage-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
           }
         }
       },
@@ -535,7 +535,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",

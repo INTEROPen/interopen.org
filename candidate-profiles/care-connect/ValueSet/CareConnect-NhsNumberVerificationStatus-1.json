@@ -1,5 +1,4 @@
 ﻿{
-  "id": "CareConnect-NhsNumberVerificationStatus-1",
   "meta": {
     "lastUpdated": "2015-10-27T00:00:00+00:00"
   },
@@ -13,9 +12,9 @@
       "url": "http://hl7.org/fhir/StructureDefinition/valueset-sourceReference"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-VS",
+  "url": "http://hl7.org.uk/CareConnect-NhsNumberVerificationStatus-1.valueset.xml",
   "version": "1.0.0",
-  "name": "CareConnect-NhsNumberVerificationStatus-1-Valueset",
+  "name": "CareConnect-NhsNumberVerificationStatus-1",
   "status": "draft",
   "publisher": "HL7 UK",
   "description": "NHS number verification status.  This valueset is comprised of codes from NHS Data Dictionary: NHS Number Status Indicator Code.",

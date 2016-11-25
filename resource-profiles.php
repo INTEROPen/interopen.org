@@ -24,18 +24,17 @@
         <ul class="candidate-profile-name-list">
           <li>AllergyIntolerance</li>
           <li>Condition</li>
+          <li>Encounter</li>
+          <li>Immunization</li>
+          <li>Location</li>
+          <li>Medication</li>
           <li>MedicationOrder</li>
           <li>MedicationStatement</li>
           <li>Observation</li>
+          <li>Organization</li>
           <li>Patient</li>
-        </ul>
-        
-        <div style="padding-top: 10px;">Under development:</div>
-        <ul class="candidate-profile-name-list">
-          <li>Encounter</li>
-          <li>Immunization</li>
-          <li>VitalSigns</li>
-        </ul>
+          <li>Practitioner</li>
+        </ul>        
       </li>
     </ol>
     

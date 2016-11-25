@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-10-25T00:58:29.47+01:00" />
+    <lastUpdated value="2016-11-25T08:00:33.228+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-Observation-1" />
+  <url value="http://hl7.org.uk/CareConnect-Observation-1.structuredefinition.xml" />
   <name value="CareConnect-Observation-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -1514,7 +1514,7 @@
       <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.identifier.use" />
         <min value="0" />
@@ -1548,7 +1548,7 @@
       <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
       <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.identifier.type" />
         <min value="0" />
@@ -1870,7 +1870,7 @@
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
       <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Observation.identifier.system" />
@@ -1930,7 +1930,7 @@
       <short value="Time period when id is/was valid for use" />
       <definition value="Time period during which identifier is/was valid for use." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.identifier.period" />
         <min value="0" />
@@ -2054,7 +2054,7 @@
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.identifier.assigner" />
         <min value="0" />
@@ -2062,7 +2062,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2209,7 +2209,7 @@
       <definition value="A code that classifies the general type of observation being made.  This is used  for searching, sorting and display purposes." />
       <comments value="The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Observation.code." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.category" />
         <min value="0" />
@@ -2278,6 +2278,10 @@
     </element>
     <element>
       <path value="Observation.category.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -2473,6 +2477,232 @@
       <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
       <min value="0" />
       <max value="1" />
+      <base>
+        <path value="Observation.category.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation of the category of observation" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes for high level observation categories." />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Observation.category.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.category.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="0" />
       <base>
         <path value="Observation.category.coding.userSelected" />
         <min value="0" />
@@ -3099,8 +3329,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3130,7 +3359,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+        <profile value="http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -3231,7 +3460,7 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.effectiveDateTime" />
+      <path value="Observation.effective[x]" />
       <short value="Clinically relevant time/time-period for observation" />
       <definition value="The time or time-period the observed value is asserted as being true. This is usually called the &quot;physiologically relevant time&quot;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself." />
       <comments value="At least a date should be present unless this observation is a historical report." />
@@ -3245,6 +3474,9 @@
       </base>
       <type>
         <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3266,7 +3498,7 @@
       <definition value="The date and time this observation was made available to providers, typically after the results have been reviewed and verified." />
       <comments value="Updated when the result is updated." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.issued" />
         <min value="0" />
@@ -3303,12 +3535,19 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3366,7 +3605,7 @@
       <comments value="Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;specimen unsatisfactory&quot;.   The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." />
       <requirements value="For many results it is necessary to handle exceptional values in measurements." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.dataAbsentReason" />
         <min value="0" />
@@ -3436,6 +3675,10 @@
     </element>
     <element>
       <path value="Observation.dataAbsentReason.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -3654,6 +3897,232 @@
       </mapping>
     </element>
     <element>
+      <path value="Observation.dataAbsentReason.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation specifying why the result value is missing" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes specifying why the result value is missing" />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
       <path value="Observation.dataAbsentReason.text" />
       <short value="Plain text representation of the concept" />
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
@@ -3759,6 +4228,10 @@
     </element>
     <element>
       <path value="Observation.interpretation.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -3865,7 +4338,7 @@
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
       <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.interpretation.coding.version" />
         <min value="0" />
@@ -3953,7 +4426,233 @@
       <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
       <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
       <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT identifying interpretation of the observation" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Codes identifying interpretations of observations" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-ObservationInterpretation-1.valueset.xml" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Observation.interpretation.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
       <max value="0" />
+      <base>
+        <path value="Observation.interpretation.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.interpretation.coding.userSelected" />
         <min value="0" />
@@ -4347,6 +5046,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="required" />
+        <description value="Codes describing anatomical locations" />
         <valueSetUri value="http://snomed.info/sct" />
       </binding>
       <mapping>
@@ -6976,8 +7676,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Observation-1.structuredefinition.xml" />
       </type>
       <mapping>
         <identity value="rim" />
@@ -7676,7 +8375,7 @@
       <comments value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;.   The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." />
       <requirements value="For many results it is necessary to handle exceptional values in measurements." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.component.dataAbsentReason" />
         <min value="0" />
@@ -7746,6 +8445,10 @@
     </element>
     <element>
       <path value="Observation.component.dataAbsentReason.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
       <short value="Code defined by a terminology system" />
       <definition value="A reference to a code defined by a terminology system." />
       <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
@@ -7964,6 +8667,232 @@
       </mapping>
     </element>
     <element>
+      <path value="Observation.component.dataAbsentReason.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation specifying why the result value is missing" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes specifying why the result value is missing" />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references)." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="id" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.extension" />
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comments value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+      </mapping>
+    </element>
+    <element>
       <path value="Observation.component.dataAbsentReason.text" />
       <short value="Plain text representation of the concept" />
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
@@ -8063,70 +8992,33 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.identifier.use" />
-      <short value="usual | official | temp | secondary (If known)" />
-      <definition value="The purpose of this identifier." />
-      <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
-      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
-      <min value="0" />
-      <max value="0" />
+      <path value="Observation.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="Observation.identifier.use" />
+        <path value="Observation.identifier.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="code" />
+        <code value="uri" />
       </type>
-      <isModifier value="true" />
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
       <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="Identifies the purpose for this identifier, if known ." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-use" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="v2" />
-        <map value="N/A" />
+        <map value="CX.4 / EI-2-4" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="Role.code or implied by context" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Observation.identifier.type" />
-      <short value="Description of identifier" />
-      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
-      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
-      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Observation.identifier.type" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="extensible" />
-        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.5" />
+        <map value="II.root or Role.id.root" />
       </mapping>
       <mapping>
-        <identity value="rim" />
-        <map value="Role.code or implied by context" />
+        <identity value="servd" />
+        <map value="./IdentifierType" />
       </mapping>
     </element>
     <element>
@@ -8160,40 +9052,12 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.identifier.period" />
-      <short value="Time period when id is/was valid for use" />
-      <definition value="Time period during which identifier is/was valid for use." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Observation.identifier.period" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Period" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.7 + CX.8" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="Role.effectiveTime or implied by context" />
-      </mapping>
-      <mapping>
-        <identity value="servd" />
-        <map value="./StartDate and ./EndDate" />
-      </mapping>
-    </element>
-    <element>
       <path value="Observation.identifier.assigner" />
       <short value="Organization that issued id (may be just text)" />
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Observation.identifier.assigner" />
         <min value="0" />
@@ -8201,7 +9065,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -8218,34 +9082,221 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.category" />
-      <short value="Classification of  type of observation" />
-      <definition value="A code that classifies the general type of observation being made.  This is used  for searching, sorting and display purposes." />
-      <comments value="The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Observation.code." />
+      <path value="Observation.category.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
-        <path value="Observation.category" />
+        <path value="Observation.category.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation of the category of observation" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes for high level observation categories." />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="uri" />
       </type>
-      <binding>
-        <strength value="example" />
-        <description value="Codes for high level observation categories ." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/observation-category" />
-        </valueSetReference>
-      </binding>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
       <mapping>
-        <identity value="rim" />
-        <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code" />
+        <identity value="v2" />
+        <map value="C*E.3" />
       </mapping>
       <mapping>
-        <identity value="w5" />
-        <map value="class" />
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.category.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.category.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.category.coding.userSelected" />
+      <short value="If this coding was chosen directly by the user" />
+      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
+      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.category.coding.userSelected" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="Sometimes implied by being first" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CD.codingRationale" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
       </mapping>
     </element>
     <element>
@@ -8453,8 +9504,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -8468,6 +9518,35 @@
       <mapping>
         <identity value="w5" />
         <map value="who.focus" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.encounter" />
+      <short value="Healthcare event during which this observation is made" />
+      <definition value="The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made." />
+      <requirements value="For some observations it may be important to know the link between an observation and a particular encounter." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.encounter" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml" />
+      </type>
+      <mapping>
+        <identity value="v2" />
+        <map value="PV1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="context" />
       </mapping>
     </element>
     <element>
@@ -8493,7 +9572,7 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.effectiveDateTime" />
+      <path value="Observation.effective[x]" />
       <short value="Clinically relevant time/time-period for observation" />
       <definition value="The time or time-period the observed value is asserted as being true. This is usually called the &quot;physiologically relevant time&quot;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself." />
       <comments value="At least a date should be present unless this observation is a historical report." />
@@ -8507,6 +9586,9 @@
       </base>
       <type>
         <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -8523,35 +9605,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.issued" />
-      <short value="Date/Time this was made available" />
-      <definition value="The date and time this observation was made available to providers, typically after the results have been reviewed and verified." />
-      <comments value="Updated when the result is updated." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Observation.issued" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="instant" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="participation[typeCode=AUT].time" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="when.recorded" />
-      </mapping>
-    </element>
-    <element>
       <path value="Observation.performer" />
       <short value="Who is responsible for the observation" />
       <definition value="Who was responsible for asserting the observed value as &quot;true&quot;." />
@@ -8565,12 +9618,19 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -8622,36 +9682,292 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.dataAbsentReason" />
-      <short value="Why the result is missing" />
-      <definition value="Provides a reason why the expected value in the element Observation.value[x] is missing." />
-      <comments value="Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;specimen unsatisfactory&quot;.   The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." />
-      <requirements value="For many results it is necessary to handle exceptional values in measurements." />
+      <path value="Observation.dataAbsentReason.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
-        <path value="Observation.dataAbsentReason" />
+        <path value="Observation.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation specifying why the result value is missing" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes specifying why the result value is missing" />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="uri" />
       </type>
-      <condition value="obs-6" />
-      <binding>
-        <strength value="extensible" />
-        <description value="Codes specifying why the result (Observation.value[x]) is missing." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/observation-valueabsentreason" />
-        </valueSetReference>
-      </binding>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="N/A" />
+        <map value="C*E.3" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="value.nullFlavor" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.dataAbsentReason.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.dataAbsentReason.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Observation.interpretation.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT identifying interpretation of the observation" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="extensible" />
+        <description value="Codes identifying interpretations of observations" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-ObservationInterpretation-1.valueset.xml" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.3" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
       </mapping>
     </element>
     <element>
@@ -8684,33 +10000,61 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.interpretation.coding.userSelected" />
-      <short value="If this coding was chosen directly by the user" />
-      <definition value="Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
-      <comments value="Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely." />
-      <requirements value="This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing." />
-      <min value="0" />
-      <max value="0" />
+      <path value="Observation.interpretation.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="Observation.interpretation.coding.userSelected" />
+        <path value="Observation.interpretation.coding.code" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="boolean" />
+        <code value="code" />
       </type>
       <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="Sometimes implied by being first" />
+        <map value="C*E.1" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="CD.codingRationale" />
+        <map value="./code" />
       </mapping>
       <mapping>
         <identity value="orim" />
-        <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.interpretation.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.interpretation.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
       </mapping>
     </element>
     <element>
@@ -8767,6 +10111,7 @@
       <isSummary value="true" />
       <binding>
         <strength value="required" />
+        <description value="Codes describing anatomical locations" />
         <valueSetUri value="http://snomed.info/sct" />
       </binding>
       <mapping>
@@ -9420,8 +10765,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Observation-1" />
-        <aggregation value="referenced" />
+        <profile value="http://hl7.org.uk/CareConnect-Observation-1.structuredefinition.xml" />
       </type>
       <mapping>
         <identity value="rim" />
@@ -9652,36 +10996,191 @@
       </mapping>
     </element>
     <element>
-      <path value="Observation.component.dataAbsentReason" />
-      <short value="Why the component result is missing" />
-      <definition value="Provides a reason why the expected value in the element Observation.value[x] is missing." />
-      <comments value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;.   The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." />
-      <requirements value="For many results it is necessary to handle exceptional values in measurements." />
+      <path value="Observation.component.dataAbsentReason.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+      <short value="Code defined by a terminology system" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
-        <path value="Observation.component.dataAbsentReason" />
+        <path value="Observation.component.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation specifying why the result value is missing" />
+      <definition value="A reference to a code defined by a terminology system." />
+      <comments value="Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labelled as UserSelected = true." />
+      <requirements value="Allows for translations and alternate encodings within a code system.  Also supports communication of the same instance to systems requiring different encodings." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Coding" />
+      </type>
+      <isSummary value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Codes specifying why the result value is missing" />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1-8, C*E.10-22" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="union(., ./translation)" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.system" />
+      <short value="Identity of the terminology system" />
+      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <comments value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should de-reference to some definition that establish the system clearly and unambiguously." />
+      <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="uri" />
       </type>
-      <condition value="obs-6" />
-      <binding>
-        <strength value="extensible" />
-        <description value="Codes specifying why the result (Observation.value[x]) is missing." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/observation-valueabsentreason" />
-        </valueSetReference>
-      </binding>
+      <fixedUri value="http://snomed.info/sct" />
+      <isSummary value="true" />
       <mapping>
         <identity value="v2" />
-        <map value="N/A" />
+        <map value="C*E.3" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="value.nullFlavor" />
+        <map value="./codeSystem" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.version" />
+      <short value="Version of the system - if relevant" />
+      <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <comments value="Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date." />
+      <min value="0" />
+      <max value="0" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.version" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.7" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./codeSystemVersion" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.code" />
+      <short value="Symbol in syntax defined by the system" />
+      <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <requirements value="Need to refer to a particular code in the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.code" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="code" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="./code" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Observation.component.dataAbsentReason.coding.display" />
+      <short value="Representation defined by the system" />
+      <definition value="A representation of the meaning of the code in the system, following the rules of the system." />
+      <requirements value="Need to be able to carry a human-readable meaning of the code for readers that do not know  the system." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Observation.component.dataAbsentReason.coding.display" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="C*E.2 - but note this is not well followed" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="CV.displayName" />
+      </mapping>
+      <mapping>
+        <identity value="orim" />
+        <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
       </mapping>
     </element>
   </differential>

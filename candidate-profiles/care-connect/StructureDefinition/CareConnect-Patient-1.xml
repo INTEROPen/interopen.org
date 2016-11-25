@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-10-25T00:49:50.496+01:00" />
+    <lastUpdated value="2016-11-24T21:27:38.599+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
-  <url value="http://hl7.org.uk/CareConnect-Patient-1" />
+  <url value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
   <version value="1.0" />
   <name value="CareConnect-Patient-1" />
   <status value="draft" />
@@ -57,34 +57,37 @@
     <element>
       <path value="Patient.extension" />
       <name value="ethnicCategory" />
+      <short value="Ethnic category" />
       <definition value="The ethnicity of the subject." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-EthnicCategory-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-EthnicCategory-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
       <path value="Patient.extension" />
       <name value="religiousAffiliation" />
+      <short value="Religious affiliation" />
       <definition value="The religious affiliation of the subject." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
       <path value="Patient.extension" />
       <name value="gpRegistrationDetails" />
       <short value="Additional GP registration information for the Patient resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -96,8 +99,9 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -108,8 +112,9 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -120,18 +125,12 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
-      <path value="Patient.modifierExtension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="Patient.modifierExtension" />
+      <path value="Patient.extension" />
       <name value="nhsCommunication" />
       <short value="NHS communication preferences for a resource" />
       <definition value="Communication preferences including a list of Languages which may be used for communication" />
@@ -139,8 +138,9 @@
       <max value="*" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.id" />
@@ -2296,12 +2296,13 @@
     <element>
       <path value="Patient.identifier.extension" />
       <name value="nhsNumberVerificationStatus" />
+      <short value="NHS number verification status" />
       <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -6560,7 +6561,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-PersonRelationshipType-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -9518,7 +9519,7 @@
       </type>
       <binding>
         <strength value="required" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />
@@ -10100,7 +10101,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isModifier value="true" />
       <mapping>
@@ -10272,34 +10273,37 @@
     <element>
       <path value="Patient.extension" />
       <name value="ethnicCategory" />
+      <short value="Ethnic category" />
       <definition value="The ethnicity of the subject." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-EthnicCategory-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-EthnicCategory-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
       <path value="Patient.extension" />
       <name value="religiousAffiliation" />
+      <short value="Religious affiliation" />
       <definition value="The religious affiliation of the subject." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-ReligiousAffiliation-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
       <path value="Patient.extension" />
       <name value="gpRegistrationDetails" />
       <short value="Additional GP registration information for the Patient resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -10311,8 +10315,9 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10323,8 +10328,9 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10335,18 +10341,12 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
-      <path value="Patient.modifierExtension" />
-      <slicing>
-        <discriminator value="url" />
-        <rules value="openAtEnd" />
-      </slicing>
-    </element>
-    <element>
-      <path value="Patient.modifierExtension" />
+      <path value="Patient.extension" />
       <name value="nhsCommunication" />
       <short value="NHS communication preferences for a resource" />
       <definition value="Communication preferences including a list of Languages which may be used for communication" />
@@ -10354,8 +10354,9 @@
       <max value="*" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
+      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.id" />
@@ -10455,12 +10456,13 @@
     <element>
       <path value="Patient.identifier.extension" />
       <name value="nhsNumberVerificationStatus" />
+      <short value="NHS number verification status" />
       <definition value="Optional Extensions Element - found in all resources." />
       <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Ext" />
+        <profile value="http://hl7.org.uk/CareConnect-NhsNumberVerificatnStatus-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -11700,7 +11702,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-PersonRelationshipType-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-PersonRelationshipType-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -12229,7 +12231,7 @@
       </type>
       <binding>
         <strength value="required" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1-VS" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml" />
       </binding>
       <mapping>
         <identity value="v2" />
@@ -12431,7 +12433,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Patient-1" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
       </type>
       <isModifier value="true" />
       <mapping>

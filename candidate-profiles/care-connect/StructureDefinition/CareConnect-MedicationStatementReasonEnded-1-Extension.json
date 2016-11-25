@@ -8,7 +8,7 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext",
+  "url": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml",
   "name": "CareConnect-MedicationStatementReasonEnded-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -128,7 +128,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -215,7 +215,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Ext",
+        "Item1": "http://hl7.org.uk/CareConnect-MedicationStatementReasonEnded-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",

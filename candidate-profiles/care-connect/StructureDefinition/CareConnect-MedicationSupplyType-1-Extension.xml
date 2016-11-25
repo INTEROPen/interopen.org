@@ -121,7 +121,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -190,7 +190,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1-VS" />
+          <reference value="http://hl7.org.uk/CareConnect-MedicationSupplyType-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>

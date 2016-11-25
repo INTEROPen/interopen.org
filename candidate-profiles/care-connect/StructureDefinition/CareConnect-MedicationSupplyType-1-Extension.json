@@ -155,7 +155,7 @@
         "binding": {
           "strength": 0,
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-MedicationSupplyType-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-MedicationSupplyType-1.valueset.xml"
           }
         },
         "mapping": [
@@ -243,7 +243,7 @@
         "binding": {
           "strength": 0,
           "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-MedicationSupplyType-1-VS"
+            "reference": "http://hl7.org.uk/CareConnect-MedicationSupplyType-1.valueset.xml"
           }
         },
         "mapping": [

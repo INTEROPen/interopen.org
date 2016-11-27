@@ -278,6 +278,11 @@ table tr.removed-row
     width: 50px;
 }
 
+.ignore-whitespace
+{
+    font-size: 0;
+}
+
 
 /***********************************************
 * resource content tabs 

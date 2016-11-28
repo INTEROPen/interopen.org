@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-07-29T10:05:21.043+01:00"
+    "lastUpdated": "2016-11-28T00:02:40.404+00:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml",
   "version": "1.0",
@@ -24,21 +24,6 @@
             "code": "Encounter"
           }
         ]
-      },
-      {
-        "path": "Encounter.identifier",
-        "label": "nhsNumber",
-        "code": [
-          {
-            "system": "http://hl7.org/fhir/sid/icd-9"
-          }
-        ],
-        "slicing": {
-          "discriminator": [
-            "type.coding.system"
-          ],
-          "rules": 2
-        }
       }
     ]
   },

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+	<meta>
+		<lastUpdated value="2016-08-03T00:00:00+01:00"/>
+	</meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+      <valueInteger value="1" />
+    </extension>
+	<url value="http://hl7.org.uk/CareConnect-FamilyMember-1.valueset.xml"/>
+	<name value="CareConnect-FamilyMember-1"/>
+	<status value="draft"/>
+	<publisher value="HL7 UK"/>
+	<description value="An extensible code list from the SNOMED Clinical Terminology UK coding system that describes family member relationships."/>
+	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+	<compose>
+		<include>
+			<system value="http://snomed.info/sct"/>
+			<filter>
+				<property value="concept"/>
+				<op value="in"/>
+				<value value="125677006"/>
+			</filter>
+		</include>
+	</compose>
+</ValueSet>

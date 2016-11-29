@@ -23,8 +23,10 @@
         <div style="padding-top: 10px;">Available for preview (<a href="candidate-profiles/care-connect/">HERE</a>):</div>
         <ul class="candidate-profile-name-list">
           <li>AllergyIntolerance</li>
+          <li>AssociatedLinks</li>
           <li>Condition</li>
           <li>Encounter</li>
+          <li>FamilyMemberHistory</li>
           <li>Immunization</li>
           <li>Location</li>
           <li>Medication</li>
@@ -34,6 +36,7 @@
           <li>Organization</li>
           <li>Patient</li>
           <li>Practitioner</li>
+          <li>Procedure</li>
         </ul>        
       </li>
     </ol>

@@ -278,7 +278,7 @@
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>system</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
               </td>
@@ -295,7 +295,7 @@
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>value</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
               </td>
@@ -1211,7 +1211,7 @@
           </thead>
           <tbody>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck0.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/icon_resource.png" class="hierarchy" alt="." title="Resource" />
@@ -1221,6 +1221,56 @@
               <td>Location</td>
               <td>
                 <p>Details and position information for a physical place</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck01.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>identifier</td>
+              <td>0..*</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Identifier">Identifier</a>
+              </td>
+              <td>
+                <p>Unique code or number identifying the location to its users</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck010.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>system</td>
+              <td>1..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
+              </td>
+              <td>
+                <p>The namespace for the identifier</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck000.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>value</td>
+              <td>1..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
+              </td>
+              <td>
+                <p>The value that is unique</p>
               </td>
             </tr>
           </tbody>

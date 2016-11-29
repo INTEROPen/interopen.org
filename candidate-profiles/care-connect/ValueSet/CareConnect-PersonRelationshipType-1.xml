@@ -17,42 +17,40 @@
 	<codeSystem>
 		<system value="http://hl7.org.uk/fhir/ValueSet/CareConnect-PersonRelationshipType"/>
 		<concept>
-			<code value="1"/>
+			<code value="01"/>
 			<display value="Spouse"/>
 		</concept>
 		<concept>
-			<code value="2"/>
+			<code value="02"/>
 			<display value="Partner"/>
 		</concept>
 		<concept>
-			<code value="3"/>
+			<code value="03"/>
 			<display value="Parent"/>
 		</concept>
 		<concept>
-			<code value="4"/>
+			<code value="04"/>
 			<display value="Next of kin"/>
 		</concept>
 		<concept>
-			<code value="5"/>
+			<code value="05"/>
 			<display value="Guardian"/>
 			<definition value="Other than a parent"/>
 		</concept>
 		<concept>
-			<code value="6"/>
+			<code value="06"/>
 			<display value="Foster parent"/>
 		</concept>
 		<concept>
-			<code value="7"/>
+			<code value="07"/>
 			<display value="Step parent"/>
-			<definition value="Retired from MIM 7.2.00. Was re-activated in 7.2.01"/>
 		</concept>
 		<concept>
-			<code value="8"/>
+			<code value="08"/>
 			<display value="Polygamous partner"/>
-			<definition value="Retired from MIM 7.2.00. Was re-activated in 7.2.01"/>
 		</concept>
 		<concept>
-			<code value="9"/>
+			<code value="09"/>
 			<display value="Child"/>
 		</concept>
 		<concept>
@@ -230,16 +228,6 @@
 		<concept>
 			<code value="51"/>
 			<display value="Non-relative lived with for at least 5 years"/>
-		</concept>
-		<concept>
-			<code value="61"/>
-			<display value="Step parent"/>
-			<definition value="Retired from Publication 7.2.01"/>
-		</concept>
-		<concept>
-			<code value="62"/>
-			<display value="Polygamous partner"/>
-			<definition value="Retired from Publication 7.2.01"/>
 		</concept>
 	</codeSystem>
 </ValueSet>

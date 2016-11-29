@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-24T21:27:38.599+00:00" />
+    <lastUpdated value="2016-11-29T14:23:38.979+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -56,6 +56,29 @@
     </element>
     <element>
       <path value="Patient.extension" />
+      <name value="registrationDetails" />
+      <short value="Additional registration information for the Patient resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-RegistrationDetails-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Patient.extension" />
+      <name value="birthTime" />
+      <short value="The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthTime" />
+      </type>
+    </element>
+    <element>
+      <path value="Patient.extension" />
       <name value="ethnicCategory" />
       <short value="Ethnic category" />
       <definition value="The ethnicity of the subject." />
@@ -80,18 +103,6 @@
     </element>
     <element>
       <path value="Patient.extension" />
-      <name value="gpRegistrationDetails" />
-      <short value="Additional GP registration information for the Patient resource" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml" />
-      </type>
-    </element>
-    <element>
-      <path value="Patient.extension" />
       <name value="organDonor" />
       <short value="An indicator that the patient is listed as an organ donor." />
       <definition value="An indicator that the patient is listed as an organ donor." />
@@ -101,7 +112,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -114,7 +124,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -127,7 +136,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -140,7 +148,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.id" />
@@ -3121,7 +3128,7 @@
       <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
       <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Patient.identifier.type" />
         <min value="0" />
@@ -4265,7 +4272,7 @@
       <comments value="Can provide both a text representation and structured parts." />
       <requirements value="A renderable, unencoded form." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Patient.name.text" />
         <min value="0" />
@@ -4639,7 +4646,7 @@
       <comments value="Can provide both a text representation and structured parts." />
       <requirements value="A renderable, unencoded form." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Patient.name.text" />
         <min value="0" />
@@ -5290,7 +5297,7 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.deceasedDateTime" />
+      <path value="Patient.deceased[x]" />
       <short value="Indicates if the individual is deceased or not" />
       <definition value="Indicates if the individual is deceased or not." />
       <comments value="If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive." />
@@ -5302,6 +5309,9 @@
         <min value="0" />
         <max value="1" />
       </base>
+      <type>
+        <code value="boolean" />
+      </type>
       <type>
         <code value="dateTime" />
       </type>
@@ -6149,7 +6159,7 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.multipleBirthBoolean" />
+      <path value="Patient.multipleBirth[x]" />
       <short value="Whether patient is part of a multiple birth" />
       <definition value="Indicates whether the patient is part of a multiple or indicates the actual birth order." />
       <requirements value="For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs." />
@@ -6162,6 +6172,9 @@
       </base>
       <type>
         <code value="boolean" />
+      </type>
+      <type>
+        <code value="integer" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -9869,7 +9882,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -9899,7 +9916,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -10003,7 +10020,7 @@
       <comments value="There is no assumption that linked patient records have mutual links." />
       <requirements value="There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
         <path value="Patient.link" />
         <min value="0" />
@@ -10272,6 +10289,29 @@
     </element>
     <element>
       <path value="Patient.extension" />
+      <name value="registrationDetails" />
+      <short value="Additional registration information for the Patient resource" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-RegistrationDetails-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Patient.extension" />
+      <name value="birthTime" />
+      <short value="The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/patient-birthTime" />
+      </type>
+    </element>
+    <element>
+      <path value="Patient.extension" />
       <name value="ethnicCategory" />
       <short value="Ethnic category" />
       <definition value="The ethnicity of the subject." />
@@ -10296,18 +10336,6 @@
     </element>
     <element>
       <path value="Patient.extension" />
-      <name value="gpRegistrationDetails" />
-      <short value="Additional GP registration information for the Patient resource" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml" />
-      </type>
-    </element>
-    <element>
-      <path value="Patient.extension" />
       <name value="organDonor" />
       <short value="An indicator that the patient is listed as an organ donor." />
       <definition value="An indicator that the patient is listed as an organ donor." />
@@ -10317,7 +10345,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10330,7 +10357,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10343,7 +10369,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.extension" />
@@ -10356,7 +10381,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="false" />
     </element>
     <element>
       <path value="Patient.id" />
@@ -10686,39 +10710,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.identifier.type" />
-      <short value="Description of identifier" />
-      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
-      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
-      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Patient.identifier.type" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <isSummary value="true" />
-      <binding>
-        <strength value="extensible" />
-        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.5" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="Role.code or implied by context" />
-      </mapping>
-    </element>
-    <element>
       <path value="Patient.identifier.system" />
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
@@ -10881,32 +10872,6 @@
       <mapping>
         <identity value="servd" />
         <map value="./NamePurpose" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Patient.name.text" />
-      <short value="Text representation of the full name" />
-      <definition value="A full text representation of the name." />
-      <comments value="Can provide both a text representation and structured parts." />
-      <requirements value="A renderable, unencoded form." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Patient.name.text" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="string" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="implied by XPN.11" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="./formatted" />
       </mapping>
     </element>
     <element>
@@ -11085,32 +11050,6 @@
       <mapping>
         <identity value="servd" />
         <map value="./NamePurpose" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Patient.name.text" />
-      <short value="Text representation of the full name" />
-      <definition value="A full text representation of the name." />
-      <comments value="Can provide both a text representation and structured parts." />
-      <requirements value="A renderable, unencoded form." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Patient.name.text" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="string" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="implied by XPN.11" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="./formatted" />
       </mapping>
     </element>
     <element>
@@ -11357,37 +11296,6 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.deceasedDateTime" />
-      <short value="Indicates if the individual is deceased or not" />
-      <definition value="Indicates if the individual is deceased or not." />
-      <comments value="If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive." />
-      <requirements value="The fact that a patient is deceased influences the clinical process. Also, in human communication and relation management it is necessary to know whether the person is alive." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Patient.deceased[x]" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <isModifier value="true" />
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="PID-30  (bool) and PID-29 (datetime)" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime" />
-      </mapping>
-      <mapping>
-        <identity value="cda" />
-        <map value="n/a" />
-      </mapping>
-    </element>
-    <element>
       <path value="Patient.address.state" />
       <short value="Sub-unit of country (abbreviations ok)" />
       <definition value="Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes)." />
@@ -11626,34 +11534,6 @@
       <mapping>
         <identity value="orim" />
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Patient.multipleBirthBoolean" />
-      <short value="Whether patient is part of a multiple birth" />
-      <definition value="Indicates whether the patient is part of a multiple or indicates the actual birth order." />
-      <requirements value="For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Patient.multipleBirth[x]" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="boolean" />
-      </type>
-      <mapping>
-        <identity value="v2" />
-        <map value="PID-24 (bool), PID-25 (integer)" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber" />
-      </mapping>
-      <mapping>
-        <identity value="cda" />
-        <map value="n/a" />
       </mapping>
     </element>
     <element>
@@ -12379,7 +12259,11 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
       </type>
       <mapping>
         <identity value="v2" />
@@ -12395,29 +12279,30 @@
       </mapping>
     </element>
     <element>
-      <path value="Patient.link" />
-      <short value="Link to another patient resource that concerns the same actual person" />
-      <definition value="Link to another patient resource that concerns the same actual patient." />
-      <comments value="There is no assumption that linked patient records have mutual links." />
-      <requirements value="There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers." />
+      <path value="Patient.managingOrganization" />
+      <short value="Organization that is the custodian of the patient record" />
+      <definition value="Organization that is the custodian of the patient record." />
+      <comments value="There is only one managing organization for a specific patient record. Other organizations will have their own Patient record, and may use the Link property to join the records together (or a Person resource which can include confidence ratings for the association)." />
+      <requirements value="Need to know who recognizes this patient record, manages and updates it." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
-        <path value="Patient.link" />
+        <path value="Patient.managingOrganization" />
         <min value="0" />
-        <max value="*" />
+        <max value="1" />
       </base>
       <type>
-        <code value="BackboneElement" />
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
-      <isModifier value="true" />
+      <isSummary value="true" />
       <mapping>
         <identity value="rim" />
-        <map value="outboundLink" />
+        <map value="scoper" />
       </mapping>
       <mapping>
         <identity value="cda" />
-        <map value="n/a" />
+        <map value=".providerOrganization" />
       </mapping>
     </element>
     <element>

@@ -8,13 +8,13 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-GPRegistrationType-1.valueset.xml",
-  "name": "CareConnect-GPRegistrationType-1",
+  "url": "http://hl7.org.uk/CareConnect-RegistrationType-1.valueset.xml",
+  "name": "CareConnect-RegistrationType-1",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "A vocabulary that identifies the type of registration for a patient at a GP practice.",
+  "description": "A vocabulary that identifies the type of registration for a patient at a healthcare organisation.",
   "codeSystem": {
-    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-GPRegistrationType",
+    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-RegistrationType",
     "concept": [
       {
         "code": "R",

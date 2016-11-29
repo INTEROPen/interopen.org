@@ -283,7 +283,7 @@
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>system</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
               </td>
@@ -300,7 +300,7 @@
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>value</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
               </td>
@@ -1772,7 +1772,7 @@
                   <img src="images/icon_element.gif" class="hierarchy" alt="." title="Element" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>reaction</td>
-              <td>0..1</td>
+              <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#BackboneElement">BackboneElement</a>
               </td>
@@ -1838,7 +1838,7 @@
                   <img src="images/icon_element.gif" class="hierarchy" alt="." title="Element" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>vaccinationProtocol</td>
-              <td>0..1</td>
+              <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#BackboneElement">BackboneElement</a>
               </td>
@@ -1939,7 +1939,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>targetDisease</td>
-              <td>1..1</td>
+              <td>1..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
@@ -2578,6 +2578,40 @@
               </td>
             </tr>
             <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck110.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>system</td>
+              <td>1..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
+              </td>
+              <td>
+                <p>The namespace for the identifier</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck110.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>value</td>
+              <td>1..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
+              </td>
+              <td>
+                <p>The value that is unique</p>
+              </td>
+            </tr>
+            <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck100.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
@@ -2895,6 +2929,22 @@
               </td>
               <td>
                 <p>Narrative text for the resource</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>wasNotGiven</td>
+              <td>1..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#boolean">boolean</a>
+              </td>
+              <td>
+                <p>Flag for whether immunization was given</p>
               </td>
             </tr>
             <tr>
@@ -3639,7 +3689,7 @@
                   <img src="images/icon_element.gif" class="hierarchy" alt="." title="Element" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>reaction</td>
-              <td>0..1</td>
+              <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#BackboneElement">BackboneElement</a>
               </td>
@@ -3671,7 +3721,7 @@
                   <img src="images/icon_element.gif" class="hierarchy" alt="." title="Element" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>vaccinationProtocol</td>
-              <td>0..1</td>
+              <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#BackboneElement">BackboneElement</a>
               </td>
@@ -3721,7 +3771,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>targetDisease</td>
-              <td>1..1</td>
+              <td>1..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>

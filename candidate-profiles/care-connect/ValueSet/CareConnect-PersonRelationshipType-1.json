@@ -22,42 +22,40 @@
     "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-PersonRelationshipType",
     "concept": [
       {
-        "code": "1",
+        "code": "01",
         "display": "Spouse"
       },
       {
-        "code": "2",
+        "code": "02",
         "display": "Partner"
       },
       {
-        "code": "3",
+        "code": "03",
         "display": "Parent"
       },
       {
-        "code": "4",
+        "code": "04",
         "display": "Next of kin"
       },
       {
-        "code": "5",
+        "code": "05",
         "display": "Guardian",
         "definition": "Other than a parent"
       },
       {
-        "code": "6",
+        "code": "06",
         "display": "Foster parent"
       },
       {
-        "code": "7",
-        "display": "Step parent",
-        "definition": "Retired from MIM 7.2.00. Was re-activated in 7.2.01"
+        "code": "07",
+        "display": "Step parent"
       },
       {
-        "code": "8",
-        "display": "Polygamous partner",
-        "definition": "Retired from MIM 7.2.00. Was re-activated in 7.2.01"
+        "code": "08",
+        "display": "Polygamous partner"
       },
       {
-        "code": "9",
+        "code": "09",
         "display": "Child"
       },
       {
@@ -235,16 +233,6 @@
       {
         "code": "51",
         "display": "Non-relative lived with for at least 5 years"
-      },
-      {
-        "code": "61",
-        "display": "Step parent",
-        "definition": "Retired from Publication 7.2.01"
-      },
-      {
-        "code": "62",
-        "display": "Polygamous partner",
-        "definition": "Retired from Publication 7.2.01"
       }
     ]
   }

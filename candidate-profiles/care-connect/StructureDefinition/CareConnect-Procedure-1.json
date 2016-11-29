@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-28T11:56:25.794+00:00"
+    "lastUpdated": "2016-11-29T14:09:31.223+00:00"
   },
   "extension": [
     {
@@ -9,6 +9,7 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-Procedure-1.structuredefinition.xml",
+  "version": "1.0",
   "name": "CareConnect-Procedure-1",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -2278,7 +2279,7 @@
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
         "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Procedure.identifier.system",
@@ -2659,6 +2660,13 @@
           "max": "1"
         },
         "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          },
           {
             "TypeName": "Reference",
             "code": "Reference",
@@ -9678,6 +9686,41 @@
         ]
       },
       {
+        "path": "Procedure.identifier.system",
+        "short": "The namespace for the identifier",
+        "definition": "Establishes the namespace in which set of possible id values is unique.",
+        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Procedure.identifier.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.4 / EI-2-4"
+          },
+          {
+            "identity": "rim",
+            "map": "II.root or Role.id.root"
+          },
+          {
+            "identity": "servd",
+            "map": "./IdentifierType"
+          }
+        ]
+      },
+      {
         "path": "Procedure.identifier.value",
         "short": "The value that is unique",
         "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
@@ -9761,6 +9804,13 @@
           "max": "1"
         },
         "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          },
           {
             "TypeName": "Reference",
             "code": "Reference",

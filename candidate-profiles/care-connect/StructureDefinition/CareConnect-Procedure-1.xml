@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-28T11:56:25.794+00:00" />
+    <lastUpdated value="2016-11-29T14:09:31.223+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
   <url value="http://hl7.org.uk/CareConnect-Procedure-1.structuredefinition.xml" />
+  <version value="1.0" />
   <name value="CareConnect-Procedure-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -1875,7 +1876,7 @@
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
       <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Procedure.identifier.system" />
@@ -2179,6 +2180,10 @@
         <min value="1" />
         <max value="1" />
       </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Group" />
+      </type>
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
@@ -7910,6 +7915,36 @@
       </type>
     </element>
     <element>
+      <path value="Procedure.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Procedure.identifier.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / EI-2-4" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.root or Role.id.root" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierType" />
+      </mapping>
+    </element>
+    <element>
       <path value="Procedure.identifier.value" />
       <short value="The value that is unique" />
       <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
@@ -7980,6 +8015,10 @@
         <min value="1" />
         <max value="1" />
       </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Group" />
+      </type>
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />

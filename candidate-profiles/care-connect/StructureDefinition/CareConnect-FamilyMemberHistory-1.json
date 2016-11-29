@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-28T13:23:31.621+00:00"
+    "lastUpdated": "2016-11-29T11:10:35.674+00:00"
   },
   "extension": [
     {
@@ -9,6 +9,7 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-FamilyMemberHistory-1.structuredefinition.xml",
+  "version": "1.0",
   "name": "CareConnect-FamilyMemberHistory-1",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -2294,7 +2295,7 @@
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
         "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "FamilyMemberHistory.identifier.system",
@@ -5640,6 +5641,41 @@
             "profile": [
               "http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter"
             ]
+          }
+        ]
+      },
+      {
+        "path": "FamilyMemberHistory.identifier.system",
+        "short": "The namespace for the identifier",
+        "definition": "Establishes the namespace in which set of possible id values is unique.",
+        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "FamilyMemberHistory.identifier.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.4 / EI-2-4"
+          },
+          {
+            "identity": "rim",
+            "map": "II.root or Role.id.root"
+          },
+          {
+            "identity": "servd",
+            "map": "./IdentifierType"
           }
         ]
       },

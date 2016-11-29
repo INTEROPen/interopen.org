@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-24T21:24:17.003+00:00" />
+    <lastUpdated value="2016-11-29T11:58:35.527+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -64,6 +64,18 @@
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ConditionEpisode-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Condition.extension" />
+      <name value="associated" />
+      <short value="Associated resource link" />
+      <definition value="A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -1515,7 +1527,7 @@
       <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Condition.identifier.use" />
         <min value="0" />
@@ -1549,7 +1561,7 @@
       <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
       <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Condition.identifier.type" />
         <min value="0" />
@@ -1871,7 +1883,7 @@
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
       <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Condition.identifier.system" />
@@ -1931,7 +1943,7 @@
       <short value="Time period when id is/was valid for use" />
       <definition value="Time period during which identifier is/was valid for use." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Condition.identifier.period" />
         <min value="0" />
@@ -2055,7 +2067,7 @@
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Condition.identifier.assigner" />
         <min value="0" />
@@ -2063,7 +2075,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -2292,7 +2304,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+        <profile value="http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3341,7 +3353,7 @@
     </element>
     <element>
       <path value="Condition.clinicalStatus" />
-      <short value="active | relapse | remission | resolved" />
+      <short value="active | inactive | relapse | remission | resolved" />
       <definition value="The clinical status of the condition." />
       <min value="0" />
       <max value="1" />
@@ -3357,8 +3369,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="required" />
+        <description value="Condition Clinical Status Codes" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/condition-clinical" />
+          <reference value="http://hl7.org.uk/CareConnect-ConditionClinicalStatus-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -3735,8 +3748,8 @@
       </mapping>
     </element>
     <element>
-      <path value="Condition.onsetDateTime" />
-      <short value="Estimated or actual date or date-time" />
+      <path value="Condition.onset[x]" />
+      <short value="Estimated or actual date,  date-time, or age" />
       <definition value="Estimated or actual date or date-time  the condition began, in the opinion of the clinician." />
       <comments value="Age is generally used when the patient reports an age at which the Condition began to occur." />
       <min value="0" />
@@ -3748,6 +3761,19 @@
       </base>
       <type>
         <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Age" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="string" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -3764,8 +3790,8 @@
       </mapping>
     </element>
     <element>
-      <path value="Condition.abatementDateTime" />
-      <short value="When in resolution/remission" />
+      <path value="Condition.abatement[x]" />
+      <short value="If/when in resolution/remission" />
       <definition value="The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate." />
       <comments value="There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid." />
       <min value="0" />
@@ -3777,6 +3803,22 @@
       </base>
       <type>
         <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Age" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="string" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -4446,6 +4488,10 @@
       </base>
       <type>
         <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/ClinicalImpression" />
+      </type>
+      <type>
+        <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
       </type>
       <type>
@@ -4465,7 +4511,7 @@
       <definition value="Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed." />
       <comments value="The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both." />
       <min value="0" />
-      <max value="0" />
+      <max value="*" />
       <base>
         <path value="Condition.evidence" />
         <min value="0" />
@@ -5600,70 +5646,45 @@
       </type>
     </element>
     <element>
-      <path value="Condition.identifier.use" />
-      <short value="usual | official | temp | secondary (If known)" />
-      <definition value="The purpose of this identifier." />
-      <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary." />
-      <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers." />
+      <path value="Condition.extension" />
+      <name value="associated" />
+      <short value="Associated resource link" />
+      <definition value="A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition." />
       <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Condition.identifier.use" />
-        <min value="0" />
-        <max value="1" />
-      </base>
+      <max value="1" />
       <type>
-        <code value="code" />
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml" />
       </type>
-      <isModifier value="true" />
-      <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="Identifies the purpose for this identifier, if known ." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-use" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="v2" />
-        <map value="N/A" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="Role.code or implied by context" />
-      </mapping>
     </element>
     <element>
-      <path value="Condition.identifier.type" />
-      <short value="Description of identifier" />
-      <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose." />
-      <comments value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type." />
-      <requirements value="Allows users to make use of identifiers when the identifier system is not known." />
-      <min value="0" />
-      <max value="0" />
+      <path value="Condition.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="1" />
+      <max value="1" />
       <base>
-        <path value="Condition.identifier.type" />
+        <path value="Condition.identifier.system" />
         <min value="0" />
         <max value="1" />
       </base>
       <type>
-        <code value="CodeableConcept" />
+        <code value="uri" />
       </type>
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
       <isSummary value="true" />
-      <binding>
-        <strength value="extensible" />
-        <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/identifier-type" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="v2" />
-        <map value="CX.5" />
+        <map value="CX.4 / EI-2-4" />
       </mapping>
       <mapping>
         <identity value="rim" />
-        <map value="Role.code or implied by context" />
+        <map value="II.root or Role.id.root" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierType" />
       </mapping>
     </element>
     <element>
@@ -5697,40 +5718,12 @@
       </mapping>
     </element>
     <element>
-      <path value="Condition.identifier.period" />
-      <short value="Time period when id is/was valid for use" />
-      <definition value="Time period during which identifier is/was valid for use." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Condition.identifier.period" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="Period" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="CX.7 + CX.8" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value="Role.effectiveTime or implied by context" />
-      </mapping>
-      <mapping>
-        <identity value="servd" />
-        <map value="./StartDate and ./EndDate" />
-      </mapping>
-    </element>
-    <element>
       <path value="Condition.identifier.assigner" />
       <short value="Organization that issued id (may be just text)" />
       <definition value="Organization that issued/manages the identifier." />
       <comments value="The reference may be just a text description of the assigner." />
       <min value="0" />
-      <max value="0" />
+      <max value="1" />
       <base>
         <path value="Condition.identifier.assigner" />
         <min value="0" />
@@ -5738,7 +5731,7 @@
       </base>
       <type>
         <code value="Reference" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
       </type>
       <isSummary value="true" />
       <mapping>
@@ -5803,6 +5796,36 @@
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Condition.encounter" />
+      <short value="Encounter when condition first asserted" />
+      <definition value="Encounter during which the condition was first asserted." />
+      <comments value="This record indicates the encounter this particular record is associated with.  In the case of a &quot;new&quot; diagnosis reflecting ongoing/revised information about the condition, this might be distinct from the first encounter in which the underlying condition was first &quot;known&quot;." />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Condition.encounter" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml" />
+      </type>
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="PV1-19 (+PV1-54)" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="context" />
       </mapping>
     </element>
     <element>
@@ -6298,7 +6321,7 @@
     </element>
     <element>
       <path value="Condition.clinicalStatus" />
-      <short value="active | relapse | remission | resolved" />
+      <short value="active | inactive | relapse | remission | resolved" />
       <definition value="The clinical status of the condition." />
       <min value="0" />
       <max value="1" />
@@ -6314,8 +6337,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="required" />
+        <description value="Condition Clinical Status Codes" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/condition-clinical" />
+          <reference value="http://hl7.org.uk/CareConnect-ConditionClinicalStatus-1.valueset.xml" />
         </valueSetReference>
       </binding>
       <mapping>
@@ -6443,60 +6467,6 @@
       <mapping>
         <identity value="orim" />
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Condition.onsetDateTime" />
-      <short value="Estimated or actual date or date-time" />
-      <definition value="Estimated or actual date or date-time  the condition began, in the opinion of the clinician." />
-      <comments value="Age is generally used when the patient reports an age at which the Condition began to occur." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Condition.onset[x]" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="v2" />
-        <map value="PRB-16" />
-      </mapping>
-      <mapping>
-        <identity value="rim" />
-        <map value=".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at onset&quot;].value" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="when.init" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Condition.abatementDateTime" />
-      <short value="When in resolution/remission" />
-      <definition value="The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate." />
-      <comments value="There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid." />
-      <min value="0" />
-      <max value="1" />
-      <base>
-        <path value="Condition.abatement[x]" />
-        <min value="0" />
-        <max value="1" />
-      </base>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value=".effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at remission&quot;].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed" />
-      </mapping>
-      <mapping>
-        <identity value="w5" />
-        <map value="when.done" />
       </mapping>
     </element>
     <element>
@@ -6700,6 +6670,10 @@
       </base>
       <type>
         <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/ClinicalImpression" />
+      </type>
+      <type>
+        <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
       </type>
       <type>
@@ -6711,33 +6685,6 @@
       <mapping>
         <identity value="rim" />
         <map value=".self" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Condition.evidence" />
-      <short value="Supporting evidence" />
-      <definition value="Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed." />
-      <comments value="The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both." />
-      <min value="0" />
-      <max value="0" />
-      <base>
-        <path value="Condition.evidence" />
-        <min value="0" />
-        <max value="*" />
-      </base>
-      <type>
-        <code value="BackboneElement" />
-      </type>
-      <constraint>
-        <key value="con-2" />
-        <severity value="error" />
-        <human value="evidence SHALL have code or details" />
-        <xpath value="exists(f:code) or exists(f:detail)" />
-      </constraint>
-      <isSummary value="true" />
-      <mapping>
-        <identity value="rim" />
-        <map value=".outboundRelationship[typeCode=SPRT].target[classCode=OBS, moodCode=EVN]" />
       </mapping>
     </element>
     <element>

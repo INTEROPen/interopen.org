@@ -1,0 +1,49 @@
+﻿{
+  "meta": {
+    "lastUpdated": "2016-08-03T00:00:00+01:00"
+  },
+  "extension": [
+    {
+      "Item": "urn:oid:2.16.840.1.113883.5.60",
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+    },
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
+  "url": "http://hl7.org.uk/CareConnect-LanguageAbilityMode-1.valueset.xml",
+  "name": "CareConnect-LanguageAbilityMode-1",
+  "status": "draft",
+  "publisher": "HL7 UK",
+  "description": "A valueset to describe the mode the patient can communicate in, representing the method of expression of the language.",
+  "codeSystem": {
+    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-LanguageAbilityMode",
+    "concept": [
+      {
+        "code": "ESGN",
+        "display": "Expressed signed"
+      },
+      {
+        "code": "ESP",
+        "display": "Expressed spoken"
+      },
+      {
+        "code": "EWR",
+        "display": "Expressed written"
+      },
+      {
+        "code": "RSGN",
+        "display": "Received signed"
+      },
+      {
+        "code": "RSP",
+        "display": "Received spoken"
+      },
+      {
+        "code": "RWR",
+        "display": "Received written"
+      }
+    ]
+  }
+}

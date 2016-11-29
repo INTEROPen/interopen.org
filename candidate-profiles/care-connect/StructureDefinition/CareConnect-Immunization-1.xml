@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-24T23:25:33.034+00:00" />
+    <lastUpdated value="2016-11-29T14:01:08.809+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
   <url value="http://hl7.org.uk/CareConnect-Immunization-1.structuredefinition.xml" />
-  <version value="0.0.1" />
+  <version value="1.0" />
   <name value="CareConnect-Immunization-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -1895,7 +1895,7 @@
       <short value="The namespace for the identifier" />
       <definition value="Establishes the namespace in which set of possible id values is unique." />
       <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Immunization.identifier.system" />
@@ -1925,7 +1925,7 @@
       <short value="The value that is unique" />
       <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
       <comments value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986." />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Immunization.identifier.value" />
@@ -2933,6 +2933,7 @@
       <path value="Immunization.wasNotGiven" />
       <short value="Flag for whether immunization was given" />
       <definition value="Indicates if the vaccination was or was not given." />
+      <comments value="This needs to be discussed with PRSB- clarify the requirements on how  this element should be used." />
       <min value="1" />
       <max value="1" />
       <base>
@@ -5798,7 +5799,7 @@
       <definition value="Categorical data indicating that an adverse event is associated in time to an immunization." />
       <comments value="A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case,  it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements." />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <base>
         <path value="Immunization.reaction" />
         <min value="0" />
@@ -6041,8 +6042,9 @@
       <path value="Immunization.vaccinationProtocol" />
       <short value="What protocol was followed" />
       <definition value="Contains information about the protocol(s) under which the vaccine was administered." />
+      <comments value="This needs to be discussed with PRSB- clarify the requirements on how  this element should be used. There are some debates as to if this should be used," />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <base>
         <path value="Immunization.vaccinationProtocol" />
         <min value="0" />
@@ -6313,7 +6315,7 @@
       <short value="Disease immunized against" />
       <definition value="The targeted disease." />
       <min value="1" />
-      <max value="1" />
+      <max value="*" />
       <base>
         <path value="Immunization.vaccinationProtocol.targetDisease" />
         <min value="1" />
@@ -7592,6 +7594,66 @@
       </mapping>
     </element>
     <element>
+      <path value="Immunization.identifier.system" />
+      <short value="The namespace for the identifier" />
+      <definition value="Establishes the namespace in which set of possible id values is unique." />
+      <requirements value="There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Immunization.identifier.system" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.4 / EI-2-4" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.root or Role.id.root" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./IdentifierType" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Immunization.identifier.value" />
+      <short value="The value that is unique" />
+      <definition value="The portion of the identifier typically displayed to the user and which is unique within the context of the system." />
+      <comments value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Immunization.identifier.value" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <exampleString value="123456" />
+      <isSummary value="true" />
+      <mapping>
+        <identity value="v2" />
+        <map value="CX.1 / EI.1" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)" />
+      </mapping>
+      <mapping>
+        <identity value="servd" />
+        <map value="./Value" />
+      </mapping>
+    </element>
+    <element>
       <path value="Immunization.identifier.assigner" />
       <short value="Organization that issued id (may be just text)" />
       <definition value="Organization that issued/manages the identifier." />
@@ -8059,6 +8121,31 @@
       <mapping>
         <identity value="rim" />
         <map value="N/A" />
+      </mapping>
+    </element>
+    <element>
+      <path value="Immunization.wasNotGiven" />
+      <short value="Flag for whether immunization was given" />
+      <definition value="Indicates if the vaccination was or was not given." />
+      <comments value="This needs to be discussed with PRSB- clarify the requirements on how  this element should be used." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Immunization.wasNotGiven" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="boolean" />
+      </type>
+      <isModifier value="true" />
+      <mapping>
+        <identity value="rim" />
+        <map value="[actionNegationInd=true].reasonCode" />
+      </mapping>
+      <mapping>
+        <identity value="w5" />
+        <map value="status" />
       </mapping>
     </element>
     <element>
@@ -9159,7 +9246,7 @@
       <definition value="Categorical data indicating that an adverse event is associated in time to an immunization." />
       <comments value="A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case,  it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements." />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <base>
         <path value="Immunization.reaction" />
         <min value="0" />
@@ -9205,8 +9292,9 @@
       <path value="Immunization.vaccinationProtocol" />
       <short value="What protocol was followed" />
       <definition value="Contains information about the protocol(s) under which the vaccine was administered." />
+      <comments value="This needs to be discussed with PRSB- clarify the requirements on how  this element should be used. There are some debates as to if this should be used," />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <base>
         <path value="Immunization.vaccinationProtocol" />
         <min value="0" />
@@ -9262,32 +9350,6 @@
       <mapping>
         <identity value="rim" />
         <map value="outboundRelationship[typeCode=INST].target[classCode=SBADM].inboundRelationship[typeCode=COMP].source[classCode=SBADM].participation[typeCode=AUT].COCT_MT090200UV" />
-      </mapping>
-    </element>
-    <element>
-      <path value="Immunization.vaccinationProtocol.targetDisease" />
-      <short value="Disease immunized against" />
-      <definition value="The targeted disease." />
-      <min value="1" />
-      <max value="1" />
-      <base>
-        <path value="Immunization.vaccinationProtocol.targetDisease" />
-        <min value="1" />
-        <max value="*" />
-      </base>
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <binding>
-        <strength value="example" />
-        <description value="The disease target of the vaccination protocol" />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/vaccination-protocol-dose-target" />
-        </valueSetReference>
-      </binding>
-      <mapping>
-        <identity value="rim" />
-        <map value="outboundRelationship.target[classCode=OBS].code" />
       </mapping>
     </element>
     <element>

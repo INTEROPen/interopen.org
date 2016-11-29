@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-16T12:06:16.566+01:00"
+    "lastUpdated": "2016-11-29T15:34:04.101+00:00"
   },
   "extension": [
     {
@@ -8,12 +8,13 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml",
+  "url": "http://hl7.org.uk/CareConnect-EncounterTransport-1-Extension.structuredefinition.xml",
   "version": "1.0",
-  "name": "CareConnect-GPRegistrationDetails-1-Extension",
+  "name": "CareConnect-EncounterTransport-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "This extension supports the registration information recorded by the GP practices.",
+  "description": "An extension to the Encounter resource to include the Transport used by the subject for an encounter.",
+  "requirements": "The ability to add extensions in a structured way is what keeps FHIR resources simple.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
   "fhirVersion": "1.0.2",
   "kind": 0,
@@ -21,7 +22,7 @@
   "abstract": false,
   "contextType": 0,
   "context": [
-    "Patient"
+    "Encounter"
   ],
   "base": "http://hl7.org/fhir/StructureDefinition/Extension",
   "snapshot": {
@@ -29,8 +30,8 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "Additional GP registration information for the Patient resource",
-        "definition": "Optional Extensions Element - found in all resources.",
+        "short": "Encounter transport",
+        "definition": "Details of the transport used by the subject for the encounter.",
         "min": 0,
         "max": "*",
         "base": {
@@ -62,14 +63,37 @@
       },
       {
         "path": "Extension.extension",
-        "name": "registrationPeriod",
-        "short": "The period of time during which the Patient registration applies",
-        "definition": "The period of time during which the Patient registration applies.",
+        "name": "transportType",
+        "short": "Transport Type",
         "min": 1,
         "max": "1"
       },
       {
+        "path": "Extension.extension.valueCodeableConcept",
+        "short": "Transport Type",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Coded transport type",
+          "Item": "http://snomed.info/sct"
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "transportPeriod",
+        "short": "Transport Period",
+        "definition": "Period of time that the transportation occured.",
+        "max": "1"
+      },
+      {
         "path": "Extension.extension.valuePeriod",
+        "short": "Transport Period",
         "min": 1,
         "type": [
           {
@@ -80,51 +104,22 @@
       },
       {
         "path": "Extension.extension",
-        "name": "registrationType",
-        "short": "The type of patient registration at the GP practice",
-        "definition": "The type of patient registration at the GP practice.",
-        "min": 1,
+        "name": "reasonForTransport",
+        "short": "Reason for transport",
+        "definition": "Reason transport required by subject",
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCodeableConcept",
+        "path": "Extension.extension.valueString",
+        "short": "Reason for transport",
+        "definition": "Reason transport required by subject",
         "min": 1,
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "string",
+            "code": "string"
           }
-        ],
-        "binding": {
-          "strength": 0,
-          "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationType-1.valueset.xml"
-          }
-        }
-      },
-      {
-        "path": "Extension.extension",
-        "name": "registrationStatus",
-        "short": "The registration status for this patient at the GP practice",
-        "definition": "The registration status for this patient at the GP practice.",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "path": "Extension.extension.valueCodeableConcept",
-        "min": 1,
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": 0,
-          "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationStatus-1.valueset.xml"
-          }
-        }
+        ]
       },
       {
         "path": "Extension.id",
@@ -203,7 +198,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml",
+        "Item1": "http://hl7.org.uk/CareConnect-EncounterTransport-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",
@@ -370,8 +365,8 @@
       {
         "path": "Extension",
         "name": "extension",
-        "short": "Additional GP registration information for the Patient resource",
-        "definition": "Optional Extensions Element - found in all resources.",
+        "short": "Encounter transport",
+        "definition": "Details of the transport used by the subject for the encounter.",
         "min": 0,
         "max": "*",
         "base": {
@@ -403,14 +398,37 @@
       },
       {
         "path": "Extension.extension",
-        "name": "registrationPeriod",
-        "short": "The period of time during which the Patient registration applies",
-        "definition": "The period of time during which the Patient registration applies.",
+        "name": "transportType",
+        "short": "Transport Type",
         "min": 1,
         "max": "1"
       },
       {
+        "path": "Extension.extension.valueCodeableConcept",
+        "short": "Transport Type",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Coded transport type",
+          "Item": "http://snomed.info/sct"
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "transportPeriod",
+        "short": "Transport Period",
+        "definition": "Period of time that the transportation occured.",
+        "max": "1"
+      },
+      {
         "path": "Extension.extension.valuePeriod",
+        "short": "Transport Period",
         "min": 1,
         "type": [
           {
@@ -421,51 +439,22 @@
       },
       {
         "path": "Extension.extension",
-        "name": "registrationType",
-        "short": "The type of patient registration at the GP practice",
-        "definition": "The type of patient registration at the GP practice.",
-        "min": 1,
+        "name": "reasonForTransport",
+        "short": "Reason for transport",
+        "definition": "Reason transport required by subject",
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueCodeableConcept",
+        "path": "Extension.extension.valueString",
+        "short": "Reason for transport",
+        "definition": "Reason transport required by subject",
         "min": 1,
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "string",
+            "code": "string"
           }
-        ],
-        "binding": {
-          "strength": 0,
-          "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationType-1.valueset.xml"
-          }
-        }
-      },
-      {
-        "path": "Extension.extension",
-        "name": "registrationStatus",
-        "short": "The registration status for this patient at the GP practice",
-        "definition": "The registration status for this patient at the GP practice.",
-        "min": 1,
-        "max": "1"
-      },
-      {
-        "path": "Extension.extension.valueCodeableConcept",
-        "min": 1,
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": 0,
-          "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-GPRegistrationStatus-1.valueset.xml"
-          }
-        }
+        ]
       },
       {
         "path": "Extension.url",
@@ -488,7 +477,7 @@
             "code": "uri"
           }
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml",
+        "Item1": "http://hl7.org.uk/CareConnect-EncounterTransport-1-Extension.structuredefinition.xml",
         "mapping": [
           {
             "identity": "rim",

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-24T21:27:38.599+00:00"
+    "lastUpdated": "2016-11-29T14:23:38.979+00:00"
   },
   "extension": [
     {
@@ -68,6 +68,39 @@
       },
       {
         "path": "Patient.extension",
+        "name": "registrationDetails",
+        "short": "Additional registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-RegistrationDetails-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "birthTime",
+        "short": "The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/patient-birthTime"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
         "name": "ethnicCategory",
         "short": "Ethnic category",
         "definition": "The ethnicity of the subject.",
@@ -102,23 +135,6 @@
       },
       {
         "path": "Patient.extension",
-        "name": "gpRegistrationDetails",
-        "short": "Additional GP registration information for the Patient resource",
-        "definition": "Optional Extensions Element - found in all resources.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml"
-            ]
-          }
-        ]
-      },
-      {
-        "path": "Patient.extension",
         "name": "organDonor",
         "short": "An indicator that the patient is listed as an organ donor.",
         "definition": "An indicator that the patient is listed as an organ donor.",
@@ -132,8 +148,7 @@
               "http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -150,8 +165,7 @@
               "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -168,8 +182,7 @@
               "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -186,8 +199,7 @@
               "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.id",
@@ -3831,7 +3843,7 @@
         "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
         "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Patient.identifier.type",
           "min": 0,
@@ -5236,7 +5248,7 @@
         "comments": "Can provide both a text representation and structured parts.",
         "requirements": "A renderable, unencoded form.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Patient.name.text",
           "min": 0,
@@ -5696,7 +5708,7 @@
         "comments": "Can provide both a text representation and structured parts.",
         "requirements": "A renderable, unencoded form.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Patient.name.text",
           "min": 0,
@@ -6493,7 +6505,7 @@
         ]
       },
       {
-        "path": "Patient.deceasedDateTime",
+        "path": "Patient.deceased[x]",
         "short": "Indicates if the individual is deceased or not",
         "definition": "Indicates if the individual is deceased or not.",
         "comments": "If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.",
@@ -6506,6 +6518,10 @@
           "max": "1"
         },
         "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          },
           {
             "TypeName": "dateTime",
             "code": "dateTime"
@@ -7530,7 +7546,7 @@
         ]
       },
       {
-        "path": "Patient.multipleBirthBoolean",
+        "path": "Patient.multipleBirth[x]",
         "short": "Whether patient is part of a multiple birth",
         "definition": "Indicates whether the patient is part of a multiple or indicates the actual birth order.",
         "requirements": "For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs.",
@@ -7545,6 +7561,10 @@
           {
             "TypeName": "boolean",
             "code": "boolean"
+          },
+          {
+            "TypeName": "integer",
+            "code": "integer"
           }
         ],
         "mapping": [
@@ -12086,7 +12106,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
             ]
           }
         ],
@@ -12123,7 +12150,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
             ]
           }
         ],
@@ -12257,7 +12284,7 @@
         "comments": "There is no assumption that linked patient records have mutual links.",
         "requirements": "There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Patient.link",
           "min": 0,
@@ -12601,6 +12628,39 @@
       },
       {
         "path": "Patient.extension",
+        "name": "registrationDetails",
+        "short": "Additional registration information for the Patient resource",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-RegistrationDetails-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
+        "name": "birthTime",
+        "short": "The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/patient-birthTime"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Patient.extension",
         "name": "ethnicCategory",
         "short": "Ethnic category",
         "definition": "The ethnicity of the subject.",
@@ -12635,23 +12695,6 @@
       },
       {
         "path": "Patient.extension",
-        "name": "gpRegistrationDetails",
-        "short": "Additional GP registration information for the Patient resource",
-        "definition": "Optional Extensions Element - found in all resources.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-GPRegistrationDetails-1-Extension.structuredefinition.xml"
-            ]
-          }
-        ]
-      },
-      {
-        "path": "Patient.extension",
         "name": "organDonor",
         "short": "An indicator that the patient is listed as an organ donor.",
         "definition": "An indicator that the patient is listed as an organ donor.",
@@ -12665,8 +12708,7 @@
               "http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -12683,8 +12725,7 @@
               "http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -12701,8 +12742,7 @@
               "http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.extension",
@@ -12719,8 +12759,7 @@
               "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       },
       {
         "path": "Patient.id",
@@ -13109,44 +13148,6 @@
         ]
       },
       {
-        "path": "Patient.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.identifier.type",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.5"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
-          }
-        ]
-      },
-      {
         "path": "Patient.identifier.system",
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
@@ -13335,37 +13336,6 @@
           {
             "identity": "servd",
             "map": "./NamePurpose"
-          }
-        ]
-      },
-      {
-        "path": "Patient.name.text",
-        "short": "Text representation of the full name",
-        "definition": "A full text representation of the name.",
-        "comments": "Can provide both a text representation and structured parts.",
-        "requirements": "A renderable, unencoded form.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.name.text",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "implied by XPN.11"
-          },
-          {
-            "identity": "rim",
-            "map": "./formatted"
           }
         ]
       },
@@ -13578,37 +13548,6 @@
           {
             "identity": "servd",
             "map": "./NamePurpose"
-          }
-        ]
-      },
-      {
-        "path": "Patient.name.text",
-        "short": "Text representation of the full name",
-        "definition": "A full text representation of the name.",
-        "comments": "Can provide both a text representation and structured parts.",
-        "requirements": "A renderable, unencoded form.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Patient.name.text",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "string",
-            "code": "string"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "implied by XPN.11"
-          },
-          {
-            "identity": "rim",
-            "map": "./formatted"
           }
         ]
       },
@@ -13900,42 +13839,6 @@
         ]
       },
       {
-        "path": "Patient.deceasedDateTime",
-        "short": "Indicates if the individual is deceased or not",
-        "definition": "Indicates if the individual is deceased or not.",
-        "comments": "If there's no value in the instance it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.",
-        "requirements": "The fact that a patient is deceased influences the clinical process. Also, in human communication and relation management it is necessary to know whether the person is alive.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.deceased[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-30  (bool) and PID-29 (datetime)"
-          },
-          {
-            "identity": "rim",
-            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime"
-          },
-          {
-            "identity": "cda",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
         "path": "Patient.address.state",
         "short": "Sub-unit of country (abbreviations ok)",
         "definition": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).",
@@ -14215,39 +14118,6 @@
           {
             "identity": "orim",
             "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
-          }
-        ]
-      },
-      {
-        "path": "Patient.multipleBirthBoolean",
-        "short": "Whether patient is part of a multiple birth",
-        "definition": "Indicates whether the patient is part of a multiple or indicates the actual birth order.",
-        "requirements": "For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Patient.multipleBirth[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "boolean",
-            "code": "boolean"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PID-24 (bool), PID-25 (integer)"
-          },
-          {
-            "identity": "rim",
-            "map": "player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber"
-          },
-          {
-            "identity": "cda",
-            "map": "n/a"
           }
         ]
       },
@@ -15104,7 +14974,14 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
             ]
           }
         ],
@@ -15124,33 +15001,36 @@
         ]
       },
       {
-        "path": "Patient.link",
-        "short": "Link to another patient resource that concerns the same actual person",
-        "definition": "Link to another patient resource that concerns the same actual patient.",
-        "comments": "There is no assumption that linked patient records have mutual links.",
-        "requirements": "There are multiple usecases:   * Duplicate patient records due to the clerical errors associated with the difficulties of identifying humans consistently, and * Distribution of patient information across multiple servers.",
+        "path": "Patient.managingOrganization",
+        "short": "Organization that is the custodian of the patient record",
+        "definition": "Organization that is the custodian of the patient record.",
+        "comments": "There is only one managing organization for a specific patient record. Other organizations will have their own Patient record, and may use the Link property to join the records together (or a Person resource which can include confidence ratings for the association).",
+        "requirements": "Need to know who recognizes this patient record, manages and updates it.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
-          "path": "Patient.link",
+          "path": "Patient.managingOrganization",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
-            "TypeName": "BackboneElement",
-            "code": "BackboneElement"
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
           }
         ],
-        "isModifier": true,
+        "isSummary": true,
         "mapping": [
           {
             "identity": "rim",
-            "map": "outboundLink"
+            "map": "scoper"
           },
           {
             "identity": "cda",
-            "map": "n/a"
+            "map": ".providerOrganization"
           }
         ]
       },

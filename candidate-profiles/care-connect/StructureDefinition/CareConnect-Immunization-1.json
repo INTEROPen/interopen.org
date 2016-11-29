@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-24T23:25:33.034+00:00"
+    "lastUpdated": "2016-11-29T14:01:08.809+00:00"
   },
   "extension": [
     {
@@ -9,7 +9,7 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-Immunization-1.structuredefinition.xml",
-  "version": "0.0.1",
+  "version": "1.0",
   "name": "CareConnect-Immunization-1",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -2303,7 +2303,7 @@
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
         "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Immunization.identifier.system",
@@ -2338,7 +2338,7 @@
         "short": "The value that is unique",
         "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
         "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Immunization.identifier.value",
@@ -3574,6 +3574,7 @@
         "path": "Immunization.wasNotGiven",
         "short": "Flag for whether immunization was given",
         "definition": "Indicates if the vaccination was or was not given.",
+        "comments": "This needs to be discussed with PRSB- clarify the requirements on how  this element should be used.",
         "min": 1,
         "max": "1",
         "base": {
@@ -7107,7 +7108,7 @@
         "definition": "Categorical data indicating that an adverse event is associated in time to an immunization.",
         "comments": "A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case,  it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Immunization.reaction",
           "min": 0,
@@ -7419,8 +7420,9 @@
         "path": "Immunization.vaccinationProtocol",
         "short": "What protocol was followed",
         "definition": "Contains information about the protocol(s) under which the vaccine was administered.",
+        "comments": "This needs to be discussed with PRSB- clarify the requirements on how  this element should be used. There are some debates as to if this should be used,",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Immunization.vaccinationProtocol",
           "min": 0,
@@ -7770,7 +7772,7 @@
         "short": "Disease immunized against",
         "definition": "The targeted disease.",
         "min": 1,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Immunization.vaccinationProtocol.targetDisease",
           "min": 1,
@@ -9325,6 +9327,76 @@
         ]
       },
       {
+        "path": "Immunization.identifier.system",
+        "short": "The namespace for the identifier",
+        "definition": "Establishes the namespace in which set of possible id values is unique.",
+        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Immunization.identifier.system",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "uri",
+            "code": "uri"
+          }
+        ],
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.4 / EI-2-4"
+          },
+          {
+            "identity": "rim",
+            "map": "II.root or Role.id.root"
+          },
+          {
+            "identity": "servd",
+            "map": "./IdentifierType"
+          }
+        ]
+      },
+      {
+        "path": "Immunization.identifier.value",
+        "short": "The value that is unique",
+        "definition": "The portion of the identifier typically displayed to the user and which is unique within the context of the system.",
+        "comments": "If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Immunization.identifier.value",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "string",
+            "code": "string"
+          }
+        ],
+        "Item3": "123456",
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "CX.1 / EI.1"
+          },
+          {
+            "identity": "rim",
+            "map": "II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"
+          },
+          {
+            "identity": "servd",
+            "map": "./Value"
+          }
+        ]
+      },
+      {
         "path": "Immunization.identifier.assigner",
         "short": "Organization that issued id (may be just text)",
         "definition": "Organization that issued/manages the identifier.",
@@ -9879,6 +9951,36 @@
           {
             "identity": "rim",
             "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Immunization.wasNotGiven",
+        "short": "Flag for whether immunization was given",
+        "definition": "Indicates if the vaccination was or was not given.",
+        "comments": "This needs to be discussed with PRSB- clarify the requirements on how  this element should be used.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Immunization.wasNotGiven",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          }
+        ],
+        "isModifier": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "[actionNegationInd=true].reasonCode"
+          },
+          {
+            "identity": "w5",
+            "map": "status"
           }
         ]
       },
@@ -11196,7 +11298,7 @@
         "definition": "Categorical data indicating that an adverse event is associated in time to an immunization.",
         "comments": "A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case,  it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Immunization.reaction",
           "min": 0,
@@ -11254,8 +11356,9 @@
         "path": "Immunization.vaccinationProtocol",
         "short": "What protocol was followed",
         "definition": "Contains information about the protocol(s) under which the vaccine was administered.",
+        "comments": "This needs to be discussed with PRSB- clarify the requirements on how  this element should be used. There are some debates as to if this should be used,",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Immunization.vaccinationProtocol",
           "min": 0,
@@ -11327,37 +11430,6 @@
           {
             "identity": "rim",
             "map": "outboundRelationship[typeCode=INST].target[classCode=SBADM].inboundRelationship[typeCode=COMP].source[classCode=SBADM].participation[typeCode=AUT].COCT_MT090200UV"
-          }
-        ]
-      },
-      {
-        "path": "Immunization.vaccinationProtocol.targetDisease",
-        "short": "Disease immunized against",
-        "definition": "The targeted disease.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Immunization.vaccinationProtocol.targetDisease",
-          "min": 1,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": 3,
-          "description": "The disease target of the vaccination protocol",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/vaccination-protocol-dose-target"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "outboundRelationship.target[classCode=OBS].code"
           }
         ]
       },

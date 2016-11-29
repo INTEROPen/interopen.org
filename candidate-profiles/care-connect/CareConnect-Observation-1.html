@@ -904,7 +904,7 @@
                 </span>subject [Patient]</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Patient-1.html">CareConnect-Patient-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/StructureDefinition/Group">Group</a> | <a href="http://hl7.org/fhir/StructureDefinition/Device">Device</a> | <a href="CareConnect-Patient-1.html">CareConnect-Patient-1</a> | <a href="CareConnect-Location-1.html">CareConnect-Location-1</a>)</td>
               <td>
                 <p>Who this is about</p>
               </td>
@@ -997,7 +997,7 @@
                 </span>value[x]</td>
               <td>0..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a></td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#SampledData">SampledData</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Attachment">Attachment</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#time">time</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#dateTime">dateTime</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Period">Period</a></td>
               <td>
                 <p>Actual result</p>
               </td>
@@ -1285,7 +1285,7 @@
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_slice.png" class="hierarchy" alt="." title="Slice" />
+                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>coding</td>
               <td>0..*</td>
@@ -1297,124 +1297,11 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck1111.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>coding#1 [SNOMED CT]</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
-              </td>
-              <td>
-                <p>SNOMED CT identifying interpretation of the observation</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11110.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>system</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
-              </td>
-              <td>
-                <p>Identity of the terminology system</p>
-                <p>
-                  <span class="label label-default">Fixed value</span> http://snomed.info/sct</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11110.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>code</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
-              </td>
-              <td>
-                <p>Symbol in syntax defined by the system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11110.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>display</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
-              </td>
-              <td>
-                <p>Representation defined by the system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11100.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>userSelected</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#boolean">boolean</a>
-              </td>
-              <td>
-                <p>If this coding was chosen directly by the user</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck1101.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>coding#n</td>
-              <td />
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
-              </td>
-              <td />
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -1428,12 +1315,11 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11010.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -1447,12 +1333,11 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11010.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -1466,12 +1351,11 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11010.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -1485,12 +1369,11 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11000.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1100.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -2929,7 +2812,7 @@
                 </span>target</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Observation-1.html">CareConnect-Observation-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse">QuestionnaireResponse</a> | <a href="CareConnect-Observation-1.html">CareConnect-Observation-1</a>)</td>
               <td>
                 <p>Resource that is related to this one</p>
               </td>
@@ -3234,7 +3117,7 @@
                 </span>value[x]</td>
               <td>0..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a></td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#SampledData">SampledData</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Attachment">Attachment</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#time">time</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#dateTime">dateTime</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Period">Period</a></td>
               <td>
                 <p>Actual component result</p>
               </td>
@@ -3918,7 +3801,7 @@
                 </span>subject [Patient]</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Patient-1.html">CareConnect-Patient-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/StructureDefinition/Group">Group</a> | <a href="http://hl7.org/fhir/StructureDefinition/Device">Device</a> | <a href="CareConnect-Patient-1.html">CareConnect-Patient-1</a> | <a href="CareConnect-Location-1.html">CareConnect-Location-1</a>)</td>
               <td>
                 <p>Who this is about</p>
               </td>
@@ -3986,21 +3869,6 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_choice.gif" class="hierarchy" alt="." title="Choice of types" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>value[x]</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a></td>
-              <td>
-                <p>Actual result</p>
-              </td>
-            </tr>
-            <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck11.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
@@ -4051,135 +3919,6 @@
               </td>
               <td>
                 <p>SNOMED CT representation specifying why the result value is missing</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>system</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#uri">uri</a>
-              </td>
-              <td>
-                <p>Identity of the terminology system</p>
-                <p>
-                  <span class="label label-default">Fixed value</span> http://snomed.info/sct</p>
-              </td>
-            </tr>
-            <tr class="removed-row">
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>version</td>
-              <td>0..0</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
-              </td>
-              <td />
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>code</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
-              </td>
-              <td>
-                <p>Symbol in syntax defined by the system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10000.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>display</td>
-              <td>1..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
-              </td>
-              <td>
-                <p>Representation defined by the system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck11.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>interpretation</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
-              </td>
-              <td>
-                <p>High, low, normal, etc.</p>
-                <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">Observation Interpretation Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#extensible">Extensible</a>)</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck101.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_slice.png" class="hierarchy" alt="." title="Slice" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>coding</td>
-              <td>0..*</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
-              </td>
-              <td>
-                <p>Code defined by a terminology system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck1001.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>coding#1 [SNOMED CT]</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
-              </td>
-              <td>
-                <p>SNOMED CT identifying interpretation of the observation</p>
               </td>
             </tr>
             <tr>
@@ -4899,7 +4638,7 @@
                 </span>target</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Observation-1.html">CareConnect-Observation-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse">QuestionnaireResponse</a> | <a href="CareConnect-Observation-1.html">CareConnect-Observation-1</a>)</td>
               <td>
                 <p>Resource that is related to this one</p>
               </td>
@@ -5054,22 +4793,6 @@
               </td>
               <td>
                 <p>Representation defined by the system</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_choice.gif" class="hierarchy" alt="." title="Choice of types" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>value[x]</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Quantity">Quantity</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Ratio">Ratio</a></td>
-              <td>
-                <p>Actual component result</p>
               </td>
             </tr>
             <tr>

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-09-17T09:03:10.462+01:00"
+    "lastUpdated": "2016-11-29T12:51:38.828+00:00"
   },
   "extension": [
     {
@@ -72,7 +72,6 @@
         "short": "Languages which may be used for communication",
         "definition": "Languages which may be used for communication",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "CodeableConcept",
@@ -93,7 +92,6 @@
         "short": "Language preference indicator",
         "definition": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "comments": "This language is specifically identified for communicating healthcare information",
-        "min": 0,
         "max": "1"
       },
       {
@@ -101,7 +99,6 @@
         "short": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "definition": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "boolean",
@@ -114,7 +111,6 @@
         "name": "interpreterRequired",
         "short": "Interpreter preference indicator",
         "definition": "Indicates whether an interperter is required for communication purposes",
-        "min": 0,
         "max": "1"
       },
       {
@@ -122,7 +118,6 @@
         "short": "Indicates whether an interperter is required for communication purposes",
         "definition": "Indicates whether an interperter is required for communication purposes- True / False?",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "boolean",
@@ -135,19 +130,62 @@
         "name": "modeOfCommunication",
         "short": "Mode of communucation for the selected language",
         "definition": "Mode of communucation for the selected language",
-        "min": 0,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueString",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "modeOfCommunication"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
         "min": 1,
-        "max": "1",
         "type": [
           {
-            "TypeName": "string",
-            "code": "string"
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Language Ability Mode",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-LanguageAbilityMode-1.valueset.xml"
+          }
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "communicationProficiency",
+        "short": "A valueset to describe the level of proficiency in communicating the language",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "communicationProficiency"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "short": "A valueset to describe the level of proficiency in communicating the language",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Language Ability Proficiency",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-LanguageAbilityProficiency-1.valueset.xml"
+          }
+        }
       },
       {
         "path": "Extension.id",
@@ -437,7 +475,6 @@
         "short": "Languages which may be used for communication",
         "definition": "Languages which may be used for communication",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "CodeableConcept",
@@ -458,7 +495,6 @@
         "short": "Language preference indicator",
         "definition": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "comments": "This language is specifically identified for communicating healthcare information",
-        "min": 0,
         "max": "1"
       },
       {
@@ -466,7 +502,6 @@
         "short": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "definition": "Indicates whether or not this language is preferred (over other languages up a certain level)",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "boolean",
@@ -479,7 +514,6 @@
         "name": "interpreterRequired",
         "short": "Interpreter preference indicator",
         "definition": "Indicates whether an interperter is required for communication purposes",
-        "min": 0,
         "max": "1"
       },
       {
@@ -487,7 +521,6 @@
         "short": "Indicates whether an interperter is required for communication purposes",
         "definition": "Indicates whether an interperter is required for communication purposes- True / False?",
         "min": 1,
-        "max": "1",
         "type": [
           {
             "TypeName": "boolean",
@@ -500,19 +533,62 @@
         "name": "modeOfCommunication",
         "short": "Mode of communucation for the selected language",
         "definition": "Mode of communucation for the selected language",
-        "min": 0,
         "max": "1"
       },
       {
-        "path": "Extension.extension.valueString",
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "modeOfCommunication"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
         "min": 1,
-        "max": "1",
         "type": [
           {
-            "TypeName": "string",
-            "code": "string"
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Language Ability Mode",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-LanguageAbilityMode-1.valueset.xml"
+          }
+        }
+      },
+      {
+        "path": "Extension.extension",
+        "name": "communicationProficiency",
+        "short": "A valueset to describe the level of proficiency in communicating the language",
+        "max": "1"
+      },
+      {
+        "path": "Extension.extension.url",
+        "representation": [
+          0
+        ],
+        "Item1": "communicationProficiency"
+      },
+      {
+        "path": "Extension.extension.valueCodeableConcept",
+        "short": "A valueset to describe the level of proficiency in communicating the language",
+        "min": 1,
+        "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": 0,
+          "description": "Language Ability Proficiency",
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-LanguageAbilityProficiency-1.valueset.xml"
+          }
+        }
       },
       {
         "path": "Extension.url",

@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-24T21:24:17.003+00:00"
+    "lastUpdated": "2016-11-29T11:58:35.527+00:00"
   },
   "extension": [
     {
@@ -77,6 +77,23 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org.uk/CareConnect-ConditionEpisode-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Condition.extension",
+        "name": "associated",
+        "short": "Associated resource link",
+        "definition": "A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml"
             ]
           }
         ]
@@ -1843,7 +1860,7 @@
         "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
         "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.identifier.use",
           "min": 0,
@@ -1882,7 +1899,7 @@
         "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
         "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.identifier.type",
           "min": 0,
@@ -2272,7 +2289,7 @@
         "short": "The namespace for the identifier",
         "definition": "Establishes the namespace in which set of possible id values is unique.",
         "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Condition.identifier.system",
@@ -2342,7 +2359,7 @@
         "short": "Time period when id is/was valid for use",
         "definition": "Time period during which identifier is/was valid for use.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.identifier.period",
           "min": 0,
@@ -2499,7 +2516,7 @@
         "definition": "Organization that issued/manages the identifier.",
         "comments": "The reference may be just a text description of the assigner.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.identifier.assigner",
           "min": 0,
@@ -2510,7 +2527,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
             ]
           }
         ],
@@ -2805,7 +2822,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Encounter"
+              "http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml"
             ]
           }
         ],
@@ -4081,7 +4098,7 @@
       },
       {
         "path": "Condition.clinicalStatus",
-        "short": "active | relapse | remission | resolved",
+        "short": "active | inactive | relapse | remission | resolved",
         "definition": "The clinical status of the condition.",
         "min": 0,
         "max": "1",
@@ -4100,8 +4117,9 @@
         "isSummary": true,
         "binding": {
           "strength": 0,
+          "description": "Condition Clinical Status Codes",
           "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/condition-clinical"
+            "reference": "http://hl7.org.uk/CareConnect-ConditionClinicalStatus-1.valueset.xml"
           }
         },
         "mapping": [
@@ -4553,8 +4571,8 @@
         ]
       },
       {
-        "path": "Condition.onsetDateTime",
-        "short": "Estimated or actual date or date-time",
+        "path": "Condition.onset[x]",
+        "short": "Estimated or actual date,  date-time, or age",
         "definition": "Estimated or actual date or date-time  the condition began, in the opinion of the clinician.",
         "comments": "Age is generally used when the patient reports an age at which the Condition began to occur.",
         "min": 0,
@@ -4568,6 +4586,25 @@
           {
             "TypeName": "dateTime",
             "code": "dateTime"
+          },
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Age"
+            ]
+          },
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          },
+          {
+            "TypeName": "Range",
+            "code": "Range"
+          },
+          {
+            "TypeName": "string",
+            "code": "string"
           }
         ],
         "isSummary": true,
@@ -4587,8 +4624,8 @@
         ]
       },
       {
-        "path": "Condition.abatementDateTime",
-        "short": "When in resolution/remission",
+        "path": "Condition.abatement[x]",
+        "short": "If/when in resolution/remission",
         "definition": "The date or estimated date that the condition resolved or went into remission. This is called \"abatement\" because of the many overloaded connotations associated with \"remission\" or \"resolution\" - Conditions are never really resolved, but they can abate.",
         "comments": "There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.",
         "min": 0,
@@ -4602,6 +4639,29 @@
           {
             "TypeName": "dateTime",
             "code": "dateTime"
+          },
+          {
+            "TypeName": "Quantity",
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/Age"
+            ]
+          },
+          {
+            "TypeName": "boolean",
+            "code": "boolean"
+          },
+          {
+            "TypeName": "Period",
+            "code": "Period"
+          },
+          {
+            "TypeName": "Range",
+            "code": "Range"
+          },
+          {
+            "TypeName": "string",
+            "code": "string"
           }
         ],
         "isSummary": true,
@@ -5421,6 +5481,13 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
               "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
             ]
           },
@@ -5449,7 +5516,7 @@
         "definition": "Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed.",
         "comments": "The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Condition.evidence",
           "min": 0,
@@ -6850,79 +6917,54 @@
         ]
       },
       {
-        "path": "Condition.identifier.use",
-        "short": "usual | official | temp | secondary (If known)",
-        "definition": "The purpose of this identifier.",
-        "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
-        "requirements": "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
+        "path": "Condition.extension",
+        "name": "associated",
+        "short": "Associated resource link",
+        "definition": "A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition.",
         "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Condition.identifier.use",
-          "min": 0,
-          "max": "1"
-        },
+        "max": "1",
         "type": [
           {
-            "TypeName": "code",
-            "code": "code"
-          }
-        ],
-        "isModifier": true,
-        "isSummary": true,
-        "binding": {
-          "strength": 0,
-          "description": "Identifies the purpose for this identifier, if known .",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-use"
-          }
-        },
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "N/A"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.code or implied by context"
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml"
+            ]
           }
         ]
       },
       {
-        "path": "Condition.identifier.type",
-        "short": "Description of identifier",
-        "definition": "A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.",
-        "comments": "This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.",
-        "requirements": "Allows users to make use of identifiers when the identifier system is not known.",
-        "min": 0,
-        "max": "0",
+        "path": "Condition.identifier.system",
+        "short": "The namespace for the identifier",
+        "definition": "Establishes the namespace in which set of possible id values is unique.",
+        "requirements": "There are many sequences of identifiers.  To perform matching, we need to know what sequence we're dealing with. The system identifies a particular sequence or set of unique identifiers.",
+        "min": 1,
+        "max": "1",
         "base": {
-          "path": "Condition.identifier.type",
+          "path": "Condition.identifier.system",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
+            "TypeName": "uri",
+            "code": "uri"
           }
         ],
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri",
         "isSummary": true,
-        "binding": {
-          "strength": 1,
-          "description": "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/identifier-type"
-          }
-        },
         "mapping": [
           {
             "identity": "v2",
-            "map": "CX.5"
+            "map": "CX.4 / EI-2-4"
           },
           {
             "identity": "rim",
-            "map": "Role.code or implied by context"
+            "map": "II.root or Role.id.root"
+          },
+          {
+            "identity": "servd",
+            "map": "./IdentifierType"
           }
         ]
       },
@@ -6962,45 +7004,12 @@
         ]
       },
       {
-        "path": "Condition.identifier.period",
-        "short": "Time period when id is/was valid for use",
-        "definition": "Time period during which identifier is/was valid for use.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Condition.identifier.period",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Period",
-            "code": "Period"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "CX.7 + CX.8"
-          },
-          {
-            "identity": "rim",
-            "map": "Role.effectiveTime or implied by context"
-          },
-          {
-            "identity": "servd",
-            "map": "./StartDate and ./EndDate"
-          }
-        ]
-      },
-      {
         "path": "Condition.identifier.assigner",
         "short": "Organization that issued id (may be just text)",
         "definition": "Organization that issued/manages the identifier.",
         "comments": "The reference may be just a text description of the assigner.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Condition.identifier.assigner",
           "min": 0,
@@ -7011,7 +7020,7 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/Organization"
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
             ]
           }
         ],
@@ -7093,6 +7102,43 @@
           {
             "identity": "rim",
             "map": "N/A"
+          }
+        ]
+      },
+      {
+        "path": "Condition.encounter",
+        "short": "Encounter when condition first asserted",
+        "definition": "Encounter during which the condition was first asserted.",
+        "comments": "This record indicates the encounter this particular record is associated with.  In the case of a \"new\" diagnosis reflecting ongoing/revised information about the condition, this might be distinct from the first encounter in which the underlying condition was first \"known\".",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Condition.encounter",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml"
+            ]
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "PV1-19 (+PV1-54)"
+          },
+          {
+            "identity": "rim",
+            "map": ".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"
+          },
+          {
+            "identity": "w5",
+            "map": "context"
           }
         ]
       },
@@ -7678,7 +7724,7 @@
       },
       {
         "path": "Condition.clinicalStatus",
-        "short": "active | relapse | remission | resolved",
+        "short": "active | inactive | relapse | remission | resolved",
         "definition": "The clinical status of the condition.",
         "min": 0,
         "max": "1",
@@ -7697,8 +7743,9 @@
         "isSummary": true,
         "binding": {
           "strength": 0,
+          "description": "Condition Clinical Status Codes",
           "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/condition-clinical"
+            "reference": "http://hl7.org.uk/CareConnect-ConditionClinicalStatus-1.valueset.xml"
           }
         },
         "mapping": [
@@ -7847,70 +7894,6 @@
           {
             "identity": "orim",
             "map": "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"
-          }
-        ]
-      },
-      {
-        "path": "Condition.onsetDateTime",
-        "short": "Estimated or actual date or date-time",
-        "definition": "Estimated or actual date or date-time  the condition began, in the opinion of the clinician.",
-        "comments": "Age is generally used when the patient reports an age at which the Condition began to occur.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Condition.onset[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "PRB-16"
-          },
-          {
-            "identity": "rim",
-            "map": ".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"age at onset\"].value"
-          },
-          {
-            "identity": "w5",
-            "map": "when.init"
-          }
-        ]
-      },
-      {
-        "path": "Condition.abatementDateTime",
-        "short": "When in resolution/remission",
-        "definition": "The date or estimated date that the condition resolved or went into remission. This is called \"abatement\" because of the many overloaded connotations associated with \"remission\" or \"resolution\" - Conditions are never really resolved, but they can abate.",
-        "comments": "There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Condition.abatement[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "dateTime",
-            "code": "dateTime"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": ".effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"age at remission\"].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed"
-          },
-          {
-            "identity": "w5",
-            "map": "when.done"
           }
         ]
       },
@@ -8150,6 +8133,13 @@
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
+            ]
+          },
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
               "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"
             ]
           },
@@ -8169,40 +8159,6 @@
           {
             "identity": "rim",
             "map": ".self"
-          }
-        ]
-      },
-      {
-        "path": "Condition.evidence",
-        "short": "Supporting evidence",
-        "definition": "Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed.",
-        "comments": "The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Condition.evidence",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "BackboneElement",
-            "code": "BackboneElement"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "con-2",
-            "severity": 0,
-            "human": "evidence SHALL have code or details",
-            "xpath": "exists(f:code) or exists(f:detail)"
-          }
-        ],
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": ".outboundRelationship[typeCode=SPRT].target[classCode=OBS, moodCode=EVN]"
           }
         ]
       },

@@ -8,13 +8,13 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-GPRegistrationStatus-1.valueset.xml",
-  "name": "CareConnect-GPRegistrationStatus-1",
+  "url": "http://hl7.org.uk/CareConnect-RegistrationStatus-1.valueset.xml",
+  "name": "CareConnect-RegistrationStatus-1",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "A vocabulary that identifies the status of registration for a patient at a GP practice.",
+  "description": "A vocabulary that identifies the status of registration for a patient at the healthcare organisation.",
   "codeSystem": {
-    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-GPRegistrationStatus",
+    "system": "http://hl7.org.uk/fhir/ValueSet/CareConnect-RegistrationStatus",
     "concept": [
       {
         "code": "A",

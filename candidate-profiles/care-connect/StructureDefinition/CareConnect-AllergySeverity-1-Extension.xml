@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-25T05:46:34.523+00:00" />
+    <lastUpdated value="2016-11-29T18:12:49.398+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -123,7 +123,9 @@
       <binding>
         <strength value="required" />
         <description value="A coded severity of the allergy/intolerance" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />
@@ -192,7 +194,9 @@
       <binding>
         <strength value="required" />
         <description value="A coded severity of the allergy/intolerance" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="rim" />

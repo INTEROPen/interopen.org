@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-25T05:46:34.523+00:00"
+    "lastUpdated": "2016-11-29T18:12:49.398+00:00"
   },
   "extension": [
     {
@@ -157,7 +157,9 @@
         "binding": {
           "strength": 0,
           "description": "A coded severity of the allergy/intolerance",
-          "Item": "http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml"
+          }
         },
         "mapping": [
           {
@@ -245,7 +247,9 @@
         "binding": {
           "strength": 0,
           "description": "A coded severity of the allergy/intolerance",
-          "Item": "http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-AllergySeverity-1.valueset.xml"
+          }
         },
         "mapping": [
           {

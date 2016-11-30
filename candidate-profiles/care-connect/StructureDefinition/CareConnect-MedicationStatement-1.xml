@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-11-29T13:50:51.163+00:00" />
+    <lastUpdated value="2016-11-29T18:20:45.301+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -4401,7 +4401,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />
@@ -4946,7 +4948,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />
@@ -6357,7 +6361,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />
@@ -6544,7 +6550,9 @@
       <isSummary value="true" />
       <binding>
         <strength value="preferred" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml" />
+        </valueSetReference>
       </binding>
       <mapping>
         <identity value="v2" />

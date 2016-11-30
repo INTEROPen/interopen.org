@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-25T05:38:15.7+00:00"
+    "lastUpdated": "2016-11-29T18:11:45.957+00:00"
   },
   "extension": [
     {
@@ -156,7 +156,9 @@
         "binding": {
           "strength": 0,
           "description": "A coded certainty of the allergy/intolerance",
-          "Item": "http://hl7.org.uk/CareConnect-AllergyCertainty-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-AllergyCertainty-1.valueset.xml"
+          }
         },
         "mapping": [
           {
@@ -244,7 +246,9 @@
         "binding": {
           "strength": 0,
           "description": "A coded certainty of the allergy/intolerance",
-          "Item": "http://hl7.org.uk/CareConnect-AllergyCertainty-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-AllergyCertainty-1.valueset.xml"
+          }
         },
         "mapping": [
           {

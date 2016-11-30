@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-29T13:50:51.163+00:00"
+    "lastUpdated": "2016-11-29T18:20:45.301+00:00"
   },
   "extension": [
     {
@@ -5411,7 +5411,9 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
+          }
         },
         "mapping": [
           {
@@ -6070,7 +6072,9 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
+          }
         },
         "mapping": [
           {
@@ -7809,7 +7813,9 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-MedicationDosageRoute-1.valueset.xml"
+          }
         },
         "mapping": [
           {
@@ -8028,7 +8034,9 @@
         "isSummary": true,
         "binding": {
           "strength": 2,
-          "Item": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-MedicationDosageMethod-1.valueset.xml"
+          }
         },
         "mapping": [
           {

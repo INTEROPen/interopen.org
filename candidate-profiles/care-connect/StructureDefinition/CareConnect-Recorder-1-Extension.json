@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-11-28T13:19:01.355+00:00"
+    "lastUpdated": "2016-12-01T11:16:41.936+00:00"
   },
   "extension": [
     {
@@ -24,219 +24,24 @@
     "FamilyMemberHistory"
   ],
   "base": "http://hl7.org/fhir/StructureDefinition/Extension",
-  "snapshot": {
-    "element": [
-      {
-        "path": "Extension",
-        "short": "Who recorded the event",
-        "definition": "Individual who recorded the event and takes responsibility for its content.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Element",
-            "code": "Element"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Extension.id",
-        "representation": [
-          0
-        ],
-        "short": "xml:id (or equivalent in JSON)",
-        "definition": "unique id for the element within a resource (for internal references).",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Extension.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "id",
-            "code": "id"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Extension.extension",
-        "short": "Additional Content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comments": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Extension.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Extension",
-            "code": "Extension"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "path": "Extension.url",
-        "representation": [
-          0
-        ],
-        "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
-        "comments": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Extension.url",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://hl7.org.uk/CareConnect-Recorder-1-Extension.structuredefinition.xml",
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "path": "Extension.value[x]",
-        "short": "Who recorded the event",
-        "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Extension.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml"
-            ]
-          },
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
-            ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      }
-    ]
-  },
   "differential": {
     "element": [
       {
         "path": "Extension",
         "short": "Who recorded the event",
-        "definition": "Individual who recorded the event and takes responsibility for its content.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "TypeName": "Element",
-            "code": "Element"
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
+        "definition": "Individual who recorded the event and takes responsibility for its content."
       },
       {
         "path": "Extension.url",
         "representation": [
           0
         ],
-        "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
-        "comments": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Extension.url",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "TypeName": "uri",
-            "code": "uri"
-          }
-        ],
-        "Item1": "http://hl7.org.uk/CareConnect-Recorder-1-Extension.structuredefinition.xml",
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
+        "Item1": "http://hl7.org.uk/CareConnect-Recorder-1-Extension.structuredefinition.xml"
       },
       {
         "path": "Extension.value[x]",
         "short": "Who recorded the event",
-        "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
         "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Extension.value[x]",
-          "min": 0,
-          "max": "1"
-        },
         "type": [
           {
             "TypeName": "Reference",
@@ -251,12 +56,6 @@
             "profile": [
               "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml"
             ]
-          }
-        ],
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
           }
         ]
       }

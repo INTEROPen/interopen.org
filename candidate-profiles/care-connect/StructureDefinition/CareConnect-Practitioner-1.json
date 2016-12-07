@@ -1,9 +1,8 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:11:01.903+00:00"
+    "lastUpdated": "2016-12-06T23:53:10.384+00:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml",
-  "version": "1.0",
   "name": "CareConnect-Practitioner-1",
   "status": "draft",
   "publisher": "HL7 UK",
@@ -26,6 +25,63 @@
         ]
       },
       {
+        "path": "Practitioner.id",
+        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated"
+      },
+      {
+        "path": "Practitioner.identifier",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Practitioner.identifier",
+        "name": "sdsUserId",
+        "max": "1"
+      },
+      {
+        "path": "Practitioner.identifier.use",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier.type",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier.system",
+        "min": 1,
+        "Item1": "http://fhir.nhs.net/Id/sds-user-id",
+        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
+      },
+      {
+        "path": "Practitioner.identifier.value",
+        "min": 1,
+        "Item3": "123456"
+      },
+      {
+        "path": "Practitioner.identifier.period",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier",
+        "name": "sdsRoleProfileId"
+      },
+      {
+        "path": "Practitioner.identifier.use",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier.type",
+        "max": "0"
+      },
+      {
         "path": "Practitioner.identifier.system",
         "min": 1,
         "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
@@ -34,6 +90,107 @@
         "path": "Practitioner.identifier.value",
         "min": 1,
         "Item3": "123456"
+      },
+      {
+        "path": "Practitioner.identifier.period",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.name",
+        "min": 1
+      },
+      {
+        "path": "Practitioner.name.use",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.name.text",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.name.family",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Practitioner.name.prefix",
+        "max": "1"
+      },
+      {
+        "path": "Practitioner.name.suffix",
+        "max": "1"
+      },
+      {
+        "path": "Practitioner.name.period",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.address.state",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.practitionerRole.managingOrganization",
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Practitioner.practitionerRole.location",
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Location-1.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Practitioner.qualification.issuer",
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Practitioner.communication",
+        "binding": {
+          "strength": 0,
+          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1-VS"
+        }
+      },
+      {
+        "path": "Practitioner.communication.coding.system",
+        "min": 1,
+        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage"
+      },
+      {
+        "path": "Practitioner.communication.coding.version",
+        "max": "0"
+      },
+      {
+        "path": "Practitioner.communication.coding.code",
+        "min": 1
+      },
+      {
+        "path": "Practitioner.communication.coding.userSelected",
+        "max": "0"
       }
     ]
   },

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.84+00:00" />
+    <lastUpdated value="2016-12-06T23:54:54.75+00:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
   <version value="1.0" />
@@ -23,14 +23,182 @@
       </type>
     </element>
     <element>
+      <path value="Organization.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Organization.extension" />
+      <name value="mainLocation" />
+      <short value="Main location" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MainLocation-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Organization.id" />
+      <short value="Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated" />
+    </element>
+    <element>
+      <path value="Organization.identifier" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Organization.identifier" />
+      <name value="odsCode" />
+      <short value="Organisation Data Service code" />
+      <definition value="Identifier code supplier by the Organisation Data Service" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Organization.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="Organization.identifier.system" />
       <min value="1" />
+      <fixedUri value="http://fhir.nhs.net/Id/ods-organization-code" />
       <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
     </element>
     <element>
       <path value="Organization.identifier.value" />
       <min value="1" />
+      <exampleString value="A12345" />
+    </element>
+    <element>
+      <path value="Organization.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier" />
+      <name value="localIdentifier" />
+      <short value="Business identifier issued locally or by system supplier" />
+    </element>
+    <element>
+      <path value="Organization.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier.system" />
+      <short value="The local or system suppliers identifier namespace" />
+      <min value="1" />
+      <exampleUri value="http://supplier.co.uk/organisation-identifier" />
+    </element>
+    <element>
+      <path value="Organization.identifier.value" />
+      <min value="1" />
       <exampleString value="123456" />
+    </element>
+    <element>
+      <path value="Organization.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Organization.active.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Organization.active.extension" />
+      <name value="activePeriod" />
+      <short value="Date the organisation became active, and if inactive, date the organisation became inactive" />
+      <definition value="Optional Extensions Element - found in all resources." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-ActivePeriod-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Organization.type.coding" />
+      <binding>
+        <strength value="extensible" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-OrganizationType-1-VS" />
+      </binding>
+    </element>
+    <element>
+      <path value="Organization.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.uk/fhir/ValueSet/CareConnect-OrganizationType" />
+    </element>
+    <element>
+      <path value="Organization.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.name" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Organization.address.state" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.partOf" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Organization.contact.name.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.contact.name.text" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Organization.contact.name.family" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Organization.contact.name.prefix" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Organization.contact.name.suffix" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Organization.contact.name.period" />
+      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>

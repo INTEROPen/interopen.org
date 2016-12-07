@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.903+00:00" />
+    <lastUpdated value="2016-12-06T23:53:10.384+00:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
-  <version value="1.0" />
   <name value="CareConnect-Practitioner-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -23,6 +22,61 @@
       </type>
     </element>
     <element>
+      <path value="Practitioner.id" />
+      <short value="Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Practitioner.identifier" />
+      <name value="sdsUserId" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.nhs.net/Id/sds-user-id" />
+      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.value" />
+      <min value="1" />
+      <exampleString value="123456" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier" />
+      <name value="sdsRoleProfileId" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="Practitioner.identifier.system" />
       <min value="1" />
       <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
@@ -31,6 +85,92 @@
       <path value="Practitioner.identifier.value" />
       <min value="1" />
       <exampleString value="123456" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.name" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.name.use" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.name.text" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.name.family" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.name.prefix" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.name.suffix" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.name.period" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.address.state" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.practitionerRole.managingOrganization" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Practitioner.practitionerRole.location" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Location-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Practitioner.qualification.issuer" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Practitioner.communication" />
+      <binding>
+        <strength value="required" />
+        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1-VS" />
+      </binding>
+    </element>
+    <element>
+      <path value="Practitioner.communication.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage" />
+    </element>
+    <element>
+      <path value="Practitioner.communication.coding.version" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.communication.coding.code" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Practitioner.communication.coding.userSelected" />
+      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>

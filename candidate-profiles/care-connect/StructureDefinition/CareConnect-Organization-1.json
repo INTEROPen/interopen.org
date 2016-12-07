@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:11:01.84+00:00"
+    "lastUpdated": "2016-12-06T23:54:54.75+00:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml",
   "version": "1.0",
@@ -26,14 +26,208 @@
         ]
       },
       {
+        "path": "Organization.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Organization.extension",
+        "name": "mainLocation",
+        "short": "Main location",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-MainLocation-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Organization.id",
+        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated"
+      },
+      {
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            "system"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Organization.identifier",
+        "name": "odsCode",
+        "short": "Organisation Data Service code",
+        "definition": "Identifier code supplier by the Organisation Data Service",
+        "max": "1"
+      },
+      {
+        "path": "Organization.identifier.use",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier.type",
+        "max": "0"
+      },
+      {
         "path": "Organization.identifier.system",
         "min": 1,
+        "Item1": "http://fhir.nhs.net/Id/ods-organization-code",
         "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
       },
       {
         "path": "Organization.identifier.value",
         "min": 1,
+        "Item3": "A12345"
+      },
+      {
+        "path": "Organization.identifier.period",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier",
+        "name": "localIdentifier",
+        "short": "Business identifier issued locally or by system supplier"
+      },
+      {
+        "path": "Organization.identifier.use",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier.type",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier.system",
+        "short": "The local or system suppliers identifier namespace",
+        "min": 1,
+        "Item3": "http://supplier.co.uk/organisation-identifier"
+      },
+      {
+        "path": "Organization.identifier.value",
+        "min": 1,
         "Item3": "123456"
+      },
+      {
+        "path": "Organization.identifier.period",
+        "max": "0"
+      },
+      {
+        "path": "Organization.identifier.assigner",
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Organization.active.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Organization.active.extension",
+        "name": "activePeriod",
+        "short": "Date the organisation became active, and if inactive, date the organisation became inactive",
+        "definition": "Optional Extensions Element - found in all resources.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ActivePeriod-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Organization.type.coding",
+        "binding": {
+          "strength": 1,
+          "Item": "http://hl7.org.uk/CareConnect-OrganizationType-1-VS"
+        }
+      },
+      {
+        "path": "Organization.type.coding.system",
+        "min": 1,
+        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-OrganizationType"
+      },
+      {
+        "path": "Organization.type.coding.version",
+        "max": "0"
+      },
+      {
+        "path": "Organization.type.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "path": "Organization.name",
+        "min": 1
+      },
+      {
+        "path": "Organization.address.state",
+        "max": "0"
+      },
+      {
+        "path": "Organization.partOf",
+        "type": [
+          {
+            "TypeName": "Reference",
+            "code": "Reference",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml"
+            ]
+          }
+        ]
+      },
+      {
+        "path": "Organization.contact.name.use",
+        "max": "0"
+      },
+      {
+        "path": "Organization.contact.name.text",
+        "max": "0"
+      },
+      {
+        "path": "Organization.contact.name.family",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "path": "Organization.contact.name.prefix",
+        "max": "1"
+      },
+      {
+        "path": "Organization.contact.name.suffix",
+        "max": "1"
+      },
+      {
+        "path": "Organization.contact.name.period",
+        "max": "0"
       }
     ]
   },

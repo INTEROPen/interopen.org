@@ -2,21 +2,6 @@
       
   <h1 class="page-heading">Upcoming events</h1>
 
-  <h2>2016</h2>
-
-  <table class="events-table">
-    <tbody>
-      <tr>
-          <td><span class="event-date">30 Nov</span></td>
-          <td id="curationteamreview">
-            <p class="event-title">INTEROPen Curation Team Review</p>
-            <p>The outputs of this meeting will be shared amongst all membership for consultation.</p>
-          </td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h2>2017</h2>
 
   <table class="events-table">
@@ -39,12 +24,19 @@
   
   <hr/>
 
-  <h3>Minutes and slides from events</h3>
+  <h3>Past events</h3>
 
   <h3>2016</h3>
 
   <table class="events-table events-table-past">
     <tbody>
+      <tr>
+          <td><span class="event-date">30 Nov</span></td>
+          <td id="curationteamreview">
+            <p class="event-title">INTEROPen Curation Team Review</p>
+            <p>The outputs of this meeting will be shared among the membership for consultation.</p>
+          </td>
+      </tr>
       <tr>
         <td><span class="event-date">2-3 Nov</span></td>
         <td id="ehi">

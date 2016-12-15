@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-12T09:28:48.292+00:00" />
+    <lastUpdated value="2016-12-15T11:26:24.68+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
   <url value="http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml" />
-  <version value="1.0" />
+  <version value="1.1" />
   <name value="CareConnect-Condition-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
@@ -158,7 +158,7 @@
     </element>
     <element>
       <path value="Condition.category" />
-      <short value="complaint | symptom | finding | diagnosis | problem" />
+      <short value="complaint | symptom | finding | diagnosis | problem | need" />
       <min value="1" />
       <binding>
         <strength value="extensible" />

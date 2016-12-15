@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-13T09:25:41.299+00:00"
+    "lastUpdated": "2016-12-15T11:26:45.836+00:00"
   },
   "extension": [
     {
@@ -9,7 +9,7 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-MedicationStatement-1.structuredefinition.xml",
-  "version": "1.0",
+  "version": "1.1",
   "name": "CareConnect-MedicationStatement-1",
   "status": "draft",
   "publisher": "HL7 UK",

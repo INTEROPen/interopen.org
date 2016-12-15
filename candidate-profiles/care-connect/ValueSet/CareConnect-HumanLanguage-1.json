@@ -17,7 +17,6 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml",
-  "version": "1.0.0",
   "name": "CareConnect-HumanLanguage-1",
   "status": "draft",
   "publisher": "HL7 UK",

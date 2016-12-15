@@ -1,8 +1,14 @@
 
 #resources-table .resources-table-name-column
 {
-    width: 450px;
+    width: 400px;
 }
+
+#resources-table .resources-table-maturity-column
+{
+    width: 200px;
+}
+
 
 #resources-table td.resources-table-identifier-column
 {

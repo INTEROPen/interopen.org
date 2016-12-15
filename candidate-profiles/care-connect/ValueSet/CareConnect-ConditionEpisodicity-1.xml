@@ -16,27 +16,27 @@
 		<concept>
 			<code value="first"/>
 			<display value="First"/>
-			<definition value="The first episode of a condition"/>
+			<definition value="The first episode of a condition."/>
 		</concept>
 		<concept>
 			<code value="new"/>
 			<display value="New"/>
-			<definition value="A new episode of a previously recorded condition"/>
+			<definition value="A new episode of a previously recorded condition."/>
 		</concept>
 		<concept>
 			<code value="review"/>
 			<display value="Review"/>
-			<definition value="A review of an existing condition episode"/>
+			<definition value="A review of an existing condition episode."/>
 		</concept>
 		<concept>
 			<code value="flare"/>
 			<display value="Flare"/>
-			<definition value="A flare-up of an existing condition episode"/>
+			<definition value="A flare-up of an existing condition episode."/>
 		</concept>
 		<concept>
 			<code value="end"/>
 			<display value="End"/>
-			<definition value="Marks the end of a condition episode"/>
+			<definition value="Marks the end of an existing condition episode."/>
 		</concept>
 	</codeSystem>
 </ValueSet>

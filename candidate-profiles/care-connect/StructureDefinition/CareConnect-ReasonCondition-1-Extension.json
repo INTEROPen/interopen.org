@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:16:41.342+00:00"
+    "lastUpdated": "2016-12-13T09:02:38.376+00:00"
   },
   "extension": [
     {
@@ -8,12 +8,11 @@
       "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
     }
   ],
-  "url": "http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml",
-  "name": "CareConnect-ConditionAssociatedLinks-1-Extension",
+  "url": "http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml",
+  "name": "CareConnect-ReasonCondition-1-Extension",
   "status": "draft",
   "publisher": "HL7 UK",
-  "description": "This Extension resource is constrained to support condition associated links",
-  "requirements": "The ability to add extensions in a structured way is what keeps FHIR resources simple.",
+  "description": "The reason why a resource was added/performed/given. This may be due to a Condition, may be coded entity of some type, or may simply be present as text.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
   "fhirVersion": "1.0.2",
   "kind": 0,
@@ -21,41 +20,48 @@
   "abstract": false,
   "contextType": 0,
   "context": [
-    "Condition"
+    "Procedure",
+    "Observation",
+    "MedicationOrder",
+    "MedicationStatement"
   ],
   "base": "http://hl7.org/fhir/StructureDefinition/Extension",
   "differential": {
     "element": [
       {
         "path": "Extension",
-        "name": "extension",
-        "short": "Associated resource link",
-        "definition": "A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition."
+        "short": "Reason resource added/performed/given",
+        "definition": "The reason why a resource was added/performed/given. This may be due to a Condition, may be coded entity of some type, or may simply be present as text."
       },
       {
         "path": "Extension.url",
         "representation": [
           0
         ],
-        "Item1": "http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml"
+        "Item1": "http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml"
       },
       {
-        "path": "Extension.valueReference",
-        "short": "Associated resource link",
-        "definition": "A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition.",
+        "path": "Extension.value[x]",
+        "short": "Reason resource added/performed/given",
         "min": 1,
         "type": [
+          {
+            "TypeName": "CodeableConcept",
+            "code": "CodeableConcept"
+          },
           {
             "TypeName": "Reference",
             "code": "Reference",
             "profile": [
-              "http://hl7.org.uk/CareConnect-AssociatedLinks-1.structuredefinition.xml"
-            ],
-            "aggregation": [
-              0
+              "http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml"
             ]
           }
-        ]
+        ],
+        "binding": {
+          "strength": 2,
+          "description": "Coded identification of the condition or diagnosis.",
+          "Item": "http://snomed.info/sct"
+        }
       }
     ]
   },

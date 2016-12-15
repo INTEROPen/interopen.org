@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:11:01.684+00:00"
+    "lastUpdated": "2016-12-13T09:26:08.358+00:00"
   },
   "extension": [
     {
@@ -39,6 +39,23 @@
           ],
           "rules": 2
         }
+      },
+      {
+        "path": "MedicationOrder.extension",
+        "name": "reason",
+        "short": "Reason or indication for writing the prescription",
+        "definition": "The reason or indication for writing the prescription. This may be due to a Condition, may be coded entity of some type, or may simply be present as text.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml"
+            ]
+          }
+        ]
       },
       {
         "path": "MedicationOrder.extension",
@@ -194,25 +211,7 @@
       },
       {
         "path": "MedicationOrder.reason[x]",
-        "type": [
-          {
-            "TypeName": "CodeableConcept",
-            "code": "CodeableConcept"
-          },
-          {
-            "TypeName": "Reference",
-            "code": "Reference",
-            "profile": [
-              "http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml"
-            ]
-          }
-        ],
-        "binding": {
-          "strength": 2,
-          "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/condition-code"
-          }
-        }
+        "max": "0"
       },
       {
         "path": "MedicationOrder.medication[x]",

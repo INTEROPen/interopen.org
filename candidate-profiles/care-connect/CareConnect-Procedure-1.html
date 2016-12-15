@@ -1480,23 +1480,6 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_reference.png" class="hierarchy" alt="." title="Reference" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>reason[x]</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
-              <td>
-                <p>Reason procedure performed</p>
-                <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/procedure-reason">Procedure Reason Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#example">Example</a>)</p>
-              </td>
-            </tr>
-            <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck11.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
@@ -3035,10 +3018,10 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck00.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>dateRecorded</td>
@@ -3050,6 +3033,23 @@
                 <p>The Date that the Procedure was recorded</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-DateRecorded-1-Extension.extension.html">CareConnect-DateRecorded-1-Extension</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck00.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>reason</td>
+              <td>0..*</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
+              <td>
+                <p>Reason procedure performed</p>
+                <p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-ReasonCondition-1-Extension.extension.html">CareConnect-ReasonCondition-1-Extension</a></p>
               </td>
             </tr>
           </tbody>
@@ -3706,7 +3706,7 @@
                 <p>Representation defined by the system</p>
               </td>
             </tr>
-            <tr>
+            <tr class="removed-row">
               <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
@@ -3714,14 +3714,10 @@
                   <img src="images/icon_reference.png" class="hierarchy" alt="." title="Reference" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>reason[x]</td>
-              <td>0..1</td>
+              <td>0..0</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
-              <td>
-                <p>Reason procedure performed</p>
-                <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/procedure-reason">Procedure Reason Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#example">Example</a>)</p>
-              </td>
+              <td />
             </tr>
             <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck11.png)">
@@ -4374,10 +4370,10 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck00.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>dateRecorded</td>
@@ -4389,6 +4385,23 @@
                 <p>The Date that the Procedure was recorded</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-DateRecorded-1-Extension.extension.html">CareConnect-DateRecorded-1-Extension</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck00.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>reason</td>
+              <td>0..*</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
+              <td>
+                <p>Reason procedure performed</p>
+                <p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-ReasonCondition-1-Extension.extension.html">CareConnect-ReasonCondition-1-Extension</a></p>
               </td>
             </tr>
           </tbody>

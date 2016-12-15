@@ -33,5 +33,9 @@
 			<code value="problem"/>
 			<display value="Problem"/>
 		</concept>
+		<concept>
+			<code value="need"/>
+			<display value="Need"/>
+		</concept>
 	</codeSystem>
 </ValueSet>

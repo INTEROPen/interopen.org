@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.793+00:00" />
+    <lastUpdated value="2016-12-13T09:16:34.595+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -23,6 +23,25 @@
       <path value="Observation" />
       <type>
         <code value="Observation" />
+      </type>
+    </element>
+    <element>
+      <path value="Observation.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Observation.extension" />
+      <name value="reason" />
+      <short value="Reason observation added" />
+      <definition value="The reason why the observation was added. This may be due to a Condition, may be coded entity of some type, or may simply be present as text." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>

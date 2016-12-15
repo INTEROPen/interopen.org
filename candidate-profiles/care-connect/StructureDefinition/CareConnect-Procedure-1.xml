@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.934+00:00" />
+    <lastUpdated value="2016-12-13T09:11:32.724+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -42,6 +42,18 @@
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-DateRecorded-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Procedure.extension" />
+      <name value="reason" />
+      <short value="Reason procedure performed" />
+      <definition value="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -220,13 +232,7 @@
     </element>
     <element>
       <path value="Procedure.reason[x]" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <type>
-        <code value="Reference" />
-        <profile value="http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml" />
-      </type>
+      <max value="0" />
     </element>
     <element>
       <path value="Procedure.performer.actor" />

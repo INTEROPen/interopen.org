@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:11:01.793+00:00"
+    "lastUpdated": "2016-12-13T09:16:34.595+00:00"
   },
   "extension": [
     {
@@ -28,6 +28,32 @@
           {
             "TypeName": "Observation",
             "code": "Observation"
+          }
+        ]
+      },
+      {
+        "path": "Observation.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 2
+        }
+      },
+      {
+        "path": "Observation.extension",
+        "name": "reason",
+        "short": "Reason observation added",
+        "definition": "The reason why the observation was added. This may be due to a Condition, may be coded entity of some type, or may simply be present as text.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml"
+            ]
           }
         ]
       },

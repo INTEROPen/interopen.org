@@ -21,11 +21,11 @@
       <div class="container">
         <div><div>
   <h3>
-    <span class="label label-default">Extension</span> CareConnect-ConditionAssociatedLinks-1-Extension</h3>
+    <span class="label label-default">Extension</span> CareConnect-ReasonCondition-1-Extension</h3>
   <p>The official URL for this profile is: </p>
-  <pre>http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml</pre>
+  <pre>http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml</pre>
   <h3>Description</h3>
-  <p>This Extension resource is constrained to support condition associated links</p>
+  <p>The reason why a resource was added/performed/given. This may be due to a Condition, may be coded entity of some type, or may simply be present as text.</p>
   <h3>Definition</h3>
   <p>This profile is derived from <a href="http://hl7.org/fhir/StructureDefinition/Extension">Extension</a>.</p>
   <div>
@@ -77,13 +77,13 @@
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>Extension [extension]</td>
+                </span>Extension</td>
               <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Element">Element</a>
               </td>
               <td>
-                <p>Associated resource link</p>
+                <p>Reason resource added/performed/given</p>
               </td>
             </tr>
             <tr>
@@ -101,56 +101,22 @@
               <td>
                 <p>identifies the meaning of the extension</p>
                 <p>
-                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml</p>
+                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml</p>
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck01.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck00.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_reference.png" class="hierarchy" alt="." title="Reference" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>valueReference</td>
+                </span>value[x]</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-AssociatedLinks-1.html">CareConnect-AssociatedLinks-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
-                <p>Associated resource link</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck010.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>reference</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
-              </td>
-              <td>
-                <p>Relative, internal or absolute URL reference</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck000.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>display</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
-              </td>
-              <td>
-                <p>Text alternative for the resource</p>
+                <p>Reason resource added/performed/given</p>
               </td>
             </tr>
           </tbody>
@@ -181,13 +147,13 @@
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>Extension [extension]</td>
+                </span>Extension</td>
               <td>0..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Element">Element</a>
               </td>
               <td>
-                <p>Associated resource link</p>
+                <p>Reason resource added/performed/given</p>
               </td>
             </tr>
             <tr>
@@ -205,7 +171,7 @@
               <td>
                 <p>identifies the meaning of the extension</p>
                 <p>
-                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml</p>
+                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml</p>
               </td>
             </tr>
             <tr>
@@ -215,12 +181,12 @@
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_reference.png" class="hierarchy" alt="." title="Reference" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>valueReference</td>
+                </span>value[x]</td>
               <td>1..1</td>
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-AssociatedLinks-1.html">CareConnect-AssociatedLinks-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
-                <p>Associated resource link</p>
+                <p>Reason resource added/performed/given</p>
               </td>
             </tr>
           </tbody>
@@ -231,12 +197,12 @@
         <ul class="star-list schema-list">
           <li>
             <p>
-              <a href="StructureDefinition/CareConnect-ConditionAssociatedLinks-1-Extension.xml">StructureDefinition XML</a>
+              <a href="StructureDefinition/CareConnect-ReasonCondition-1-Extension.xml">StructureDefinition XML</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="StructureDefinition/CareConnect-ConditionAssociatedLinks-1-Extension.json">StructureDefinition JSON</a>
+              <a href="StructureDefinition/CareConnect-ReasonCondition-1-Extension.json">StructureDefinition JSON</a>
             </p>
           </li>
         </ul>

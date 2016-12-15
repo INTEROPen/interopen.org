@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.434+00:00" />
+    <lastUpdated value="2016-12-12T09:28:48.292+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -48,14 +48,14 @@
     </element>
     <element>
       <path value="Condition.extension" />
-      <name value="associated" />
-      <short value="Associated resource link" />
-      <definition value="A reference to another resource (e.g. MedicationOrder, Observation, ReferralRequest etc.) associated/linked to this condition." />
+      <name value="related" />
+      <short value="Related condition" />
+      <definition value="A reference to another condition (target) whose relationship is defined by the relationship type code." />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <type>
         <code value="Extension" />
-        <profile value="http://hl7.org.uk/CareConnect-ConditionAssociatedLinks-1-Extension.structuredefinition.xml" />
+        <profile value="http://hl7.org.uk/CareConnect-ConditionRelationship-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>

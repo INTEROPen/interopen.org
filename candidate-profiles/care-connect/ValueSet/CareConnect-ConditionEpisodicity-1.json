@@ -19,27 +19,27 @@
       {
         "code": "first",
         "display": "First",
-        "definition": "The first episode of a condition"
+        "definition": "The first episode of a condition."
       },
       {
         "code": "new",
         "display": "New",
-        "definition": "A new episode of a previously recorded condition"
+        "definition": "A new episode of a previously recorded condition."
       },
       {
         "code": "review",
         "display": "Review",
-        "definition": "A review of an existing condition episode"
+        "definition": "A review of an existing condition episode."
       },
       {
         "code": "flare",
         "display": "Flare",
-        "definition": "A flare-up of an existing condition episode"
+        "definition": "A flare-up of an existing condition episode."
       },
       {
         "code": "end",
         "display": "End",
-        "definition": "Marks the end of a condition episode"
+        "definition": "Marks the end of an existing condition episode."
       }
     ]
   }

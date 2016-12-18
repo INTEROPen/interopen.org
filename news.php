@@ -10,8 +10,9 @@
 		
 		<div id="18dec">
 		  <p class="news-title">FHIR Proof of Concept Evaluation Report</p>
-		  <p class="news-meta">A key aim of this project was to support faster development of UK standards for the exchange of health and care information in FHIR, drawing on existing work nationally and internationally and collaborating with the interoperability community to bring a greater focus on implementation of the standards.</p>
+		  <p class="news-meta">18 December 2016 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
+			<p>A key aim of this project was to support faster development of UK standards for the exchange of health and care information in FHIR, drawing on existing work nationally and internationally and collaborating with the interoperability community to bring a greater focus on implementation of the standards.</p>
 			<p>Click <a href="content/FHIR PoC Evaluation Report FINAL.docx">here</a> for the final report.</p>
 		  </div>
 		</div>

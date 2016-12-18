@@ -14,10 +14,10 @@
 
         <h2 class="index-col-heading">Upcoming events</h2>          
 
-<!--        <div class="event">
-          <span class="event-date">30 Nov</span>
-          <span class="event-text"><a href="events#curationteamreview">INTEROPen Curation Team Review</a></span>
-        </div>-->
+        <div class="event">
+          <span class="event-date">20 Jan</span>
+          <span class="event-text"><a href="events#catonfhir">CATonFHIR hands-on event</a></span>
+        </div>
         
         <div class="event">
           <span class="event-date">2 &amp; 3 Mar</span>

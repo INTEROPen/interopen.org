@@ -7,7 +7,15 @@
       <h1 class="page-heading news-heading">News</h1> 
       
       <div class="news-list">
-
+		
+		<div id="18dec">
+		  <p class="news-title">FHIR Proof of Concept Evaluation Report</p>
+		  <p class="news-meta">A key aim of this project was to support faster development of UK standards for the exchange of health and care information in FHIR, drawing on existing work nationally and internationally and collaborating with the interoperability community to bring a greater focus on implementation of the standards.</p>
+		  <div class="news-text">
+			<p>Click <a href="content/FHIR PoC Evaluation Report FINAL.docx">here</a> for the final report.</p>
+		  </div>
+		</div>
+		
         <div id="19oct">
           <p class="news-title">Developing Community FHIR Profiles (Webinar slides)</p>
           <p class="news-meta">19 October 2016 &nbsp; Amir Mehrkar, Orion Health &amp; Richard Kavanagh, NHS Digital</p>

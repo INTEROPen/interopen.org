@@ -45,6 +45,8 @@
     <p>External FHIR resources relevant to UK health and social:</p>
     
     <ul>    
+	  <li><a href="content/FHIR PoC Evaluation Report FINAL.docx">FHIR Proof of Concept Evaluation Report</a></li>
+	  
       <li><a href="https://nhsconnect.github.io/gpconnect/index.html">GP-Connect – NHS Digital program for providing a set of APIs into GP system</a></li>
 
       <li><a href="http://theprsb.org/publications/bible-sets-out-the-latest-agreed-standards">PRSB - Standards for the clinical structure and content of patient records</a></li>

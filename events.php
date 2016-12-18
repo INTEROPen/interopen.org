@@ -7,6 +7,14 @@
   <table class="events-table">
     <tbody>
       <tr>
+        <td><span class="event-date">20 Jan</span></td>
+        <td id="interopsummit">
+          <p class="event-title">CATonFHIR - participate in a unique hands-on educational event and ‘connectathon’ working with FHIR</p>
+          <div class="event-location"><img src="images/world.png" alt="location"/><a href="https://www.google.co.uk/maps/place/London+W2+1AF/@51.5182927,-0.178663,17z/data=!3m1!4b1!4m5!3m4!1s0x48761aad89d378ef:0x3d013ccea3cbf87a!8m2!3d51.5183884!4d-0.1763377?hl=en">Cerner UK, London</a></div>
+          <p><img src="images/bullet_go.png"/><a href="content/CATonFHIR flyer.pdf">More information</a></p>
+        </td>
+      </tr>
+      <tr>
         <td><span class="event-date">2-3 Mar</span></td>
         <td id="interopsummit">
           <p class="event-title">Interop Summit 2017 - an educational summit where we learn a common language for interoperability, to connect our care system</p>

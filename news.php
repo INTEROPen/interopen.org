@@ -8,6 +8,24 @@
       
       <div class="news-list">
 		
+        <div id="29dec">
+		  <p class="news-title">Emerging Target Architecture</p>
+		  <p class="news-meta">29 December 2016 &nbsp; Will Smart, NHS England CIO</p>
+		  <div class="news-text">
+			<p><a href="content/Interoperability%20Summit%20-%20Emerging%20Target%20Architecture%20v1-0.pdf">This is a paper</a> summarising the outputs from an Interoperability and Population Health Summit that was convened by Will Smart, NHS England CIO, in November 2016.</p>
+            <p>The purpose of the summit was to bring together national and international experts to explore the challenges associated with enabling data to flow across the health and social care system to support the provision of the best possible care to citizens.</p>
+            <p>The purpose of the target architecture paper is to explore the design of such a target architecture, to support the direction of travel to</p>
+            <ul>
+              <li>OPEN APIs (e.g. CareConnnect)</li>
+              <li>(Near) Real time data access for direct patient care</li>
+              <li>Near real time data access for analytics</li>
+            </ul>
+            <p>A key recommendation is that a target architecture (or platform for sharing) is at a regional level of populations from 2 to 5 million, adopting national standards (e.g. CareConnect), supported by national capabilities and integrated also with the emerging National Data Platform.</p>
+            <p>INTEROPen members are recognised stakeholders in providing feedback - please log in to RYVER for details on how to provide feedback by noon Monday 16th January.</p>
+			<p>Click <a href="content/Interoperability%20Summit%20-%20Emerging%20Target%20Architecture%20v1-0.pdf">here</a> for the paper.</p>
+		  </div>
+		</div>
+        
 		<div id="18dec">
 		  <p class="news-title">FHIR Proof of Concept Evaluation Report</p>
 		  <p class="news-meta">18 December 2016 &nbsp; Amir Mehrkar</p>

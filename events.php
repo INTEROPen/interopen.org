@@ -41,8 +41,8 @@
       <tr>
           <td><span class="event-date">30 Nov</span></td>
           <td id="curationteamreview">
-            <p class="event-title">INTEROPen Curation Team Review</p>
-            <p>The outputs of this meeting will be shared among the membership for consultation.</p>
+            <p class="event-title">INTEROPen 5 - Curation Team Review</p>
+            <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/INTEROPEN%205%20KEY%20DISCUSSION%20POINTS%20V1.pdf">Key discussion points from the review</a></p></div>
           </td>
       </tr>
       <tr>

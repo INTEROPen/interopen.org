@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-13T09:16:34.595+00:00" />
+    <lastUpdated value="2017-01-05T19:34:31.417+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -138,10 +138,6 @@
     </element>
     <element>
       <path value="Observation.subject" />
-      <name value="Patient" />
-      <short value="Who this is about" />
-      <definition value="The patient whose characteristics (direct or indirect) are described by the observation and into whose record the observation is placed.  Comments: Indirect characteristics may be those of a specimen, fetus, donor,  other observer (for example a relative or EMT), or any observation made about the subject." />
-      <min value="1" />
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/Group" />
@@ -176,7 +172,6 @@
     </element>
     <element>
       <path value="Observation.performer" />
-      <min value="1" />
       <type>
         <code value="Reference" />
         <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />

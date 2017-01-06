@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-13T09:16:34.595+00:00"
+    "lastUpdated": "2017-01-05T19:34:31.417+00:00"
   },
   "extension": [
     {
@@ -160,10 +160,6 @@
       },
       {
         "path": "Observation.subject",
-        "name": "Patient",
-        "short": "Who this is about",
-        "definition": "The patient whose characteristics (direct or indirect) are described by the observation and into whose record the observation is placed.  Comments: Indirect characteristics may be those of a specimen, fetus, donor,  other observer (for example a relative or EMT), or any observation made about the subject.",
-        "min": 1,
         "type": [
           {
             "TypeName": "Reference",
@@ -217,7 +213,6 @@
       },
       {
         "path": "Observation.performer",
-        "min": 1,
         "type": [
           {
             "TypeName": "Reference",

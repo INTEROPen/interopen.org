@@ -25,7 +25,7 @@
   <p>The official URL for this profile is: </p>
   <pre>http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml</pre>
   <h3>Version</h3>
-  <p>1.1</p>
+  <p>1.0</p>
   <h3>Description</h3>
   <p>Use to record detailed information about conditions or diagnoses recognised by a clinician.</p>
   <h3>Definition</h3>
@@ -584,7 +584,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>coding#1 [SNOMED CT]</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
               </td>
@@ -849,6 +849,8 @@
               </td>
               <td>
                 <p>Identity of the terminology system</p>
+                <p>
+                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1</p>
               </td>
             </tr>
             <tr>
@@ -867,8 +869,6 @@
               </td>
               <td>
                 <p>Symbol in syntax defined by the system</p>
-                <p>
-                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1</p>
               </td>
             </tr>
             <tr>
@@ -1910,7 +1910,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>episode</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
               </td>
@@ -1928,10 +1928,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>related</td>
-              <td>0..*</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>Related condition</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ConditionRelationship-1-Extension.extension.html">CareConnect-ConditionRelationship-1-Extension</a></p>
               </td>
@@ -2177,7 +2176,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>coding#1 [SNOMED CT]</td>
-              <td>0..1</td>
+              <td>1..1</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Coding">Coding</a>
               </td>
@@ -2312,6 +2311,8 @@
               </td>
               <td>
                 <p>Identity of the terminology system</p>
+                <p>
+                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1</p>
               </td>
             </tr>
             <tr class="removed-row">
@@ -2346,8 +2347,6 @@
               </td>
               <td>
                 <p>Symbol in syntax defined by the system</p>
-                <p>
-                  <span class="label label-default">Fixed value</span> http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1</p>
               </td>
             </tr>
             <tr>
@@ -2817,7 +2816,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>episode</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
               </td>
@@ -2835,10 +2834,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>related</td>
-              <td>0..*</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>Related condition</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ConditionRelationship-1-Extension.extension.html">CareConnect-ConditionRelationship-1-Extension</a></p>
               </td>

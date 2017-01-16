@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-01T11:11:01.872+00:00" />
+    <lastUpdated value="2017-01-16T06:32:03.665+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -13,7 +13,6 @@
   <publisher value="HL7 UK" />
   <description value="CareConnect Patient profile" />
   <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
-  <fhirVersion value="1.0.2" />
   <kind value="resource" />
   <constrainedType value="Patient" />
   <abstract value="false" />
@@ -31,15 +30,12 @@
       <path value="Patient.extension" />
       <slicing>
         <discriminator value="url" />
-        <rules value="openAtEnd" />
+        <rules value="open" />
       </slicing>
     </element>
     <element>
       <path value="Patient.extension" />
       <name value="registrationDetails" />
-      <short value="Additional registration information for the Patient resource" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -50,7 +46,6 @@
       <path value="Patient.extension" />
       <name value="birthTime" />
       <short value="The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -60,9 +55,6 @@
     <element>
       <path value="Patient.extension" />
       <name value="ethnicCategory" />
-      <short value="Ethnic category" />
-      <definition value="The ethnicity of the subject." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -72,9 +64,6 @@
     <element>
       <path value="Patient.extension" />
       <name value="religiousAffiliation" />
-      <short value="Religious affiliation" />
-      <definition value="The religious affiliation of the subject." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -85,9 +74,6 @@
       <path value="Patient.extension" />
       <name value="organDonor" />
       <short value="An indicator that the patient is listed as an organ donor." />
-      <definition value="An indicator that the patient is listed as an organ donor." />
-      <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-OrganDonor-1-Extension.structuredefinition.xml" />
@@ -96,10 +82,6 @@
     <element>
       <path value="Patient.extension" />
       <name value="residentialStatus" />
-      <short value="The residential status of the patient " />
-      <definition value="The residential status of the patient. For example if this patient is a UK resident." />
-      <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ResidentialStatus-1-Extension.structuredefinition.xml" />
@@ -108,10 +90,6 @@
     <element>
       <path value="Patient.extension" />
       <name value="treatmentCategory" />
-      <short value="The treatment category for this patient" />
-      <definition value="The treatment category for this patient. For example if this patient is entitled to free healthcare treatment." />
-      <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-TreatmentCategory-1-Extension.structuredefinition.xml" />
@@ -120,18 +98,10 @@
     <element>
       <path value="Patient.extension" />
       <name value="nhsCommunication" />
-      <short value="NHS communication preferences for a resource" />
-      <definition value="Communication preferences including a list of Languages which may be used for communication" />
-      <min value="0" />
-      <max value="*" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
-    </element>
-    <element>
-      <path value="Patient.id" />
-      <short value="Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated" />
     </element>
     <element>
       <path value="Patient.identifier" />
@@ -151,15 +121,13 @@
       <path value="Patient.identifier.extension" />
       <slicing>
         <discriminator value="url" />
-        <rules value="openAtEnd" />
+        <rules value="open" />
       </slicing>
     </element>
     <element>
       <path value="Patient.identifier.extension" />
       <name value="nhsNumberVerificationStatus" />
-      <short value="NHS number verification status" />
       <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -178,13 +146,11 @@
       <path value="Patient.identifier.system" />
       <min value="1" />
       <fixedUri value="http://fhir.nhs.net/Id/nhs-number" />
-      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
     </element>
     <element>
       <path value="Patient.identifier.value" />
       <short value="Ten numeric digit NHS number" />
       <min value="1" />
-      <exampleString value="123456" />
     </element>
     <element>
       <path value="Patient.identifier.period" />
@@ -203,12 +169,10 @@
     <element>
       <path value="Patient.identifier.system" />
       <min value="1" />
-      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
     </element>
     <element>
       <path value="Patient.identifier.value" />
       <min value="1" />
-      <exampleString value="123456" />
     </element>
     <element>
       <path value="Patient.name" />
@@ -255,6 +219,7 @@
       <name value="other" />
       <short value="The patient's other names" />
       <definition value="The patient's other names." />
+      <min value="1" />
     </element>
     <element>
       <path value="Patient.name.use" />
@@ -292,7 +257,7 @@
       <binding>
         <strength value="required" />
         <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/administrative-gender" />
+          <reference value="http://hl7.org.uk/CareConnect-AdministrativeGender-1.valueset.xml" />
         </valueSetReference>
       </binding>
     </element>
@@ -306,6 +271,15 @@
     <element>
       <path value="Patient.address.state" />
       <max value="0" />
+    </element>
+    <element>
+      <path value="Patient.maritalStatus" />
+      <binding>
+        <strength value="required" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-MaritalStatus-1.valueset.xml" />
+        </valueSetReference>
+      </binding>
     </element>
     <element>
       <path value="Patient.maritalStatus.coding" />
@@ -411,6 +385,15 @@
     <element>
       <path value="Patient.contact.address.state" />
       <max value="0" />
+    </element>
+    <element>
+      <path value="Patient.contact.gender" />
+      <binding>
+        <strength value="required" />
+        <valueSetReference>
+          <reference value="http://hl7.org.uk/CareConnect-AdministrativeGender-1.valueset.xml" />
+        </valueSetReference>
+      </binding>
     </element>
     <element>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">

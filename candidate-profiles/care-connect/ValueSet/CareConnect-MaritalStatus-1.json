@@ -1,0 +1,168 @@
+﻿{
+  "meta": {
+    "lastUpdated": "2016-08-03T00:00:00+01:00"
+  },
+  "contained": [
+    {
+      "Item": {
+        "id": "map",
+        "name": "NHS Data Model and Dictionary Mapping",
+        "status": "draft",
+        "Item": {
+          "reference": "http://hl7.org.uk/CareConnect-MaritalStatus-1.valueset.xml"
+        },
+        "Item1": {
+          "reference": "http://hl7.org.uk/CareConnect-MaritalStatus-DDMAP-1.valueset.xml"
+        },
+        "element": [
+          {
+            "codeSystem": "http://hl7.org/fhir/marital-status",
+            "code": "U",
+            "target": [
+              {
+                "code": "S",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/MaritalStatus",
+            "code": "D",
+            "target": [
+              {
+                "code": "D",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/MaritalStatus",
+            "code": "L",
+            "target": [
+              {
+                "code": "P",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/MaritalStatus",
+            "code": "M",
+            "target": [
+              {
+                "code": "M",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/MaritalStatus",
+            "code": "S",
+            "target": [
+              {
+                "code": "S",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/MaritalStatus",
+            "code": "W",
+            "target": [
+              {
+                "code": "W",
+                "equivalence": "equivalent"
+              }
+            ]
+          },
+          {
+            "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "UNK",
+            "target": [
+              {
+                "code": "N",
+                "equivalence": "equivalent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "Item": {
+        "reference": "#map"
+      },
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-map"
+    },
+    {
+      "Item": "urn:oid:2.16.840.1.113883.4.642.2.19",
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+    },
+    {
+      "Item": 1,
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+    }
+  ],
+  "url": "http://hl7.org.uk/CareConnect-MaritalStatus-1.valueset.xml",
+  "name": "CareConnect-MaritalStatus-1",
+  "status": "draft",
+  "description": "This value set defines the set of codes that can be used to indicate the marital status of a person.",
+  "requirements": "The codes listed in this FHIR ValueSet are a restricted set of the FHIR Marital Status set of codes. This FHIR ValueSet has a 'Required' binding; for conformance the Marital Status element SHALL include a code listed below. Concept Maps for this value set: http://hl7.org.uk/CareConnect-MaritalStatus-DDMAP-1.valueset.xml",
+  "codeSystem": {
+    "extension": [
+      {
+        "Item": "urn:oid:2.16.840.1.113883.4.642.1.19",
+        "url": "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+      }
+    ],
+    "system": "http://hl7.org/fhir/marital-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "U",
+        "display": "Unmarried",
+        "definition": "The person is not presently married. The marital history is not known or stated."
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org.uk/CareConnect-MaritalStatus",
+        "concept": [
+          {
+            "code": "D",
+            "display": "Divorced"
+          },
+          {
+            "code": "L",
+            "display": "Legally Separated"
+          },
+          {
+            "code": "M",
+            "display": "Married"
+          },
+          {
+            "code": "S",
+            "display": "Never Married"
+          },
+          {
+            "code": "W",
+            "display": "Widowed"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/v3/NullFlavor",
+        "concept": [
+          {
+            "code": "UNK",
+            "display": "unknown"
+          }
+        ]
+      }
+    ]
+  }
+}

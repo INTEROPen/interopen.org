@@ -25,7 +25,7 @@
   <p>The official URL for this profile is: </p>
   <pre>http://hl7.org.uk/CareConnect-MedicationOrder-1.structuredefinition.xml</pre>
   <h3>Version</h3>
-  <p>1.1</p>
+  <p>1.0</p>
   <h3>Description</h3>
   <p>CareConnect MedicationOrder profile</p>
   <h3>Definition</h3>
@@ -1673,8 +1673,6 @@
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
                 <p>Body site to administer to</p>
-                <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/approach-site-codes">SNOMED CT Anatomical Structure for Administration Site Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
               </td>
             </tr>
             <tr>
@@ -1732,7 +1730,7 @@
               <td>
                 <p>Code defined by a terminology system</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="CareConnect-MedicationDosageMethod-1.valueset.html">CareConnect-MedicationDosageMethod-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-MedicationDosageRoute-1.valueset.html">CareConnect-MedicationDosageRoute-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
               </td>
             </tr>
             <tr>
@@ -2634,6 +2632,26 @@
                   <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>comparator</td>
+              <td>0..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
+              </td>
+              <td>
+                <p>&lt; | &lt;= | &gt;= | &gt; - how to understand the value</p>
+                <p>
+                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/quantity-comparator">QuantityComparator</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>unit</td>
               <td>1..1</td>
               <td>
@@ -2689,12 +2707,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>quantityText</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
               </td>
               <td>
-                <p>Quantity representation</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-MedicationQuantityText-1-Extension.extension.html">CareConnect-MedicationQuantityText-1-Extension</a></p>
               </td>
@@ -3163,7 +3180,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>reason</td>
-              <td>0..*</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
@@ -3185,9 +3202,24 @@
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
               </td>
               <td>
-                <p>Medication supply type</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-MedicationSupplyType-1-Extension.extension.html">CareConnect-MedicationSupplyType-1-Extension</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>statement</td>
+              <td />
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-MedicationStatement-1.html">CareConnect-MedicationStatement-1</a>)</td>
+              <td>
+                <p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationOrderStatement-1-Extension.extension.html">CareConnect-MedicationOrderStatement-1-Extension</a></p>
               </td>
             </tr>
             <tr>
@@ -3197,14 +3229,13 @@
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>statement</td>
-              <td>0..1</td>
+                </span>flag</td>
+              <td />
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-MedicationStatement-1.html">CareConnect-MedicationStatement-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Medication-Flag-1.html">CareConnect-Medication-Flag-1</a>)</td>
               <td>
-                <p>Medication Statement link</p>
                 <p>
-                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationOrderStatement-1-Extension.extension.html">CareConnect-MedicationOrderStatement-1-Extension</a></p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationFlag-1-Extension.extension.html">CareConnect-MedicationFlag-1-Extension</a></p>
               </td>
             </tr>
           </tbody>
@@ -3827,8 +3858,6 @@
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
                 <p>Body site to administer to</p>
-                <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/approach-site-codes">SNOMED CT Anatomical Structure for Administration Site Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
               </td>
             </tr>
             <tr>
@@ -3886,7 +3915,7 @@
               <td>
                 <p>Code defined by a terminology system</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="CareConnect-MedicationDosageMethod-1.valueset.html">CareConnect-MedicationDosageMethod-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-MedicationDosageRoute-1.valueset.html">CareConnect-MedicationDosageRoute-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#preferred">Preferred</a>)</p>
               </td>
             </tr>
             <tr>
@@ -4222,22 +4251,6 @@
                 <p>Numerical value (with implicit precision)</p>
               </td>
             </tr>
-            <tr class="removed-row">
-              <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>comparator</td>
-              <td>0..0</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
-              </td>
-              <td />
-            </tr>
             <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck1110.png)">
                 <span class="ignore-whitespace">
@@ -4302,12 +4315,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>quantityText</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
               </td>
               <td>
-                <p>Quantity representation</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-MedicationQuantityText-1-Extension.extension.html">CareConnect-MedicationQuantityText-1-Extension</a></p>
               </td>
@@ -4442,7 +4454,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>reason</td>
-              <td>0..*</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a> | <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a></td>
               <td>
@@ -4464,9 +4476,24 @@
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
               </td>
               <td>
-                <p>Medication supply type</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-MedicationSupplyType-1-Extension.extension.html">CareConnect-MedicationSupplyType-1-Extension</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
+                  <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>statement</td>
+              <td />
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-MedicationStatement-1.html">CareConnect-MedicationStatement-1</a>)</td>
+              <td>
+                <p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationOrderStatement-1-Extension.extension.html">CareConnect-MedicationOrderStatement-1-Extension</a></p>
               </td>
             </tr>
             <tr>
@@ -4476,14 +4503,13 @@
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>statement</td>
-              <td>0..1</td>
+                </span>flag</td>
+              <td />
               <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-MedicationStatement-1.html">CareConnect-MedicationStatement-1</a>)</td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#Reference">Reference</a>(<a href="CareConnect-Medication-Flag-1.html">CareConnect-Medication-Flag-1</a>)</td>
               <td>
-                <p>Medication Statement link</p>
                 <p>
-                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationOrderStatement-1-Extension.extension.html">CareConnect-MedicationOrderStatement-1-Extension</a></p>
+                  <span class="label label-default">Extension</span> <a href="CareConnect-MedicationFlag-1-Extension.extension.html">CareConnect-MedicationFlag-1-Extension</a></p>
               </td>
             </tr>
           </tbody>

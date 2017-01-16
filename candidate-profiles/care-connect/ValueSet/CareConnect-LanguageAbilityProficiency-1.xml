@@ -31,13 +31,5 @@
 			<code value="P"/>
 			<display value="Poor"/>
 		</concept>
-		<concept>
-			<code value="0"/>
-			<display value="Interpreter not required"/>
-		</concept>
-		<concept>
-			<code value="1"/>
-			<display value="Interpreter required"/>
-		</concept>
 	</codeSystem>
 </ValueSet>

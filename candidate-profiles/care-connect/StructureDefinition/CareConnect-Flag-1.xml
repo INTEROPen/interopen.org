@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-01-13T15:32:44.189+00:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1" />
+  </extension>
+  <url value="http://hl7.org.uk/CareConnect-Flag-1.structuredefinition.xml" />
+  <version value="1.0" />
+  <name value="CareConnect-Flag-1" />
+  <status value="draft" />
+  <publisher value="HL7 UK" />
+  <date value="2017-01-13T15:17:45.8123335Z" />
+  <description value="Prospective warnings of potential issues when providing care to the patient." />
+  <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
+  <kind value="resource" />
+  <constrainedType value="Flag" />
+  <abstract value="false" />
+  <base value="http://hl7.org/fhir/StructureDefinition/Flag" />
+  <differential>
+    <element>
+      <path value="Flag" />
+    </element>
+    <element>
+      <path value="Flag.identifier.system" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Flag.identifier.value" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Flag.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Flag.category" />
+      <binding>
+        <strength value="extensible" />
+      </binding>
+    </element>
+    <element>
+      <path value="Flag.subject" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Group" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Location-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Flag.encounter" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Encounter-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Flag.author" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Organization-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Patient-1.structuredefinition.xml" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
+      <path value="Flag.code.coding" />
+      <slicing>
+        <discriminator value="system" />
+        <rules value="openAtEnd" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Flag.code.coding" />
+      <name value="SNOMED CT" />
+      <short value="SNOMED CT representation identifying specific flagged issues." />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Detail codes identifying specific flagged issues." />
+        <valueSetUri value="http://snomed.info/sct" />
+      </binding>
+    </element>
+    <element>
+      <path value="Flag.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element>
+      <path value="Flag.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Flag.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Flag.code.coding.display" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

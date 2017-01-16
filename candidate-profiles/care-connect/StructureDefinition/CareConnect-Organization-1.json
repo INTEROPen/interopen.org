@@ -52,10 +52,6 @@
         ]
       },
       {
-        "path": "Organization.id",
-        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must NOT be populated"
-      },
-      {
         "path": "Organization.identifier",
         "slicing": {
           "discriminator": [

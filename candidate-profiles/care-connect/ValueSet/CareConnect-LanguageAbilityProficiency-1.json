@@ -34,14 +34,6 @@
       {
         "code": "P",
         "display": "Poor"
-      },
-      {
-        "code": "0",
-        "display": "Interpreter not required"
-      },
-      {
-        "code": "1",
-        "display": "Interpreter required"
       }
     ]
   }

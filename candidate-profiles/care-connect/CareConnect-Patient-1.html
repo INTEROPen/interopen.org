@@ -87,22 +87,6 @@
               </td>
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>id</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#id">id</a>
-              </td>
-              <td>
-                <p>Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated</p>
-              </td>
-            </tr>
-            <tr>
               <td class="hierarchy" style="background-image: url(images/tbl_bck11.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
@@ -183,12 +167,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>nhsNumberVerificationStatus</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>NHS number verification status</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-NhsNumberVerificationStatus-1-Extension.extension.html">CareConnect-NhsNumberVerificationStatus-1-Extension</a></p>
               </td>
@@ -741,7 +724,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>name#2 [other]</td>
-              <td>0..*</td>
+              <td>1..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#HumanName">HumanName</a>
               </td>
@@ -1054,7 +1037,7 @@
               <td>
                 <p>Gender for administrative purposes</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-AdministrativeGender-1.valueset.html">CareConnect-AdministrativeGender-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
               </td>
             </tr>
             <tr>
@@ -1312,7 +1295,7 @@
               <td>
                 <p>Marital (civil) status of a patient</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/marital-status">Marital Status Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-MaritalStatus-1.valueset.html">CareConnect-MaritalStatus-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
               </td>
             </tr>
             <tr>
@@ -1992,7 +1975,7 @@
               <td>
                 <p>male | female | other | unknown</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-AdministrativeGender-1.valueset.html">CareConnect-AdministrativeGender-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
               </td>
             </tr>
             <tr>
@@ -2259,10 +2242,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>registrationDetails</td>
-              <td>0..1</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>Additional registration information for the Patient resource</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-RegistrationDetails-1-Extension.extension.html">CareConnect-RegistrationDetails-1-Extension</a></p>
               </td>
@@ -2275,7 +2257,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>birthTime</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#dateTime">dateTime</a>
               </td>
@@ -2293,12 +2275,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>ethnicCategory</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>Ethnic category</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-EthnicCategory-1-Extension.extension.html">CareConnect-EthnicCategory-1-Extension</a></p>
               </td>
@@ -2311,12 +2292,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>religiousAffiliation</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>Religious affiliation</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ReligiousAffiliation-1-Extension.extension.html">CareConnect-ReligiousAffiliation-1-Extension</a></p>
               </td>
@@ -2329,7 +2309,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>organDonor</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#boolean">boolean</a>
               </td>
@@ -2347,12 +2327,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>residentialStatus</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>The residential status of the patient </p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ResidentialStatus-1-Extension.extension.html">CareConnect-ResidentialStatus-1-Extension</a></p>
               </td>
@@ -2365,12 +2344,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>treatmentCategory</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>The treatment category for this patient</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-TreatmentCategory-1-Extension.extension.html">CareConnect-TreatmentCategory-1-Extension</a></p>
               </td>
@@ -2383,10 +2361,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>nhsCommunication</td>
-              <td>0..*</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>NHS communication preferences for a resource</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-NhsCommunication-1-Extension.extension.html">CareConnect-NhsCommunication-1-Extension</a></p>
               </td>
@@ -2424,22 +2401,6 @@
               <td>Patient</td>
               <td>
                 <p>The Patient resource carries the patient demographic details</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
-                <span class="ignore-whitespace">
-                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
-                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
-                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
-                </span>id</td>
-              <td>0..1</td>
-              <td>
-                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#id">id</a>
-              </td>
-              <td>
-                <p>Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated</p>
               </td>
             </tr>
             <tr>
@@ -2586,12 +2547,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>nhsNumberVerificationStatus</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>NHS number verification status</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-NhsNumberVerificationStatus-1-Extension.extension.html">CareConnect-NhsNumberVerificationStatus-1-Extension</a></p>
               </td>
@@ -2801,7 +2761,7 @@
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>name#2 [other]</td>
-              <td>0..*</td>
+              <td>1..*</td>
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#HumanName">HumanName</a>
               </td>
@@ -2965,7 +2925,7 @@
               <td>
                 <p>Gender for administrative purposes</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-AdministrativeGender-1.valueset.html">CareConnect-AdministrativeGender-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
               </td>
             </tr>
             <tr>
@@ -3030,7 +2990,7 @@
               <td>
                 <p>Marital (civil) status of a patient</p>
                 <p>
-                  <span class="label label-default">Valueset</span> <a href="http://hl7.org/fhir/ValueSet/marital-status">Marital Status Codes</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-MaritalStatus-1.valueset.html">CareConnect-MaritalStatus-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
               </td>
             </tr>
             <tr>
@@ -3486,11 +3446,11 @@
               <td />
             </tr>
             <tr>
-              <td class="hierarchy" style="background-image: url(images/tbl_bck101.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck111.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin.png" class="hierarchy" alt="." />
                   <img src="images/icon_datatype.gif" class="hierarchy" alt="." title="Data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>address</td>
@@ -3503,11 +3463,11 @@
               </td>
             </tr>
             <tr class="removed-row">
-              <td class="hierarchy" style="background-image: url(images/tbl_bck1000.png)">
+              <td class="hierarchy" style="background-image: url(images/tbl_bck1100.png)">
                 <span class="ignore-whitespace">
                   <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vline.png" class="hierarchy" alt="." />
-                  <img src="images/tbl_blank.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
                   <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
                   <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
@@ -3517,6 +3477,25 @@
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#string">string</a>
               </td>
               <td />
+            </tr>
+            <tr>
+              <td class="hierarchy" style="background-image: url(images/tbl_bck100.png)">
+                <span class="ignore-whitespace">
+                  <img src="images/tbl_spacer.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vline.png" class="hierarchy" alt="." />
+                  <img src="images/tbl_vjoin_end.png" class="hierarchy" alt="." />
+                  <img src="images/icon_primitive.png" class="hierarchy" alt="." title="Primitive data type" />
+                  <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
+                </span>gender</td>
+              <td>0..1</td>
+              <td>
+                <a href="http://hl7.org/fhir/DSTU2/datatypes.html#code">code</a>
+              </td>
+              <td>
+                <p>male | female | other | unknown</p>
+                <p>
+                  <span class="label label-default">Valueset</span> <a href="CareConnect-AdministrativeGender-1.valueset.html">CareConnect-AdministrativeGender-1</a> (<a href="http://hl7.org/fhir/DSTU2/terminologies.html#required">Required</a>)</p>
+              </td>
             </tr>
             <tr class="removed-row">
               <td class="hierarchy" style="background-image: url(images/tbl_bck10.png)">
@@ -3725,10 +3704,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>registrationDetails</td>
-              <td>0..1</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>Additional registration information for the Patient resource</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-RegistrationDetails-1-Extension.extension.html">CareConnect-RegistrationDetails-1-Extension</a></p>
               </td>
@@ -3741,7 +3719,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>birthTime</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#dateTime">dateTime</a>
               </td>
@@ -3759,12 +3737,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>ethnicCategory</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>Ethnic category</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-EthnicCategory-1-Extension.extension.html">CareConnect-EthnicCategory-1-Extension</a></p>
               </td>
@@ -3777,12 +3754,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>religiousAffiliation</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>Religious affiliation</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ReligiousAffiliation-1-Extension.extension.html">CareConnect-ReligiousAffiliation-1-Extension</a></p>
               </td>
@@ -3795,7 +3771,7 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>organDonor</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#boolean">boolean</a>
               </td>
@@ -3813,12 +3789,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>residentialStatus</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>The residential status of the patient </p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-ResidentialStatus-1-Extension.extension.html">CareConnect-ResidentialStatus-1-Extension</a></p>
               </td>
@@ -3831,12 +3806,11 @@
                   <img src="images/icon_extension_simple.png" class="hierarchy" alt="." title="Simple extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>treatmentCategory</td>
-              <td>0..1</td>
+              <td />
               <td>
                 <a href="http://hl7.org/fhir/DSTU2/datatypes.html#CodeableConcept">CodeableConcept</a>
               </td>
               <td>
-                <p>The treatment category for this patient</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-TreatmentCategory-1-Extension.extension.html">CareConnect-TreatmentCategory-1-Extension</a></p>
               </td>
@@ -3849,10 +3823,9 @@
                   <img src="images/icon_extension_complex.png" class="hierarchy" alt="." title="Complex extension" />
                   <img src="images/tbl_spacerwide.png" class="hierarchy" alt="." />
                 </span>nhsCommunication</td>
-              <td>0..*</td>
+              <td />
               <td>(complex extension)</td>
               <td>
-                <p>NHS communication preferences for a resource</p>
                 <p>
                   <span class="label label-default">Extension</span> <a href="CareConnect-NhsCommunication-1-Extension.extension.html">CareConnect-NhsCommunication-1-Extension</a></p>
               </td>

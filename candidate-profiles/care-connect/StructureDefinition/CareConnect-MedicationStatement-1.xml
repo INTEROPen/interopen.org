@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2016-12-15T11:26:45.836+00:00" />
+    <lastUpdated value="2017-01-13T13:55:31.143+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
   </extension>
   <url value="http://hl7.org.uk/CareConnect-MedicationStatement-1.structuredefinition.xml" />
-  <version value="1.1" />
+  <version value="1.0" />
   <name value="CareConnect-MedicationStatement-1" />
   <status value="draft" />
   <publisher value="HL7 UK" />
   <description value="CareConnect MedicationStatement profile" />
   <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
-  <fhirVersion value="1.0.2" />
   <kind value="resource" />
   <constrainedType value="MedicationStatement" />
   <abstract value="false" />
@@ -29,7 +28,7 @@
       <path value="MedicationStatement.extension" />
       <slicing>
         <discriminator value="url" />
-        <rules value="openAtEnd" />
+        <rules value="open" />
       </slicing>
     </element>
     <element>
@@ -37,8 +36,6 @@
       <name value="reasonForUse" />
       <short value="Reason medication is being/was taken" />
       <definition value="A reason for why the medication is being/was taken. This may be due to a Condition, may be coded entity of some type, or may simply be present as text." />
-      <min value="0" />
-      <max value="*" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org.uk/CareConnect-ReasonCondition-1-Extension.structuredefinition.xml" />
@@ -47,9 +44,6 @@
     <element>
       <path value="MedicationStatement.extension" />
       <name value="reasonEnded" />
-      <short value="Why prescription was stopped" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -59,9 +53,6 @@
     <element>
       <path value="MedicationStatement.extension" />
       <name value="quantityDispensed" />
-      <short value="Amount of medication to supply per dispense" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -71,8 +62,6 @@
     <element>
       <path value="MedicationStatement.extension" />
       <name value="lastIssueDate" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -82,9 +71,6 @@
     <element>
       <path value="MedicationStatement.extension" />
       <name value="repeatInformation" />
-      <short value="Medication repeat information" />
-      <definition value="Optional Extensions Element - found in all resources." />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -92,14 +78,20 @@
       </type>
     </element>
     <element>
+      <path value="MedicationStatement.extension" />
+      <name value="flag" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationFlag-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
       <path value="MedicationStatement.identifier.system" />
       <min value="1" />
-      <exampleUri value="http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri" />
     </element>
     <element>
       <path value="MedicationStatement.identifier.value" />
       <min value="1" />
-      <exampleString value="123456" />
     </element>
     <element>
       <path value="MedicationStatement.identifier.assigner" />
@@ -194,6 +186,25 @@
       <max value="1" />
     </element>
     <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <path value="MedicationStatement.dosage.extension" />
+      <name value="additionalInstructions" />
+      <short value="Supplemental instructions - e.g. &quot;with meals&quot;" />
+      <definition value="Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-MedicationDosageAdditionalInstructions-1-Extension.structuredefinition.xml" />
+      </type>
+    </element>
+    <element>
       <path value="MedicationStatement.dosage.text" />
       <short value="A text representation of the dosage instructions given to the patient" />
       <min value="1" />
@@ -213,9 +224,6 @@
       <path value="MedicationStatement.dosage.site[x]" />
       <binding>
         <strength value="preferred" />
-        <valueSetReference>
-          <reference value="http://hl7.org/fhir/ValueSet/approach-site-codes" />
-        </valueSetReference>
       </binding>
     </element>
     <element>
@@ -290,6 +298,7 @@
     </element>
     <element>
       <path value="MedicationStatement.dosage.quantityQuantity" />
+      <name value="SimpleQuantity" />
       <type>
         <code value="Quantity" />
         <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />

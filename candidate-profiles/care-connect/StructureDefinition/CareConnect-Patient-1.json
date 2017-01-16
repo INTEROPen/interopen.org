@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-01T11:11:01.872+00:00"
+    "lastUpdated": "2017-01-16T06:32:03.665+00:00"
   },
   "extension": [
     {
@@ -15,7 +15,6 @@
   "publisher": "HL7 UK",
   "description": "CareConnect Patient profile",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
-  "fhirVersion": "1.0.2",
   "kind": 1,
   "constrainedType": "Patient",
   "abstract": false,
@@ -39,15 +38,12 @@
           "discriminator": [
             "url"
           ],
-          "rules": 2
+          "rules": 1
         }
       },
       {
         "path": "Patient.extension",
         "name": "registrationDetails",
-        "short": "Additional registration information for the Patient resource",
-        "definition": "Optional Extensions Element - found in all resources.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -63,7 +59,6 @@
         "path": "Patient.extension",
         "name": "birthTime",
         "short": "The time of day that the patient was born. This includes the date to ensure that the time zone information can be communicated effectivley.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -78,9 +73,6 @@
       {
         "path": "Patient.extension",
         "name": "ethnicCategory",
-        "short": "Ethnic category",
-        "definition": "The ethnicity of the subject.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -95,9 +87,6 @@
       {
         "path": "Patient.extension",
         "name": "religiousAffiliation",
-        "short": "Religious affiliation",
-        "definition": "The religious affiliation of the subject.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -113,9 +102,6 @@
         "path": "Patient.extension",
         "name": "organDonor",
         "short": "An indicator that the patient is listed as an organ donor.",
-        "definition": "An indicator that the patient is listed as an organ donor.",
-        "min": 0,
-        "max": "1",
         "type": [
           {
             "TypeName": "Extension",
@@ -129,10 +115,6 @@
       {
         "path": "Patient.extension",
         "name": "residentialStatus",
-        "short": "The residential status of the patient ",
-        "definition": "The residential status of the patient. For example if this patient is a UK resident.",
-        "min": 0,
-        "max": "1",
         "type": [
           {
             "TypeName": "Extension",
@@ -146,10 +128,6 @@
       {
         "path": "Patient.extension",
         "name": "treatmentCategory",
-        "short": "The treatment category for this patient",
-        "definition": "The treatment category for this patient. For example if this patient is entitled to free healthcare treatment.",
-        "min": 0,
-        "max": "1",
         "type": [
           {
             "TypeName": "Extension",
@@ -163,10 +141,6 @@
       {
         "path": "Patient.extension",
         "name": "nhsCommunication",
-        "short": "NHS communication preferences for a resource",
-        "definition": "Communication preferences including a list of Languages which may be used for communication",
-        "min": 0,
-        "max": "*",
         "type": [
           {
             "TypeName": "Extension",
@@ -176,10 +150,6 @@
             ]
           }
         ]
-      },
-      {
-        "path": "Patient.id",
-        "short": "Logical id of this artifact. Must be populated with a globally unique identifier, except where resource is being sent to the server for creation when it must should not be populated"
       },
       {
         "path": "Patient.identifier",
@@ -203,15 +173,13 @@
           "discriminator": [
             "url"
           ],
-          "rules": 2
+          "rules": 1
         }
       },
       {
         "path": "Patient.identifier.extension",
         "name": "nhsNumberVerificationStatus",
-        "short": "NHS number verification status",
         "definition": "Optional Extensions Element - found in all resources.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -234,14 +202,12 @@
       {
         "path": "Patient.identifier.system",
         "min": 1,
-        "Item1": "http://fhir.nhs.net/Id/nhs-number",
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
+        "Item1": "http://fhir.nhs.net/Id/nhs-number"
       },
       {
         "path": "Patient.identifier.value",
         "short": "Ten numeric digit NHS number",
-        "min": 1,
-        "Item3": "123456"
+        "min": 1
       },
       {
         "path": "Patient.identifier.period",
@@ -259,13 +225,11 @@
       },
       {
         "path": "Patient.identifier.system",
-        "min": 1,
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
+        "min": 1
       },
       {
         "path": "Patient.identifier.value",
-        "min": 1,
-        "Item3": "123456"
+        "min": 1
       },
       {
         "path": "Patient.name",
@@ -313,7 +277,8 @@
         "path": "Patient.name",
         "name": "other",
         "short": "The patient's other names",
-        "definition": "The patient's other names."
+        "definition": "The patient's other names.",
+        "min": 1
       },
       {
         "path": "Patient.name.use",
@@ -351,7 +316,7 @@
         "binding": {
           "strength": 0,
           "Item": {
-            "reference": "http://hl7.org/fhir/ValueSet/administrative-gender"
+            "reference": "http://hl7.org.uk/CareConnect-AdministrativeGender-1.valueset.xml"
           }
         }
       },
@@ -365,6 +330,15 @@
       {
         "path": "Patient.address.state",
         "max": "0"
+      },
+      {
+        "path": "Patient.maritalStatus",
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-MaritalStatus-1.valueset.xml"
+          }
+        }
       },
       {
         "path": "Patient.maritalStatus.coding",
@@ -470,6 +444,15 @@
       {
         "path": "Patient.contact.address.state",
         "max": "0"
+      },
+      {
+        "path": "Patient.contact.gender",
+        "binding": {
+          "strength": 0,
+          "Item": {
+            "reference": "http://hl7.org.uk/CareConnect-AdministrativeGender-1.valueset.xml"
+          }
+        }
       },
       {
         "extension": [

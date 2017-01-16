@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2016-12-15T11:26:24.68+00:00"
+    "lastUpdated": "2017-01-13T12:03:50.817+00:00"
   },
   "extension": [
     {
@@ -9,13 +9,12 @@
     }
   ],
   "url": "http://hl7.org.uk/CareConnect-Condition-1.structuredefinition.xml",
-  "version": "1.1",
+  "version": "1.0",
   "name": "CareConnect-Condition-1",
   "status": "draft",
   "publisher": "HL7 UK",
   "description": "Use to record detailed information about conditions or diagnoses recognised by a clinician.",
   "copyright": "Copyright © 2016 HL7 UK\r\n\r\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\r\n\r\nhttp://www.apache.org/licenses/LICENSE-2.0\r\n\r\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\r\n\r\nHL7® FHIR® standard Copyright © 2011+ HL7\r\n\r\nThe HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at\r\n\r\nhttps://www.hl7.org/fhir/license.html",
-  "fhirVersion": "1.0.2",
   "kind": 1,
   "constrainedType": "Condition",
   "abstract": false,
@@ -39,15 +38,13 @@
           "discriminator": [
             "url"
           ],
-          "rules": 2
+          "rules": 1
         }
       },
       {
         "path": "Condition.extension",
         "name": "episode",
         "short": "first | new | review | flare | end",
-        "definition": "The episodicity status of a condition.",
-        "min": 0,
         "max": "1",
         "type": [
           {
@@ -62,10 +59,6 @@
       {
         "path": "Condition.extension",
         "name": "related",
-        "short": "Related condition",
-        "definition": "A reference to another condition (target) whose relationship is defined by the relationship type code.",
-        "min": 0,
-        "max": "*",
         "type": [
           {
             "TypeName": "Extension",
@@ -78,13 +71,11 @@
       },
       {
         "path": "Condition.identifier.system",
-        "min": 1,
-        "Item3": "http://www.acme.com/identifiers/patient or urn:ietf:rfc:3986 if the Identifier.value itself is a full uri"
+        "min": 1
       },
       {
         "path": "Condition.identifier.value",
-        "min": 1,
-        "Item3": "123456"
+        "min": 1
       },
       {
         "path": "Condition.identifier.assigner",
@@ -175,6 +166,7 @@
         "path": "Condition.code.coding",
         "name": "SNOMED CT",
         "short": "SNOMED CT representation identifying the condition or diagnosis",
+        "min": 1,
         "max": "1",
         "binding": {
           "strength": 0,
@@ -212,7 +204,8 @@
       },
       {
         "path": "Condition.category.coding.system",
-        "min": 1
+        "min": 1,
+        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1"
       },
       {
         "path": "Condition.category.coding.version",
@@ -220,8 +213,7 @@
       },
       {
         "path": "Condition.category.coding.code",
-        "min": 1,
-        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-ConditionCategory-1"
+        "min": 1
       },
       {
         "path": "Condition.category.coding.display",

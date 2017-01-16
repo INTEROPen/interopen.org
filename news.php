@@ -14,14 +14,6 @@
 			<p>The INTEROPen 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
 		  </div>
         </div>
-		<div id="05jan">
-		  <p class="news-title">2017 emerges as pivotal year for FHIR interoperability standard</p>
-		  <p class="news-meta">05 January 2017&nbsp;Greg Slabodkin</p>
-		  <div class="news-text">
-		  <p>"Health Level Seven International’s Fast Healthcare Interoperability Resources (FHIR) application programming interface is moving closer to becoming a mature standard, with the “normative” version slated for release sometime in 2017."</p>
-		  <p><a href="http://www.healthdatamanagement.com/news/2017-emerges-as-pivotal-year-for-fhir-interoperability-standard">Read the full article here.</a></p>
-		  </div>
-		</div>
         <div id="29dec">
 		  <p class="news-title">Emerging Target Architecture</p>
 		  <p class="news-meta">29 December 2016 &nbsp; Will Smart, NHS England CIO</p>
@@ -123,6 +115,12 @@
       
       <div class="news-list">
 
+	    <div id="05jan">
+		  <a class="news-title" href="http://www.healthdatamanagement.com/news/2017-emerges-as-pivotal-year-for-fhir-interoperability-standard">2017 emerges as pivotal year for FHIR interoperability standard</a>
+		  <p class="news-meta">05 Jan 2017 &nbsp; healthdatamanagement.com</p>
+		  <p class="news-summary">Health Level Seven International’s Fast Healthcare Interoperability Resources (FHIR) application programming interface is moving closer to becoming a mature standard, with the “normative” version slated for release sometime in 2017.</p>
+		</div>
+		
         <div id="3nov">
           <a class="news-title" href="http://www.digitalhealth.net/infrastructure/48240/ade-memoire:-all-mod-cons">Ade Memoire: all mod cons</a>
           <p class="news-meta">3 Nov 2016 &nbsp; digitalhealth.net</p>

@@ -53,7 +53,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Interopen - Supplier led healthcare IT interoperability in the UK</title>
+    <title>Interopen - Healthcare IT interoperability in the UK</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400" rel="stylesheet">

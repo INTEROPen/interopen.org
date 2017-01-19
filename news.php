@@ -8,14 +8,14 @@
       
       <div class="news-list">
 		<div id="12jan">
-		  <p class="news-title">2017 INTEROPen Summit Agenda</p>
+		  <p class="news-title">2017 Interop Summit Agenda</p>
 		  <p class="news-meta">12 January 2017 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
-			<p>The INTEROPen 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
+			<p>The Interop 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
 		  </div>
         </div>
         <div id="29dec">
-		  <p class="news-title">Emerging Target Architecture</p>
+		  <p class="news-title">Interoperability and Population Health Summit: Emerging Target Architecture</p>
 		  <p class="news-meta">29 December 2016 &nbsp; Will Smart, NHS England CIO</p>
 		  <div class="news-text">
 			<p><a href="content/Interoperability%20Summit%20-%20Emerging%20Target%20Architecture%20v1-0.pdf">This is a paper</a> summarising the outputs from an Interoperability and Population Health Summit that was convened by Will Smart, NHS England CIO, in November 2016.</p>

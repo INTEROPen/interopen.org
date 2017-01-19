@@ -31,7 +31,7 @@
             <table>
               <tr>
                 <td>
-                  <p>INTEROPen 4 was held on 5 July</p>
+                  <p>INTEROPen 4 was held on the 5 July</p>
                 </td>
               </tr>
               <tr>

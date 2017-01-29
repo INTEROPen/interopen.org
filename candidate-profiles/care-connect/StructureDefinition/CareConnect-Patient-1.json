@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2017-01-16T06:32:03.665+00:00"
+    "lastUpdated": "2017-01-18T07:50:16.325+00:00"
   },
   "extension": [
     {
@@ -466,30 +466,6 @@
       },
       {
         "path": "Patient.communication",
-        "max": "0"
-      },
-      {
-        "path": "Patient.communication.language",
-        "binding": {
-          "strength": 0,
-          "Item": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
-        }
-      },
-      {
-        "path": "Patient.communication.language.coding.system",
-        "min": 1,
-        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage"
-      },
-      {
-        "path": "Patient.communication.language.coding.version",
-        "max": "0"
-      },
-      {
-        "path": "Patient.communication.language.coding.code",
-        "min": 1
-      },
-      {
-        "path": "Patient.communication.language.coding.userSelected",
         "max": "0"
       },
       {

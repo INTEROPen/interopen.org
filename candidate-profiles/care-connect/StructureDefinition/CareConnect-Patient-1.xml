@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-01-16T06:32:03.665+00:00" />
+    <lastUpdated value="2017-01-18T07:50:16.325+00:00" />
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1" />
@@ -404,30 +404,6 @@
     </element>
     <element>
       <path value="Patient.communication" />
-      <max value="0" />
-    </element>
-    <element>
-      <path value="Patient.communication.language" />
-      <binding>
-        <strength value="required" />
-        <valueSetUri value="http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml" />
-      </binding>
-    </element>
-    <element>
-      <path value="Patient.communication.language.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage" />
-    </element>
-    <element>
-      <path value="Patient.communication.language.coding.version" />
-      <max value="0" />
-    </element>
-    <element>
-      <path value="Patient.communication.language.coding.code" />
-      <min value="1" />
-    </element>
-    <element>
-      <path value="Patient.communication.language.coding.userSelected" />
       <max value="0" />
     </element>
     <element>

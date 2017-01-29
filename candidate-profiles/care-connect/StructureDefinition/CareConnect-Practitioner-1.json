@@ -1,6 +1,6 @@
 ﻿{
   "meta": {
-    "lastUpdated": "2017-01-16T06:36:25.528+00:00"
+    "lastUpdated": "2017-01-18T07:47:44.706+00:00"
   },
   "url": "http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml",
   "version": "1.0",
@@ -21,6 +21,28 @@
           {
             "TypeName": "Practitioner",
             "code": "Practitioner"
+          }
+        ]
+      },
+      {
+        "path": "Practitioner.extension",
+        "slicing": {
+          "discriminator": [
+            "url"
+          ],
+          "rules": 1
+        }
+      },
+      {
+        "path": "Practitioner.extension",
+        "name": "nhsCommunication",
+        "type": [
+          {
+            "TypeName": "Extension",
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml"
+            ]
           }
         ]
       },
@@ -171,28 +193,6 @@
       },
       {
         "path": "Practitioner.communication",
-        "binding": {
-          "strength": 0,
-          "Item": {
-            "reference": "http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml"
-          }
-        }
-      },
-      {
-        "path": "Practitioner.communication.coding.system",
-        "min": 1,
-        "Item1": "http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage"
-      },
-      {
-        "path": "Practitioner.communication.coding.version",
-        "max": "0"
-      },
-      {
-        "path": "Practitioner.communication.coding.code",
-        "min": 1
-      },
-      {
-        "path": "Practitioner.communication.coding.userSelected",
         "max": "0"
       }
     ]

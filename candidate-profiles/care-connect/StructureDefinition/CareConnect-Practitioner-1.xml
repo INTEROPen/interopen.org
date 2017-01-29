@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-01-16T06:36:25.528+00:00" />
+    <lastUpdated value="2017-01-18T07:47:44.706+00:00" />
   </meta>
   <url value="http://hl7.org.uk/CareConnect-Practitioner-1.structuredefinition.xml" />
   <version value="1.0" />
@@ -19,6 +19,21 @@
       <path value="Practitioner" />
       <type>
         <code value="Practitioner" />
+      </type>
+    </element>
+    <element>
+      <path value="Practitioner.extension" />
+      <slicing>
+        <discriminator value="url" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element>
+      <path value="Practitioner.extension" />
+      <name value="nhsCommunication" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org.uk/CareConnect-NhsCommunication-1-Extension.structuredefinition.xml" />
       </type>
     </element>
     <element>
@@ -151,28 +166,6 @@
     </element>
     <element>
       <path value="Practitioner.communication" />
-      <binding>
-        <strength value="required" />
-        <valueSetReference>
-          <reference value="http://hl7.org.uk/CareConnect-HumanLanguage-1.valueset.xml" />
-        </valueSetReference>
-      </binding>
-    </element>
-    <element>
-      <path value="Practitioner.communication.coding.system" />
-      <min value="1" />
-      <fixedUri value="http://hl7.org.uk/fhir/ValueSet/CareConnect-HumanLanguage" />
-    </element>
-    <element>
-      <path value="Practitioner.communication.coding.version" />
-      <max value="0" />
-    </element>
-    <element>
-      <path value="Practitioner.communication.coding.code" />
-      <min value="1" />
-    </element>
-    <element>
-      <path value="Practitioner.communication.coding.userSelected" />
       <max value="0" />
     </element>
   </differential>

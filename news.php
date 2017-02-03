@@ -7,13 +7,23 @@
       <h1 class="page-heading news-heading">News</h1> 
       
       <div class="news-list">
-		<div id="12jan">
+		<div id="pinned">
 		  <p class="news-title">2017 Interop Summit Agenda</p>
-		  <p class="news-meta">12 January 2017 &nbsp; Amir Mehrkar</p>
+		  <p class="news-meta">**pinned item: 12 January 2017 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
 			<p>The Interop 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
 		  </div>
         </div>
+
+		<div id="16jan">
+		  <p class="news-title">C4H Briefing - FHIR Tooling</p>
+		  <p class="news-meta">16 January 2016 &nbsp; Amir Mehrkar</p>
+		  <div class="news-text">
+			<p>The Code4Health Interoperability Community Board endorsed this paper and its recommendations.  FHIR tooling is not quite mature enough to drive the clinical engagement to help define clinical user requirements and use cases.  This is an opportunity for members to share their initial thoughts on this paper.  The NHS Digital team plans to initiate this in collaboration with community input.  This should be an exciting project to help further popularise and engage clinicians and technician in FHIR.</p>
+			<p>Click <a href="content/C4H Briefing - FHIR Tooling v1.2.pdf">here</a> for the paper.</p>
+		  </div>
+		</div>
+
         <div id="29dec">
 		  <p class="news-title">Interoperability and Population Health Summit: Emerging Target Architecture</p>
 		  <p class="news-meta">29 December 2016 &nbsp; Will Smart, NHS England CIO</p>

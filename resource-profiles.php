@@ -26,9 +26,11 @@
           <li>Condition</li>
           <li>Encounter</li>
           <li>FamilyMemberHistory</li>
+		  <li>Flag</li>
           <li>Immunization</li>
           <li>Location</li>
           <li>Medication</li>
+		  <li>MedicationFlag</li>
           <li>MedicationOrder</li>
           <li>MedicationStatement</li>
           <li>Observation</li>

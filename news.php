@@ -20,7 +20,7 @@
 		  <p class="news-meta">17 January 2016 &nbsp; Luke Readman, Chair C4H CIB</p>
 		  <div class="news-text">
               <p>Members of the C4H CIB responded to the <a href="content/Interoperability%20Summit%20-%20Emerging%20Target%20Architecture%20v1-0.pdf"> Emerging Target Architecture paper</a> by NHS England CIO, Will Smart. </p>
-			<p>Click <a href="content/Letter%20to%20Will%20Smart%20190117.pdf">here</a> for the paper.</p>
+			<p>Click <a href="content/Letter%20to%20Will%20Smart%20190117.pdf">here</a> for the paper. Discuss <a href=https://interopen.ryver.com/#posts/1249360> here </a>on RYVER</p>
 		  </div>
 		</div>
           

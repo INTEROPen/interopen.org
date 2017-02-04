@@ -15,8 +15,17 @@
 		  </div>
         </div>
 
+          <div id="16jan">
+		  <p class="news-title">Code4Health Interoperability Community Board (C4H CIB) - Response to "Emerging Target Architecture" paper</p>
+		  <p class="news-meta">17 January 2016 &nbsp; Luke Readman, Chair C4H CIB</p>
+		  <div class="news-text">
+              <p>Members of the C4H CIB responded to the <a href="content/Interoperability%20Summit%20-%20Emerging%20Target%20Architecture%20v1-0.pdf"> Emerging Target Architecture paper</a> by NHS England CIO, Will Smart. </p>
+			<p>Click <a href="content/Letter%20to%20Will%20Smart%20190117.pdf">here</a> for the paper.</p>
+		  </div>
+		</div>
+          
 		<div id="16jan">
-		  <p class="news-title">C4H Briefing - FHIR Tooling</p>
+		  <p class="news-title">Code4Health Interoperability Community Board Briefing - FHIR Tooling</p>
 		  <p class="news-meta">16 January 2016 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
 			<p>The Code4Health Interoperability Community Board endorsed this paper and its recommendations.  FHIR tooling is not quite mature enough to drive the clinical engagement to help define clinical user requirements and use cases.  This is an opportunity for members to share their initial thoughts on this paper.  The NHS Digital team plans to initiate this in collaboration with community input.  This should be an exciting project to help further popularise and engage clinicians and technician in FHIR.</p>

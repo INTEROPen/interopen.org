@@ -15,7 +15,7 @@
 		  </div>
         </div>
 
-          <div id="16jan">
+          <div id="17jan">
 		  <p class="news-title">Code4Health Interoperability Community Board (C4H CIB) - Response to "Emerging Target Architecture" paper</p>
 		  <p class="news-meta">17 January 2016 &nbsp; Luke Readman, Chair C4H CIB</p>
 		  <div class="news-text">

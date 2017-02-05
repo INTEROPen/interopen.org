@@ -14,14 +14,14 @@
 
         <h2 class="index-col-heading">Upcoming events</h2>          
 
+          <div class="event">
+          <span class="event-date">2 &amp; 3 Mar</span>
+          <span class="event-text"><a href="events#interopsummit">Interop Summit 2017</a></span>
+        </div>
+          
         <div class="event">
           <span class="event-date">20 Jan</span>
           <span class="event-text"><a href="events#catonfhir">CATonFHIR hands-on event</a></span>
-        </div>
-        
-        <div class="event">
-          <span class="event-date">2 &amp; 3 Mar</span>
-          <span class="event-text"><a href="events#interopsummit">Interop Summit 2017</a></span>
         </div>
         
         <p><a class="btn btn-default" href="events" role="button">View full events list &raquo;</a></p>
@@ -50,7 +50,9 @@
 
         <h2 class="index-col-heading">News</h2>
 
-		<p class="index-news-item"><span class="news-date">12 Jan</span><a href="news#pinned">Interop 2017 Summit agenda</a></p>        
+		<p class="index-news-item"><span class="news-date">12 Jan</span><a href="news#pinned">Interop 2017 Summit agenda</a></p>
+        <p class="index-news-item"><span class="news-date">17 Jan</span><a href="news#17jan">
+Code4Health Interoperability Community Board Response to Emerging Target Architecture paper by Will Smart, NHS England CIO</a></p>
         <p class="index-news-item"><span class="news-date">16 Jan</span><a href="news#16jan">FHIR Briefing Paper - FHIR Technical Tools to Code4Health Interop Community Board</a></p>        
         <p class="index-news-item"><span class="news-date">29 Dec</span><a href="news#29dec">Interoperability and Population Health Summit: Emerging Target Architecture - Will Smart, NHS England CIO</a></p>        
         <p class="index-news-item"><span class="news-date">19 Oct</span><a href="news#19oct">Developing Community FHIR Profiles (Webinar slides)</a></p>

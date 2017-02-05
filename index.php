@@ -16,7 +16,7 @@
 
           <div class="event">
           <span class="event-date">2 &amp; 3 Mar</span>
-          <span class="event-text"><a href="events#interopsummit">Interop Summit 2017</a></span>
+          <span class="event-text"><a href="events#interopsummit">Interop Summit 2017 </a><a href=https://t.co/omn0nlEn45>BOOK HERE</a> </span>
         </div>
           
         <div class="event">
@@ -50,7 +50,7 @@
 
         <h2 class="index-col-heading">News</h2>
 
-		<p class="index-news-item"><span class="news-date">12 Jan</span><a href="news#pinned">Interop 2017 Summit agenda</a></p>
+          <p class="index-news-item"><span class="news-date">12 Jan</span><a href=https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit>Interop 2017 Summit agenda</a> </p>
         <p class="index-news-item"><span class="news-date">17 Jan</span><a href="news#17jan">
 Code4Health Interoperability Community Board Response to Emerging Target Architecture paper by Will Smart, NHS England CIO</a></p>
         <p class="index-news-item"><span class="news-date">16 Jan</span><a href="news#16jan">FHIR Briefing Paper - FHIR Technical Tools to Code4Health Interop Community Board</a></p>        

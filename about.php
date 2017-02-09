@@ -25,58 +25,101 @@
       <div class="panel-heading">Our members</div>
       <div class="panel-body">
         <ul class="list-unstyled">
+          <li>Active medicine</li>
           <li>Advanced Health and Care</li>
+          <li>A|D Vault, Inc.</li>
           <li>Allocate Software</li>
           <li>Allscripts</li>
           <li>Answer Digital</li>
+          <li>Atos</li>
+          <li>Birmingham &amp; Solihull Mental Health NHS FT</li>
           <li>Blackpear</li>
+          <li>Boots</li>
           <li>BT</li>
-          <li>Cambio+ Healthcare Systems Ltd</li>
+          <li>Cambio+ Healthcare Systems</li>
           <li>Capita Health Partners</li>
           <li>Cerner</li>
-          <li>CGI</li>
+          <li>CGI Group</li>
           <li>CharityLog</li>
+          <li>CheckWare</li>
+          <li>Clinical Information</li>
           <li>CommonTime</li>
           <li>CSC</li>
+          <li>Cyber Media Solutions</li>
+          <li>Deepmind Health</li>
+          <li>Deontics</li>
           <li>Docman</li>
           <li>Egress</li>
-          <li>Emis Health</li>
           <li>Elsevier</li>
+          <li>EMIS Health</li>
+          <li>EMIS National User Group</li>
           <li>Endeavour Health</li>
           <li>Enovacom</li>
-          <li>GPC</li>
+          <li>Epic</li>
+          <li>everyLIFE Technologies</li>
+          <li>Experis</li>
+          <li>Forcare</li>
+          <li>FreshEHR</li>
+          <li>GPC Group</li>
           <li>Graphnet Health</li>
+          <li>Health Fabric</li>
           <li>Health Intelligence</li>
           <li>Health Linked</li>
           <li>Healthcare Gateway</li>
-          <li>Health Fabric</li>
-          <li>Huawei Technologies (UK) Co Ltd</li>
+          <li>HealthForge</li>
+          <li>Healthlinked</li>
+          <li>Healthy London Partnership</li>
+          <li>Huawei Technologies</li>
+          <li>IBM</li>
+          <li>IHE</li>
+          <li>IMD-SOFT</li>
           <li>IMS Maxims</li>
           <li>INPS</li>
           <li>Intelesant</li>
-          <li>InterSystems</li>
+          <li>Intersystems</li>
           <li>JAC Computer Services Ltd</li>
-          <li>Microsoft</li>
+          <li>Kainos Evolve</li>
+          <li>Mayden</li>
+          <li>Medelinked</li>
+          <li>Medxnote</li>
+          <li>Microsoft Health &amp; Life Sciences</li>
+          <li>NHS DIGITAL</li>
+          <li>NHS ENGLAND</li>
+          <li>Northern Ireland CCIO network</li>
+          <li>Nth Dimension</li>
+          <li>OLM systems</li>
+          <li>Open Mapping Software</li>
+          <li>OpenHealthHub CIC</li>
           <li>Optum International</li>
           <li>Orion Health</li>
           <li>Patients Know Best</li>
+          <li>Pinnacle Health Partnership</li>
+          <li>Prederi</li>
+          <li>psHEALTH</li>
+          <li>Pumpco</li>
           <li>Quicksilva Systems Integration Solutions</li>
           <li>Red Embedded Systems</li>
+          <li>Researcher</li>
+          <li>Restart Consulting</li>
           <li>Ripple</li>
-          <li>SCC</li>
-          <li>Servelec Healthcare</li>
+          <li>Salford Royal NHS FT</li>
+          <li>Servelec</li>
           <li>SiteKit</li>
-          <li>Solutions4Health Ltd</li>
+          <li>Solutions4Health</li>
+          <li>Specialist Computer Centres</li>
           <li>Stalis</li>
-          <li>Sunquest Information Systems Ltd</li>
+          <li>Sunquest</li>
           <li>SystemC</li>
           <li>Targett Business Technology</li>
           <li>Tiani Spirit</li>
           <li>TotalMobile</li>
           <li>TPP</li>
-          <li>Trustmarque</li>
+          <li>University College London Hospitals NHS FT</li>
+          <li>University Southampton Hospitals NHS FT</li>
           <li>Virgin Media Business</li>
           <li>Wiggly-Amps</li>
+          <li>XML Solutions</li>
+          <li>York Teaching Hospitals NHS FT</li>
         </ul>
       </div>
     </div>

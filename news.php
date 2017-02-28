@@ -15,6 +15,15 @@
 		  </div>
         </div>
 
+		<div id="27feb">
+		  <p class="news-title">Request from INTEROpen to HL7UK</p>
+		  <p class="news-meta">27 February 2017 &nbsp; Amir Mehrkar</p>
+		  <div class="news-text">
+              <p>INTEROPen request a HL7UK ballot on the draft INTEROPen CareConnect profiles(extensions and valuesets)</p>
+			<p>Click <a href="content/INTEROPen%20to%20HL7%20UK%20CareConnect%20FHIR%20profile%20ballot%20request%20and%20response%20from%20HL7UK.pdf">here</a> for the full details. Discuss <a href=https://interopen.ryver.com/#posts/1281147> here </a>on RYVER</p>
+		  </div>
+		</div>
+		
           <div id="17jan">
 		  <p class="news-title">Code4Health Interoperability Community Board (C4H CIB) - Response to "Emerging Target Architecture" paper</p>
 		  <p class="news-meta">17 January 2016 &nbsp; Luke Readman, Chair C4H CIB</p>

@@ -58,6 +58,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="~/favicon.ico" type="image/x-icon">
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

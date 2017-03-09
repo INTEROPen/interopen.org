@@ -14,6 +14,8 @@
       <p>Commercial interests are put to one side in the group’s activities.</p>
       
       <p class="text-left">To join INTEROPen please contact <a class="emailb" href="">.</a></p>
+	  
+	  <p class="text-left"><a href="content/MembershipTnCINTEROPenWebsite.pdf">Membership Terms and Conditions</a>.</p>
         
     </blockquote>
   </div>

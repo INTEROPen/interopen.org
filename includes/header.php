@@ -12,7 +12,7 @@
             "events.php" => array("NAME" => "Meetings &amp; events", "LINK" => "events"),
             "news.php" => array("NAME" => "News &amp; media", "LINK" => "news"),
             "discuss.php" => array("NAME" => "Discuss", "LINK" => "discuss"),
-            "interop-summit.php" => array("NAME" => "<b><span style='color: #1b5a7d'>@INTEROP</span><span style='color: #F16D3B'>SUMMIT</span></b>", "LINK" => "interop-summit"));
+            "http://www.interopsummit.com" => array("NAME" => "<b><span style='color: #1b5a7d'>@INTEROP</span><span style='color: #F16D3B'>SUMMIT</span></b>", "LINK" => "http://www.interopsummit.com"));
 
   function writeNavbarItem($page_filename, $page_name, $page_link, $current_filename)
   {

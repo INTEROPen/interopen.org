@@ -11,7 +11,7 @@
 		  <p class="news-title">Request for Governance feedback</p>
 		  <p class="news-meta">14 March 2017 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
-			<p>At the recent <a href="http://www.interopsummit.com">interopsummit</a> panel debate, it was announced that leaders of interoperability networks (C4H, HL7UK, techUK, PRSB, BCS, CCIO/CIO network, OpenEHR, NHS Digital, NHS England) have agreed to 
+			<p>At the recent <a href="http://www.interopsummit.com">interopsummit</a> panel debate, it was announced that leaders of interoperability networks (C4H, HL7UK, techUK, PRSB, BCS, IHE, CCIO/CIO network, OpenEHR, NHS Digital, NHS England) have agreed to 
 			work to establish how they can come together under an umbrella group called INTEROPen, whilst keeping the INTEROPen T+C/values/purpose/aims.
 			</p>
 			<p><a href="content/INTEROPen%20governance%20discussions.pdf">This is a request to the INTEROPen membership</a> for OPEN feedback – via the <a href="https://interopen.ryver.com/index.html#forums/1106270">RYVER GOVERNANCE FORUM CHAT</a> - on how our governance structure could evolve.</p>

@@ -7,11 +7,15 @@
       <h1 class="page-heading news-heading">News</h1> 
       
       <div class="news-list">
-		<div id="pinned">
-		  <p class="news-title">2017 Interop Summit Agenda</p>
-		  <p class="news-meta">**pinned item: 12 January 2017 &nbsp; Amir Mehrkar</p>
+		<div id="14mar">
+		  <p class="news-title">Request for Governance feedback</p>
+		  <p class="news-meta">14 March 2017 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">
-			<p>The Interop 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
+			<p>At the recent <a href="http://www.interopsummit.com">interopsummit</a> panel debate, it was announced that leaders of interoperability networks (C4H, HL7UK, techUK, PRSB, BCS, CCIO/CIO network, OpenEHR, NHS Digital, NHS England) have agreed to 
+			work to establish how they can come together under an umbrella group called INTEROPen, whilst keeping the INTEROPen T+C/values/purpose/aims.
+			</p>
+			<p><a href="content/INTEROPen%20governance%20discussions.pdf">This is a request to the INTEROPen membership</a> for OPEN feedback – via the <a href="https://interopen.ryver.com/index.html#forums/1106270">RYVER GOVERNANCE FORUM CHAT</a> - on how our governance structure could evolve.</p>
+			<p>INTEROPen has been established for just over 1 year and continues to grow with organisations (vendor, provider, standards and clinical) joining weekly.</p>
 		  </div>
         </div>
 
@@ -23,8 +27,16 @@
 			<p>Click <a href="content/INTEROPen%20to%20HL7%20UK%20CareConnect%20FHIR%20profile%20ballot%20request%20and%20response%20from%20HL7UK.pdf">here</a> for the full details. Discuss <a href=https://interopen.ryver.com/#posts/1281147> here </a>on RYVER</p>
 		  </div>
 		</div>
+
+		<div id="12jan">
+		  <p class="news-title">2017 Interop Summit Agenda</p>
+		  <p class="news-meta">12 January 2017 &nbsp; Amir Mehrkar</p>
+		  <div class="news-text">
+			<p>The Interop 2017 Summit agenda is now available <a href="https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit">here</a></p>
+		  </div>
+        </div>
 		
-          <div id="17jan">
+        <div id="17jan">
 		  <p class="news-title">Code4Health Interoperability Community Board (C4H CIB) - Response to "Emerging Target Architecture" paper</p>
 		  <p class="news-meta">17 January 2016 &nbsp; Luke Readman, Chair C4H CIB</p>
 		  <div class="news-text">

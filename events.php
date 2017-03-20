@@ -19,6 +19,14 @@
   <table class="events-table events-table-past">
     <tbody>
       <tr>
+        <td><span class="event-date">17 Mar</span></td>
+        <td id="careconnect170317">
+          <p class="event-title">CareConnect curation update</p>
+          <p>An update of the CareConnect FHIR curation work and how NHS Digital plans to use the CareConnect profiles and contribute to the INTEROPen community, by NHS Digital's Head of Data Standards, Richard Kavanagh.</p>
+          <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/INTEROPen Curation Call 2017-03-17.pdf">Slides from the webex</a></p></div>
+        </td>
+      </tr>
+      <tr>
         <td><span class="event-date">2-3 Mar</span></td>
         <td id="interopsummit">
           <p class="event-title">Interop Summit 2017</p>

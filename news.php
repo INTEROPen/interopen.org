@@ -7,7 +7,7 @@
       <h1 class="page-heading news-heading">News</h1> 
       
       <div class="news-list">
-		<div id="14mar">
+   	    <div id="14mar">
 		  <p class="news-title">Request for Governance feedback</p>
 		  <p class="news-meta">14 March 2017 &nbsp; Amir Mehrkar</p>
 		  <div class="news-text">

@@ -49,13 +49,12 @@
       <div class="col-md-4 index-col">
 
         <h2 class="index-col-heading">News</h2>
-
+        <p class="index-news-item"><span class="news-date">28 Apr</span><a href="news#28apr">INTEROPen Governance proposals from interoperability networks</a></p>
         <p class="index-news-item"><span class="news-date">14 Mar</span><a href="news#14mar">Request for feedback on the INTEROpen Governance structure</a></p>
         <p class="index-news-item"><span class="news-date">27 Feb</span><a href="news#27feb">INTEROPen request a HL7UK ballot on the draft INTEROPen CareConnect profiles(extensions and valuesets)</a></p>
         <p class="index-news-item"><span class="news-date">12 Jan</span><a href=https://docs.google.com/document/d/1-ZaZw5Y69cNigQ4iPb2pr6Qz4Ksp6Tf-anaCEfNaLsk/edit>Interop 2017 Summit agenda</a> </p>
         <p class="index-news-item"><span class="news-date">17 Jan</span><a href="news#17jan">Code4Health Interoperability Community Board Response to Emerging Target Architecture paper by Will Smart, NHS England CIO</a></p>
         <p class="index-news-item"><span class="news-date">16 Jan</span><a href="news#16jan">FHIR Briefing Paper - FHIR Technical Tools to Code4Health Interop Community Board</a></p>        
-        <p class="index-news-item"><span class="news-date">29 Dec</span><a href="news#29dec">Interoperability and Population Health Summit: Emerging Target Architecture - Will Smart, NHS England CIO</a></p>        
 
         <p><a class="btn btn-default" href="news" role="button">View all news &raquo;</a></p>
         

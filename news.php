@@ -7,6 +7,20 @@
       <h1 class="page-heading news-heading">News</h1> 
       
       <div class="news-list">
+	  
+	    <div id="28apr">
+		  <p class="news-title">INTEROPen Governance proposals from interoperability networks</p>
+		  <p class="news-meta">28 April 2017 &nbsp; Amir Mehrkar</p>
+		  <div class="news-text">
+			<p>
+			The following interoperability networks BCS, CCIO/CIO Network, C4H, HL7UK, IHE, NHS Digital, NHS England, NHS Hack Days, OpenEHR, PRSB and techUK have all joined INTEROPen, agreeing to its terms and conditions.
+			</p>
+			<p>
+			Discussions amongst leaders of these networks have led to the <a href="content/2017-04 INTEROPen Governance notes.pdf">following agreement</a>. INTEROPen members are encouraged to review and comment so we can progress the governance work and establish a new INTEROPen board to lead the interoperability standards work collaboratively.
+			</p>
+		  </div>
+        </div>
+		
    	    <div id="14mar">
 		  <p class="news-title">Request for Governance feedback</p>
 		  <p class="news-meta">14 March 2017 &nbsp; Amir Mehrkar</p>

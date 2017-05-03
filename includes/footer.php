@@ -2,7 +2,7 @@
       <hr/>
 
       <footer>
-        <span>&copy; 2016 INTEROPen</span>
+        <span>&copy; 2017 INTEROPen</span>
         
         <span style="float: right;">
             <span class="github-btn" id="github-btn">

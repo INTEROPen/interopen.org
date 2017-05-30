@@ -19,28 +19,14 @@
     <h3>Member proposals</h3>
     
     <ol>
-      <li><a href="candidate-profiles/care-connect/"><span style="font-size: 120%">The CareConnect Group</span></a>
-        <div style="padding-top: 10px;">Available for preview (<a href="candidate-profiles/care-connect/">HERE</a>):</div>
-        <ul class="candidate-profile-name-list">
-          <li>AllergyIntolerance</li>
-          <li>Condition</li>
-          <li>Encounter</li>
-          <li>FamilyMemberHistory</li>
-		  <li>Flag</li>
-          <li>Immunization</li>
-          <li>Location</li>
-          <li>Medication</li>
-		  <li>MedicationFlag</li>
-          <li>MedicationOrder</li>
-          <li>MedicationStatement</li>
-          <li>Observation</li>
-          <li>Organization</li>
-          <li>Patient</li>
-          <li>Practitioner</li>
-          <li>Procedure</li>
-        </ul>        
-      </li>
-    </ol>
+      <li><span style="font-size: 120%">CareConnect profiles</span>
+        <p>
+          Including AllergyIntolerance, Condition, Encounter, FamilyMemberHistory, Flag, Immunization, Location,  Medication, MedicationFlag, MedicationOrder, MedicationStatement, Observation, Organization, Patient,  Practitioner and Procedure
+        </p>
+        <div>
+        <a href="https://github.com/HL7-UK/CareConnect-profiles/tree/feature/interopen"><button type="button" class="btn btn-primary">View profiles on GitHub</button></a>
+        </div>
+    <p>(A new profile viewer is currently under development)</p>
     
     <h3>Other resouces</h3>
     

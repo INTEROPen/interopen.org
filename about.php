@@ -46,11 +46,11 @@
           <li>CheckWare</li>
           <li>Clinical Information</li>
           <li>CommonTime</li>
-          <li>CSC</li>
           <li>Cyber Media Solutions</li>
           <li>Deepmind Health</li>
           <li>Deontics</li>
           <li>Docman</li>
+          <li>DXC Technology</li>
           <li>Egress</li>
           <li>Elsevier</li>
           <li>EMIS Health</li>

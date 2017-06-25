@@ -5,7 +5,7 @@
   $page_configuration = array(
             "index.php" => array("NAME" => "Home", "LINK" => "./"),
             "about.php" => array("NAME" => "About", "LINK" => "about"),
-            "DROPDOWN" => array("NAME" => "Standards development", 
+            "DROPDOWN" => array("NAME" => "Standards development",
                                 "ELEMENTS" => array("standards.php" => array("NAME" => "Overview", "LINK" => "standards"),
                                                     "resource-profiles.php" => array("NAME" => "FHIR resource profiles", "LINK" => "resource-profiles"),
                                                     "connectathon.php" => array("NAME" => "Connectathon", "LINK" => "connectathon"))),
@@ -21,12 +21,12 @@
     if ($page_filename != $current_filename)
       $active = '';
 
-    echo '<li' . $active . '><a href="' . $page_link . '">' . $page_name . '</a></li>';  
+    echo '<li' . $active . '><a href="' . $page_link . '">' . $page_name . '</a></li>';
   }
 
   function writeNavbarItems($page_configuration, $current_filename)
   {
-    foreach ($page_configuration as $key => $value) 
+    foreach ($page_configuration as $key => $value)
     {
       if ($key == "DROPDOWN")
       {
@@ -52,7 +52,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Interopen - Healthcare IT interoperability in the UK</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
     <link href="css/style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="~/favicon.ico" type="image/x-icon">
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,29 +69,30 @@
     <![endif]-->
   </head>
   <body>
-    
+    <?php include_once("analyticstracking.php") ?>
+
     <div class="container">
-    
+
       <div class="logo-header">
         <a href="./"><img src="images/logo.png" alt="INTEROPen logo" />
         <h1>INTEROPen</h1></a>
         <div class="logo-header-right"><h4>An Open Collaborative Leading Healthcare IT Interoperability</h4></div>
-        <div class="logo-header-clear"></div>  
+        <div class="logo-header-clear"></div>
       </div>
-      
+
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-    
-      <ul class="nav navbar-nav">  
+
+      <ul class="nav navbar-nav">
 <?php
-        
+
   writeNavbarItems($page_configuration, $current_filename);
-          
+
 ?>
         </ul>
-      
+
         </div>
-          
+
       </nav>
       <div style="overflow: hidden; height: 0px; width: 0px;">.</div>
 <!-- end header -->

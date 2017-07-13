@@ -13,7 +13,7 @@
       <li>They should be created using the Forge tool.</li>
       <li>They must first be submitted via a pull request to the <a href="https://github.com/HL7-UK/CareConnect-profiles">HL7 CareConnect repository</a> to ensure visibility and access to the source.</li>
       <li>A suitable view of the FHIR profile (e.g. Simplifier viewer, or via clinFHIR) should be created in order to be able to view the profiles, together with any documentation providing rationale for changes to the current version.</li>
-      <li>A submission to this web site should include a summary of the project content and the organisations responsible for editing the proposal.</li>
+      <li>A submission to <a href="mailto:CareConnect@interopen.org">CareConnect@interopen.org</a> should include a summary of the project content and the organisations responsible for editing the proposal.</li>
     </ol>
     
     <h3>Member proposals</h3>

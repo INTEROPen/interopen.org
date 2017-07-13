@@ -12,7 +12,7 @@
 
     <h3>Outputs</h3>
 
-    <p>A Library of HL7® FHIR® resource profiles and interaction patterns (APIs).</p>
+    <p>A Library of HL7® FHIR® resource profiles and <a href="https://nhsconnect.github.io/CareConnectAPI/">interaction patterns (APIs)</a>.</p>
 
     <p>Once having established a consensus with INTEROPen members these will be submitted for clinical validation and feedback by a wider group of stakeholders, the lead clinical validation organisation being <a href="http://theprsb.org">the PRSB</a>.</p>
 

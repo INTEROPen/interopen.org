@@ -52,7 +52,6 @@
           <li>Clinical Information</li>
           <li>CommonTime</li>
           <li>Connecting Care Partnership</li>
-          <li>CSC</li>
           <li>Cyber Media Solutions</li>
           <li>Deepmind Health</li>
           <li>Deontics</li>

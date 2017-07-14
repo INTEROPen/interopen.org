@@ -30,7 +30,6 @@
           <li>AccuRx</li>
           <li>Active medicine</li>
           <li>Advanced Health &amp; Care</li>
-          <li>A|D Vault, Inc.</li>
           <li>Allocate Software</li>
           <li>Allscripts</li>
           <li>Answer Digital</li>

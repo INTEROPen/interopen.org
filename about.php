@@ -27,138 +27,156 @@
       <div class="panel-heading">Our members</div>
       <div class="panel-body">
         <ul class="list-unstyled">
-          <li>AccuRx</li>
-          <li>Active medicine</li>
-          <li>Advanced Health &amp; Care</li>
-          <li>Allocate Software</li>
-          <li>Allscripts</li>
-          <li>Answer Digital</li>
-          <li>Application Insight</li>
-          <li>Atos</li>
-          <li>BCS (British Computer Society)</li>
-          <li>Birmingham &amp; Solihull LDR</li>
-          <li>Birmingham &amp; Solihull Mental Health NHS FT</li>
-          <li>Black Pear</li>
-          <li>Boots</li>
-          <li>BT</li>
-          <li>Cambio+ Healthcare Systems</li>
-          <li>Capita Health Partners</li>
-          <li>Cerner</li>
-          <li>CGI Group</li>
-          <li>CharityLog</li>
-          <li>CheckWare</li>
-          <li>Clinisys</li>
-          <li>Clinical Information</li>
-          <li>CommonTime</li>
-          <li>Connecting Care Partnership</li>
-          <li>Cyber Media Solutions</li>
-          <li>Deepmind Health</li>
-          <li>Deontics</li>
-          <li>Digital Health CCIO Network</li>
-          <li>Digital Health CIO Network</li>
-          <li>Docman</li>
-          <li>Dorset Health &amp; Care Community (Dorset CCG)</li>
-          <li>DXC Technology</li>
-          <li>Egress</li>
-          <li>Elsevier</li>
-          <li>EMIS Health</li>
-          <li>EMIS National User Group</li>
-          <li>Endeavour Health</li>
-          <li>Enovacom</li>
-          <li>Epic</li>
-          <li>Epro</li>
-          <li>everyLIFE Technologies</li>
-          <li>Experis</li>
-          <li>Forcare</li>
-          <li>FreshEHR</li>
-          <li>GPC Group</li>
-          <li>Graphnet Health</li>
-          <li>Greater Manchester Health &amp;Social Care Partnership CDO</li>
-          <li>Great North Care Record</li>
-          <li>HCI Group (Tech Mahindra Ltd)</li>
-          <li>Health Fabric</li>
-          <li>Health Intelligence</li>
-          <li>Health Linked</li>
-          <li>Healthcare Gateway</li>
-          <li>HealthForge</li>
-          <li>Healthlinked</li>
-          <li>Healthy London Partnership</li>
-          <li>HL7 UK</li>
-          <li>Huawei Technologies</li>
-          <li>IBM</li>
-          <li>IHE UK</li>
-          <li>IMD-SOFT</li>
-          <li>Imperial College Healthcare NHS Trust</li>
-          <li>IMS Maxims</li>
-          <li>INPS</li>
-          <li>Intelesant</li>
-          <li>Intersystems</li>
-          <li>JAC Computer Services Ltd</li>
-          <li>Kainos Evolve</li>
-          <li>Mayden</li>
-          <li>Medelinked</li>
-          <li>Medical Connections</li>
-          <li>Medxnote</li>
-          <li>Microsoft Health &amp; Life Sciences</li>
-          <li>MphRx</li>
-          <li>NHS Digital</li>
-          <li>NHS England</li>
-          <li>NHS Gloucestershire CCG</li>
-          <li>NHS Hack Day</li>
-          <li>NHS South, Central, and West CSU</li>
-          <li>NHS Wales Informatics Service</li>
-          <li>NoemaLife UK</li>
-          <li>Northern Ireland CCIO Network</li>
-          <li>North Yorkshire County Council (Adult Social Care Services)</li>
-          <li>Nottinghamshire Health Informatics Service (NHIS)</li>
-          <li>Northern Ireland CCIO network</li>
-          <li>Nth Dimension</li>
-          <li>OLM systems</li>
-          <li>Open Mapping Software</li>
-          <li>OpenEHR</li>
-          <li>OpenHealthHub CIC</li>
-          <li>Optum International</li>
-          <li>Oracle</li>
-          <li>Orion Health</li>
-          <li>OTTech Healthcare Consultancy</li>
-          <li>Patients Know Best</li>
-          <li>Pinnacle Health Partnership</li>
-          <li>PRSB (Professional Records Standards Body)</li>
-          <li>Prederi</li>
-          <li>psHEALTH</li>
-          <li>Pumpco</li>
-          <li>Quicksilva Systems Integration Solutions</li>
-          <li>Ramsay Systems</li>
-          <li>Red Embedded Systems</li>
-          <li>Researcher</li>
-          <li>Restart Consulting</li>
-          <li>Ripple</li>
-          <li>Salford Royal NHS FT</li>
-          <li>Servelec</li>
-          <li>SiteKit</li>
-          <li>SOCITM</li>
-          <li>Solutions4Health</li>
-          <li>Somerset Integrated Digital Electronic Record</li>
-          <li>Specialist Computer Centres</li>
-          <li>Stalis</li>
-          <li>Sunquest</li>
-          <li>SystemC</li>
-          <li>Targett Business Technology</li>
-          <li>techUK</li>
-          <li>Tiani Spirit</li>
-          <li>Tower Hamlet/Newham/City Hackney/Waltham Forest CCG</li>
-          <li>TotalMobile</li>
-          <li>TPP</li>
-          <li>Trisoft</li>
-          <li>University College London Hospitals NHS FT</li>
-          <li>University Southampton Hospitals NHS FT</li>
-          <li>Virgin Media Business</li>
-          <li>Vision Health</li>
-          <li>Wolters Kluwer Health "HealthLanguage"</li>
-          <li>Wiggly-Amps</li>
-          <li>X-Lab</li>
-          <li>XML Solutions</li>
-          <li>York Teaching Hospitals NHS FT</li>
+            <li>AccuRx</li>
+            <li>Active Medicine</li>
+            <li>Advanced Health and care</li>
+            <li>Aire Logic Ltd (XML Solutions Ltd)</li>
+            <li>Allocate Software</li>
+            <li>Allscripts</li>
+            <li>Answer Digital</li>
+            <li>Application Insight</li>
+            <li>Atos</li>
+            <li>BCS (British Computer Society)</li>
+            <li>Birmingham &amp; Solihull LDR</li>
+            <li>Birmingham &amp; Solihull Mental Health NHS FT</li>
+            <li>Blackpear</li>
+            <li>Boots</li>
+            <li>BT</li>
+            <li>Cambio+ Healthcare Systems</li>
+            <li>Capita Health Partners</li>
+            <li>Careflow Connect Ltd</li>
+            <li>Carelink (Piksel Ltd)</li>
+            <li>CCIO network</li>
+            <li>Cerner</li>
+            <li>CGI Group</li>
+            <li>CharityLog</li>
+            <li>Checkware</li>
+            <li>CJ Technical Consulting Ltd</li>
+            <li>Clinisys</li>
+            <li>CommonTime</li>
+            <li>Connecting Care Partnership (Bristol, North Somerset and South Gloucestershire)</li>
+            <li>CSC</li>
+            <li>Cyber Media Solutions Ltd</li>
+            <li>Deepmind Health</li>
+            <li>Deontics</li>
+            <li>Digital Health CCIO Network</li>
+            <li>Digital Health CIO Network</li>
+            <li>Docman</li>
+            <li>Dorset Health and Care Community (Dorset CCG)</li>
+            <li>Egress</li>
+            <li>Elsevier</li>
+            <li>EMIS Health</li>
+            <li>EMIS National User Group</li>
+            <li>Endeavour Health</li>
+            <li>Epic</li>
+            <li>Epro</li>
+            <li>everyLIFE Technologies</li>
+            <li>Experis</li>
+            <li>Forcare</li>
+            <li>FreshEHR</li>
+            <li>GPC Group</li>
+            <li>Graphnet Health</li>
+            <li>Great North Care Record</li>
+            <li>Greater Manchester Health &amp; Social Care Partnership (NHS CENTRAL MANCHESTER CCG)</li>
+            <li>Greater Manchester Health &amp; Social Care Partnership CDO</li>
+            <li>HCI Group (Tech Mahindra Ltd)</li>
+            <li>Health Education England</li>
+            <li>Health Fabric</li>
+            <li>Health Intelliegence</li>
+            <li>Healthcare Gateway</li>
+            <li>HealthForge</li>
+            <li>HealthLinked</li>
+            <li>Healthy London Partnership</li>
+            <li>HL7 UK</li>
+            <li>Holding Your Hand Ltd</li>
+            <li>Huawei Technologies</li>
+            <li>Humber NHS Foundation Trust</li>
+            <li>Humber, Coast and Vale STP</li>
+            <li>IBM</li>
+            <li>IHE UK</li>
+            <li>IMD-SOFT</li>
+            <li>IMMJ Systems (mediviewer)</li>
+            <li>Imperial College Healthcare NHS Trust</li>
+            <li>IMS MAXIMS</li>
+            <li>Innovate UK - Knowledge Transfer Network</li>
+            <li>INPS</li>
+            <li>Intelesant</li>
+            <li>Intersystems</li>
+            <li>JAC Computer Services Ltd</li>
+            <li>Kainos Evolve</li>
+            <li>Klas Research</li>
+            <li>Lancashire and South Cumbria STP</li>
+            <li>Marie Curie UK</li>
+            <li>Mayden</li>
+            <li>Medelinked</li>
+            <li>Medical Connections</li>
+            <li>Medxnote</li>
+            <li>Microsoft Health &amp; Life Sciences</li>
+            <li>Microtest</li>
+            <li>MphRx</li>
+            <li>NHS Digital</li>
+            <li>NHS England</li>
+            <li>NHS Gloucestershire CCG</li>
+            <li>NHS HACK DAY</li>
+            <li>NHS South, Central and West CSU</li>
+            <li>NHS Wales Informatics Service  - NWIS</li>
+            <li>NoemaLife UK</li>
+            <li>North West London Care Information Exchange</li>
+            <li>North Yorkshire County Council (Adult Social Care Services)</li>
+            <li>Northern Ireland CCIO Network</li>
+            <li>Northumberland, Tyne and Wear NHS Foundation Trust</li>
+            <li>Nottinghamshire Health Informatics Service (NHIS)</li>
+            <li>Nth Dimension</li>
+            <li>OLM Systems</li>
+            <li>One HealthTech</li>
+            <li>Open Mapping Software</li>
+            <li>OpenEHR</li>
+            <li>OpenHealthHub CIC</li>
+            <li>Optum International</li>
+            <li>Oracle</li>
+            <li>Orion Health</li>
+            <li>OTTech Healthcare Consultancy</li>
+            <li>Outcomes Based Healthcare</li>
+            <li>Patients Know Best</li>
+            <li>Pinnacle Health Partnership</li>
+            <li>Prederi</li>
+            <li>PRSB (Professional Records Standards Body)</li>
+            <li>psHEALTH</li>
+            <li>Pumpco</li>
+            <li>Quicksilva Systems Integration Solutions</li>
+            <li>Ramsey Systems</li>
+            <li>Red Embedded Systems</li>
+            <li>Restart Consulting</li>
+            <li>Ripple</li>
+            <li>Salford Royal NHS FT</li>
+            <li>Servelec</li>
+            <li>Sheffield Health and Social Care NHS FT</li>
+            <li>Sitekit</li>
+            <li>SOCITM</li>
+            <li>Soliton IT</li>
+            <li>Solutions4Health</li>
+            <li>Somerset Integrated Digital electronic Record (SIDeR)</li>
+            <li>Specialist Computer Centres</li>
+            <li>Stalis</li>
+            <li>Sunquest</li>
+            <li>SystemC</li>
+            <li>Targett Business Technology</li>
+            <li>Taunton &amp; Somerset NHS FT</li>
+            <li>techUK</li>
+            <li>Tiani Spirit</li>
+            <li>Tiny Medical Apps</li>
+            <li>TotalMobile</li>
+            <li>Tower Hamlet/Newham/City Hackney/Waltham Forest CCG</li>
+            <li>TPP</li>
+            <li>Trisoft Limited (Trisoft Healthcare)</li>
+            <li>University College London Hospitals NHS FT</li>
+            <li>University Hospital Southampton NHS FT</li>
+            <li>Virgin Media Business</li>
+            <li>Vision Health</li>
+            <li>Wiggly-Amps</li>
+            <li>Wolters Kluwer Health "Health Language"</li>
+            <li>X-Lab</li>
+            <li>York Teaching Hospitals NHS FT</li>
         </ul>
       </div>
     </div>

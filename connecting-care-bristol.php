@@ -2,7 +2,7 @@
 
   <div>
 
-    <h1 class="page-heading">Connecting Care</h1>
+    <h1 class="page-heading">Case Study: Connecting Care</h1>
     <h3>Bristol, North Somerset, South Gloucestershire</h3>
     <p>
       Business Capabilities:

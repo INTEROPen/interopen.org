@@ -57,6 +57,8 @@
     <title>Interopen - Healthcare IT interoperability in the UK</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Font Awesome http://fontawesome.io-->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">

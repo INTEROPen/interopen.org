@@ -15,4 +15,10 @@
 4. If you have permission, to deploy to the live site:
     
     * Connect to the live web server via FTP 
-    * Copy your local copy of the files to the `/site/wwwroot` directory 
+    * Copy your local copy of the files to the `/site/wwwroot` directory
+    
+
+### Rewrite Rules
+If you want to add a rewrite rule for the web server, you need to add it to both the .htaccess file, and the web.config file.
+
+Azure Hosting will use the web.config file, but Apache-based servers will use .htaccess. 

@@ -3,20 +3,20 @@
   <div>
 
     <h1 class="page-heading">Interoperability Case Studies</h1>
-    
+
     <p>The following critical appraisal case studies have been sourced from recent exemplar implementations and cover a range of business capabilities. They provide an opportunity for CIOs, CCIOs, IT teams and others to study and learn from detailed analysis and research carried out on a variety of national and international exemplars.</p>
 
     <h2>United Kingdom</h2>
-    
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Bristol</h3>
       </div>
-      <div class="panel-body">      
+      <div class="panel-body">
         <p>The Connecting Care Programme has implemented a read-only shared care record across Bristol, North Somerset and South Gloucestershire. The record is used to share information across a range of health and care settings and support the provision of integrated care.</p>
         <p>The solution uses the Orion Health technology platform.</p>
         <br>
-        <h4><a href="content/interoperability_case_studies/Interoperability_CaseStudy_Bristol.pdf" target="_blank"><button type="button" class="btn btn-default">Download Case Study</button></a></h3>
+        <h4><a href="connecting-care-bristol"><button type="button" class="btn btn-default">View Case Study</button></a></h3>
         <br>
         <p>
           Business Capabilities:
@@ -29,12 +29,12 @@
         </p>
       </div>
     </div>
-    
+
         <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Cheshire</h3>
       </div>
-      <div class="panel-body">      
+      <div class="panel-body">
         <p>The Cheshire Care Record is an integrated care record solution that shares information across a range of health and care settings. The record is used to support clinical decision making and transfers of care. The former West Cheshire Record was extended across the whole of Cheshire in 2016.</p>
         <p>The Cheshire Care Record uses Graphnet CareCentric v.3 software.</p>
         <br>
@@ -74,7 +74,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Greater Manchester</h3>
       </div>
-      <div class="panel-body">      
+      <div class="panel-body">
         <p>The Greater Manchester Academic Science Network Partners (AHSN) have implemented a Lumira data sharing solution to support the devolution of health and care services to Greater Manchester. This is part of the regional interoperability programme called DataWell. At the current scale, the solution enables sharing of pathology information between healthcare organisations, viewable through mobile devices.</p>
         <p>The solution implementation is in progress with a final Go-Live date of May 2018.</p>
         <br>
@@ -170,7 +170,7 @@
     </div>
     <br>
     <h2>International</h2>
-    
+
         <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">New York City</h3>
@@ -212,5 +212,5 @@
 
 
   </div>
-  
+
 <?php include('includes/footer.php') ?>

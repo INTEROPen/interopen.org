@@ -9,6 +9,7 @@
                                 "ELEMENTS" => array("standards.php" => array("NAME" => "Overview", "LINK" => "standards"),
                                                     "resource-profiles.php" => array("NAME" => "FHIR resource profiles", "LINK" => "resource-profiles"),
                                                     "connectathon.php" => array("NAME" => "Connectathon", "LINK" => "connectathon"),
+                                                    "interoperability-case-studies.php" => array("NAME" => "Use Cases", "LINK" => "interoperability-case-studies"),
                                                     "https://nhsconnect.github.io/CareConnectAPI/" => array("NAME" => "CareConnect API", "LINK" => "https://nhsconnect.github.io/CareConnectAPI/"))),
             "events.php" => array("NAME" => "Meetings &amp; events", "LINK" => "events"),
             "news.php" => array("NAME" => "News &amp; media", "LINK" => "news"),

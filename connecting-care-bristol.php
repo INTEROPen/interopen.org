@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <img class="img-responsive" src="images\bristol-hoops.jpg">
+        <img class="img-responsive" src="images\bristol-clifton.jpg">
       </div>
       <div class="col-md-6">
         <div class="media">
@@ -36,7 +36,7 @@
         <br>
         <h4><a href="content/interoperability_case_studies/Interoperability_CaseStudy_Bristol.pdf" target="_blank"><button type="button" class="btn btn-primary"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download Case Study</button></a></h3>
         <h4><a href="https://docs.google.com/forms/d/e/1FAIpQLScKawUgU8x8xr4zaMQnA6Lb78T4R33OyiNcooi1e5k0eipopg/viewform?usp=sf_link" target="_blank"><button type="button" class="btn btn-success"><i class="fa fa-file-text-o" aria-hidden="true"></i> Leave Feedback</button></a></h3>
-        <h4><a href="https://interopen.ryver.com/index.html#forums/1149581" target="_blank"><button type="button" class="btn btn-info"><i class="fa fa-comment-o" aria-hidden="true"></i> Discuss on RYVER</button></a></h3>
+        <h4><a href="https://interopen.ryver.com/#posts/1454714" target="_blank"><button type="button" class="btn btn-info"><i class="fa fa-comment-o" aria-hidden="true"></i> Discuss on RYVER</button></a></h3>
 
       </div>
     </div>

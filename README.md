@@ -24,3 +24,5 @@
 If you want to add a rewrite rule for the web server, you need to add it to both the .htaccess file, and the web.config file.
 
 Azure Hosting will use the web.config file, but Apache-based servers will use .htaccess.
+
+This is a test by Atif

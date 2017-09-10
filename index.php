@@ -13,7 +13,11 @@
       <div class="col-md-4 index-col">
 
         <h2 class="index-col-heading">Upcoming events</h2>          
-
+        <div class="event">
+          <span class="event-date">21 Nov</span>
+          <span class="event-text"><a href="events#clinicians-on-fhir-171121">Clinicians On FHIR @ Kings Fund</a></span>
+          <p><img src="images/events/clinicians-on-fhir.png" style="padding-left: 10px;" width="250" height="141" alt="Clinicians On FHIR"/></p>
+        </div>
          <!-- <div class="event">
           <span class="event-date">2 &amp; 3 Mar</span>
           <span class="event-text"><a href="events#interopsummit">Interop Summit 2017 </a><a href=https://t.co/omn0nlEn45>BOOK HERE</a> </span>

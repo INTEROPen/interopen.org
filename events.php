@@ -6,7 +6,17 @@
 
   <table class="events-table">
     <tbody>
-
+      <tr>
+        <td><span class="event-date">21 Nov</span></td>
+        <td id="clinicians-on-fhir-171121">
+          <p class="event-title">Clinicians On FHIR @ The Kings Fund</p>
+          <p>Following the overwhelming popularity of the Interop Summit earlier this year, INTEROPen is delighted to be running a day of practical learning focusing on the Fast Healthcare Interoperability Resources (FHIR) communication standard that will be used for NHS care information.</p>
+          <p>This educational conference, led by Dr. David Hay, FHIR Evangelist and Orion Health Product Strategist, and supported by Dr. Amir Mehrkar, clinical co-chair of INTEROPen and NHS Digital clinical lead for interoperability, is designed to help promote an understanding of FHIR amongst clinicians, equipping them to access and share clinical information from the point of care.</p>
+          <p><img src="images/bullet_go.png"/><a href="https://www.eventbrite.co.uk/e/clinicians-on-fhir-tickets-37090350236">More information and tickets</a></p>
+          <p><img src="images/events/clinicians-on-fhir.png" style="padding-left: 10px;" width="500" height="282" alt="Clinicians On FHIR"/></p>
+          
+        </td>
+      </tr>
     </tbody>
   </table>
   

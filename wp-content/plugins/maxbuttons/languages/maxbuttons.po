@@ -1,0 +1,1265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MaxButtonV3\n"
+"POT-Creation-Date: 2015-06-19 16:45+0300\n"
+"PO-Revision-Date: 2015-06-19 16:46+0300\n"
+"Last-Translator: \n"
+"Language-Team: MaxFoundry <support@maxfoundry.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../maxbuttons.php:20
+#, php-format
+msgid ""
+"From version 3 MaxButtons requires at least PHP 5.3 . You are running "
+"version: %s "
+msgstr ""
+
+#: ../maxbuttons.php:35
+msgid ""
+"Already found an instance of MaxButtons running. Please check if you are "
+"trying to activate two MaxButtons plugins and deactivate one. "
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:11
+msgid "MaxButtons: Upgrade to Pro"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:22
+msgid "Upgrade to MaxButtons Pro - It's Only $19!"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:23
+msgid ""
+"If you've created at least one button with MaxButtons, then you know what it "
+"can do: Unlimited colors. Rounded corners. Gradients. Text shadowing. Box "
+"shadowing."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:24
+#, php-format
+msgid ""
+"Now you can take your buttons to the next level with %sMaxButtons Pro%s. The "
+"Pro version gives you all the CSS3 goodness and so much more:"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:26
+msgid "Font Awesome Integration"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:26
+msgid "Use icons from the most popular icon font set on the web!"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:27
+msgid "Icon Support"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:27
+msgid "Like buttons, everyone loves icons. Use Font Awesome or upload yor own."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:28
+msgid "Multi-Line Text"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:28
+msgid ""
+"Use a second a line of text to communicate extra information to your users "
+"and customers."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:29
+#: ../includes/maxbuttons-admin-helper.php:85
+msgid "Google Web Fonts"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:29
+msgid "Great typography can take your buttons up several notches."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:30
+msgid "Button Packs"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:30
+msgid ""
+"Import sets of pre-defined buttons, which you can then use as-is or "
+"customize as you need."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:31
+msgid "Shopp Integration"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:31
+msgid ""
+"Use buttons created with MaxButtons Pro as the shopping cart buttons of the "
+"Shopp e-commerce plugin."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:33
+#, php-format
+msgid "And did we mention you can %sget MaxButtons Pro for only $19%s"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:35
+msgid "CSS3 Button Examples"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:36
+msgid ""
+"Just take a look at the types of buttons you can make with MaxButtons Pro:"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:39
+msgid "Button Packs: Pre-Made Sets of CSS3 and Icon Goodness"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:40
+#, php-format
+msgid ""
+"Button packs are sets of buttons with icons and settings already predefined "
+"for you, saving you loads of time. We have an %sever-growing collection of "
+"button packs%s that you can buy and import into your website (only $5 each). "
+"You can then use those buttons as they are, or customize them to fit your "
+"needs (below are a few to get you started)."
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:45
+msgid "E-Commerce Buttons"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:50
+msgid "Colored Round Social Icons Set #1"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:55
+msgid "Chrome Icons"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:60
+msgid "Shopping Cart Blue"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:65
+msgid "Pace"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:70
+msgid "Social Sign-In"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:74
+msgid "Feature Comparison"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:75
+msgid ""
+"There's nothing like a nice, straightforward checklist to do a product "
+"comparison, so here's another one:"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:79
+msgid "Free Version"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:80
+msgid "MaxButtons Pro"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:83
+msgid ""
+"Icon support (put icons to the left, right, top, or bottom of your text)"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:88
+msgid ""
+"Multi-line text, to add a second line of text for communicating extra "
+"information"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:93
+msgid ""
+"Google Web Fonts, to make your buttons stand out with beautiful typography"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:98
+msgid "Button packs, to import pre-made sets of buttons into your website"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:103
+msgid ""
+"Import/export functionality (useful for backing up and/or moving your "
+"buttons)"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:108
+msgid ""
+"Explicit height and width options, to ensure your buttons are the same size"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:113
+msgid "Shopp integration for buttons in your e-commerce shopping cart"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:118
+msgid "Major browser support (Firefox, Chrome, Opera, Safari, and IE9)"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:123
+msgid "Gradients for background colors"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:128
+msgid "Border radius for rounded corners"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:133
+msgid "Text and box shadowing"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:138
+msgid "Hover effects and styles"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:143
+msgid "Shortcodes to use anywhere in your WordPress site"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:149
+msgid "Get Your Copy Today"
+msgstr ""
+
+#: ../includes/maxbuttons-pro.php:150
+#, php-format
+msgid ""
+"So what are you waiting for? %sGrab your copy of MaxButtons Pro today%s!"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:44
+msgid "MaxButtons: Settings"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:58
+#: ../includes/maxbuttons-admin-helper.php:38
+#: ../classes/maxbuttons-class.php:210
+msgid "Settings"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:63
+msgid "MaxButtons User Level"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:73
+msgid ""
+"For more details on user roles and permissions, click <a target=\"_blank\" "
+"href=\"https://codex.wordpress.org/Roles_and_Capabilities\">here</a>."
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:84
+msgid "Don't show add button in editor"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:98
+msgid "Clear button cache"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:100
+msgid ""
+"Maxbuttons caches the style output allowing for lightning fast display of "
+"your buttons. In the event \n"
+"        \t\t\tthis cache needs to be flushed and rebuilt you can reset the "
+"cache here."
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:102
+msgid "Reset Cache"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:110
+msgid "Retry Database migration"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:111
+msgid ""
+"In case the upgrade functionality failed to move your old buttons from "
+"MaxButtons before version 3, you can do so here manually. <strong>Attention</"
+"strong>  The new database table (maxbuttonsv3) *must* be empty, and the old "
+"database table *must* contain buttons otherwise this will not run. Run this "
+"<strong>at your own risk</strong> - it is strongly advised to make a backup "
+"before doing so."
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:112
+msgid "Remigrate"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:120
+msgid "UTF8 Table Fix"
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:123
+msgid ""
+"WARNING: We strongly recommend backing up your database before altering the "
+"charset of the MaxButtons table in your WordPress database."
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:125
+msgid ""
+"The button below should help fix the \"foreign character issue\" some people "
+"experience when using MaxButtons. If you use foreign characters in your "
+"buttons and after saving see ????, use this button."
+msgstr ""
+
+#: ../includes/maxbuttons-settings.php:128
+msgid "Change MaxButtons Table To UTF8"
+msgstr ""
+
+#: ../includes/maxbuttons-media-button.php:18
+msgid "Please select a button."
+msgstr ""
+
+#: ../includes/maxbuttons-media-button.php:30
+msgid "Insert Button into Editor"
+msgstr ""
+
+#: ../includes/maxbuttons-media-button.php:34
+msgid ""
+"Select a button from the list below to place the button shortcode in the "
+"editor."
+msgstr ""
+
+#: ../includes/maxbuttons-media-button.php:36
+msgid "Loading your buttons"
+msgstr ""
+
+#: ../includes/maxbuttons-media-button.php:41
+msgid "Cancel"
+msgstr ""
+
+#: ../includes/maxbuttons_group_edit.php:3
+msgid "Button Group Editor"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:22
+#: ../includes/maxbuttons-list-trash.php:50 ../includes/maxbuttons-list.php:46
+#: ../includes/maxbuttons-list.php:79
+msgid "Restored 1 button."
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:26 ../includes/maxbuttons-list.php:50
+msgid "Restored "
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:26
+#: ../includes/maxbuttons-list-trash.php:43 ../includes/maxbuttons-list.php:50
+#: ../includes/maxbuttons-list.php:69
+msgid " buttons."
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:39
+#: ../includes/maxbuttons-list-trash.php:54 ../includes/maxbuttons-list.php:65
+#: ../includes/maxbuttons-list.php:83
+msgid "Deleted 1 button."
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:43 ../includes/maxbuttons-list.php:69
+msgid "Deleted "
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:107
+#: ../includes/maxbuttons-list.php:137
+msgid "MaxButtons: Button List"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:117
+#: ../includes/maxbuttons-list.php:149 ../classes/maxbuttons-class.php:196
+msgid "Add New"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:125
+#: ../includes/maxbuttons-list.php:164 ../includes/maxbuttons-list.php:169
+msgid "All"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:127
+#: ../includes/maxbuttons-list.php:165 ../includes/maxbuttons-list.php:170
+msgid "Trash"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:132
+#: ../includes/maxbuttons-list.php:190
+msgid "Bulk Actions"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:133
+#: ../includes/maxbuttons-list-trash.php:171
+#: ../includes/maxbuttons-list.php:196 ../includes/maxbuttons-list.php:260
+msgid "Restore"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:134
+#: ../includes/maxbuttons-list-trash.php:173
+#: ../includes/maxbuttons-list.php:197 ../includes/maxbuttons-list.php:262
+msgid "Delete Permanently"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:136
+#: ../includes/maxbuttons-list.php:200
+msgid "Apply"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:142
+#: ../includes/maxbuttons-list.php:222 ../blocks/text.php:65
+msgid "Button"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:143
+#: ../includes/maxbuttons-list.php:225
+msgid "Name and Description"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:144
+#: ../includes/maxbuttons-list.php:229
+msgid "Shortcode"
+msgstr ""
+
+#: ../includes/maxbuttons-list-trash.php:145
+msgid "Actions"
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:25 ../includes/maxbuttons-list.php:75
+msgid "Moved 1 button to the trash."
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:29
+msgid "Moved "
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:29
+msgid " buttons to the trash."
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:193 ../includes/maxbuttons-list.php:256
+#: ../includes/maxbuttons-button.php:73
+msgid "Move to Trash"
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:252
+msgid "Edit"
+msgstr ""
+
+#: ../includes/maxbuttons-list.php:254 ../includes/maxbuttons-button.php:72
+msgid "Copy"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:22
+msgid "Maxbuttons Error: Button id should never be zero"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:36
+msgid ""
+"Maxbuttons button id is zero. Your data is not saved correctly! Please check "
+"your database."
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:43
+msgid ""
+"MaxButtons could not find this button in the database. It might not be "
+"possible to save this button! Please check your database or contact support! "
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:56
+msgid "MaxButtons: Add/Edit Button"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:71 ../includes/maxbuttons-button.php:134
+msgid "Save"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:74
+msgid "Delete"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:79
+msgid "Removing button"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:82
+msgid "You are about to permanently remove this button. Are you sure?"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:83
+msgid "Yes"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:85
+msgid "No"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:95
+msgid ""
+"To use this button, place the following shortcode anywhere in your site "
+"content:"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:96
+msgid "or"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:97
+msgid "See more examples"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:103
+msgid "Add the same button with different link"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:107
+msgid "Use the same button but change the text"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:110
+msgid "All possible shortcode options"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:114
+msgid "Some tips"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:115
+msgid ""
+"If you use the button on a static page, on multiple pages, or upload your "
+"theme to another WordPress installation choose an unique name and use "
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:119
+msgid ""
+"Using this syntax if you change your button it will change throughout the "
+"entire site.  If you delete the button and create a new one with the same "
+"name the site will use the new button. "
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:139
+msgid "Button Output"
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:142
+msgid "The top is the normal button, the bottom one is the hover."
+msgstr ""
+
+#: ../includes/maxbuttons-button.php:162
+msgid "Change this color to see your button on a different background."
+msgstr ""
+
+#: ../includes/maxbuttons-groups.php:6
+msgid "Button groups"
+msgstr ""
+
+#: ../includes/maxbuttons-groups.php:13
+msgid "Create new group"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:19
+msgid "Brought to you by"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:21
+#, php-format
+msgid "Upgrade to MaxButtons Pro today! %sClick Here%s"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:28
+#: ../classes/maxbuttons-class.php:191 ../classes/maxbuttons-class.php:316
+msgid "Buttons"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:34
+#: ../classes/maxbuttons-class.php:203
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:42
+#: ../classes/maxbuttons-class.php:217
+msgid "Support"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:75
+msgid "Get MaxButtons Pro!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:77
+msgid "MaxButton Pro bonus features include:"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:81
+msgid "Button Search!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:82
+msgid "Two Lines of Editable Text"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:83
+msgid "Pre-Made Button Packs"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:84
+msgid "Add An Icon To Your Buttons"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:86
+msgid "Font Awesome Icon Support"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:87
+msgid "Responsive Buttons"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:88
+msgid "Our terrific Support"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:89
+msgid "Plus More!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:92
+msgid "Get MaxButtons Pro Now!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:96
+msgid "Everything for $99!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:98
+msgid "Get Everything Now!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:102
+msgid "Get MaxGalleria"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:103
+msgid ""
+"Download our free WordPress Gallery plugin MaxGalleria!  Add-ons for Albums, "
+"Videos, and Image Sliders."
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:104
+msgid "Get MaxGalleria Now!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:108
+msgid "Font Awesome Support"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:109
+msgid ""
+"With MaxButtons Pro you have access to all 439 Font Awesome icons, ready to "
+"add to your buttons."
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:110
+msgid ""
+"Never upload another icon again, just choose an icon and go about your "
+"normal button-making business."
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:111
+msgid "Use Font Awesome!"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:143
+msgid "Go to the first page"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:145
+msgid "Go to the previous page"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:147
+msgid "of"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:149
+msgid "Go to the next page"
+msgstr ""
+
+#: ../includes/maxbuttons-admin-helper.php:151
+msgid "Go to the last page"
+msgstr ""
+
+#: ../includes/maxbuttons-support.php:133
+msgid "MaxButtons: Support"
+msgstr ""
+
+#: ../includes/maxbuttons-support.php:144
+#, php-format
+msgid "All support is handled through the %sSupport Forums%s."
+msgstr ""
+
+#: ../includes/maxbuttons-support.php:147
+msgid "Latest Support Questions"
+msgstr ""
+
+#: ../includes/maxbuttons-support.php:182
+msgid "Your server doesn't allow us to catch the latest support questions"
+msgstr ""
+
+#: ../includes/maxbuttons-support.php:191
+msgid ""
+"You may be asked to provide the information below to help troubleshoot your "
+"issue."
+msgstr ""
+
+#: ../includes/arrays.php:4
+msgid "dashed"
+msgstr ""
+
+#: ../includes/arrays.php:5
+msgid "dotted"
+msgstr ""
+
+#: ../includes/arrays.php:6
+msgid "double"
+msgstr ""
+
+#: ../includes/arrays.php:7
+msgid "groove"
+msgstr ""
+
+#: ../includes/arrays.php:8
+msgid "inset"
+msgstr ""
+
+#: ../includes/arrays.php:9
+msgid "outset"
+msgstr ""
+
+#: ../includes/arrays.php:10
+msgid "ridge"
+msgstr ""
+
+#: ../includes/arrays.php:11
+msgid "solid"
+msgstr ""
+
+#: ../includes/arrays.php:79 ../includes/arrays.php:85
+msgid "normal"
+msgstr ""
+
+#: ../includes/arrays.php:80
+msgid "italic"
+msgstr ""
+
+#: ../includes/arrays.php:86
+msgid "bold"
+msgstr ""
+
+#: ../blocks/advanced.php:67
+msgid "Advanced"
+msgstr ""
+
+#: ../blocks/advanced.php:70
+msgid ""
+"Adding !important to the button styles can help avoid potential conflicts "
+"with your theme styles."
+msgstr ""
+
+#: ../blocks/advanced.php:71
+msgid "Use !important"
+msgstr ""
+
+#: ../blocks/advanced.php:79
+msgid ""
+"By default, the CSS styles for the button are rendered within a &lt;"
+"style&gt; block in the HTML body. Enabling the \"Use External CSS\" option "
+"allows you to put the CSS code for the button into your theme stylesheet "
+"instead."
+msgstr ""
+
+#: ../blocks/advanced.php:80
+msgid "Use External CSS"
+msgstr ""
+
+#: ../blocks/advanced.php:87
+msgid "View CSS"
+msgstr ""
+
+#: ../blocks/advanced.php:94
+msgid "External CSS"
+msgstr ""
+
+#: ../blocks/advanced.php:99
+msgid ""
+"If the \"Use External CSS\" option is enabled for this button, copy and "
+"paste the CSS code below into your theme stylesheet."
+msgstr ""
+
+#: ../blocks/advanced.php:116
+msgid "Please save the button first"
+msgstr ""
+
+#: ../blocks/container.php:112
+msgid "Container"
+msgstr ""
+
+#: ../blocks/container.php:115
+msgid "Use Container"
+msgstr ""
+
+#: ../blocks/container.php:121
+msgid "Wrap with Center Div"
+msgstr ""
+
+#: ../blocks/container.php:128 ../blocks/border.php:127
+msgid "Width"
+msgstr ""
+
+#: ../blocks/container.php:134
+msgid "Margin Top"
+msgstr ""
+
+#: ../blocks/container.php:140
+msgid "Margin Right"
+msgstr ""
+
+#: ../blocks/container.php:146
+msgid "Margin Bottom"
+msgstr ""
+
+#: ../blocks/container.php:152
+msgid "Margin Left"
+msgstr ""
+
+#: ../blocks/container.php:158
+msgid "Alignment"
+msgstr ""
+
+#: ../blocks/gradient.php:53
+msgid "Gradients and Opacity"
+msgstr ""
+
+#: ../blocks/gradient.php:56
+msgid "Gradient Stop"
+msgstr ""
+
+#: ../blocks/gradient.php:58 ../blocks/gradient.php:65
+#: ../blocks/gradient.php:72 ../blocks/gradient.php:79
+#: ../blocks/gradient.php:86 ../blocks/border.php:82 ../blocks/border.php:88
+#: ../blocks/border.php:96 ../blocks/border.php:102 ../blocks/border.php:122
+#: ../blocks/border.php:129 ../blocks/border.php:136 ../blocks/border.php:143
+#: ../blocks/border.php:150 ../blocks/text.php:143 ../blocks/text.php:161
+#: ../blocks/text.php:177 ../blocks/text.php:193 ../blocks/text.php:200
+#: ../blocks/text.php:207 ../blocks/text.php:214 ../blocks/text.php:229
+#: ../blocks/text.php:235 ../blocks/text.php:243 ../blocks/text.php:249
+msgid "Default:"
+msgstr ""
+
+#: ../blocks/gradient.php:63
+msgid "Gradient Start Opacity"
+msgstr ""
+
+#: ../blocks/gradient.php:70
+msgid "Gradient End Opacity"
+msgstr ""
+
+#: ../blocks/gradient.php:77
+msgid "Gradient Start Opacity Hover"
+msgstr ""
+
+#: ../blocks/gradient.php:84
+msgid "Gradient End Opacity Hover"
+msgstr ""
+
+#: ../blocks/border.php:72 ../blocks/color.php:76
+msgid "Border"
+msgstr ""
+
+#: ../blocks/border.php:75
+msgid "Radius"
+msgstr ""
+
+#: ../blocks/border.php:80
+msgid "Top Left"
+msgstr ""
+
+#: ../blocks/border.php:86
+msgid "Top Right"
+msgstr ""
+
+#: ../blocks/border.php:94
+msgid "Bottom Left"
+msgstr ""
+
+#: ../blocks/border.php:100
+msgid "Bottom Right"
+msgstr ""
+
+#: ../blocks/border.php:112 ../blocks/text.php:166
+msgid "Style"
+msgstr ""
+
+#: ../blocks/border.php:134 ../blocks/text.php:198
+msgid "Shadow Offset Left"
+msgstr ""
+
+#: ../blocks/border.php:141 ../blocks/text.php:205
+msgid "Shadow Offset Top"
+msgstr ""
+
+#: ../blocks/border.php:148 ../blocks/text.php:212
+msgid "Shadow Width"
+msgstr ""
+
+#: ../blocks/color.php:72 ../blocks/text.php:116 ../blocks/text.php:121
+msgid "Text"
+msgstr ""
+
+#: ../blocks/color.php:73
+#, php-format
+msgid "Text%sShadow"
+msgstr ""
+
+#: ../blocks/color.php:74
+#, php-format
+msgid "Gradient%sStart"
+msgstr ""
+
+#: ../blocks/color.php:75
+#, php-format
+msgid "Gradient%sEnd"
+msgstr ""
+
+#: ../blocks/color.php:77
+#, php-format
+msgid "Border%sShadow"
+msgstr ""
+
+#: ../blocks/color.php:91
+msgid "Colors"
+msgstr ""
+
+#: ../blocks/color.php:105
+msgid "Normal"
+msgstr ""
+
+#: ../blocks/color.php:125
+msgid "Hover"
+msgstr ""
+
+#: ../blocks/color.php:150
+msgid "Shortcuts"
+msgstr ""
+
+#: ../blocks/color.php:152
+msgid "Copy normal colors to hover"
+msgstr ""
+
+#: ../blocks/color.php:153
+msgid "Copy hover colors to normal"
+msgstr ""
+
+#: ../blocks/color.php:154
+msgid "Swap normal and hover colors"
+msgstr ""
+
+#: ../blocks/color.php:155
+msgid "Copy and invert normal colors"
+msgstr ""
+
+#: ../blocks/dimension.php:62
+msgid "Dimensions"
+msgstr ""
+
+#: ../blocks/dimension.php:65
+msgid "Button Width"
+msgstr ""
+
+#: ../blocks/dimension.php:70
+msgid "Button Height"
+msgstr ""
+
+#: ../blocks/responsive.php:177
+msgid "px"
+msgstr ""
+
+#: ../blocks/responsive.php:178
+msgid "%"
+msgstr ""
+
+#: ../blocks/responsive.php:182
+msgid "None"
+msgstr ""
+
+#: ../blocks/responsive.php:183 ../blocks/text.php:241
+msgid "Left"
+msgstr ""
+
+#: ../blocks/responsive.php:184 ../blocks/text.php:247
+msgid "Right"
+msgstr ""
+
+#: ../blocks/responsive.php:201
+msgid "Responsive Settings"
+msgstr ""
+
+#: ../blocks/responsive.php:203
+msgid ""
+"Responsive settings let you decide the behavior of the button on different "
+"devices and screen sizes. For instance large buttons on small screens."
+msgstr ""
+
+#: ../blocks/responsive.php:205
+msgid "Auto Responsive"
+msgstr ""
+
+#: ../blocks/responsive.php:205
+msgid "(Experimental)"
+msgstr ""
+
+#: ../blocks/responsive.php:212
+msgid "Note:"
+msgstr ""
+
+#: ../blocks/responsive.php:212
+msgid ""
+" Auto responsive settings will take a guess only on small screens. To "
+"control your responsive settings uncheck this button. This will show more "
+"options."
+msgstr ""
+
+#: ../blocks/responsive.php:234 ../blocks/responsive.php:298
+msgid "Min width"
+msgstr ""
+
+#: ../blocks/responsive.php:237 ../blocks/responsive.php:301
+msgid "Max width"
+msgstr ""
+
+#: ../blocks/responsive.php:243 ../blocks/responsive.php:306
+msgid "Font size"
+msgstr ""
+
+#: ../blocks/responsive.php:247 ../blocks/responsive.php:310
+msgid "Button width"
+msgstr ""
+
+#: ../blocks/responsive.php:251 ../blocks/responsive.php:312
+msgid "Container width"
+msgstr ""
+
+#: ../blocks/responsive.php:256 ../blocks/responsive.php:317
+msgid "Container float"
+msgstr ""
+
+#: ../blocks/responsive.php:258 ../blocks/responsive.php:319
+msgid "Hide button on this view"
+msgstr ""
+
+#: ../blocks/responsive.php:276
+msgid "New Query"
+msgstr ""
+
+#: ../blocks/responsive.php:281
+msgid "Add"
+msgstr ""
+
+#: ../blocks/text.php:127
+msgid "The actual words that appear on the button."
+msgstr ""
+
+#: ../blocks/text.php:132
+msgid "Font"
+msgstr ""
+
+#: ../blocks/text.php:150
+msgid "Size"
+msgstr ""
+
+#: ../blocks/text.php:182
+msgid "Weight"
+msgstr ""
+
+#: ../blocks/text.php:221
+msgid "Padding"
+msgstr ""
+
+#: ../blocks/text.php:226
+msgid "Top"
+msgstr ""
+
+#: ../blocks/text.php:233
+msgid "Bottom"
+msgstr ""
+
+#: ../blocks/basic.php:117
+msgid "Basics"
+msgstr ""
+
+#: ../blocks/basic.php:120
+msgid "Name"
+msgstr ""
+
+#: ../blocks/basic.php:121
+msgid "Something that you can quickly identify the button with."
+msgstr ""
+
+#: ../blocks/basic.php:129
+msgid "Description"
+msgstr ""
+
+#: ../blocks/basic.php:130
+msgid "Brief explanation about how and where the button is used."
+msgstr ""
+
+#: ../blocks/basic.php:138
+msgid "URL"
+msgstr ""
+
+#: ../blocks/basic.php:139
+msgid "The link when the button is clicked."
+msgstr ""
+
+#: ../blocks/basic.php:148
+msgid "Open in New Window"
+msgstr ""
+
+#: ../blocks/basic.php:156
+msgid "Use rel=\"nofollow\""
+msgstr ""
+
+#: ../classes/max-utils.php:84
+msgid "Small phones"
+msgstr ""
+
+#: ../classes/max-utils.php:85
+msgid "Small phones (landscape)"
+msgstr ""
+
+#: ../classes/max-utils.php:86
+msgid "Small phones (portrait)"
+msgstr ""
+
+#: ../classes/max-utils.php:87
+msgid "Ipad (all)"
+msgstr ""
+
+#: ../classes/max-utils.php:88
+msgid "Medium-size (smart)phone"
+msgstr ""
+
+#: ../classes/max-utils.php:89
+msgid "Ipad landscape"
+msgstr ""
+
+#: ../classes/max-utils.php:90
+msgid "Ipad portrait"
+msgstr ""
+
+#: ../classes/max-utils.php:91
+msgid "Desktop"
+msgstr ""
+
+#: ../classes/max-utils.php:92
+msgid "Large desktops"
+msgstr ""
+
+#: ../classes/max-utils.php:93
+msgid "Custom size"
+msgstr ""
+
+#: ../classes/max-utils.php:97
+msgid "Optimized for small smartphones ( screen sizes under 480px )"
+msgstr ""
+
+#: ../classes/max-utils.php:98
+msgid ""
+"Optimzed for small smartphones in landscape and higher ( screen sizes 321px "
+"- 480px)"
+msgstr ""
+
+#: ../classes/max-utils.php:99
+msgid "Optimized for small phones ( screen size max 320px )"
+msgstr ""
+
+#: ../classes/max-utils.php:100
+msgid "Optimized for devices between 768px and 1024px"
+msgstr ""
+
+#: ../classes/max-utils.php:101
+msgid "Optimized for medium sizes devices between 480px and 768px"
+msgstr ""
+
+#: ../classes/max-utils.php:102
+msgid "Optimized for devices between 768px and 1024px in landscape"
+msgstr ""
+
+#: ../classes/max-utils.php:103
+msgid "Optimized for deviced between 768px and 1024 in portrait"
+msgstr ""
+
+#: ../classes/max-utils.php:104
+msgid "Desktop screens from 1224px"
+msgstr ""
+
+#: ../classes/max-utils.php:105
+msgid "Large desktop screens, from 1824px"
+msgstr ""
+
+#: ../classes/max-utils.php:106
+msgid "Set your own breakpoints"
+msgstr ""
+
+#: ../classes/max-utils.php:185
+msgid "MaxButtons Loading Time:"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:179
+msgid "MaxButtons : Buttons"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:180
+msgid "MaxButtons"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:195
+msgid "MaxButtons : Add/Edit Button"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:202
+msgid "MaxButtons : Upgrade to Pro"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:209
+msgid "MaxButtons : Settings"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:216
+msgid "MaxButtons : Support"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:280
+msgid "Select a MaxButton"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:327
+#, php-format
+msgid "%sUpgrade to Pro Version%s"
+msgstr ""
+
+#: ../classes/maxbuttons-class.php:342
+msgid "Add Button"
+msgstr ""
+
+#: ../classes/admin-class.php:206
+msgid "Insert This Button"
+msgstr ""

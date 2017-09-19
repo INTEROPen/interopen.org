@@ -1,0 +1,438 @@
+
+/* Here be elements for the editors.Standardized somehow */ 
+
+
+select { 
+	width: 150px; 
+	&.small { width: auto; } // small as can be.
+} 
+
+.input { 
+	display: inline-block;
+	margin-right: 15px;
+	//margin-top: 3px;
+	min-height: 35px;
+
+			
+	img { vertical-align: middle; } 
+	&.mbcolor {	min-width: 50px; } 
+	&.checkbox { 	//padding-top: 8px;
+			input { margin-top: 0; }
+			label {
+			 line-height: 16px; 
+			 margin-top: 0 !important;
+			 }
+	 }
+}
+
+input {
+//	margin-top: 0;	
+//	padding: 3px 4px;
+}
+
+input[type='text'] {
+	width: 450px;
+	@include bp(780)
+	{
+		width: 350px;
+	}
+	&.tiny { 
+		width: 35px; 
+		vertical-align: middle;
+	}
+	&.small {
+		width: 50px; 
+	}
+	&.medium {
+		width: 150px;
+	}
+	&.tiny-nopad {
+	width: 35px;
+	}
+}
+
+input[type='number']
+{
+	vertical-align: middle; 
+	
+	&.tiny, &.tiny-nopad { 
+		width: 55px; 
+		@include bp(780)
+		{
+			width: 60px; 
+		}	
+	} 
+	&.small { width: 70px;
+		@include bp(780)
+		{
+			width: 75px;
+		}
+	 }
+
+}
+
+
+textarea {
+	width: 450px;
+	height: 80px;
+	//white-space: nowrap;
+	//overflow: auto;
+}
+
+
+
+// finetuning 
+ .option-container .inside .option {
+ 	label.mbcolor:nth-of-type(2) {  
+			margin-left: 37px;
+			
+		}	
+	&.url { margin-bottom: 0; }
+	&.url_options { margin: 5px 0 10px; } 
+	&.url_options .nofollow { margin-left: 35px; } 
+	&.url_options, &.rel_options 
+	{
+		label {
+			font-weight: 400;
+		}
+	//	.input { float: left; } 
+	}
+	&.font .checkbox { 
+		margin-right: 2px;
+	} 
+
+	&.font .radio { margin-right: 0; } 
+ 	&.font .input.font { margin-right: 2px; } 
+
+ 	&.font .input.font_size {
+ 		margin-right: 0; 
+  		&:after {
+  			display: block;
+  		}
+ 	}  
+ 	
+ 	@include bp(780)
+ 	{
+ 		&.font {
+ 			display: inline-block;
+	 		&:after {
+	 			clear: both;
+	 		}
+ 		
+ 			> * { float: left; }
+ 		}
+	}
+ 	
+ 	&.font .control-group.font_weight {
+ 		margin-left: 28px; 
+ 		@include bp(780)
+ 		{
+
+ 		 	clear: left; 
+ 			margin-left: 148px;
+ 			margin-top: 10px;
+ 		}
+ 	}
+ 	&.font .control-group.text_align {
+ 		margin-left: 48px; 
+ 		@include bp(780)
+ 		{
+ 			margin-left: 20px;
+ 			margin-top: 10px;
+ 		}
+ 	}
+	
+	&.padding_top .input, &.container_margin_top .input {
+		margin-right: 30px;
+		&:last-of-type { margin-right: 0; } 
+		@include bp(780)
+		{
+			margin-right: 15px;
+		}
+
+	} 
+	&.text_color label { padding-top: 10px; } 
+	&.text_color label:nth-of-type(2) { margin-left: 51px; } 
+	&.description label { padding-top: 35px; } 
+
+	.radius-wrap {
+		position: relative; 
+		margin-left: 45px; 
+		display: inline-block;
+	} 
+ 	&.radius { 
+ 		.label:first-child { width: 100px; float:left; } 
+ 		.bottom, .top { 
+ 			position: relative;
+ 			.input { margin-right: 0; margin-left: 0;} 
+ 			.dashicons:nth-child(3) { margin-right: 10px; } 
+ 		} 
+ 		.top { margin-bottom: 10px; }
+ 		label { 
+ 			display:inline-block;  
+ 			font-weight: 700; 
+ 			width: 90px; 
+ 			margin-left: 5px;
+ 			cursor: default;
+ 		 } 
+ 		.dashicons { font-size: 35px; height: 35px; width: 35px;  color:#ccc; } 
+ 		.top .dashicons { margin-top: -5px; } 
+ 		.bottom .dashicons { margin-top: 5px; } 
+ 		#radius_toggle {   
+ 			position: absolute; 
+ 			left:46%; 
+ 			top:25px; 
+ 			font-size: 30px;
+ 			cursor:pointer;
+ 		 } 
+ 	
+ 	}
+ 	&.gradient_head .label:nth-child(even) { width: 120px; } 
+ 	.gradient_end_color, .gradient_end_color_hover {
+ 			margin-left: 58px;	
+ 		}
+ 
+		
+} // end
+
+.default {
+	//float: left;
+	display: inline-block;
+	padding-left: 10px;
+	padding-top: 4px;
+	font-style: italic;
+	color: #808080;
+
+	.other { 
+		padding-left: 40px;
+		padding-top: 8px;
+	
+	
+	}
+}
+
+.mb-button {
+	width: 38px; 
+	height: 38px; 
+	background-color: #eceded;
+	display: inline-block; 
+	margin-right: 6px; 
+	cursor: pointer;
+	display: none;
+	
+	span {
+		text-align:center; 
+		padding: 9px 0; 
+		width: 100%;
+		line-height: 20px;
+	}
+}
+
+.check_button
+{ 
+	display: none;
+	+ label{
+		background-position: center center; 
+		background-repeat: no-repeat; 
+		background-color: #fff;
+		display: inline-block; 
+		border: 1px solid #ddd;
+		font_weight: normal;
+		padding: 4px;
+		@include bp(780)
+		{
+			padding: 10px;
+		}
+	}
+	&.text + label { 
+		padding: 5px; 
+	
+	}
+
+	&.icon + label i
+	{ 
+		width: 20px; 
+		height: 20px; 
+		color: #545454;
+		&:focus { 
+			outline: none;
+		}
+	}
+
+	&:checked + label { 
+ 	   	background: #ebebeb none repeat scroll 0 0;
+   		border-color: #999999;
+    	box-shadow: 0 2px 5px -3px rgba(0, 0, 0, 0.3) inset;
+	} 
+
+}
+
+/** Slider / Range input **/ 
+.option .input_label {
+	display: inline-block; 
+	vertical-align: top; 
+	&.left { margin-right: 10px; }
+	&.right { margin-left: 10px; }
+}	
+
+.option .range_value
+{
+	margin-top: 5px;
+
+	output { 
+		clear: both; 
+		font-size: 18px;
+		text-align: center; 
+		width: 100%;
+		display: inline-block;
+	}
+}
+
+
+.option .switch_label { 
+	//vertical-align: top;
+	//line-height: 35px;
+	padding-top: 2px !important;
+	margin: 0 !important;
+	/*display: inline-block;
+	padding: 5px;
+	font-size: 14px; 
+	margin-right: 10px;
+	*/
+}
+
+.switch_button 
+{
+	margin-left: -5px;
+		
+	label{
+		padding: 8px 5px; // this padding to make clicking more flexible ( bigger hitbox )
+		
+		&:focus {
+			outline: none;
+		}		
+	}
+	input { display: none; 
+		&:checked ~ .the_switch { background: #6fbeb5; } 
+		&:checked ~ .the_switch:after {
+		  left: 26px;
+		  background: #179588;
+		} 
+		&::disabled ~ .the_switch{
+		  background: #d5d5d5;
+		  pointer-events: none;
+		}
+		&:disabled ~ .the_switch:after { background: #bcbdbc; }
+	} 
+	.the_switch{ 
+	  position: relative;
+	  display: inline-block;
+	  height: 15px;
+	  width: 50px;
+	  background: #898989;
+	  border-radius: 100px;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+	  &:after {
+		  position: absolute;
+		  left: -2px;
+		  top: -3px;
+		  display: block;
+		  width: 24px;
+		  height: 24px;
+		  border-radius: 100px;
+		  background: #aaa;
+		  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+		  content: '';
+		  transition: all 0.2s ease;
+		}
+		&:active:after { transform: scale(0.9, 0.85); } 
+		&:focus {
+			outline: none;
+		}
+	}
+
+}
+
+
+
+/** COLORPICKER **/ 
+
+.input.mbcolor { 
+	margin-top: 5px;
+	position: relative; 
+	
+	.wp-picker-clear { display: none; } // can't control behavior -- xxit. 
+	input[type="text"] { width: 75px; line-height: 22px; } 
+	.wp-color-picker { 
+		width: inherit; 
+	} 
+	.wp-color-result { 
+		@include box-shadow(-1px, 1px, 2px, #999);
+		height: 30px;
+		border: 0; 
+		font-size: 900px;
+		&:after {
+			font-size: 12px; 
+			line-height: 30px;	
+			display: none;
+		}
+		&:focus { 
+			border-color: #5b9dd9;
+ 		 	@include box-shadow(0, 0, 5px, rgba(30, 140, 190, 0.8) );
+		}	
+	 }
+	 .wp-picker-active { 
+			& + .arrows {
+			display: inline-block;
+		} 
+	 
+	}
+	 .arrows { 
+	 	position: absolute; 
+	 	display:  none;
+		top: 0;
+	 	margin-top: 40%;
+	 	&.right {
+	 		right: -45px;
+	 	}
+	 	&.left {
+	 		left: -35px;
+	 	}
+	 	
+	 	.arrow-left, .arrow-right {
+	 	  width: 0; 
+		  height: 0; 
+		  font-size: 0;
+		  line-height: 0; 
+		  vertical-align: bottom;
+	 	  cursor: pointer;
+	 	}
+	 	.arrow-left { 
+		  border-top: 30px solid transparent;
+		  border-bottom: 30px solid transparent; 
+		  border-right:20px solid #ccc; 
+	 	}
+	 	.arrow-right {
+		  border-top: 30px solid transparent;
+		  border-bottom: 30px solid transparent;
+		  
+		  border-left: 20px solid #ccc;
+		  margin-top: 35px;
+	 	}
+	 	 
+	 	.left, .right {
+	 		display: inline-block;
+	 		float: left;
+	 		clear: both;
+	 		width: 35px;
+	 		height: 45px;
+	 		
+	 	} 
+	 	.left {
+	 		margin-top: 15px;
+	 	}
+	 }
+	 
+}
+

@@ -1,0 +1,515 @@
+= 4.22.1 = 
+
+* Removed Splinfo getExtension call since it's not compatible with all PHP 5.3 installations 
+
+= 4.22 = 
+
+* Major upgrade of user interface 
+* Major cleanup of styling code
+* Description now handles multiple lines correctly
+
+= 4.21 = 
+
+* Cleaner user interface at font options
+* Check if jquery function exists on front. 
+
+= 4.20 = 
+
+* Tested for WordPress 4.5
+* Moved old error modals in social sharing to new modal
+* New copy dialog 
+
+= 4.19 = 
+
+* Fixed: Relative URL's without starting slash no longer are prepended with default scheme 
+* Tel: and sms: URL's not accepted in URL field 
+
+= 4.18 = 
+
+* Fixed problem responsive settings not correctly enabling / disabling options
+* Button editor now warns when moving away without saving
+
+= 4.17 = 
+
+* Moving from leanModal to better popup code
+* Fixed Modal background and CSS error on delete button / view CSS
+* Put Font style options (italics) back
+
+= 4.16 = 
+
+* Version number added to JS scripts to prevent browser caching on updates
+* Tweaks to the main CSS class statement to avoid clutter 
+* Fix for Cloudflare's email obfuscation in combination with responsive buttons. 
+
+
+= 4.15 = 
+
+* Option to add custom class names
+* Added changes to increase plugin page speed performance
+
+= 4.14 = 
+
+* Buttons in Shortcake didn't show Font Awesome buttons correctly
+* Fixed bug in Shortcake rendering with ID's over 10
+* Fixed error when adding button via Shortcake dialog
+* Fixed paging and popup issues in button add dialog
+* Made previous / next buttons in button add dialog more clear
+
+= 4.13 = 
+
+* New option: Custom rel (Advanced) - for targeting popups 
+* Upgraded to Font Awesome 4.5.0  
+* Fixed remove collection link not working
+
+= 4.12 = 
+
+* SO Pagebuilder : Fixed callbacks
+* Shortcake : Fixed faulty callback when mixing add button functionality 
+* Social Share: fixed caching problem on blog pages results in same share URL's
+* Social Share: fixed no image sharing with Pinterest. 
+* Editor: Fixed Javascript crash when clicking No in Delete button dialog 
+
+
+= 4.11.1 = 
+
+* Fixed possible crash due to extra return characters in the plugin causing WordPress to malfunction.
+
+= 4.11 = 
+
+* Fixed SiteOrigin PageBuilder error when adding button 
+* Shortcake integration
+* Add button dialog improvements
+
+
+= 4.10 = 
+
+* Removed Twitter share count since Twitter doesn't support this anymore. 
+* Fixed issue with color picker 
+* Color picker window much larger now
+* Add button interface now available in SiteOrigin editor widget
+
+= 4.09 = 
+
+* Several issues were fixed with upgrading the plugin and database tables
+* Fixed link in edit post/page screen when having no buttons
+* Fixed integration crash with new version of SiteOrigin Page Builder 
+
+
+= 4.08 =
+
+* Fixed conflict with WPMU Popup Pro
+* New shortcode tag style="inline" - this forces the button style to load in document. This can be useful with JS-heavy sites who don't properly
+load wp_footer(); 
+
+= 4.07 = 
+
+* Fixed problem with URL encodings 
+* Fixed issue with Siteorigin widget not selecting button 
+* Changes in styling ( WP 4.4. update )
+
+= 4.06 = 
+
+* Default button updated 
+
+= 4.05 = 
+
+* Integration with SiteOrigin Page Builder
+
+= 4.04 = 
+
+* Updates to the color picker interface.
+
+= 4.03 =
+
+* Shortcode examples popup no longer expands the editor window 
+* Small fixes to title bar 
+
+= 4.02 = 
+
+* Fixed message in button inserter incorrectly stating no buttons are found.
+* Javascript hardening to prevent conflicts in rare cases
+* Better Settings interface
+
+= 4.01 = 
+
+* Add check for function 'maybe_convert_table_to_utf8mb4' which doesn't exists before WP 4.2.0
+* Several interface fixes
+
+
+= 4.0.2 = 
+
+* Fixed issue that could cause database save to fail on button edit.
+* Security validation on bulk edit form added
+ 
+
+= 4.0.1 = 
+
+* Changed few PHP calls which possibly were causing crashes on older versions.
+* Bug in internal social sharing block function.
+
+= 4.0 = 
+
+* Social sharing [BETA] 
+* Fixed possible conflicts with colpick.js
+* Fixed problem in URL with mailto: scheme
+* Fixed issue with enconding URL's. 
+
+= 3.19 = 
+
+* Added possibility for bulk editing - at own risk 
+* Changed URL handling in certain cases to better URL encode the non-domain part. 
+
+= 3.18 = 
+
+* New filter for button url 
+* By default overview shows your latest buttons. 
+* Overview now sortable by button id 
+
+
+= 3.17 = 
+
+* Position and size of preview window updated to be less in the way 
+* Small layout and text updates
+
+
+= 3.16.1 = 
+
+* Backward compatibility of layout changes
+
+ 
+
+= 3.16 = 
+
+* Fixed update box running through page title
+* Fixed rating screen in some cases could not be closed
+* Fixed plugin crash when database table is not present or wrong
+* Lot of interface updates to make plugin more in line with WordPress admin defaults.
+
+= 3.15.1 =
+
+* Fixed save crash in case of custom responsive settings due to debug information
+
+= 3.15 = 
+
+* Small validation fix on custom responsive field
+* Fixed rare bug occurence in SCSS parser
+
+= 3.14 = 
+
+* Fixed crash on servers without character encoding module enabled
+* Attempts to upgrade utf-8 table to utf-8mb4 (plugin activation)
+* Groups CSS statements without repeating <style> tag. 
+
+= 3.13.1 = 
+
+* Fixed issue with font size not being displayed correctly in editor
+
+= 3.13 = 
+
+* Fixed checkbox size on Chrome 
+* Fixed several layout issues
+* Fixed issue with non-latin button names in the css declaration of button
+* Paging buttons now disabled if there are no more pages to browse
+* Updated SCSS parser to latest version 
+
+
+= 3.12.1 =
+
+* Fixed responsive bug with multiple custom settings
+* Fixed checkbox interface bug with responsive settings
+* Fixed CSS parse errors with multiple responsive queries
+ 
+ 
+= 3.12 = 
+
+* Moved from serialize to json_encode 
+* ID on button is now unique
+
+= 3.11 = 
+
+* Better checking of number values in interface
+* Button name is now also a class on the button ( for custom work )
+* CSS output can now be compressed ( minified ) 
+
+= 3.10 = 
+
+* Fixed: Now possible to add javascript to button URL field
+* Fixed: Several JS plugin conflicts ( notably with Sidekick )
+* Fixed: Now able to add spaces to URL 
+
+= 3.09 = 
+
+* Responsiveness bug fixes
+* Fixed - custom sizes now allow width or height to be zero or not set
+* Fixed rare bug when dbDelta was not properly loaded during installation
+
+
+= 3.08 = 
+
+* Text align now defaults to empty
+* New color picker fixing several bugs 
+* Fixed Divi themes / sitebuilder issue with add button 
+* Fixed small interface issue with paging and zero buttons
+* Fixed interface issue with bulk actions notices
+* Fixed various small unset variable issues
+
+
+= 3.07 = 
+
+* Added Text align option 
+* Fixed interface issue with removing responsive parts
+* Fixed URL Escaping issue  
+
+= 3.06 = 
+
+* Added German translation
+
+= 3.05 = 
+
+* Better detection if all needed database fields are present 
+* Updates to the plugin styles 
+* Fixed a bug on the support page when allow_url_fopen is off 
+* Some shortcode examples in button editor
+* Fixed a bug in responsive data handling 
+* Responsive items now can be hidden per screen size
+
+= 3.04.2 = 
+
+* Reworked add button interface in the post editor
+
+= 3.04.1 = 
+
+* Version numbering change to allow better version management in WP 
+* Improved: Wordpress style pagination
+* Improved: The button editor interface now warns before permanently deleting a button
+* Fixed: Layout issue in button overview disrupting interface
+* Fixed: Support area not showing correctly and deprecated error on mysql info.
+* Fixed: Close button didn't show in the external css dialog  
+
+= 3.04 = 
+
+* New : Pagination 
+
+* Fixed : Issue in parser causing issues when saving buttons
+* Fixed : Button list can now display buttons from cache
+* Fixed : Big buttons in list would be too large for screen causing problems
+* Several smaller issues and interface hardening
+* Updated several links
+
+= 3.03 = 
+
+* Fixed: Text shadow and border shadow were still showing with zero width. 
+* Fixed: Migrate script from old version moves button id correctly. 
+* Fixed: Link to buttons missing on plugins page
+
+
+= 3.02 = 
+
+* Fixed: IK Facebook plugin jamming the colorpicker 
+* Fixed: Bug where hover cursor wouldn't show up when url was added via shortcode
+* Fixed: Moving table to UTF-8 in settings works again
+
+* Option for remigration of settings from old to new table in case upgrade didn't complete
+* Added PHP 5.3 requirement in readme
+* Added checks for both PHP version, and if activation did run. 
+* Removed default 'white-space: nowrap'.
+* Tested with WP 4.2
+
+= 3.01 = 
+
+* Code rebuilt
+* Major performance enhancements 
+* Responsive module 
+* Dimensions, set width and height 
+
+= 3.0 = 
+
+* Beta release of new codebase
+
+= 1.37 = 
+
+* Fixed two XSS vulnerabilities
+
+= 1.36 = 
+
+* Minor tweaks and updates
+
+
+= 1.35 = 
+
+* Better description for certain options 
+* New icon for WP-repository 
+
+= 1.34 = 
+
+* Fixed UI issue in edit posts screen.
+
+= 1.33 = 
+* Buttons list is now sortable by Button name. 
+
+= 1.32 = 
+* Setting to remove 'add button' interface from editor
+
+= 1.31 =
+* Courier New added to fonts
+
+= 1.30 =
+* Added placement for MaxGalleria
+
+= 1.29 =
+* Can now use shortcodes as URL and text
+
+= 1.28.2 =
+* Updated wording to reflect Font Awesome 4.2.0 update
+
+= 1.28.1 =
+* Updated CSS to have white-space: nowrap, should fix weird wrapping issue
+
+= 1.28 =
+* Added 9 latest Forum posts to Support Page via RSS feed
+
+= 1.27.0 =
+* Removed style blocks from being inline, now placed in footer of the page.
+* Updated database to allow for negative margins on container.
+
+= 1.26.0 =
+* Placed button description in ThickBox when opened in Content Editor
+* Added ability to get shortcode by button name along with button id
+
+= 1.25.0 =
+* Added Permissions so more than admin can use the buttons if desired.
+
+= 1.24.3 =
+* Small CSS tweaks including adding box-sizing and more border-style options. 
+* Updated some of the notifications.
+
+= 1.24.2 =
+* Fixed button editor editor issue where button background colors weren't being reflected in real-time in Firefox and Internet Explorer.
+
+= 1.24.1 =
+* Replaced TinyMCE button with "Add Button" media button.
+
+= 1.24.0 =
+* Copy and invert normal colors to hover added.
+* Settings tab added to Button edit page
+* Updated phrasing
+
+= 1.23.0 =
+* Save button added to bottom of page
+
+= 1.22.0 =
+* Added Settings page
+* Added "Alter Table" button for foreign text issue
+
+= 1.21.0 =
+* Replaced separate PHP page for viewing button CSS with lean modal box.
+
+= 1.20.0 =
+* Fixed vulnerability issue when viewing the button CSS page.
+
+= 1.19.0 =
+* Minor UI and style changes to better support WP 3.8.
+
+= 1.18.0 =
+* Updated Colors section in button editor to match layout of Pro version.
+
+= 1.17.0 =
+* Added shortcut links in Colors section for enhanced usability.
+* Updated the shortcode so that it doesn't render the HREF or the hover colors when button URL is empty.
+
+= 1.16.0 =
+* Added gradient and opacity options.
+* Changed the button output window so that the button isn't clickable.
+
+= 1.15.0 =
+* Changed MAXBUTTONS_PLUGIN_URL constant to call the plugins_url() function instead of WP_PLUGIN_URL so that the proper url scheme is used.
+* Removed the MAXBUTTONS_PLUGIN_DIR constant as it was no longer used.
+
+= 1.14.0 =
+* Updated description and Go Pro page to show new price of MaxButtons Pro.
+
+= 1.13.0 =
+* Added 'exclude' parameter to shortcode to exclude button from rendering on certain posts/pages.
+* Replace get_theme_data() with wp_get_theme() on the support page.
+
+= 1.12.0 =
+* Ignoring the container element on the button list pages so that the button alignment is consistent on those pages.
+
+= 1.11.0 =
+* Added TinyMCE plugin to be able to insert button shortcode from the Visual tab in the WP text editor.
+
+= 1.10.0 =
+* Added ability to externalize the button CSS code.
+* Added option to use !important on button styles.
+
+= 1.9.1 =
+* Fixed issues with spacing of the system info on the Support page.
+
+= 1.9.0 =
+* Added support for localization.
+
+= 1.8.0 =
+* Added the Support page that contains system information along with a link to the support forums.
+
+= 1.7.0 =
+* Added center div wrapper option to Container section in button editor.
+* Added rel="nofollow" option in button editor.
+* Added status field to database table to provide ability to move buttons to trash (default = 'publish').
+* Added actions for Move to Trash, Restore, and Delete Permanently.
+* Added CSS3PIE for better IE support.
+
+= 1.6.0 =
+* Updated UI for button editor.
+* The container is now enabled by default.
+* Removed the IE-specific gradient filter and -ms-filter styles from shortcode output due to issue when used with rounded corners.
+* Changed url database field to be VARCHAR(250) instead of VARCHAR(500).
+
+= 1.5.0 =
+* Added container options.
+
+= 1.4.3 =
+* Added :visited style to the shortcode output.
+
+= 1.4.2 =
+* Fixed issue in button editor where the colorpickers changed the value of the hover colorpickers.
+
+= 1.4.1 =
+* Changed some fields to use stripslashes instead of escape when saving to the database.
+
+= 1.4.0 =
+* Made the button output div in the button editor draggable.
+* Updated styles and scripts to be used only on plugin admin pages instead of all admin pages.
+* Added filter for widget_text to recognize and execute the button shortcode.
+
+= 1.3.3 =
+* Modified the description database field to be VARCHAR(500) instead of TEXT.
+* Modified button list page to use button shortcodes to render each button.
+* Updated the UI for the button list page.
+* Added the button count to the button list page.
+* Updated "Go Pro" page with copy for MaxButtons Pro.
+
+= 1.3.2 =
+* Added "Add New" to the admin menu.
+* Fixed issue where gradient stop value wasn't used when copying a button.
+* Fixed issue where new window option wasn't used when copying a button.
+* Fixed issue where the gradient stop value wasn't being used in the button list.
+
+= 1.3.1 =
+* Fixed issue where gradient stop value was empty after upgrade to 1.3.0 (default value now used in this scenario).
+
+= 1.3.0 =
+* Changed the style of the output div so that it floats.
+* Updated shortcode so that the style element is returned with the a element.
+* Added option for gradient stop.
+
+= 1.2.1 =
+* Fixed issue when new sites are added with multisite/network.
+
+= 1.2.0 =
+* Added option for opening url in a new window.
+
+= 1.1.0 =
+* Added text and url parameters to shortcode.
+
+= 1.0.0 =
+* Initial version.

@@ -1,0 +1,169 @@
+
+.tablenav {
+	.input-paging { width: 55px; } 
+
+}
+
+.ads {
+	ul li { margin-bottom: 4px; } 
+
+}
+
+.preview-buttons {
+	background-color: #fff; 
+	border: 1px solid #dfdfdf;
+	overflow: hidden;
+	
+	.heading 
+	{
+		width: 100%;
+		clear:both;
+		display: inline-block; 
+		border-bottom: 1px solid #dfdfdf;
+		&> span { 
+			display: inline-block; 
+			font-weight: 700; 
+			font-size: 14px;
+			float: left;
+		}
+	}
+	.button-row 
+	{
+		width: 100%; 
+		clear: both;
+		display: inline-block;
+		border-bottom: 1px solid #dfdfdf;
+		
+		&> span {
+			display: inline-block; 
+			font-size: 13px;
+			float: left;
+			overflow: hidden;
+		}
+		.actions { 
+			//margin: 10px 15px 10px 0;
+			margin: 10px 0;
+			padding: 10px 0px 10px 8px; 
+			display: inline-block;
+			z-index: 11; 
+			//height: 75px;
+			width: 50%;
+			background-color: #fff; 
+			position: relative;
+		}
+	}
+ 
+
+	.col { 
+		padding: 10px 0 10px 1%;
+	}
+	.col_check { 
+		width: 20px; 
+	} 
+	.col_button { 
+		//padding-left: 0;
+		width: 60%;
+		//min-width: 50%;
+		overflow: hidden;
+		@include bp(780)
+		{
+			width:70%;
+			margin-right:5%;
+		}
+	}
+	.col_name { 
+		width: 15%; 
+		@include bp(780)
+		{
+			display: none !important;
+		}
+	} 
+	.col_shortcode { 
+		width: 15%;
+		padding-right: 0;
+	}
+
+}
+
+// Links ( all / trash ) in overview
+p.status
+{
+	a {
+		text-decoration: none;
+	}
+	span.count {
+		color: #999999;
+	}
+}
+
+// button overview
+.button-list {
+	margin-top: 10px;
+	p {
+		font-size: 13px;
+	}	
+ 	a {
+		text-decoration: none;
+	}	
+	a.button-name {
+		font-weight: bold;
+	}
+ 	.shortcode-container {
+		margin: 10px 0px 10px 2px;
+
+	}
+	.collection_notice {
+		text-align: right;
+		margin: 10px 5px 0 0;
+		padding-top: 10px;
+		float: right;
+	}
+		
+}
+
+.shortcode-container { 
+	 .mb-container { margin: 0 !important; float:none !important; max-width: 100% !important; } 
+	.mb-center { text-align: left !important; } // default
+}  
+
+/* Pagination on the maxbuttons list page */ 
+.pagination-links {
+
+	a.disabled { 
+		color: #aaa; 
+		cursor: default; 
+		&:hover { 
+			background: #e4e4e4 none repeat scroll 0 0;
+			cursor: default; 
+			border: 1px solid #d2d2d2;
+		}
+	}
+
+}
+
+/* Pagination for the add button popup*/
+.pagination{ 
+
+	width: 100%; 
+	display: inline-block; 
+	margin: 15px 0 5px; 
+	
+	li { 
+		float: left;
+		margin-right: 5px;
+		a,span 	{
+			background: #ccc; 
+ 			vertical-align: middle;
+			padding: 4px 10px 8px ; 
+			height: 15px; 
+			display: inline-block;
+			border: 1px solid #eee;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: bold;
+
+		}
+	}
+}
+
+ 

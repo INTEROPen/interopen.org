@@ -1,0 +1,533 @@
+# Translation of Plugins - Twitter - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Twitter - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-02-12 00:03:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - Twitter - Stable (latest release)\n"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:78
+msgid "Customize title and description shown in Twitter link previews"
+msgstr "Customise title and description shown in Twitter link previews"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:79
+msgid "Customize Tweet button pre-populated share text and hashtags"
+msgstr "Customise Tweet button pre-populated share text and hashtags"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:219
+msgctxt "Vertical dimension measured in whole pixels"
+msgid "Height"
+msgstr "Height"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:214
+msgctxt "Horizontal dimension measured in whole pixels"
+msgid "Width"
+msgstr "Width"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:207
+msgctxt "Limit the number of Tweets displayed"
+msgid "Limit"
+msgstr "Limit"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:195
+msgctxt "Visual layout choices"
+msgid "Layout options"
+msgstr "Layout options"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:83
+msgctxt "Remove color shown behind the widget"
+msgid "Transparent background"
+msgstr "Transparent background"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:82
+msgctxt "Hide the visual indicator of additional content available above or below the current position"
+msgid "Hide scroll bar"
+msgstr "Hide scroll bar"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:81
+msgctxt "Hide the visual line between two sections"
+msgid "Hide borders"
+msgstr "Hide borders"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:80
+msgctxt "Hide summary section after the timeline"
+msgid "Hide footer"
+msgstr "Hide footer"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline.php:79
+msgctxt "Hide introductory section before the timeline"
+msgid "Hide header"
+msgstr "Hide header"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/TwitterList.php:79
+msgctxt "Unique identifier for Twitter user list"
+msgid "List slug"
+msgstr "List slug"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/TwitterList.php:64
+msgid "The latest Tweets from a list of Twitter accounts"
+msgstr "The latest Tweets from a list of Twitter accounts"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Search.php:91
+msgid "Search terms"
+msgstr "Search terms"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Search.php:88
+msgctxt "Create a widget identifier at a URL"
+msgid "Create a new widget ID at %s"
+msgstr "Create a new widget ID at %s"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Search.php:79
+msgid "Twitter widget ID"
+msgstr "Twitter widget ID"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Search.php:64
+msgid "Recent Tweets matching a Twitter search"
+msgstr "Recent Tweets matching a Twitter search"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Profile.php:64
+msgid "The latest Tweets from a Twitter account"
+msgstr "The latest Tweets from a Twitter account"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Collection.php:78
+msgctxt "Unique identifier for a Twitter collection"
+msgid "Collection ID"
+msgstr "Collection ID"
+
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Collection.php:64
+msgid "Tweets organized into a collection"
+msgstr "Tweets organised into a collection"
+
+#: src/Twitter/WordPress/Widgets/Advertising/Tracking.php:168
+msgctxt "Identifier used to track an advertising campaign including conversion and custom audiences"
+msgid "Website tag ID"
+msgstr "Website tag ID"
+
+#: src/Twitter/WordPress/Widgets/Advertising/Tracking.php:95
+msgid "Track Twitter advertising conversion or build a custom audience for ad targeting"
+msgstr "Track Twitter advertising conversion or build a custom audience for ad targeting"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Tweet/Video.php:104
+msgctxt "A single embedded Tweet shown with a video-specific template"
+msgid "Twitter Video"
+msgstr "Twitter Video"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/TwitterList.php:127
+msgctxt "Unique identifier for a Twitter List"
+msgid "List slug"
+msgstr "List slug"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/TwitterList.php:91
+msgctxt "The latest Tweets authored by members of a Twitter list"
+msgid "Twitter List"
+msgstr "Twitter List"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Search.php:181
+msgctxt "Tweets about a term or topic"
+msgid "Tweets about %s"
+msgstr "Tweets about %s"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Search.php:123
+msgid "Widget ID"
+msgstr "Widget ID"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Search.php:73
+msgctxt "Tweets matching a search result query"
+msgid "Twitter Search"
+msgstr "Twitter Search"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Profile.php:100
+msgctxt "The latest Tweets authored by a Twitter account"
+msgid "Twitter Profile"
+msgstr "Twitter Profile"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/CollectionGrid.php:88
+msgctxt "Tweets organized into a collection displayed in a grid template"
+msgid "Twitter Collection Grid"
+msgstr "Twitter Collection Grid"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Collection.php:100
+msgctxt "Tweets organized into a collection"
+msgid "Twitter Collection"
+msgstr "Twitter Collection"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Periscope/OnAir.php:109
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:58
+msgid "Periscope On Air Button"
+msgstr "Periscope On Air Button"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:150
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:155
+msgctxt "Table column header: user-inputted value"
+msgid "Value"
+msgstr "Value"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:86
+msgid "Lets a viewer discover your Periscope account and on air status"
+msgstr "Lets a viewer discover your Periscope account and on air status"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Collection.php:136
+msgctxt "Maximum number of items to include"
+msgid "Limit"
+msgstr "Limit"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Periscope/OnAir.php:149
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:171
+msgctxt "small size button"
+msgid "small"
+msgstr "small"
+
+#: src/Twitter/WordPress/Admin/Profile/PeriscopeUser.php:92
+#: src/Twitter/WordPress/Shortcodes/Buttons/Periscope/OnAir.php:136
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:159
+msgctxt "Prompt requesting entry of a Periscope username"
+msgid "Periscope username"
+msgstr "Periscope username"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Moment.php:90
+msgid "Twitter Moment"
+msgstr "Twitter Moment"
+
+#. Plugin Name of the plugin/theme
+msgid "Twitter"
+msgstr "Twitter"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:176
+msgid "Show number of followers?"
+msgstr "Show number of followers?"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:169
+msgid "Show username?"
+msgstr "Show username?"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:158
+msgid "@username:"
+msgstr "@username:"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:86
+msgid "Lets a viewer follow your Twitter account"
+msgstr "Lets a viewer follow your Twitter account"
+
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:58
+msgid "Twitter Follow Button"
+msgstr "Twitter Follow Button"
+
+#: src/Twitter/WordPress/Shortcodes/Advertising/Tracking.php:121
+msgid "Twitter conversion or remarketing audience tracking identifier"
+msgstr "Twitter conversion or remarketing audience tracking identifier"
+
+#: src/Twitter/WordPress/Shortcodes/Advertising/Tracking.php:93
+msgid "Twitter Advertising Tracker"
+msgstr "Twitter Advertising Tracker"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:230
+msgctxt "Follow a Twitter user"
+msgid "Follow %s"
+msgstr "Follow %s"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:137
+#: src/Twitter/WordPress/Shortcodes/Buttons/Periscope/OnAir.php:150
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:134
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:193
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:176
+msgctxt "large size button"
+msgid "large"
+msgstr "large"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:136
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:133
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:186
+msgctxt "medium size button"
+msgid "medium"
+msgstr "medium"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:132
+#: src/Twitter/WordPress/Shortcodes/Buttons/Periscope/OnAir.php:145
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:129
+#: src/Twitter/WordPress/Widgets/Buttons/Follow.php:178
+#: src/Twitter/WordPress/Widgets/Buttons/Periscope/OnAir.php:165
+msgid "Button size:"
+msgstr "Button size:"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:123
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/Profile.php:127
+#: src/Twitter/WordPress/Shortcodes/Embeds/Timeline/TwitterList.php:118
+#: src/Twitter/WordPress/Widgets/Embeds/Timeline/Profile.php:78
+msgid "Twitter @username"
+msgstr "Twitter @username"
+
+#: src/Twitter/WordPress/Shortcodes/Buttons/Follow.php:96
+msgid "Follow Button"
+msgstr "Follow Button"
+
+#: src/Twitter/WordPress/Shortcodes/Embeds/Tweet.php:194
+msgid "Embedded Tweet"
+msgstr "Embedded Tweet"
+
+#: src/Twitter/WordPress/Cards/Sanitize.php:120
+msgid "&hellip;"
+msgstr "&hellip;"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:273
+msgid "Large button"
+msgstr "Large button"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:247
+msgctxt "display Tweet Button relative to the content of an article"
+msgid "Display Tweet Button %s post content"
+msgstr "Display Tweet Button %s post content"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:208
+msgctxt "before and after another piece of content"
+msgid "before & after"
+msgstr "before & after"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:207
+msgctxt "after another piece of content"
+msgid "after"
+msgstr "after"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:206
+msgctxt "before another piece of content"
+msgid "before"
+msgstr "before"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:188
+msgid "Add a Tweet Button to every public post."
+msgstr "Add a Tweet Button to every public post."
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:171
+msgid "Size"
+msgstr "Size"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:164
+msgctxt "Display of content relative to other content. above, below, left, right"
+msgid "Position"
+msgstr "Position"
+
+#: src/Twitter/WordPress/Admin/Settings/Buttons/Tweet.php:82
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:92
+msgid "Tweet Button"
+msgstr "Tweet Button"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:489
+msgid "Please note: Not all widget functionality is supported when a %s is applied"
+msgstr "Please note: Not all widget functionality is supported when a %s is applied"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:485
+msgid "Suppress Content Security Policy warnings"
+msgstr "Suppress Content Security Policy warnings"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:465
+msgid "Warnings and error display"
+msgstr "Warnings and error display"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:451
+msgid "Select this option if you wish to opt-out of Twitter tracking visitors when a Twitter button or widget appears on a webpage."
+msgstr "Select this option if you wish to opt-out of Twitter tracking visitors when a Twitter button or widget appears on a webpage."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:449
+msgctxt "learn more about this topic"
+msgid "Read more"
+msgstr "Read more"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:448
+msgid "Twitter may track website visitors for advertising targeting, suggested Twitter accounts, and other purposes."
+msgstr "Twitter may track website visitors for advertising targeting, suggested Twitter accounts, and other purposes."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:444
+msgid "Do not use my website to tailor content and suggestions for Twitter users"
+msgstr "Do not use my website to tailor content and suggestions for Twitter users"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:423
+msgid "Limit Twitter functionality"
+msgstr "Limit Twitter functionality"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:404
+msgid "Border color applies to borders separating Tweet sections or individual Tweets."
+msgstr "Border colour applies to borders separating Tweet sections or individual Tweets."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:403
+msgid "Link color is applied to linked text including URLs, #hashtags, and @mentions."
+msgstr "Link colour is applied to linked text including URLs, #hashtags, and @mentions."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:402
+msgid "Choose a light or dark theme to best match the background color and text color of surrounding content."
+msgstr "Choose a light or dark theme to best match the background colour and text colour of surrounding content."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:401
+msgid "Twitter Embedded Tweet and Timeline widgets support customization of color theme, link color, and border color inside a rendered widget."
+msgstr "Twitter Embedded Tweet and Timeline widgets support customisation of colour theme, link colour, and border colour inside a rendered widget."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:382
+msgid "Color of border surrounding a Twitter widget."
+msgstr "Colour of border surrounding a Twitter widget."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:358
+msgid "Color of link text inside a Twitter widget."
+msgstr "Colour of link text inside a Twitter widget."
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:300
+msgid "Customize colors used in Twitter widgets to match your site's theme"
+msgstr "Customise colours used in Twitter widgets to match your site's theme"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:283
+msgctxt "Personalize Twitter content based on website visits"
+msgid "Personalization"
+msgstr "Personalisation"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:275
+msgid "Restrictions"
+msgstr "Restrictions"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:256
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:489
+msgid "Content Security Policy"
+msgstr "Content Security Policy"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:249
+msgid "Warnings"
+msgstr "Warnings"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:229
+msgctxt "CSS color styling of a box border"
+msgid "Border color"
+msgstr "Border colour"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:220
+msgctxt "CSS color styling of a link text"
+msgid "Link color"
+msgstr "Link colour"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:211
+msgctxt "A choice of color options grouped as a theme"
+msgid "Theme"
+msgstr "Theme"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:96
+msgctxt "Option for content to appear with a dark background and light text"
+msgid "dark"
+msgstr "dark"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:95
+msgctxt "Option for content to appear with a light background and dark text"
+msgid "light"
+msgstr "light"
+
+#: src/Twitter/WordPress/Admin/Settings/Embeds/Theme.php:82
+msgctxt "Visual and color theme"
+msgid "Theme"
+msgstr "Theme"
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:239
+msgid "The account may also be used to note a Tweet originated from a Tweet Button on your site."
+msgstr "The account may also be used to note a Tweet originated from a Tweet Button on your site."
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:238
+msgid "Twitter Analytics"
+msgstr "Twitter Analytics"
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:238
+msgid "Twitter Cards"
+msgstr "Twitter Cards"
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:238
+msgid "Site attribution is used to attribute site content to a Twitter account in %1$s and %2$s."
+msgstr "Site attribution is used to attribute site content to a Twitter account in %1$s and %2$s."
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:85
+msgid "Attribute shared content to your site's Twitter account"
+msgstr "Attribute shared content to your site's Twitter account"
+
+#: src/Twitter/WordPress/Admin/Settings/Cards/SiteAttribution.php:73
+msgctxt "Attribute content on a website to a Twitter account"
+msgid "Site attribution"
+msgstr "Site attribution"
+
+#: src/Twitter/WordPress/Admin/Settings/SinglePage.php:79
+msgid "Twitter settings"
+msgstr "Twitter settings"
+
+#: src/Twitter/WordPress/Admin/Settings/Loader.php:61
+msgid "Settings"
+msgstr "Settings"
+
+#: src/Twitter/WordPress/Admin/Profile/User.php:92
+msgctxt "Prompt requesting entry of a Twitter username"
+msgid "Twitter @username"
+msgstr "Twitter @username"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:188
+msgid "Customize Twitter link previews"
+msgstr "Customise Twitter link previews"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:175
+msgid "Description"
+msgstr "Description"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:159
+#: src/Twitter/WordPress/Widgets/Widget.php:46
+msgid "Title"
+msgstr "Title"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:155
+msgctxt "Object component, such as a title and description of an article"
+msgid "Property"
+msgstr "Property"
+
+#: src/Twitter/WordPress/Admin/Post/TwitterCard.php:151
+msgid "Twitter Card"
+msgstr "Twitter Card"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:192
+msgid "Pre-populate Tweet text"
+msgstr "Pre-populate Tweet text"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:176
+msgid "Hashtags"
+msgstr "Hashtags"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:161
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:119
+msgctxt "Share / Tweet text"
+msgid "Text"
+msgstr "Text"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:150
+msgctxt "Customization or variable"
+msgid "Parameter"
+msgstr "Parameter"
+
+#: src/Twitter/WordPress/Admin/Post/TweetIntent.php:148
+#: src/Twitter/WordPress/Shortcodes/Buttons/Share.php:443
+msgctxt "Tweet verb. Sharing."
+msgid "Tweet"
+msgstr "Tweet"
+
+#: src/Twitter/WordPress/Admin/Post/MetaBox.php:130
+msgctxt "Text displayed for a Twitter audience"
+msgid "Twitter Custom Text"
+msgstr "Twitter Custom Text"
+
+#: compatibility-notice.php:232
+msgid "Plugin <strong>deactivated</strong>."
+msgstr "Plugin <strong>deactivated</strong>."
+
+#: compatibility-notice.php:229
+msgctxt "The web server is running a version of the PHP software released on a locale-formatted date"
+msgid "This server is running PHP version %1$s released on %2$s."
+msgstr "This server is running PHP version %1$s released on %2$s."
+
+#: compatibility-notice.php:221
+msgctxt "the day the event occurred is unknown"
+msgid "an unknown date"
+msgstr "an unknown date"
+
+#: compatibility-notice.php:121 compatibility-notice.php:205
+msgid "The Twitter plugin for WordPress requires PHP version %s or greater."
+msgstr "The Twitter plugin for WordPress requires PHP version %s or greater."

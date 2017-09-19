@@ -1,0 +1,35 @@
+// vars 
+
+$c-border-light: #ccc; 
+$c-border-dark : #000;
+
+	// outside namespace 
+	@import "global"; 
+	@import "mixins"; 
+	
+#maxbuttons 
+{
+	//margin: 0px 20px 20px 0px;
+	display: inline-block;
+	width: 100%; // consistent size for all pages. 
+
+	@import "general"; 
+	@import "overview"; 
+	@import "editor";
+	@import "elements";
+	@import 'input_range';   
+	@import "support";
+	@import "settings"; 
+
+	@import "subtabs"; 
+	@import "collection";
+	@import "feedback"; 
+	@import "ads"; 
+	@import "gopro"; 
+}
+	// loaded outside of container
+	@import "maxmodal"; 
+	//@import "colpick"; 
+	@import "media_button";
+
+

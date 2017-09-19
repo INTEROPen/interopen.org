@@ -1,0 +1,64 @@
+// review nag screen
+.maxbuttons-notice {
+	  height: 148px;
+	  color: #000;
+	  display: block;
+
+	.review-logo {
+	  background: url("../../images/maxbuttonspro-128.png") no-repeat scroll 0 0 transparent;
+	  display: block;
+	  float: left;
+	  margin: 10px;
+	  height: 128px;
+	  width: 128px;
+	}
+
+	.mb-notice {
+	  display: block;
+	  height: 128px;
+	  float: left;  
+	  margin: 10px;
+	   p {
+	  		font-size: 16px;
+		}	  
+	}
+
+	.title {
+	  font-size: 24px !important;
+	  margin: 4px 0;
+	}
+
+	ul.review-notice-links li {
+	  float: left;
+	  display: inline-block;
+	  margin-right: 20px;
+	  a { font-size: 16px; }
+	}
+
+	.close-mb-notice {
+	  float: right;
+	  margin-top: 70px;
+	}
+}
+
+.maxbuttons-reviewoffer {
+	font-size: 14px;
+	padding: 15px; 
+	background: #fbfbfb; 
+	display: inline-block;
+	color: #000; 
+	border: 1px solid #e5e5e5;
+	border-radius: 5px; 
+	margin: 8px 0;
+	line-height: 25px;
+	
+	.dismiss {
+		cursor: pointer; 
+		display: block;
+		float: right;
+		margin-right: 10px;
+		margin-top: 3px;
+	}
+
+
+}

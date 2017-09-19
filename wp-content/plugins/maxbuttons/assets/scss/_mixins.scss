@@ -1,0 +1,93 @@
+@mixin linear-gradient($start:#000,$end:#000,$stop:45%,$important:null)
+{
+	background: $start $important;
+	-pie-background: linear-gradient($start $stop, $end) $important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($stop, $start), 
+				 								color-stop(1, $end)) $important;
+	background: -moz-linear-gradient($start $stop, $end) $important;	
+	background: -o-linear-gradient($start $stop, $end) $important;
+	background: linear-gradient( $start $stop, $end) $important; 
+
+	//filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$start}', endColorStr='#{$end}');
+}
+
+@mixin user-select($value){
+-webkit-user-select: $value;
+ -moz-user-select: $value; 
+ -ms-user-select: $value; 
+ -o-user-select: $value; 
+ user-select: $value;   
+}
+			 
+@mixin box-shadow($left, $top, $blur, $color,$spread:null, $inset:false, $important:null) {
+	@if $inset {
+	-webkit-box-shadow:inset $left $top $blur $spread $color $important;
+	-moz-box-shadow:inset $left $top $blur $spread $color $important;
+	box-shadow:inset $left $top $blur $spread $color $important;
+	} @else {
+	-webkit-box-shadow: $left $top $blur $spread $color $important;
+	-moz-box-shadow: $left $top $blur $spread $color $important;
+	box-shadow: $left $top $blur $spread $color $important;
+	}
+} 
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+	text-shadow: $x $y $blur $color;
+}		 
+
+@mixin border-radius($topleft, $topright, $bottomleft, $bottomright)
+{
+	border-radius: $topleft $topright $bottomleft $bottomright; 
+	-webkit-border-radius: $topleft $topright $bottomleft $bottomright;
+}
+
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+  -moz-transform: rotate(#{$degrees}deg);
+  -ms-transform: rotate(#{$degrees}deg);
+  -o-transform: rotate(#{$degrees}deg);
+  transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+ }
+
+
+@mixin transition($property, $duration, $ms: false) {
+	-webkit-transition: $property $duration ease-in-out;
+	-moz-transition: $property $duration ease-in-out;
+	-o-transition: $property $duration ease-in-out;
+	@if ($ms) {
+		-ms-transition: $property $duration ease-in-out;
+	}
+	transition: $property $duration ease-in-out;
+}
+
+@mixin bp($point) 
+{
+	@if $point == 480
+	{
+	 	@media (max-width: 480px) { @content; }
+	}
+	@else if $point == 640 { 
+		@media (max-width: 640px) { @content; } 
+	}
+	@else if $point == 780 {
+	   @media (max-width: 780px) { @content; }
+	}	
+	@else if $point == 800 {
+	   @media (max-width: 800px) { @content; }
+	}
+	
+	@else if $point == 960 {
+	 	@media (max-width: 960px) { @content; }
+	}
+	@else if $point == 1024 {
+		@media (max-width: 1024px) { @content; }
+	}
+	@else if $point == 1200 {
+		@media (max-width: 1200px) { @content; }
+	}
+}
+
+

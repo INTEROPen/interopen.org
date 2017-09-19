@@ -1,0 +1,68 @@
+
+
+// RSS Feed are the support questions on the page. 
+.rss-feed {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 20px;
+
+	li {
+		width: 32%;
+		margin-right: 2%;
+		float: left;
+		margin-bottom: 2%;
+	
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		a {
+			min-height: 110px; 
+			max-height: 110px; 
+			overflow: hidden;		
+			background: #fff;
+			width: 100%;
+			display: block;
+			padding: 10px;
+			box-sizing: border-box;
+			border: 1px solid #bbb;
+			//min-height: 100px;
+			text-decoration: none;
+			transition: all 200ms;
+			border-radius: 2px;
+			&:hover {
+				background: #f9f9f9;
+				span {
+					color: #0074a2;
+				}				
+			}
+			span {
+				color: #2ea2cc;
+				font-weight: bold;
+				font-size: 1.2em;
+				line-height: 1.5em;
+			}			
+		}		
+	}
+}
+ 
+
+.system_info {
+	width: 90%; 
+	background-color: #fff; 
+	border: 1px solid #000; 
+	padding: 15px;
+	.info { 
+		margin: 5px 0; 
+		
+		label { 
+			width: 250px;
+			display: inline-block;
+			clear: both; 
+		}
+	
+	}
+
+}	
+
+ 

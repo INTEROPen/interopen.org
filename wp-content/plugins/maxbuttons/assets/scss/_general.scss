@@ -1,0 +1,108 @@
+
+/* Base element - do not use this in layout since this conflict with other plugins. 
+
+*/
+.message {
+	//border: solid 1px #e6db55;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 10px;
+	margin: 10px 0px 20px 0px;
+	clear: both;
+
+
+}
+
+.main {
+	position: relative; 
+	z-index: 500; 
+	margin-top: 15px;
+	width: 72%;
+	float: left;	
+}
+
+.mb-message {
+	@extend .message;
+ 
+	&.error {
+ 
+		font-weight: 700;
+	}
+	&.shortcode {
+		border: solid 1px #e6db55;
+		background-color: #ffffe0; 
+		
+	}
+	&.mb-notice { 
+		@extend .shortcode;
+	}
+}
+
+
+// modelled after WP 
+.button-bar {
+	margin: 15px 0; 
+	padding: 10px;
+	background: #fbfbfb none repeat scroll 0 0; 
+	border: 1px solid #e5e5e5; 
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+	min-height: 28px;
+}
+h1 > span {
+	vertical-align: top; 
+	float: left;
+	@include bp(1024)
+	{
+		float:none;	
+	}
+}
+
+// the logo in the header section
+ .logo {
+//	margin-left: 70px;
+	font-weight: 400;
+///	font-style: italic;
+	font-size: 13px; 
+//	display: inline-block;
+	//height: 60px;
+	overflow: hidden;
+	text-align: center;
+	
+	@include bp(1024)
+	{
+		text-align: left;
+		margin-top: 15px;	
+	}
+	
+	img {
+		vertical-align: middle;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.fb-like { 
+		margin-top: 5px;
+		height: 20px; 
+		padding: 0;
+		margin-left: 180px;
+		overflow: hidden; 
+		
+		span { vertical-align: top !important; } 
+	}
+ 
+	 
+	
+	
+}
+
+// backward compatible for the placing of admin notices before version 4.3 - searches for h2
+.dummy-heading { display: none; } 
+
+
+@media screen and (max-width: 960px) {
+	.main { width: 100%; } 
+
+
+}
+

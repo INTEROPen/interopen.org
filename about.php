@@ -70,7 +70,7 @@
             <li>Answer Digital</li>
             <li>Application Insight</li>
             <li>Atos</li>
-            <li>Blackpear</li>
+            <li>Black Pear</li>
             <li>Boots</li>
             <li>BT</li>
             <li>Cambio + Healthcare Systems</li>

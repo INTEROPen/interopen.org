@@ -1,11 +1,31 @@
 <?php include('includes/header.php') ?>
-      
+
   <h1 class="page-heading">Upcoming events</h1>
 
   <h2>2017</h2>
 
   <table class="events-table">
     <tbody>
+        <tr>
+        <td><span class="event-date">1 Nov</span></td>
+        <td id="lessons-from-community-ehi-live-171101">
+          <p class="event-title">Lessons form the INTEROPen Community: Sharing Data, Saving Lives’ @ EHI Live</p>
+          <p>Day 2 - 10:30 - 11:45 GMT</p>
+          <p>Join us as we take to the stage as part of the Integration &amp; Interoperability stream at this year's EHI Live conference on 1 November 2017. Introduced by Head of Architecture at NHS England and INTEROPen Board representative, Inderjit Singh, this session will feature three Care Stories presented by INTEROPen community members. A 30-minute panel session featuring members of the INTEROPen Board will follow presentations to allow open discussion of questions relating to interoperability, open standards and all things FHIR!</p>
+          <p><img src="images/bullet_go.png"/><a href="https://www.ehilive.co.uk/en/conferences/day-2/integration-inoperability-day2.html">Agenda and more information</a></p>
+          <p><img src="images/events/ehi-live-171101.jpg" style="padding-left: 10px;" width="375" height="212" alt="EHI Live"/></p>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="event-date">3 Nov</span></td>
+        <td id="fhir-works-171103">
+          <p class="event-title">FHIR Works: Showcasing Progress towards Interoperable Care</p>
+          <p>10:00 - 15:00 GMT</p>
+          <p>techUK, NHS Digital and INTEROPen are delighted to invite you to an event on interoperability. The objectives of the event are as follows: Drive forward interoperability by bringing people together under the INTEROPen collaborative for a conversation on the current initiatives and future plans for interoperability Ensure consistent messaging on interoperability and inform the health and social care sector Foster a culture of working together on interoperability and encouraging commitment across suppliers, the NHS, Clinicians, and citizens</p>
+          <p><img src="images/bullet_go.png"/><a href="http://www.techuk.org/events/briefing/item/11467-bonfhir-interoperability-event">Registration and more information</a></p>
+          <p><img src="images/events/eventbrite_fhir-works-171103.png" style="padding-left: 10px;" width="375" height="212" alt="EHI Live"/></p>
+        </td>
+      </tr>
       <tr>
         <td><span class="event-date">21 Nov</span></td>
         <td id="clinicians-on-fhir-171121">
@@ -14,14 +34,23 @@
           <p>This educational conference, led by Dr. David Hay, FHIR Evangelist and Orion Health Product Strategist, and supported by Dr. Amir Mehrkar, clinical co-chair of INTEROPen and NHS Digital clinical lead for interoperability, is designed to help promote an understanding of FHIR amongst clinicians, equipping them to access and share clinical information from the point of care.</p>
           <p><img src="images/bullet_go.png"/><a href="https://interopen_clinicians_on_fhir.eventbrite.co.uk/">More information and tickets</a></p>
           <p><img src="images/events/clinicians-on-fhir.png" style="padding-left: 10px;" width="500" height="282" alt="Clinicians On FHIR"/></p>
-          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="event-date">29 Nov</span></td>
+        <td id="clinicians-on-fhir-171129">
+          <p class="event-title">Driving the Dream of Integrated Health &amp; Care Services</p>
+          <p>17:30 @ White Cloth Gallery, Leeds - £5 refundable on attendance</p>
+          <p>Join us for an evening of networking and debate on interoperability across health and care. INTEROPen is delighted to be partnering with One HealthTech and the hidden talents of Airelogic to offer a unique insight into the reality of health and care interoperability. This evening session will feature talks from NHS Digital and local healthtech organisations followed by an 'open surgery' on interoperability, led by INTEROPen Co-Founder, Dr Amir Mehrkar.</p>
+          <p><img src="images/bullet_go.png"/><a href="https://www.eventbrite.co.uk/e/driving-the-dream-of-integrated-health-care-services-leeds-tickets-38497326540">More information and tickets</a></p>
+          <p><img src="images/events/one-healthtech-driving-the-dream-171129.png" style="padding-left: 10px;" width="375" height="212" alt="Clinicians On FHIR"/></p>
         </td>
       </tr>
     </tbody>
   </table>
-  
+
   <p>&nbsp;</p>
-  
+
   <hr/>
 
   <h2>Past events</h2>
@@ -111,7 +140,7 @@
           <div class="event-location"><img src="images/world.png" alt="location"/>Online</div>
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4.1%20-%20FHIR%20Profile%20Webinar%20Draft%20Agenda.pdf">Agenda</a></p></div>
           <div class="event-document"><p><img src="images/film.png" alt="Video"/><a href="https://interopen.ryver.com/#posts/1145844">Webinar recording (requires RYVER login)</a></p></div>
-          
+
           <p>Online discussion of the CareConnect candidate profiles and to share learning points from previous PRSB review sessions. If you are keen to be part of this webinar: you must <a href="resource-profiles">review the profile proposals</a> ahead of this to inform your contribution.</p>
           <p>Please email <a class="emaila" href="">.</a> to take part.</p>
         </td>
@@ -126,21 +155,21 @@
 <!--          <div class="event-document"><p><a href="content/IO4%20-%20Draft%20Agenda.pdf"><img src="images/page_pdf.png" alt="PDF document"/>Agenda</a></p></div>-->
 
           <div class="event-document"><p><img src="images/page_excel.png" alt="PDF document"/><a href="https://docs.google.com/spreadsheets/d/1077YtOTfQQbsGjUXhZoFr-tRZMUaCy4bKcydJTeexFc/edit?usp=sharing">Action &amp; decision log from the meeting</a></p></div>
-          
+
           <p>Slides:</p>
 
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Why%20This%20Matters.pdf">Amir Mehrkar - Why this matters</a></p></div>
-          
+
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Proposed%20project%20(Michael's%20story).pdf">David Stables and Paula Turnock - Proposed project</a></p></div>
-          
+
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Michael's%20Story%20-%20Introduction.pdf">Paula Turnock - Michael's story (narrative)</a></p></div>
-                    
+
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20Code4Health%20Community%20Profiles.pdf">Richard Kavanagh - Code4Health Community Profiles</a></p></div>
-          
+
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20GP%20Connect%20programme%20overview.pdf">Glenn Collett - GP Connect Programme Overview</a></p></div>
-          
+
           <div class="event-document"><p><img src="images/page_pdf.png" alt="PDF document"/><a href="content/IO4%20-%20FHIR%20Authentication%20and%20Authorization.pdf">Dunmail Hodkinson - FHIR Authentication &amp; Authorization</a></p></div>
-          
+
         </td>
       </tr>
       <tr>

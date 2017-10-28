@@ -2,19 +2,17 @@
 
   <div class="standards-page">
 
-    <h1 class="page-heading">FHIR resource profiles</h1>
-
-    <h3>Overview</h3>
-
-    <p>This section references profile collections that have been submitted by INTEROPen members or member groups for consideration and further validation by other stakeholders.</p> 
-    <p>Any group member or group of members can submit members proposals subject to the following:</p>
-
-    <ol>
-      <li>They should be created using the Forge tool.</li>
-      <li>They must first be submitted via a pull request to the <a href="https://github.com/HL7-UK/CareConnect-profiles">HL7 CareConnect repository</a> to ensure visibility and access to the source.</li>
-      <li>A suitable view of the FHIR profile (e.g. Simplifier viewer, or via clinFHIR) should be created in order to be able to view the profiles, together with any documentation providing rationale for changes to the current version.</li>
-      <li>A submission to <a href="mailto:CareConnect@interopen.org">CareConnect@interopen.org</a> should include a summary of the project content and the organisations responsible for editing the proposal.</li>
-    </ol>
+    <h1 class="page-heading">FHIR "CareConnect" Resource Profiles</h1>
+    
+    <h3>Curation Methodology</h3>
+    
+    <p>
+    The INTEROpen Curation Methodology is documented in a public Google Doc.
+    </p>
+    <div>
+    <a href="https://drive.google.com/open?id=1n0SXC9BqN-ROjJvpdhceFCPOg5hzqmPq4B8DJxlrbMU"><button type="button" class="btn btn-primary">View the INTEROPen Curation Methodology</button></a>
+    </div>
+    <p/>
     
     <h3>Member proposals</h3>
     

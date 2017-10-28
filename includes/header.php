@@ -7,7 +7,7 @@
             "about.php" => array("NAME" => "About", "LINK" => "about"),
             "DROPDOWN" => array("NAME" => "Standards development",
                                 "ELEMENTS" => array("standards.php" => array("NAME" => "Overview", "LINK" => "standards"),
-                                                    "resource-profiles.php" => array("NAME" => "FHIR resource profiles", "LINK" => "resource-profiles"),
+                                                    "resource-profiles.php" => array("NAME" => "FHIR CareConnect Resource Profiles", "LINK" => "resource-profiles"),
                                                     "connectathon.php" => array("NAME" => "Connectathon", "LINK" => "connectathon"),
                                                     "interoperability-case-studies.php" => array("NAME" => "Use Cases", "LINK" => "interoperability-case-studies"),
                                                     "https://nhsconnect.github.io/CareConnectAPI/" => array("NAME" => "CareConnect API", "LINK" => "https://nhsconnect.github.io/CareConnectAPI/"))),
